@@ -6,7 +6,7 @@ FitFactorOS helps you go after fewer jobs that fit you well, get a real person o
 
 It is free, open source, and built for people who don't think of themselves as technical. If you can use a spreadsheet and a chat window, you can use this.
 
-> **Status:** Early build. Phase 1 (Sheet template + Intake agent) is being built. See [Roadmap](#roadmap).
+> **Status:** Early build. Phase 1 (Sheet template + Intake agent) is built and being tested. See [Roadmap](#roadmap).
 
 ---
 
@@ -136,14 +136,14 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 
 ## Getting started
 
-**What you'll need:** a Claude account (plan details will be in the setup guide), a Google account, and about 20 minutes.
+**What you'll need:** a Claude account (plan details in the [setup guide](docs/setup.md)), a Google account, and about 20 minutes.
 
 1. Create or sign in to your Claude account.
 2. Copy the Sheet template into your Google Drive.
 3. Add the FitFactorOS skills to Claude and connect Google Drive and Gmail.
 4. Start a new chat and say **"Start my intake."**
 
-The setup guide, which ships with Phase 1, will walk through every step with screenshots.
+The [setup guide](docs/setup.md) walks through every step. Screenshots are coming after the first round of testing.
 
 ---
 
@@ -156,6 +156,8 @@ fitfactoros/
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
+├── dist/
+│   └── fitfactoros-intake.zip   # Ready-to-upload Intake skill
 ├── docs/
 │   ├── setup.md              # Step-by-step setup for non-technical users
 │   ├── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
@@ -197,7 +199,7 @@ Each file in `agents/activity-log/states/` records one state's work-search requi
 | Phase | What ships | Status |
 |---|---|---|
 | 0 | README and repo structure | Done |
-| 1 | Sheet template + Intake agent | In progress |
+| 1 | Sheet template + Intake agent | Testing |
 | 2 | Research (scoring rubrics, diligence checklist, output templates) | Planned |
 | 3 | Job Finder | Planned |
 | 4 | Outreach (warm-path ladder, two-fact rule) | Planned |
