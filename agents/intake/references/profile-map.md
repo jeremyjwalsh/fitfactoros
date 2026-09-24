@@ -7,7 +7,7 @@ The Profile tab has one answer per row in column B. Row 2 (Gmail address) is fil
 | 1 | B3 | Your name | Resume, or Turn 4 if no resume |
 | 2 | B4 | Resume file | Resume (file name) |
 | 3 | B5 | Most recent role | Resume, or Turn 4 if no resume |
-| 4 | B6 | Years of experience | Resume ("About N (estimate)" unless confirmed) |
+| 4 | B6 | Years of experience | Resume ("About N (estimate)" unless confirmed), or Turn 4 if no resume |
 | 5 | B7 | Top skills | Resume, or Turn 4 if no resume |
 | 6 | B8 | Target roles | Question 2 |
 | 7 | B9 | Where you can work | Question 3 |

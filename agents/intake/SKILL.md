@@ -13,7 +13,7 @@ Before starting, read `references/guardrails.md` and `references/profile-map.md`
 
 - **Every question can be skipped.** Record a skipped answer as `skipped`.
 - **Never invent an answer.** If the user didn't say it and the resume doesn't show it, it's `skipped`.
-- **Say only what's true.** Don't promise that nothing leaves the user's computer. It's accurate to say: you won't send or submit anything, and their answers are saved in their own Sheet.
+- **Say only what's true.** Don't promise that nothing leaves the user's computer. It's accurate to say: you won't send or submit anything, and their answers go in their own Sheet.
 - **No web searches, no file creation.** Intake only talks and produces text. This keeps it light on usage.
 - **Don't rewrite the resume.** If something is worth fixing, mention it in one line at the very end.
 - **Sensitive topics:** follow the list in `references/guardrails.md`. Don't ask about those topics, and don't record them even if the resume hints at them.
@@ -45,27 +45,30 @@ If you read a resume, start with a one-line summary: "From your resume: [most re
 ### Turn 3: Tappable (questions 6, 8, and 9)
 Above the buttons:
 - If the resume had results with numbers, list them (up to 3) exactly as written in the resume, so the user can see what they're approving.
-- Add this line word for word: *Your unemployment answer only powers the Activity Log, and it's saved in your own Sheet.*
+- Add this line word for word: *Your unemployment answer only powers the Activity Log, and it goes in your own Sheet.*
 - Add the "None of these fit?" line.
 
 Then ask:
 - **Q6. What kind of work makes you lose track of time?** Multi-select, 4 options. With a resume, draw them from it (for example, "Building training programs," "Fixing a messy process"). Without one, use: "Solving tough problems," "Teaching or coaching others," "Building something new," "Working directly with customers."
 - **Q8. Are you collecting unemployment?** Single select: "Yes," "No," "Prefer not to say." Record "Prefer not to say" as `skipped`.
-- **Q9. Wins with numbers.** *Only if the resume had numbered results:* single select, "Use these," "I'll write my own," "Skip." *With no numbered results, leave Q9 out of this turn; it's asked as typed in Turn 4.*
+- **Q9. Wins with numbers.** *Only if the resume had numbered results:* single select, "Use these" or "I'll write my own." (Skipping is covered by the "type 'skip'" line.) *With no numbered results, leave Q9 out of this turn; it's asked as typed in Turn 4.*
 
 ### Turn 4: One typed message
-Ask everything that needs typing in **one** numbered list. Tell the user to answer only the numbers they want, in one reply, and that anything left blank counts as skipped. Include only the items that apply:
+Ask everything that needs typing in **one** numbered list. Include only the items that apply, and **renumber the ones you keep starting from 1**, so the numbers the user sees match what they answer. Tell the user to answer only the numbers they want, in one reply. Anything left blank counts as skipped, **except the resume-correction item: a blank there means the resume summary stands.**
+
+The items, in order:
 
 1. *(No resume)* Your name, most recent job title and employer, years of experience, and 3–5 top skills.
 2. *(Resume)* Anything to correct in the summary: role, years, or skills?
 3. *(No resume)* What roles are you targeting?
 4. *(Unless they chose "Remote only")* Which cities or regions work for you?
-5. What's the lowest base pay you'd accept? *(It's used only to screen jobs out, and it's saved in your own Sheet.)*
-6. Any other deal-breakers, and any companies you want to avoid?
-7. Any dream companies?
-8. People you know at companies you'd like to work for: first name, last initial, company, and how you know them. *(It's used only to find warm introductions, and it's saved in your own Sheet.)*
-9. What state do you live in?
-10. *(If they chose "I'll write my own," or had no numbered results)* Two or three wins from your career, with numbers. Optional.
+5. What's the lowest base pay you'd accept? *(It's used only to screen jobs out, and it goes in your own Sheet.)*
+6. Any other deal-breakers?
+7. Any companies you want to avoid?
+8. Any dream companies?
+9. People you know at companies you'd like to work for: first name, last initial, company, and how you know them. *(It's used only to find warm introductions, and it goes in your own Sheet.)*
+10. What state do you live in?
+11. *(If they chose "I'll write my own," or had no numbered results)* Two or three wins from your career, with numbers. Optional.
 
 ### Turn 5: The answer block
 1. Show a short preview table with two columns, **Field** and **Your answer**, covering all 17 fields in the order in `references/profile-map.md`.

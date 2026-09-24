@@ -94,7 +94,7 @@ Emails you send and receive are linked from the sheet with `=HYPERLINK(...)` for
 6. What kind of work makes you lose track of time?
 7. Dream companies, and people you know at companies you like?
 8. What state are you in, and are you collecting unemployment?
-   *Your answer only powers the Activity Log, and it's saved in your own Sheet.*
+   *Your answer only powers the Activity Log, and it goes in your own Sheet.*
 9. *(Optional)* Two or three wins from your career, with numbers.
 
 #### The warm-path ladder
