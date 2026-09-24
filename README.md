@@ -53,6 +53,7 @@ These are the rules every part of FitFactorOS follows. If a feature breaks one, 
 - **Warm path first.** Before you apply, find the warmest route to a person. When you can, reach out first and apply 2–3 days later, so your contact has a chance to flag you before your application lands in the pile.
 - **Keep it simple.** Built for non-technical people. Questions come as tappable choices where possible, and every question can be skipped.
 - **Only real progress counts.** Every rung on your ladder is something you actually did or something that actually happened. No fake rungs, no points for opening the app.
+- **Light by design.** Claude plans have usage limits. FitFactorOS spends your usage only where it changes a decision: a quick screen first, deep research only on jobs you choose to pursue, and never researching the same thing twice.
 - **Your data stays yours.** Your information lives in your own Google Sheet. This repository contains no personal data; it ships with a fictional sample profile.
 
 ---
@@ -135,13 +136,14 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 
 ## Getting started
 
-> Detailed setup steps will live in [`docs/setup.md`](docs/setup.md) once Phase 1 ships.
+**What you'll need:** a Claude account (plan details in the [setup guide](docs/setup.md)), a Google account, and about 20 minutes.
 
-1. Copy the Sheet template into your own Google Drive.
-2. Add the FitFactorOS agents to Claude.
-3. Say **"Start my intake."**
+1. Create or sign in to your Claude account.
+2. Copy the Sheet template into your Google Drive.
+3. Add the FitFactorOS skills to Claude and connect Google Drive and Gmail.
+4. Start a new chat and say **"Start my intake."**
 
-Want to see it working first? Open the sample sheet in [`samples/`](samples/). It's filled in for a fictional job seeker so you can see every tab in use.
+The [setup guide](docs/setup.md) walks through every step with screenshots.
 
 ---
 
@@ -194,8 +196,8 @@ Each file in `agents/activity-log/states/` records one state's work-search requi
 |---|---|---|
 | 0 | README and repo structure | Draft |
 | 1 | Sheet template + Intake agent | Next |
-| 2 | Job Finder | Planned |
-| 3 | Research (scoring rubrics, diligence checklist, output templates) | Planned |
+| 2 | Research (scoring rubrics, diligence checklist, output templates) | Planned |
+| 3 | Job Finder | Planned |
 | 4 | Outreach (warm-path ladder, two-fact rule) | Planned |
 | 5 | Activity Log (Massachusetts first, then more states) | Planned |
 | 6 | Dashboard with per-opportunity ladders and your own warm vs cold results | Planned |
@@ -246,6 +248,8 @@ FitFactorOS is designed around a small set of findings. Here's what each one say
 ## Contributing
 
 Contributions are welcome, especially **state rules files** for the Activity Log. Every state file needs an official source link and a verification date. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+Not technical? You can still help. Share feedback through the feedback form <!-- placeholder: Google Form link -->. No GitHub account needed.
 
 ## License
 
