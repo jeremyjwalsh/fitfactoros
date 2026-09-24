@@ -6,7 +6,7 @@ Rows run across columns, so fields are separated by a **tab character**. Output 
 
 | Col | Field | What to write |
 |---|---|---|
-| A | Job ID | `J-YYMMDD-COMPANY`: today's date, then the company name in capitals, letters and digits only, up to 10 characters. Example: J-260924-NORTHWIND. If the same company is screened twice on one day, add -2. |
+| A | Job ID | `J-YYMMDD-COMPANY`: today's date, then the company name in capitals, letters and digits only, up to 10 characters. Example: J-260924-NORTHWIND. If the same company comes up twice on one day, add -2. |
 | B | Date added | Today, YYYY-MM-DD |
 | C | Company | As the posting names it |
 | D | Role | The job title as posted |
@@ -15,22 +15,22 @@ Rows run across columns, so fields are separated by a **tab character**. Output 
 | G | Suggested by | The person who sent it, if the user said. Otherwise blank. |
 | H | Location | As posted |
 | I | Work mode | One of: Remote, Hybrid, On-site. Blank if the posting doesn't say. |
-| J | Pay range | Exactly as posted, or `Not posted`. Never an estimate in a quick screen. |
+| J | Pay range | Exactly as posted, or `Not posted`. Never an estimate in a quick read. |
 | K | Pay tag | `Verified` when pay is posted. Blank when not posted. |
-| L | Fit score | Whole number 0–100, or `n/a` when a gate failed |
-| M | Screen result | One of: Pursue, Maybe, Pass |
+| L | Fit score | The **Role fit**, a whole number 0–100 |
+| M | Screen result | The **user's decision**: Pursue, Maybe, or Pass. If they skipped the question, Maybe. |
 | N | Path | One of: Warm, Cold |
-| O | Warm contact | The name exactly as in the Profile (B15). Blank if Cold. |
-| P | Ladder stage | Blank after a quick screen. `Picked` if the user says they're going for it. `Researched` after deep research. Allowed: Picked, Researched, Found the right person, Reached out to contact, Sent a researched note, Applied, Heard back, Interviewing, Offer. |
-| Q | Next step | One short action. Pursue: "Go deep, then reach out to [contact]", or "Go deep" if Cold. Maybe: the one question that settles it. Pass: blank. |
+| O | Warm contact | The name exactly as in their Intake answers. Blank if Cold. |
+| P | Ladder stage | `Picked` if the user chose Pursue. `Researched` after deep research. Otherwise blank. Allowed: Picked, Researched, Found the right person, Reached out to contact, Sent a researched note, Applied, Heard back, Interviewing, Offer. |
+| Q | Next step | One short action. Pursue: "Reach out to [contact]" if Warm, or "Find the right person" if Cold. Maybe: the one question that settles it. Pass: blank. |
 | R | Next step date | Today, YYYY-MM-DD, for Pursue or Maybe. Blank for Pass. |
 | S | Status | `Active` for Pursue or Maybe. `Passed` for Pass. |
 | T | Email link | Blank. A later agent fills this. |
-| U | Notes | Starts with "Blocker: " and the blocker line. After deep research, add the deep results (see deep-research.md). |
+| U | Notes | "Company fit N/100. Blocker: [the blocker line]." Use "Company fit not checked" when a gate failed. After deep research, see deep-research.md. |
 
 ## Evidence tab: 8 columns, A through H
 
-One row per claim that drove the result. Quick screen: 3–6 rows. Deep research: up to 12.
+One row per claim that drove the result. Quick read: 3–6 rows. Deep research: up to 12.
 
 | Col | Field | What to write |
 |---|---|---|
@@ -38,8 +38,8 @@ One row per claim that drove the result. Quick screen: 3–6 rows. Deep research
 | B | Date checked | YYYY-MM-DD |
 | C | Claim | One plain sentence |
 | D | Tag | One of: Verified, Estimated, Inferred |
-| E | Source link | The link read, or blank for the user's own Profile |
-| F | Source type | One of: Job posting, Company site, Filing, News, Person, Your records, Other. Use "Your records" for Profile facts. Use "Person" for something a person told the user. |
+| E | Source link | The link read, or blank for the user's own Intake answers |
+| F | Source type | One of: Job posting, Company site, Filing, News, Person, Your records, Other. Use "Your records" for facts from the user's Intake answers. Use "Person" for something a person told the user. |
 | G | How we know | Verified: where it's stated. Estimated: the method. Inferred: the reasoning. |
 | H | Checked by | `Agent` |
 

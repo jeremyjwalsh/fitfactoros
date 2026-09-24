@@ -1,8 +1,8 @@
 # Deep research
 
-Only when the user chooses "Go deep." Budget: about 8–15 searches and page reads. Tell the user once before starting that it uses more of their Claude plan.
+Only when the user chooses "Go deeper first." Budget: about 8–15 searches and page reads. Tell the user once before starting that it uses more of their Claude plan.
 
-The quick screen's Fit score is **retired**, not averaged. Deep research scores from scratch. Keep the old score only as a note ("Quick screen 71, retired").
+The quick read's scores are **retired**, not averaged. Deep research scores from scratch. Keep the old scores only as a note ("Quick read: Company 62, Role 71, retired").
 
 ## The seven checks
 Run all seven. Report how many were done: "Research checks: 7 of 7."
@@ -54,8 +54,8 @@ Group them by who can answer:
 Keep 4 questions total for a 30-minute call, most important first. Say to ask the most important one early, not at the end.
 
 ## Output
-Keep the brief short and plain, in this order: recommendation and why; blocker; Company fit, Role fit, and Chance (three separate lines); the biggest risk found in the checks, near the top if it's serious; research checks done (N of 7); confidence; what would change my mind; questions to ask.
+Keep the brief short and plain, in this order: Company fit, Role fit, and Chance (three separate lines); your recommendation and why; blocker; the biggest risk found in the checks, near the top if it's serious; research checks done (N of 7); confidence; what would change my mind; questions to ask.
 
-Then give:
-1. The **updated Jobs row** (all 21 fields). Screen result: Pursue now → Pursue; Ask first or Watch for a repost → Maybe; either Pass → Pass. Status is Passed for a Pass, otherwise Active. Ladder stage is `Researched`. Fit score is the Role fit. Notes: "Blocker: [line]. Deep [date]: Company fit N; Role fit N; Chance [H/M/L]; [recommendation]. Quick screen N retired." Tell the user: *"On the Jobs tab, click this job's cell in column A and paste. It replaces the old row."*
+Then ask the same question as the quick read ("Pursue," "Pass"), and after the user answers, give:
+1. The **Jobs row** (all 21 fields), using the user's decision for Screen result and Status. Ladder stage is `Researched`. Fit score is the Role fit. Notes: "Company fit N/100. Blocker: [line]. Deep [date]: Chance [High/Medium/Low]; [your recommendation]." If this lead was already recorded, tell the user: *"On the Jobs tab, click this job's cell in column A and paste. It replaces the old row."* Otherwise, paste at the first empty cell in column A.
 2. **New Evidence rows** only, up to 12, pasted at the first empty cell in column A of the Evidence tab.

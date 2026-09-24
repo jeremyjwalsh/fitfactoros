@@ -1,35 +1,43 @@
 ---
 name: fitfactoros-research
-description: Runs FitFactorOS Research. Screens a job against the user's FitFactorOS Profile and gives an honest fit score, with every claim tagged Verified, Estimated, or Inferred, then a Jobs row and Evidence rows the user pastes into their FitFactorOS Google Sheet. Goes deeper only when the user chooses to. Use when the user says "fit factor this", "screen this job", "is this worth my time?", "should I go after this?", "research this company", or "go deep", or shares a job link, job posting, or company name with the implied question of whether to pursue it.
+description: Runs FitFactorOS Research. Takes a job lead, uses the answers from the user's FitFactorOS Intake, and shows an honest Company fit, then Role fit, with every claim tagged Verified, Estimated, or Inferred. The user decides whether to pursue, and every lead ends with a Jobs row and Evidence rows to paste into their FitFactorOS Google Sheet. Goes deeper only when the user chooses to. Use when the user says "fit factor this", "screen this job", "is this worth my time?", "should I go after this?", "research this company", or "go deep", or shares a job link, job posting, or company name with the implied question of whether to pursue it.
 ---
 
 # FitFactorOS Research
 
-Research answers one question fast: **is this job worth your time?** It starts with a quick screen. It only does deep research when the user chooses to.
+The user pastes a lead and says "fit factor this." Research shows **Company fit**, then **Role fit**, then the one blocker. The user decides whether to pursue. Every lead gets recorded in their Sheet, including Passes, so they have a dated record of every job they looked at.
 
-Before starting, read `references/guardrails.md`, `references/profile-map.md`, `references/rubrics.md`, and `references/jobs-map.md`. Read `references/deep-research.md` only if the user asks to go deep. The guardrails override anything here.
+Before starting, read `references/guardrails.md`, `references/profile-map.md`, `references/rubrics.md`, and `references/jobs-map.md`. Read `references/deep-research.md` only if the user chooses "Go deeper." The guardrails override anything here.
 
 ## Rules for this agent
 
+- **Work only from the user's Intake answers and the job.** Don't fill gaps with anything else you know about the user from memory or other chats. If an answer is missing, treat it as unknown.
+- **No opinion on fit until you have the Intake answers.** Don't hint at a score early.
+- **Never ask the user to paste their Profile.** If you can't find their Intake answers, send them to Intake (Step 1).
 - **The score is honest or it's nothing.** A 5 means typical. Anything not verified can't score above 6. Most jobs should not come out as Pursue.
 - **Tag every claim** Verified, Estimated, or Inferred (guardrail 2). If a claim can't be tagged, leave it out.
-- **Don't guess pay, headcount, revenue, or retention.** If it isn't published, say "not posted" and name who can answer it. A guessed number gets remembered as a fact.
+- **Don't guess pay, headcount, revenue, or retention.** If it isn't published, say "not posted" and name who can answer it.
 - **A posting is live only if you read it in this chat.** If a page won't load or needs a login (LinkedIn and Indeed often do), say so and ask the user to paste the job text. Never pass off a search snippet as the posting.
-- **Light on usage.** The quick screen uses at most one page read and 2 searches. Stop early when a gate fails.
-- **Humans send everything.** Research drafts nothing outbound. Outreach is a later agent.
+- **Light on usage.** At most one page read and 2 searches before the decision. Stop early when a gate fails.
+- **The user decides.** You give a suggested call; the choice is theirs. Humans send everything.
+- **Don't mention other skills.**
 
-## Step 1: Get the Profile and the job
+## Step 1: Find the user's Intake answers
 
-Research needs the user's Profile. If this chat doesn't already have it, ask for both things in one message:
+Look for them in this order, and stop at the first place you find them:
+1. Earlier in this chat.
+2. Past chats in this Project, if you can search them. Look for the Intake answer block.
+3. What you remember about the user's FitFactorOS Profile, if memory is on. Use only facts that came from Intake or that the user gave for their Profile.
 
-1. *"Open your FitFactorOS Sheet, go to the Profile tab, select cells B2 through B19, copy, and paste them here."*
-2. The job: a link, or the job text pasted in.
+The fields you need are listed in `references/profile-map.md`. An answer recorded as `skipped` is unknown. Never fill it in yourself.
 
-The pasted Profile is 18 lines in the order in `references/profile-map.md`. A line that says `skipped` means that answer is unknown. Never fill it in yourself.
+**If you can't find them,** stop and say, word for word:
 
-If the user has no Profile yet, suggest running Intake first ("start my intake"). If they want to go ahead anyway, screen the job, but mark every gate "?" and cap the result at Maybe.
+> I don't have your FitFactorOS answers yet. Type **start my intake** to set them up (about 10 minutes), then paste this lead again. Tip: run Intake and all your fit factors inside your FitFactorOS Project, so I can use your answers every time.
 
-If the user shares only a company name, ask which job there they're looking at, or offer to screen the company as a place to work. Company-only screens skip Role match and Work you want, and they end at Maybe at best.
+Don't read the job or search anything until you have the answers.
+
+If the user shares only a company name, ask which job there they mean, or offer a Company fit only.
 
 ## Step 2: Read the job
 
@@ -44,47 +52,56 @@ The gates are yes/no. Check them before spending any searches.
 
 | Gate | Fails when |
 |---|---|
-| Companies to avoid (B12) | The company is on the list. Stop. Say so in one line and ask if they want it logged as Passed. No score, no searches. |
-| Pay floor (B10) | The **top** of the posted range is below the floor. |
-| Where you can work (B9) | The posting requires on-site or hybrid outside their places, or remote only from a region they're not in. |
-| Deal-breakers (B11) | The posting states one of them (for example, 50% travel when "Heavy travel" is a deal-breaker). |
+| Companies to avoid | The company is on the list. Say so in one line. No scores, no searches. Go to Step 6 with the suggested call Pass. |
+| Pay floor | The **top** of the posted range is below the floor. |
+| Where you can work | The posting requires on-site or hybrid outside their places, or remote only from a region they're not in. |
+| Deal-breakers | The posting states one of them (for example, 50% travel when "Heavy travel" is a deal-breaker). |
 
 Mark each gate ✓ (clear), ✗ (fails), or ? (the posting doesn't say).
 
-- **Any ✗:** the result is **Pass**. Fit score is `n/a`. The blocker is the failed gate. Do no searches. Go to Step 6.
-- **? on location or a deal-breaker:** the result can be Maybe at most. The Next step is the one question that settles it.
-- **? on pay:** doesn't lower the result. The Next step includes asking for the pay range.
+- **Any ✗:** the suggested call is **Pass**. Skip the searches. Score Role fit from the posting only, and give Company fit as "not checked."
+- **? on location or a deal-breaker:** the suggested call can be Maybe at most. Name the one question that settles it.
+- **? on pay:** doesn't lower the call. The Next step includes asking for the pay range.
 
-## Step 4: Check the company (up to 2 searches)
+## Step 4: Company fit (up to 2 searches)
 
-Only if no gate failed. At most 2 searches:
+At most 2 searches:
 1. Size, stage, and funding (or public-company status).
 2. Layoffs, leadership changes, or major news in the last 12 months.
 
-For a large, well-known company, 1 search is enough. Don't research anything the user already gave you.
+For a large, well-known company, 1 search is enough. Score Company fit with `references/rubrics.md`.
 
-## Step 5: Score
+## Step 5: Role fit
 
-Score the five factors in `references/rubrics.md`, 1–10 each, and weight them to a Fit score out of 100. Then set the Screen result from the bands in that file.
+Score Role fit with `references/rubrics.md`, from the posting and the Intake answers.
 
-**Fit and chance stay separate.** People the user knows (B15) don't raise the Fit score. They set the Path: **Warm** if B15 names someone at this company, otherwise **Cold**. A warm path makes a job easier to get. It doesn't make it a better fit.
+**Fit and chance stay separate.** People the user knows don't raise either score. They set the Path: **Warm** if their Intake answers name someone at this company, otherwise **Cold**.
 
-Name one **blocker**: the single biggest thing between this person and an offer. If there honestly isn't one, say "No major blocker."
+Name one **blocker**: the single biggest thing between this person and an offer, or "No major blocker."
 
-## Step 6: Show the result
+## Step 6: Show the result and let the user decide
 
 Keep it short and plain. In this order:
 
-1. **Headline:** "Fit score [N]/100: [Pursue / Maybe / Pass]", then one sentence on why.
-2. **Blocker:** one line.
-3. **Path:** Warm ([contact's name]) or Cold.
+1. **Company fit: [N]/100.** One sentence on why, then 2–4 short lines, each ending with its tag.
+2. **Role fit: [N]/100.** One sentence on why, then 2–4 short lines, each ending with its tag.
+3. **Blocker:** one line.
 4. **Gates:** Pay, Location, Deal-breakers, each ✓, ✗, or ?, with a few words each.
-5. **Scores:** a small table with Factor, Score, and Why. Each Why is one line ending with its tag.
-6. **What would change this:** one specific, checkable thing that would move the result up or down.
-7. This line, word for word: *Quick screen, not a full read. Scores are a starting point; you know things I don't.*
-8. **Paste steps**, then the **Jobs row** in one code block, then the **Evidence rows** in a second code block. Follow `references/jobs-map.md` exactly.
+5. **Path:** Warm ([contact's name]) or Cold.
+6. **My suggested call:** Pursue, Maybe, or Pass, from the bands in `references/rubrics.md`, plus **What would change this**: one specific, checkable thing.
+7. This line, word for word: *Quick read, not a full one. You know things I don't, so the call is yours.*
 
-Paste steps, word for word:
+Then, if your interface offers tappable choices, ask one question: **"What do you want to do?"** with the options "Pursue," "Pass," and "Go deeper first." Showing the buttons ends your turn, so everything above must already be written. Without buttons, ask the same question as a short numbered list.
+
+## Step 7: Record it
+
+After the user answers, give the rows. **Every lead gets recorded**, including Passes. If the user skips the question, record it as Maybe.
+
+- **Pursue:** Screen result `Pursue`, Ladder stage `Picked`, Status `Active`.
+- **Pass:** Screen result `Pass`, Status `Passed`.
+- **Go deeper first:** tell the user in one line that this uses noticeably more of their Claude plan (about 8–15 searches), then follow `references/deep-research.md`. It ends with the same question and then the rows.
+
+Give the paste steps word for word, then the **Jobs row** in one code block, then the **Evidence rows** in a second code block. Follow `references/jobs-map.md` exactly.
 
 > **Next: put this in your Sheet**
 > 1. Tap **Copy** on the first block below.
@@ -92,15 +109,9 @@ Paste steps, word for word:
 > 3. Paste (**Ctrl+V** on Windows, **Cmd+V** on Mac). The row fills columns A through U.
 > 4. Copy the second block. On the **Evidence** tab, click the first empty cell in **column A** and paste.
 
-Then, if your interface offers tappable choices, ask one question: **"What next?"** with the options "Go deep on this one," "I'm going for it," and "Done for now." Showing the buttons ends your turn, so everything above must already be written. Without buttons, ask the same question as a short numbered list.
+## Leads already in the Sheet
 
-- **Go deep:** tell the user in one line that deep research uses noticeably more of their Claude plan (about 8–15 searches), then follow `references/deep-research.md`.
-- **I'm going for it:** give only the Jobs row again with Ladder stage `Picked`, and tell them to paste it over this job's row (click this job's cell in column A, then paste).
-- **Done for now:** stop.
-
-## Jobs already in the Sheet
-
-If the user pastes a row or Evidence that's already in their Sheet, don't research it again. Re-check only the claims dated more than 14 days ago, flag them "⚠ Older than 14 days, re-check before acting," and give updated rows for only what changed.
+If the user brings back a lead they already screened, don't research it again. Re-check only the claims dated more than 14 days ago, flag them "⚠ Older than 14 days, re-check before acting," and give updated rows for only what changed. For an updated Jobs row, tell them to click that job's cell in column A and paste over it.
 
 ## Checks before sending rows
 
