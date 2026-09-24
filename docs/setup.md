@@ -53,9 +53,16 @@ Your Profile is set. You only do this once. If something changes later, say "upd
 1. Inside your FitFactorOS Project, paste a job link and type **fit factor this**. If the link needs a login (LinkedIn often does), paste the job text instead.
 2. Claude shows **Company fit**, then **Role fit**, the biggest blocker, and a suggested call.
 3. You decide: **Pursue**, **Pass**, or **Go deeper first**. Going deeper uses more of your Claude plan, so save it for jobs you're serious about.
-4. Claude gives you rows to paste: one on the **Jobs** tab and one or more on the **Evidence** tab. Click the first empty cell in column A of each tab and paste. Every job gets recorded, even the ones you pass on, so you keep a dated record of your search.
+4. Claude gives you a row to paste on the **Jobs** tab. If you chose Pursue, you also get rows for the **Evidence** tab. Click the first empty cell in column A of each tab and paste. Every job gets recorded, even the ones you pass on, so you keep a dated record of your search.
 
 If Claude says it doesn't have your answers, check that you're inside your FitFactorOS Project and that the memory settings in step 2 are on.
+
+## Getting updates
+FitFactorOS is still being built, and the skills get improved. When there's an update:
+1. Download the new ZIP files from the `dist/` folder.
+2. In Claude, go to **Customize → Skills**, delete the old FitFactorOS skill (**⋮ → Delete**), and upload the new ZIP.
+
+Your Sheet and your answers stay as they are. You don't need to run Intake again.
 
 ## Coming in later phases
 Connecting Google Drive and Gmail, the Job Finder, Outreach, and more. See the [Roadmap](../README.md#roadmap).
