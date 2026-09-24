@@ -4,11 +4,11 @@ The Profile tab has one answer per row in column B. Row 2 (Gmail address) is fil
 
 | Line | Cell | Field | Filled from |
 |---|---|---|---|
-| 1 | B3 | Your name | Resume |
+| 1 | B3 | Your name | Resume, or Turn 4 if no resume |
 | 2 | B4 | Resume file | Resume (file name) |
-| 3 | B5 | Most recent role | Resume |
-| 4 | B6 | Years of experience | Resume |
-| 5 | B7 | Top skills | Resume |
+| 3 | B5 | Most recent role | Resume, or Turn 4 if no resume |
+| 4 | B6 | Years of experience | Resume ("About N (estimate)" unless confirmed) |
+| 5 | B7 | Top skills | Resume, or Turn 4 if no resume |
 | 6 | B8 | Target roles | Question 2 |
 | 7 | B9 | Where you can work | Question 3 |
 | 8 | B10 | Pay floor | Question 4 |
@@ -25,7 +25,7 @@ The Profile tab has one answer per row in column B. Row 2 (Gmail address) is fil
 ## Formatting rules for the block
 - One line per field. Never let an answer wrap onto a second line; separate list items with "; ".
 - A skipped question is the single word `skipped`. Never leave a line out, or every answer below it shifts.
-- No line may start with `=`, `+`, `-`, or `@`. Google Sheets reads those as formulas. Start with a word instead (for example, "About $95,000").
+- No line may start with `=`, `+`, `-`, `@`, or `"`. Google Sheets reads the first four as formulas, and a leading quote can make Sheets merge lines. Start with a word instead (for example, "About $95,000").
 - No tab characters.
 
 ## Single-field updates

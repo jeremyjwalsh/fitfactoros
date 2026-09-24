@@ -1,6 +1,6 @@
 # Setup guide
 
-> **Draft for the Phase 1 friends test.** Screenshots and a plan recommendation come after the test. Menu names in Claude change from time to time; if a step doesn't match what you see, tell us through the [feedback form](https://forms.gle/JAvtLkWR3unQQZQ77).
+> **Draft for the Phase 1 friends test.** Screenshots and a plan recommendation come after the test. Menu names in Claude change from time to time; if a step doesn't match what you see, tell us through the feedback form.
 
 **What you'll need:** a Claude account, a Google account, and about 20 minutes.
 
@@ -37,4 +37,4 @@ That's it. Your Profile is set.
 Connecting Google Drive and Gmail, the Research agent ("fit factor this"), and more. See the [Roadmap](../README.md#roadmap).
 
 ## Your data
-Your answers live in your own Google Sheet. FitFactorOS has no server and collects nothing. Claude's own data practices are described in Anthropic's privacy policy.
+Your answers are saved in your own Google Sheet. FitFactorOS has no server of its own and collects nothing. Your chats with Claude go through Anthropic like any Claude chat, and if Claude's memory feature is on, Claude may remember details between chats. You can control that in Claude's settings. Anthropic's privacy policy covers the rest.
