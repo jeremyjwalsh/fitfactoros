@@ -19,7 +19,7 @@ In Claude, open **Settings → Capabilities** and turn on **Code execution and f
 Anthropic's instructions: [Get started with Claude skills](https://support.claude.com/en/articles/12512180).
 
 ## 4. Copy the Sheet template into Google Drive
-1. Download `sheet/fitfactoros-template.xlsx` from this repository.
+1. Download the Sheet: [fitfactoros-template.xlsx](https://github.com/jeremyjwalsh/fitfactoros/raw/main/sheet/fitfactoros-template.xlsx) (the download starts right away).
 2. In Google Drive, click **New → File upload** and choose the file.
 3. Double-click the uploaded file to open it.
 4. **Click File → Save as Google Sheets.** A new copy opens in a new tab. Use that copy from now on.
@@ -30,14 +30,13 @@ Anthropic's instructions: [Get started with Claude skills](https://support.claud
 > **How to check:** an Excel file shows a small **.XLSX** tag next to its name at the top. A Google Sheet doesn't. If you see .XLSX, do step 4.
 > You can delete the uploaded .xlsx file afterward.
 
-5. On the **Profile** tab, type your Gmail address in cell **B2**. Email links throughout the sheet use it.
-6. On the other tabs, delete the grey example row when you're ready.
+5. On the other tabs, delete the grey example row when you're ready.
 
 ## 5. Run Intake
 1. Start a new chat in Claude.
 2. Type: **Start my intake**
 3. Answer the questions. Skip anything you like.
-4. At the end, Claude shows the steps above your answer block: tap the **Copy** icon, open your Sheet, go to the **Profile** tab, click cell **B3**, and paste.
+4. At the end, Claude shows the steps above your answer block: tap **Copy**, open your Google Sheets copy, go to the **Profile** tab, click cell **B2**, and paste. Your answers fill B2 through B19. Intake asks for your Gmail address at the start; it's used to build links that open your own inbox.
 
 That's it. Your Profile is set.
 

@@ -1,26 +1,27 @@
 # Profile tab map
 
-The Profile tab has one answer per row in column B. Row 2 (Gmail address) is filled in during setup, so Intake's answer block always starts at **B3** and must contain exactly **17 lines, in this order**.
+The Profile tab has one answer per row in column B. Intake's answer block always starts at **B2** and must contain exactly **18 lines, in this order**.
 
 | Line | Cell | Field | Filled from |
 |---|---|---|---|
-| 1 | B3 | Your name | Resume, or Turn 4 if no resume |
-| 2 | B4 | Resume file | Resume (file name) |
-| 3 | B5 | Most recent role | Resume, or Turn 4 if no resume |
-| 4 | B6 | Years of experience | Resume ("About N (estimate)" unless confirmed), or Turn 4 if no resume |
-| 5 | B7 | Top skills | Resume, or Turn 4 if no resume |
-| 6 | B8 | Target roles | Q2 (Turn 2), or Turn 4 if no resume |
-| 7 | B9 | Where you can work | Q3 (Turn 2) plus cities from Turn 4 |
-| 8 | B10 | Pay floor | Turn 4 |
-| 9 | B11 | Deal-breakers | Q5 (Turn 2) plus any added in Turn 4 |
-| 10 | B12 | Companies to avoid | Turn 4 |
-| 11 | B13 | Work that makes you lose track of time | Q6 (Turn 3) |
-| 12 | B14 | Dream companies | Turn 4 |
-| 13 | B15 | People you know (and where) | Turn 4 |
-| 14 | B16 | State | Turn 4 |
-| 15 | B17 | Collecting unemployment? | Q8 (Turn 3) |
-| 16 | B18 | Wins with numbers | Q9 (Turn 3), or Turn 4 |
-| 17 | B19 | Profile last updated | Today's date, YYYY-MM-DD |
+| 1 | B2 | Gmail address | Turn 1 |
+| 2 | B3 | Your name | Resume, or Turn 4 if no resume |
+| 3 | B4 | Resume file | Resume (file name) |
+| 4 | B5 | Most recent role | Resume, or Turn 4 if no resume |
+| 5 | B6 | Years of experience | Resume ("About N (estimate)" unless confirmed), or Turn 4 if no resume |
+| 6 | B7 | Top skills | Resume, or Turn 4 if no resume |
+| 7 | B8 | Target roles | Q2 (Turn 2), or Turn 4 if no resume |
+| 8 | B9 | Where you can work | Q3 (Turn 2) plus cities from Turn 4 |
+| 9 | B10 | Pay floor | Turn 4 |
+| 10 | B11 | Deal-breakers | Q5 (Turn 2) plus any added in Turn 4 |
+| 11 | B12 | Companies to avoid | Turn 4 |
+| 12 | B13 | Work that makes you lose track of time | Q6 (Turn 3) |
+| 13 | B14 | Dream companies | Turn 4 |
+| 14 | B15 | People you know (and where) | Turn 4 |
+| 15 | B16 | State | Turn 4 |
+| 16 | B17 | Collecting unemployment? | Q8 (Turn 3) |
+| 17 | B18 | Wins with numbers | Q9 (Turn 3), or Turn 4 |
+| 18 | B19 | Profile last updated | Today's date, YYYY-MM-DD |
 
 ## Formatting rules for the block
 - One line per field. Never let an answer wrap onto a second line; separate list items with "; ".

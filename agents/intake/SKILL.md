@@ -30,8 +30,23 @@ If there are no tappable choices, ask the same questions as short numbered lists
 
 ## The conversation (5 turns)
 
-### Turn 1: Welcome and resume
-In 4 short sentences or fewer: this takes about 10 minutes; every question can be skipped; you won't send or submit anything. Then this heads-up, as one line: *At the end you'll get a block of answers to paste into your FitFactorOS Google Sheet ([setup guide](https://github.com/jeremyjwalsh/fitfactoros/blob/main/docs/setup.md)).* Then ask them to upload their resume (PDF or Word), or type "skip" to go without it.
+### Turn 1: Welcome, Sheet check, Gmail, and resume
+In 3 sentences or fewer: this takes about 10 minutes; every question can be skipped; you won't send or submit anything, and the answers end up in their own Sheet.
+
+Then give the Sheet check, word for word:
+
+> **Before we start: is your FitFactorOS Sheet set up in Google Sheets?** You'll paste your answers there at the end. If it isn't, take 2 minutes now:
+> 1. Download the Sheet: [fitfactoros-template.xlsx](https://github.com/jeremyjwalsh/fitfactoros/raw/main/sheet/fitfactoros-template.xlsx)
+> 2. Go to [drive.google.com](https://drive.google.com), click **New → File upload**, and choose the file you just downloaded.
+> 3. Open it, then click **File → Save as Google Sheets**. A new copy opens in its own tab. Use that copy from now on, not the .xlsx file.
+>
+> Step-by-step help: [setup guide](https://github.com/jeremyjwalsh/fitfactoros/blob/main/docs/setup.md).
+
+Then ask, in one message:
+1. The Gmail address they'll use with FitFactorOS. Say why: *"It's used only to build links that open your own inbox, and it goes in your own Sheet."*
+2. Their resume (PDF or Word), or "skip" to go without it.
+
+If they give no Gmail address, record it as `skipped` and don't ask again.
 
 If they upload it, note for yourself: their name, the file name, their most recent title and employer, total years of experience (from the dates; mark it as an estimate), 4–6 top skills, and any results with numbers in them.
 
@@ -70,16 +85,19 @@ The items, in order:
 ### Turn 5: The answer block
 Give these in this order:
 
-1. **Steps first, above the block.** Start with the heading line **Next: put this in your Sheet**, then:
-   1. Tap the **Copy** icon on the block below.
-   2. Open your FitFactorOS Sheet.
-   3. Go to the **Profile** tab.
-   4. Click cell **B3**.
-   5. Paste. Each answer lands on its own row.
-2. One line: **Don't have your Sheet yet?** [Follow step 4 of the setup guide](https://github.com/jeremyjwalsh/fitfactoros/blob/main/docs/setup.md#4-copy-the-sheet-template-into-google-drive), then come back and paste.
-3. **The block**, in a single code block: **exactly 17 lines**, answers only, no field names, following every rule in `references/profile-map.md`. The last line is today's date as YYYY-MM-DD.
-4. **Preview table below the block**, with two columns, **Field** and **Your answer**, covering all 17 fields in the order in `references/profile-map.md`. Introduce it in a few words, such as "Here's what goes where."
-5. Close in 2–3 sentences: their Profile is set. If they haven't already, they should type their Gmail address in cell B2. Once Research is available, the next step is to share a job or company they're considering and say "fit factor this."
+1. **Steps first, above the block.** Word for word:
+
+   **Next: put this in your Sheet**
+   1. Tap **Copy** on the block below.
+   2. Open your FitFactorOS Sheet in Google Sheets (the Google Sheets copy, not the .xlsx file you downloaded).
+   3. Click the **Profile** tab at the bottom of the screen.
+   4. Click cell **B2** (column B, row 2).
+   5. Paste (**Ctrl+V** on Windows, **Cmd+V** on Mac). Your answers fill **B2 through B19**, one per row.
+
+2. Then this line, word for word: **No Sheet yet?** [Download it here](https://github.com/jeremyjwalsh/fitfactoros/raw/main/sheet/fitfactoros-template.xlsx), upload it to Google Drive (**New → File upload**), open it, and click **File → Save as Google Sheets**. Then do the steps above. More help: [setup guide, step 4](https://github.com/jeremyjwalsh/fitfactoros/blob/main/docs/setup.md#4-copy-the-sheet-template-into-google-drive).
+3. **The block**, in a single code block: **exactly 18 lines**, answers only, no field names, following every rule in `references/profile-map.md`. The first line is the Gmail address; the last line is today's date as YYYY-MM-DD.
+4. **Preview table below the block**, with two columns, **Field** and **Your answer**, covering all 18 fields in the order in `references/profile-map.md`. Introduce it in a few words, such as "Here's what goes where."
+5. Close in 2–3 sentences: their Profile is set. If the Gmail address was skipped, tell them the inbox links won't work until they type it into cell B2. Once Research is available, the next step is to share a job or company they're considering and say "fit factor this."
 
 If you noticed a resume issue worth flagging, add it as one line after the close.
 
@@ -100,9 +118,10 @@ Don't re-run Intake or reprint the whole block for a single change.
 
 ## Checks before sending the answer block
 
-- The block has exactly 17 lines.
+- The block has exactly 18 lines, and the first line is the Gmail address or `skipped`.
 - Skipped answers say `skipped`; no line is missing.
 - No line starts with `=`, `+`, `-`, `@`, or `"`.
 - No answer runs onto a second line.
 - Nothing in the block came from you rather than from the user or the resume.
-- Wins (line 16) are short, and every number matches the resume or what the user typed.
+- The paste steps say **B2**, and the block starts with the Gmail line.
+- Wins (line 17) are short, and every number matches the resume or what the user typed.
