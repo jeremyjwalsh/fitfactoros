@@ -16,11 +16,15 @@ Before starting, read `references/guardrails.md`, `references/profile-map.md`, `
 - **Never ask the user to paste their Profile.** If you can't find their Intake answers, send them to Intake (Step 1).
 - **The score is honest or it's nothing.** A 5 means typical. Anything not verified can't score above 6. Most jobs should not come out as Pursue.
 - **Tag every claim** Verified, Estimated, or Inferred (guardrail 2). If a claim can't be tagged, leave it out.
+  - **Verified** only from a primary source you read in this chat: the job posting, the company's own site or press release, an official filing, or the user's Intake answers.
+  - **A news story, data site, or blog reporting something is Estimated,** even from a well-known outlet. Write "reported by [source], not confirmed by the company" in How we know.
+  - **Inferred** is your judgment, with the reasoning.
 - **Don't guess pay, headcount, revenue, or retention.** If it isn't published, say "not posted" and name who can answer it.
 - **A posting is live only if you read it in this chat.** If a page won't load or needs a login (LinkedIn and Indeed often do), say so and ask the user to paste the job text. Never pass off a search snippet as the posting.
-- **Light on usage.** At most one page read and 2 searches before the decision. Stop early when a gate fails.
+- **Light on usage.** Before the decision: one page read for the job and **1 search**. A 2nd search only if the first finds nothing useful. No review sites (Glassdoor, Comparably, Reddit) in the quick read; those belong to Go deeper. Stop early when a gate fails.
 - **The user decides.** You give a suggested call; the choice is theirs. Humans send everything.
 - **Don't mention other skills.**
+- **Only real links.** Every link you write down must be a page you opened or a result your search returned in this chat. If you don't have one, leave the link blank. Never build or recall a link.
 
 ## Step 1: Find the user's Intake answers
 
@@ -63,13 +67,11 @@ Mark each gate ✓ (clear), ✗ (fails), or ? (the posting doesn't say).
 - **? on location or a deal-breaker:** the suggested call can be Maybe at most. Name the one question that settles it.
 - **? on pay:** doesn't lower the call. The Next step includes asking for the pay range.
 
-## Step 4: Company fit (up to 2 searches)
+## Step 4: Company fit (1 search)
 
-At most 2 searches:
-1. Size, stage, and funding (or public-company status).
-2. Layoffs, leadership changes, or major news in the last 12 months.
+One search that covers size, funding or public-company status, and layoffs, leadership changes, or major news in the last 12 months. For example: `[Company] layoffs funding news [this year]`. Use a 2nd search only if the first finds nothing useful.
 
-For a large, well-known company, 1 search is enough. Score Company fit with `references/rubrics.md`.
+Score Company fit with `references/rubrics.md`. Anything you couldn't find scores 5, the typical score. Don't search more to fill gaps.
 
 ## Step 5: Role fit
 
@@ -95,18 +97,25 @@ Then, if your interface offers tappable choices, ask one question: **"What do yo
 
 ## Step 7: Record it
 
-After the user answers, give the rows. **Every lead gets recorded**, including Passes. If the user skips the question, record it as Maybe.
+After the user answers, give the rows. **Every lead gets a Jobs row**, including Passes. If the user skips the question, record it as Maybe.
+
+- **Pass or Maybe:** the Jobs row only. One paste.
+- **Pursue:** the Jobs row and the Evidence rows. Two pastes.
+- **Never an Activity row.** The Jobs row is the record of the lead. The Activity tab is for things the user does beyond screening (applying, outreach, interviews).
 
 - **Pursue:** Screen result `Pursue`, Ladder stage `Picked`, Status `Active`.
 - **Pass:** Screen result `Pass`, Status `Passed`.
 - **Go deeper first:** tell the user in one line that this uses noticeably more of their Claude plan (about 8–15 searches), then follow `references/deep-research.md`. It ends with the same question and then the rows.
 
-Give the paste steps word for word, then the **Jobs row** in one code block, then the **Evidence rows** in a second code block. Follow `references/jobs-map.md` exactly.
+Give the paste steps word for word, then the **Jobs row** in one code block, then (Pursue only) the **Evidence rows** in a second code block. Follow `references/jobs-map.md` exactly.
 
 > **Next: put this in your Sheet**
-> 1. Tap **Copy** on the first block below.
+> 1. Tap **Copy** on the block below.
 > 2. In your Sheet, click the **Jobs** tab, then click the first empty cell in **column A**.
 > 3. Paste (**Ctrl+V** on Windows, **Cmd+V** on Mac). The row fills columns A through U.
+
+For Pursue, add this step:
+
 > 4. Copy the second block. On the **Evidence** tab, click the first empty cell in **column A** and paste.
 
 ## Leads already in the Sheet

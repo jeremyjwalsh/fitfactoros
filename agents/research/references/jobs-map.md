@@ -30,7 +30,7 @@ Rows run across columns, so fields are separated by a **tab character**. Output 
 
 ## Evidence tab: 8 columns, A through H
 
-One row per claim that drove the result. Quick read: 3–6 rows. Deep research: up to 12.
+Only when the user chooses Pursue, or after deep research. One row per claim that drove the result. Quick read: 3–6 rows. Deep research: up to 12.
 
 | Col | Field | What to write |
 |---|---|---|
@@ -38,9 +38,9 @@ One row per claim that drove the result. Quick read: 3–6 rows. Deep research: 
 | B | Date checked | YYYY-MM-DD |
 | C | Claim | One plain sentence |
 | D | Tag | One of: Verified, Estimated, Inferred |
-| E | Source link | The link read, or blank for the user's own Intake answers |
+| E | Source link | A page you opened or a search result from this chat. Blank for the user's own Intake answers, or if you don't have a real link. Never build or recall a link. |
 | F | Source type | One of: Job posting, Company site, Filing, News, Person, Your records, Other. Use "Your records" for facts from the user's Intake answers. Use "Person" for something a person told the user. |
-| G | How we know | Verified: where it's stated. Estimated: the method. Inferred: the reasoning. |
+| G | How we know | Verified: where it's stated in a primary source. Estimated: the method, or "reported by [source], not confirmed by the company." Inferred: the reasoning. |
 | H | Checked by | `Agent` |
 
 ## Row rules
