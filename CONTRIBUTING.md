@@ -4,7 +4,7 @@ Thanks for helping. FitFactorOS is early, so the most useful contributions right
 
 ## Not technical? You can still help
 
-Share feedback through the feedback form. No GitHub account needed.
+Share feedback through the [feedback form](https://forms.gle/JAvtLkWR3unQQZQ77). No GitHub account needed.
 
 ## Ways to contribute
 

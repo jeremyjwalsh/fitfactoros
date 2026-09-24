@@ -253,7 +253,7 @@ FitFactorOS is designed around a small set of findings. Here's what each one say
 
 Contributions are welcome, especially **state rules files** for the Activity Log. Every state file needs an official source link and a verification date. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
-Not technical? You can still help. Share feedback through the feedback form <!-- placeholder: Google Form link -->. No GitHub account needed.
+Not technical? You can still help. Share feedback through the [feedback form](https://forms.gle/JAvtLkWR3unQQZQ77). No GitHub account needed.
 
 ## License
 
