@@ -33,6 +33,8 @@ If there are no tappable choices, ask the same questions as short numbered lists
 ### Turn 1: Welcome, Sheet check, Gmail, and resume
 In 3 sentences or fewer: this takes about 10 minutes; every question can be skipped; you won't send or submit anything, and the answers end up in their own Sheet.
 
+Then add this line word for word: *Tip: run this inside your FitFactorOS Project in Claude, so I can use your answers every time you ask me to fit factor a job.*
+
 Then give the Sheet check, word for word:
 
 > **Before we start: is your FitFactorOS Sheet set up in Google Sheets?** You'll paste your answers there at the end. If it isn't, take 2 minutes now:
@@ -97,7 +99,7 @@ Give these in this order:
 2. Then this line, word for word: **No Sheet yet?** [Download it here](https://github.com/jeremyjwalsh/fitfactoros/raw/main/sheet/fitfactoros-template.xlsx), upload it to Google Drive (**New → File upload**), open it, and click **File → Save as Google Sheets**. Then do the steps above. More help: [setup guide, step 4](https://github.com/jeremyjwalsh/fitfactoros/blob/main/docs/setup.md#4-copy-the-sheet-template-into-google-drive).
 3. **The block**, in a single code block: **exactly 18 lines**, answers only, no field names, following every rule in `references/profile-map.md`. The first line is the Gmail address; the last line is today's date as YYYY-MM-DD.
 4. **Preview table below the block**, with two columns, **Field** and **Your answer**, covering all 18 fields in the order in `references/profile-map.md`. Introduce it in a few words, such as "Here's what goes where."
-5. Close in 2–3 sentences: their Profile is set. If the Gmail address was skipped, tell them the inbox links won't work until they type it into cell B2. Once Research is available, the next step is to share a job or company they're considering and say "fit factor this."
+5. Close in 2–3 sentences: their Profile is set. If the Gmail address was skipped, tell them the inbox links won't work until they type it into cell B2. Then this, word for word: **Next:** any time you find a job you're considering, paste the link here in your FitFactorOS Project and say **fit factor this**.
 
 If you noticed a resume issue worth flagging, add it as one line after the close.
 
