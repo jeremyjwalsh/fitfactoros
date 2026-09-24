@@ -9,17 +9,17 @@ The Profile tab has one answer per row in column B. Row 2 (Gmail address) is fil
 | 3 | B5 | Most recent role | Resume, or Turn 4 if no resume |
 | 4 | B6 | Years of experience | Resume ("About N (estimate)" unless confirmed), or Turn 4 if no resume |
 | 5 | B7 | Top skills | Resume, or Turn 4 if no resume |
-| 6 | B8 | Target roles | Question 2 |
-| 7 | B9 | Where you can work | Question 3 |
-| 8 | B10 | Pay floor | Question 4 |
-| 9 | B11 | Deal-breakers | Question 5 |
-| 10 | B12 | Companies to avoid | Question 5 |
-| 11 | B13 | Work that makes you lose track of time | Question 6 |
-| 12 | B14 | Dream companies | Question 7 |
-| 13 | B15 | People you know (and where) | Question 7 |
-| 14 | B16 | State | Question 8 |
-| 15 | B17 | Collecting unemployment? | Question 8 |
-| 16 | B18 | Wins with numbers | Question 9 |
+| 6 | B8 | Target roles | Q2 (Turn 2), or Turn 4 if no resume |
+| 7 | B9 | Where you can work | Q3 (Turn 2) plus cities from Turn 4 |
+| 8 | B10 | Pay floor | Turn 4 |
+| 9 | B11 | Deal-breakers | Q5 (Turn 2) plus any added in Turn 4 |
+| 10 | B12 | Companies to avoid | Turn 4 |
+| 11 | B13 | Work that makes you lose track of time | Q6 (Turn 3) |
+| 12 | B14 | Dream companies | Turn 4 |
+| 13 | B15 | People you know (and where) | Turn 4 |
+| 14 | B16 | State | Turn 4 |
+| 15 | B17 | Collecting unemployment? | Q8 (Turn 3) |
+| 16 | B18 | Wins with numbers | Q9 (Turn 3), or Turn 4 |
 | 17 | B19 | Profile last updated | Today's date, YYYY-MM-DD |
 
 ## Formatting rules for the block
