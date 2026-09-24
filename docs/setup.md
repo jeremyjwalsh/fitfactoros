@@ -7,8 +7,10 @@
 ## 1. Create or sign in to your Claude account
 Go to [claude.ai](https://claude.ai) and sign up or sign in. Skills are available on the Free, Pro, and Max plans, according to Anthropic's help center. Which plan works best for FitFactorOS is being measured during this test.
 
-## 2. Turn on file creation and web search
-In Claude, open **Settings → Capabilities** and turn on **Code execution and file creation**. Skills don't work without it.
+## 2. Turn on the settings FitFactorOS needs
+In Claude, open **Settings** and turn on:
+- **Code execution and file creation** (under Capabilities). Skills don't work without it.
+- **Generate memory from chat history** and **Search and reference chats**. These let Claude use your Intake answers every time you fit factor a job, so you only answer them once.
 
 Research also needs **web search**. In a chat, open the tools menu next to the message box and make sure **Web search** is on.
 
@@ -34,20 +36,26 @@ Anthropic's instructions: [Get started with Claude skills](https://support.claud
 
 5. On the other tabs, delete the grey example row when you're ready.
 
-## 5. Run Intake
-1. Start a new chat in Claude.
+## 5. Create your FitFactorOS Project
+1. In Claude, click **Projects**, then **New project**.
+2. Name it **FitFactorOS** and create it.
+3. Do everything below inside this Project. That's how Claude keeps your answers between chats.
+
+## 6. Run Intake (once)
+1. Inside your FitFactorOS Project, start a new chat.
 2. Type: **Start my intake**
 3. Answer the questions. Skip anything you like.
 4. At the end, Claude shows the steps above your answer block: tap **Copy**, open your Google Sheets copy, go to the **Profile** tab, click cell **B2**, and paste. Your answers fill B2 through B19. Intake asks for your Gmail address at the start; it's used to build links that open your own inbox.
 
-That's it. Your Profile is set.
+Your Profile is set. You only do this once. If something changes later, say "update my profile."
 
-## 6. Screen your first job
-1. Start a new chat in Claude.
-2. Type **fit factor this** and paste a job link or the job text. If the link needs a login (LinkedIn often does), paste the text instead.
-3. Claude asks for your Profile the first time in each chat. On the **Profile** tab, select cells **B2 through B19**, copy, and paste them into the chat.
-4. You get a fit score, the reasons, and two rows to paste: one on the **Jobs** tab and one or more on the **Evidence** tab. Click the first empty cell in column A of each tab and paste.
-5. Want more? Choose **Go deep**. Deep research uses more of your Claude plan, so save it for jobs you're serious about.
+## 7. Fit factor a job (any time)
+1. Inside your FitFactorOS Project, paste a job link and type **fit factor this**. If the link needs a login (LinkedIn often does), paste the job text instead.
+2. Claude shows **Company fit**, then **Role fit**, the biggest blocker, and a suggested call.
+3. You decide: **Pursue**, **Pass**, or **Go deeper first**. Going deeper uses more of your Claude plan, so save it for jobs you're serious about.
+4. Claude gives you rows to paste: one on the **Jobs** tab and one or more on the **Evidence** tab. Click the first empty cell in column A of each tab and paste. Every job gets recorded, even the ones you pass on, so you keep a dated record of your search.
+
+If Claude says it doesn't have your answers, check that you're inside your FitFactorOS Project and that the memory settings in step 2 are on.
 
 ## Coming in later phases
 Connecting Google Drive and Gmail, the Job Finder, Outreach, and more. See the [Roadmap](../README.md#roadmap).
