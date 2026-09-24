@@ -6,7 +6,7 @@ FitFactorOS helps you go after fewer jobs that fit you well, get a real person o
 
 It is free, open source, and built for people who don't think of themselves as technical. If you can use a spreadsheet and a chat window, you can use this.
 
-> **Status:** Early build. Phase 1 (Sheet template + Intake agent) is built and being tested. See [Roadmap](#roadmap).
+> **Status:** Early build. Phase 1 (Sheet template + Intake agent) is being tested, and Phase 2 (Research) is built and ready for testing. See [Roadmap](#roadmap).
 
 ---
 
@@ -157,7 +157,8 @@ fitfactoros/
 ├── LICENSE
 ├── CONTRIBUTING.md
 ├── dist/
-│   └── fitfactoros-intake.zip   # Ready-to-upload Intake skill
+│   ├── fitfactoros-intake.zip   # Ready-to-upload Intake skill
+│   └── fitfactoros-research.zip # Ready-to-upload Research skill
 ├── docs/
 │   ├── setup.md              # Step-by-step setup for non-technical users
 │   ├── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
@@ -171,7 +172,7 @@ fitfactoros/
 │   │   └── guardrails.md     # Rules every agent loads: humans send, tag claims, no fake rungs
 │   ├── intake/
 │   ├── job-finder/
-│   ├── research/             # Scoring rubrics, diligence checklist, output templates
+│   ├── research/             # Quick screen rubrics, deep research checklist, Jobs row map
 │   ├── outreach/             # Warm-path ladder, two-fact rule, draft templates
 │   └── activity-log/
 │       └── states/           # One rules file per state (MA first) + template
@@ -200,7 +201,7 @@ Each file in `agents/activity-log/states/` records one state's work-search requi
 |---|---|---|
 | 0 | README and repo structure | Done |
 | 1 | Sheet template + Intake agent | Testing |
-| 2 | Research (scoring rubrics, diligence checklist, output templates) | Planned |
+| 2 | Research: quick screen, deep research on request, Jobs and Evidence rows | Testing |
 | 3 | Job Finder | Planned |
 | 4 | Outreach (warm-path ladder, two-fact rule) | Planned |
 | 5 | Activity Log (Massachusetts first, then more states) | Planned |
