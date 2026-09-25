@@ -9,7 +9,7 @@ Share feedback through the [feedback form](https://forms.gle/JAvtLkWR3unQQZQ77).
 ## Ways to contribute
 
 - **Feedback from real use.** What was confusing, what saved you time, what you skipped.
-- **State rules files for the Activity Log.** Each file must include a link to the state's official unemployment agency source and the date you verified it. (The template ships with Phase 5.)
+- **State rules files for the Activity Log.** Each file must include a link to the state's official unemployment agency source and the date you verified it. Start from [`agents/activity-log/states/_template.md`](agents/activity-log/states/_template.md), and use only official state sources.
 - **Fixes to the docs.** Typos, unclear steps, broken links.
 
 ## Ground rules

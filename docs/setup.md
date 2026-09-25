@@ -15,10 +15,10 @@ In Claude, open **Settings** and turn on:
 Research also needs **web search**. In a chat, open the tools menu next to the message box and make sure **Web search** is on.
 
 ## 3. Add the skills
-1. Download `fitfactoros-intake.zip` and `fitfactoros-research.zip` from this repository's `dist/` folder.
+1. Download `fitfactoros-intake.zip`, `fitfactoros-research.zip`, and `fitfactoros-activity-log.zip` from this repository's `dist/` folder.
 2. In Claude, go to **Customize → Skills**.
-3. Click **+** and upload one ZIP file. Repeat for the other.
-4. Make sure both skills are switched on.
+3. Click **+** and upload one ZIP file. Repeat for the others.
+4. Make sure all the FitFactorOS skills are switched on.
 
 Anthropic's instructions: [Get started with Claude skills](https://support.claude.com/en/articles/12512180).
 
@@ -57,6 +57,19 @@ Your Profile is set. You only do this once. If something changes later, say "upd
 
 If Claude says it doesn't have your answers, check that you're inside your FitFactorOS Project and that the memory settings in step 2 are on.
 
+## 8. Log your activity (any time)
+Tell Claude what you did, inside your FitFactorOS Project: **"I applied to Northwind today"** or **"had coffee with Priya about Fabrikam."** Claude may ask a few quick questions (all skippable), then gives you a row for the **Activity** tab. Click the first empty cell in column A and paste.
+
+## 9. Build your weekly log
+Say **"this week's work search log."** Claude asks you to copy your **Activity** rows and **Jobs** rows for the week into the chat (copying the whole tab is fine). You get:
+- a log in your state's format, ready to copy into your weekly certification,
+- a count against your state's weekly minimum, and a plain warning if you're short,
+- rows to add to your Activity tab, so your records stay complete.
+
+Every job you fit factored that week shows up as a job posting you reviewed, even ones you passed on. Looking at jobs is part of looking for work.
+
+**Claude never submits your certification. You do that yourself.** FitFactorOS has rules for **Massachusetts** so far. In other states you still get the log, but "Counts for unemployment" stays blank. This isn't legal advice; check your state's unemployment agency for what it requires.
+
 ## Getting updates
 FitFactorOS is still being built, and the skills get improved. When there's an update:
 1. Download the new ZIP files from the `dist/` folder.
@@ -64,8 +77,12 @@ FitFactorOS is still being built, and the skills get improved. When there's an u
 
 Your Sheet and your answers stay as they are. You don't need to run Intake again.
 
+**If you set up your Sheet before the Activity Log came out,** make two small changes on the **Activity** tab:
+1. Type these headers: **M1** Pay rate, **N1** Employer address, **O1** Contact info.
+2. Select column D, click **Data → Data validation**, and add **Reviewed job posting** to the list.
+
 ## Coming in later phases
-Connecting Google Drive and Gmail, the Job Finder, Outreach, and more. See the [Roadmap](../README.md#roadmap).
+Connecting Google Drive and Gmail (so the weekly log can read your Sheet without copying), the Job Finder, Outreach, and more. See the [Roadmap](../README.md#roadmap).
 
 ## Your data
 Your answers are saved in your own Google Sheet. FitFactorOS has no server of its own and collects nothing. Your chats with Claude go through Anthropic like any Claude chat, and if Claude's memory feature is on, Claude may remember details between chats. You can control that in Claude's settings. Anthropic's privacy policy covers the rest.

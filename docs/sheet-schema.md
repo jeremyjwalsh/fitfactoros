@@ -105,8 +105,30 @@ One row per conversation: Job ID, Date, Round, Interviewer, Interviewer title, F
 
 ## Activity
 
-One row per job-search action: Date, Week ending, Job ID (optional), Activity type, Company / organization, Contact person, Contact method, Position, Result, Counts for unemployment (Yes/No), Email link, Notes.
+One row per job-search action.
 
-**Activity types:** Applied, Outreach message, Networking contact, Informational interview, Interview, Job fair, Workshop or training, Other.
+| Column | What goes in it | Choices |
+|---|---|---|
+| Date | YYYY-MM-DD, the day it happened | |
+| Week ending | Last day of your state's benefit week | |
+| Job ID | Matches Jobs, if it's about a specific job | |
+| Activity type | | Applied, Reviewed job posting, Outreach message, Networking contact, Informational interview, Interview, Job fair, Workshop or training, Other |
+| Company / organization | | |
+| Contact person | | |
+| Contact method | | Email, Phone, In person, Video, Online application, Other |
+| Position | | |
+| Result | What happened, in one plain sentence | |
+| Counts for unemployment | Set only from your state's rules file | Yes, No, or blank |
+| Email link | HYPERLINK formula | |
+| Notes | | |
+| Pay rate | As posted, or Not posted | |
+| Employer address | | |
+| Contact info | Email, website, or phone used. For an online application, the job link. | |
 
-**Week ending** depends on how your state defines the benefit week. The Activity Log agent (Phase 5) fills it in using your state's rules file. Whether an activity counts toward unemployment requirements is set by your state; FitFactorOS doesn't give legal advice.
+Pay rate, Employer address, and Contact info were added in Phase 3 because the Massachusetts DUA work search log asks for them. They sit at the end so older Sheets only need three new headers.
+
+**Week ending** depends on how your state defines the benefit week. The Activity Log fills it in from your state's rules file.
+
+**Counts for unemployment** is blank unless your state's rules file backs it up with an official source. Blank means FitFactorOS can't confirm it, not that it doesn't count. FitFactorOS doesn't give legal advice.
+
+**Jobs you look at count as looking for work.** When you build a weekly log, every job you added to the Jobs tab that week, including ones you passed on, shows up as a **Reviewed job posting**, unless you already logged something else for that job that week.

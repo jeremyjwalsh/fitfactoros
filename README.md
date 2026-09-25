@@ -6,7 +6,7 @@ FitFactorOS helps you go after fewer jobs that fit you well, get a real person o
 
 It is free, open source, and built for people who don't think of themselves as technical. If you can use a spreadsheet and a chat window, you can use this.
 
-> **Status:** Early build. Phase 1 (Sheet template + Intake agent) is being tested, and Phase 2 (Research) is built and ready for testing. See [Roadmap](#roadmap).
+> **Status:** Early build. Intake and Research are in testing. The Activity Log (Massachusetts first) is built and ready for testing. See [Roadmap](#roadmap).
 
 ---
 
@@ -82,7 +82,7 @@ Emails you send and receive are linked from the sheet with `=HYPERLINK(...)` for
 | **Job Finder** | Finds roles that match your Profile and your deal-breakers. | Apply to anything. |
 | **Research** | Scores each role and company, runs a diligence checklist, and tags every claim. | Present an inference as a fact. |
 | **Outreach** | Finds your warmest path to a person and drafts a short note. | Send the note. |
-| **Activity Log** | Logs your real activity and formats it for your state's weekly work-search certification. | Submit anything to a state portal, or give legal advice. |
+| **Activity Log** | Logs your real activity and builds a weekly work-search log from your Jobs and Activity tabs, formatted for your state's rules when FitFactorOS has them. | Submit anything to a state portal, or give legal advice. |
 
 #### The Intake questions
 
@@ -158,7 +158,8 @@ fitfactoros/
 ├── CONTRIBUTING.md
 ├── dist/
 │   ├── fitfactoros-intake.zip   # Ready-to-upload Intake skill
-│   └── fitfactoros-research.zip # Ready-to-upload Research skill
+│   ├── fitfactoros-research.zip # Ready-to-upload Research skill
+│   └── fitfactoros-activity-log.zip # Ready-to-upload Activity Log skill
 ├── docs/
 │   ├── setup.md              # Step-by-step setup for non-technical users
 │   ├── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
@@ -175,7 +176,8 @@ fitfactoros/
 │   ├── research/             # Quick screen rubrics, deep research checklist, Jobs row map
 │   ├── outreach/             # Warm-path ladder, two-fact rule, draft templates
 │   └── activity-log/
-│       └── states/           # One rules file per state (MA first) + template
+│       ├── references/       # Activity row map
+│       └── states/           # One rules file per state (ma.md first) + _template.md
 ├── dashboard/
 │   └── index.html            # Standalone dashboard with ladder view
 └── samples/
@@ -187,7 +189,9 @@ Each agent folder contains a `SKILL.md` (the agent's instructions) and a `refere
 
 ### State rules for the Activity Log
 
-Each file in `agents/activity-log/states/` records one state's work-search requirements: minimum activities per week, how the benefit week is defined, the state portal, required fields for each activity, how long records must be kept, a link to the official source, and the date the rules were last verified. The agent warns you if a state's rules haven't been checked in over 90 days.
+Each file in `agents/activity-log/states/` records one state's work-search requirements: minimum activities per week, how the benefit week is defined, the state portal, required fields for each activity, how long records must be kept, which activity types count, a link to the official source for every rule, and the date the rules were last checked. The agent warns you if a state's rules haven't been checked in over 90 days.
+
+"Counts for unemployment" stays blank unless the state file backs it up with an official source. States without a file still get a weekly log; it just doesn't mark anything as counting.
 
 **This is not legal advice.** Unemployment rules change. Always confirm requirements with your state's official unemployment agency.
 
@@ -202,9 +206,9 @@ Each file in `agents/activity-log/states/` records one state's work-search requi
 | 0 | README and repo structure | Done |
 | 1 | Sheet template + Intake agent | Testing |
 | 2 | Research: quick screen, deep research on request, Jobs and Evidence rows | Testing |
-| 3 | Job Finder | Planned |
-| 4 | Outreach (warm-path ladder, two-fact rule) | Planned |
-| 5 | Activity Log (Massachusetts first, then more states) | Planned |
+| 3 | Activity Log (Massachusetts first, then more states) | Testing |
+| 4 | Job Finder | Planned |
+| 5 | Outreach (warm-path ladder, two-fact rule) | Planned |
 | 6 | Dashboard with per-opportunity ladders and your own warm vs cold results | Planned |
 
 **V2 (future)**
