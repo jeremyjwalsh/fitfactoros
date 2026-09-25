@@ -28,9 +28,15 @@ Match by Job ID (Jobs column A). The weekly log uses: B Date added, C Company, D
 
 - Date = Date added; Activity type = Reviewed job posting; Company = Company; Position = Role; Pay rate = Pay range; Employer address = blank (a job's location isn't the employer's address); Contact method = Other; Contact info = Job link (or blank if it says `Pasted text`); Result = "Reviewed posting; decided to [pursue / hold as a maybe / pass]" from the Screen result.
 
-## How to build a row (do it this way every time)
+## How to build a row
 
-Blank cells make it easy to add one tab too many, which shifts everything after it into the wrong column. So:
+Use `scripts/make_row.py`. Its keys, A to O: date, week_ending, job_id, type, company, contact_person, method, position, result, counts, email_link, notes, pay_rate, employer_address, contact_info. Leave blank fields out.
+
+```
+python3 scripts/make_row.py date=2026-09-24 week_ending=2026-09-26 type=Applied company="Northwind" method="Online application" position="Enablement Manager" result="Submitted application" counts=Yes contact_info="https://example.com/job"
+```
+
+**Only if you can't run code:** blank cells make it easy to add one tab too many, which shifts everything after it into the wrong column. So:
 
 1. Write the row as a list of **exactly 15 values**, A through O, in order. Use an empty value for each blank cell.
 2. If you can run code, join the list with tabs in code (for example Python `"\t".join(values)`) and check `len(values) == 15`. If you can't, count: **15 fields means exactly 14 tabs.**
