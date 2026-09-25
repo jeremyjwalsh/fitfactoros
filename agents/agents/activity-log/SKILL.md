@@ -23,7 +23,9 @@ Before starting, read `references/guardrails.md` and `references/sheet-map.md`. 
 - **Keep the user's words.** Write results plainly and factually. Don't upgrade "recruiter replied" to "advanced to the next round."
 - **Build every Activity row with `scripts/make_row.py`.** Never type a row by hand. Pass each non-blank field as `key=value` and leave blank fields out; the script adds the blanks and checks there are exactly 15 columns. Copy its output into the code block unchanged. If it prints an error, fix the value and run it again. Only if you can't run code at all, follow "How to build a row" in `references/sheet-map.md`.
 - **No running totals in Log it.** Don't tell the user how many activities they have this week unless they've pasted the week's rows. You can't see their Sheet, so a count from this chat alone may be wrong.
-- **Light on usage.** No web searches. Everything comes from the state file and what the user tells or pastes. Ask for missing details in one turn, not one at a time.
+- **Light on usage.** No web searches. Everything comes from the state file, what the user tells or pastes, and at most **one page read** per job in Log it (see Step 2A). Ask for missing details in one turn, not one at a time.
+- **Skip example rows.** Ignore any pasted row whose Job ID ends in `-EXAMPLE` or whose Notes start with `EXAMPLE ROW`, even if its date falls in the week.
+- **Say where anything outside the pasted rows came from.** If you notice something from elsewhere (earlier chats, what you remember about the user, an email) that may affect an entry, such as a possible duplicate application, raise it as a question, name the source, and tag it Verified, Estimated, or Inferred. Never state a company's or agency's policy as fact without a source link. Don't drop or move an entry on your own; the user decides.
 - **Don't mention other skills.**
 
 ## Step 1: Know the state
@@ -42,13 +44,14 @@ The user describes something they did: "I applied to Northwind today," "coffee w
 
 1. Work out one row per activity. Use today's date unless they give another.
 2. If it's about a job in their Sheet, use its Job ID if they give it, or ask for it once. If they don't know it, leave Job ID blank.
-3. Ask, in one short message, only for what's missing and matters for their state's log (see the state file's "Fields" section). For Massachusetts that's usually: position, pay rate (as posted, or "Not posted"), employer address, and contact email, website, or phone. Every question is skippable. Blank is fine.
-4. Build each row with `scripts/make_row.py`, output the rows in a code block, and tell them: "Click the first empty cell in column A of your **Activity** tab and paste."
-5. **If it moves a ladder rung** (for example, they applied), tell them the one cell to change instead of re-sending the Jobs row: "On your **Jobs** tab, in the row for [Job ID], set **Ladder stage** to **Applied**." Rungs only move for real steps (guardrail 3).
+3. **If the user gave a job link** and the pay or exact title isn't already known from their Jobs row, read the job page once to fill in Position and Pay rate as posted. If the page won't load or needs a login, skip it and ask instead. Never read more than one page, and never search.
+4. Ask, in one short message, only for what's still missing and matters for their state's log (see the state file's "Fields" section). For Massachusetts that's usually: position, pay rate (as posted, or "Not posted"), employer address, and contact email, website, or phone. Every question is skippable. Blank is fine.
+5. Build each row with `scripts/make_row.py`, output the rows in a code block, and tell them: "Click the first empty cell in column A of your **Activity** tab and paste."
+6. **If it moves a ladder rung** (for example, they applied), tell them the one cell to change instead of re-sending the Jobs row: "On your **Jobs** tab, in the row for [Job ID], set **Ladder stage** to **Applied**." Rungs only move for real steps (guardrail 3).
 
 ## Step 2B: Weekly log
 
-1. **Pick the week.** Use the state file's benefit week. Default to the most recently finished week. If today is the last day of the benefit week, ask whether they mean this week or last. Say the dates back to them.
+1. **Pick the week.** Use the state file's benefit week. "This week" means the current week, even if it isn't over yet. "Last week" means the most recently finished week. If they don't say, use the most recently finished week and ask. Say the dates back to them. If the week isn't over yet, say so once: "This week runs through [end date], so this is a log so far."
 2. **Get the rows.** Ask the user to copy and paste into the chat:
    - their **Activity** rows for that week, and
    - their **Jobs** rows added that week.
