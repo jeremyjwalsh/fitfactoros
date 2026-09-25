@@ -69,7 +69,9 @@ Mark each gate ✓ (clear), ✗ (fails), or ? (the posting doesn't say).
 
 ## Step 4: Company fit (1 search)
 
-One search that covers size, funding or public-company status, and layoffs, leadership changes, or major news in the last 12 months. For example: `[Company] layoffs funding news [this year]`. Use a 2nd search only if the first finds nothing useful.
+Aim the one search at the **company's own newsroom** first: `[Company] newsroom press release [this year]`. Its funding, launch, and leadership announcements are Verified. Also look in the results for size, public-company status, and any layoffs or major news in the last 12 months (layoff news usually comes from outside press, so it's Estimated).
+
+Use a 2nd search only if the first finds nothing useful: `[Company] layoffs funding news [this year]`.
 
 Score Company fit with `references/rubrics.md`. Anything you couldn't find scores 5, the typical score. Don't search more to fill gaps.
 
@@ -77,7 +79,10 @@ Score Company fit with `references/rubrics.md`. Anything you couldn't find score
 
 Score Role fit with `references/rubrics.md`, from the posting and the Intake answers.
 
-**Fit and chance stay separate.** People the user knows don't raise either score. They set the Path: **Warm** if their Intake answers name someone at this company, otherwise **Cold**.
+**Fit and chance stay separate.** People the user knows don't raise either score. They set the Path:
+- **Warm** if anyone on their People line works at this company. Match loosely: short names, old names, and parent or child companies count (for example, "SFDC" or "Tableau" for a Salesforce job). Say which match you made.
+- **Ask** if someone on the line has no company (older Profiles): ask once, "Does [Name] work at [Company]?" and use the answer.
+- **Cold** only when nobody matches.
 
 Name one **blocker**: the single biggest thing between this person and an offer, or "No major blocker."
 
@@ -88,10 +93,11 @@ Keep it short and plain. In this order:
 1. **Company fit: [N]/100.** One sentence on why, then 2–4 short lines, each ending with its tag.
 2. **Role fit: [N]/100.** One sentence on why, then 2–4 short lines, each ending with its tag.
 3. **Blocker:** one line.
-4. **Gates:** Pay, Location, Deal-breakers, each ✓, ✗, or ?, with a few words each.
-5. **Path:** Warm ([contact's name]) or Cold.
-6. **My suggested call:** Pursue, Maybe, or Pass, from the bands in `references/rubrics.md`, plus **What would change this**: one specific, checkable thing.
-7. This line, word for word: *Quick read, not a full one. You know things I don't, so the call is yours.*
+4. **Questions to ask:** 2 short questions, most important first, each aimed at who can answer (recruiter, hiring manager, or their contact). Aim at the blocker and the biggest unknown, such as pay not posted or office days.
+5. **Gates:** Pay, Location, Deal-breakers, each ✓, ✗, or ?, with a few words each.
+6. **Path:** Warm ([contact's name]) or Cold.
+7. **My suggested call:** Pursue, Maybe, or Pass, from the bands in `references/rubrics.md`, plus **What would change this**: one specific, checkable thing.
+8. This line, word for word: *Quick read, not a full one. You know things I don't, so the call is yours.*
 
 Then, if your interface offers tappable choices, ask one question: **"What do you want to do?"** with the options "Pursue," "Pass," and "Go deeper first." Showing the buttons ends your turn, so everything above must already be written. Without buttons, ask the same question as a short numbered list.
 

@@ -53,8 +53,21 @@ Group them by who can answer:
 
 Keep 4 questions total for a 30-minute call, most important first. Say to ask the most important one early, not at the end.
 
-## Output
-Keep the brief short and plain, in this order: Company fit, Role fit, and Chance (three separate lines); your recommendation and why; blocker; the biggest risk found in the checks, near the top if it's serious; research checks done (N of 7); confidence; what would change my mind; questions to ask.
+## Output: the Fit Report
+Short and plain, in this order. Tag every claim Verified, Estimated, or Inferred, with the date checked.
+
+1. **Header:** Company, job title, today's date. Then: "Quick read: Company N, Role N, retired."
+2. **Recommendation**, in capitals (for example, **PURSUE NOW** or **ASK FIRST: office days?**), with one sentence on why.
+3. **Confidence** and **What would change my mind**, one line each.
+4. **Scores**, three separate lines, never blended: Company fit N/100, Role fit N/100, Chance High/Medium/Low.
+5. **Material gap / blocker:** one line.
+6. **Biggest risk** found in the checks, if it's serious.
+7. **Company diligence:** one line per check, in the order of the seven checks, each ending with its tag. Name any check that couldn't be done. End with "Research checks: N of 7."
+8. **Company fit table:** factor, score, why (a few words), tag.
+9. **Role fit table:** factor, score, why (a few words), tag.
+10. **Questions to ask:** the 4 questions, grouped by who can answer.
+
+No blended priority score and no resume score. Fit, Chance, and the resume stay separate.
 
 Then ask the same question as the quick read ("Pursue," "Pass"), and after the user answers, give:
 1. The **Jobs row** (all 21 fields), using the user's decision for Screen result and Status. Ladder stage is `Researched`. Fit score is the Role fit. Notes: "Company fit N/100. Blocker: [line]. Deep [date]: Chance [High/Medium/Low]; [your recommendation]." If this lead was already recorded, tell the user: *"On the Jobs tab, click this job's cell in column A and paste. It replaces the old row."* Otherwise, paste at the first empty cell in column A.

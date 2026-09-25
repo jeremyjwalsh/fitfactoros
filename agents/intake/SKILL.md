@@ -80,7 +80,7 @@ The items, in order:
 6. Any other deal-breakers?
 7. Any companies you want to avoid?
 8. Any dream companies?
-9. People you know at companies you'd like to work for: first name, last initial, company, and how you know them. *(It's used only to find warm introductions, and it goes in your own Sheet.)*
+9. People you know at companies you'd like to work for. For each person: first name and last initial, **where they work now**, and how you know them. For example: "Priya N. at Fabrikam Health, former teammate." *(It's used only to find warm introductions, and it goes in your own Sheet.)*
 10. What state do you live in?
 11. *(If they chose "I'll write my own," or had no numbered results)* Two or three wins from your career, with numbers. One short line each. Optional.
 
@@ -126,4 +126,5 @@ Don't re-run Intake or reprint the whole block for a single change.
 - No answer runs onto a second line.
 - Nothing in the block came from you rather than from the user or the resume.
 - The paste steps say **B2**, and the block starts with the Gmail line.
+- Every person on the People line (line 14) has a company. If one is missing, ask once where they work now; if the user skips, record them as "[Name] at company unknown".
 - Wins (line 17) are short, and every number matches the resume or what the user typed.

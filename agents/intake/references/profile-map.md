@@ -28,6 +28,7 @@ The Profile tab has one answer per row in column B. Intake's answer block always
 - A skipped question is the single word `skipped`. Never leave a line out, or every answer below it shifts.
 - No line may start with `=`, `+`, `-`, `@`, or `"`. Google Sheets reads the first four as formulas, and a leading quote can make Sheets merge lines. Start with a word instead (for example, "About $95,000").
 - No tab characters.
+- People you know (B15): each person as `Name at Company (how you know them)`, separated by "; ". Use the company name as the user said it. Example: `Priya N. at Fabrikam Health (former teammate); Sam T. at Tailspin Labs (college friend)`.
 - Wins (B18): at most 3, each about 10 words or fewer, numbers exactly as given, separated by "; ".
 
 ## Single-field updates

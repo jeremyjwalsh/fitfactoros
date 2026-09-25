@@ -9,10 +9,15 @@ Two scores, shown in this order: **Company fit**, then **Role fit**. Each factor
 - **If more than 2 factors in one score are 9 or higher, re-check them.** That's usually generous scoring.
 - **A skipped Intake answer caps the factor that depends on it at 6.**
 
+## Thin evidence
+When one search finds little, most factors sit at 5 and Company fit lands near 50. That means "not enough known," not "bad company." Private companies hit this most often. So:
+- A fact from the company's own newsroom or press release is **Verified** and can lift a factor above 6.
+- If 3 or more Company fit factors are 5 because nothing was found, add this to the why line: "Mostly unknowns; Go deeper would sharpen this."
+
 ## Company fit = (Stability × 3.5) + (Momentum × 2.5) + (Leadership × 2) + (Pull × 2)
 
 **Stability**
-- 9–10: Verified: public and profitable, or recently well funded, with no layoffs in the last 12 months.
+- 9–10: Verified: public and profitable, or recently well funded (a round the company itself announced counts), with no layoffs in the last 12 months.
 - 6–8: Funded and growing, with some mixed news.
 - 5: Typical, or not enough found to say.
 - 1–4: Layoffs in the last 12 months (especially in this team's area) or money trouble.
