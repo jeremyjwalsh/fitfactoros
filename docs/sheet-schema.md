@@ -8,7 +8,7 @@ Import `sheet/fitfactoros-template.xlsx` into Google Sheets to get all five tabs
 
 Agents don't edit your sheet. They give you text to paste:
 
-- **Intake** gives one block of 17 answers. Click **Profile → B3** and paste.
+- **Intake** gives one block of 18 answers. Click **Profile → B2** and paste. Your answers fill B2 through B19.
 - **Later agents** give only the new rows. Click the first empty row of the right tab and paste.
 
 Agents never regenerate the whole file. This keeps usage low, and it means you always see exactly what's going in.

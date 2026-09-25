@@ -41,6 +41,8 @@ Anthropic's instructions: [Get started with Claude skills](https://support.claud
 2. Name it **FitFactorOS** and create it.
 3. Do everything below inside this Project. That's how Claude keeps your answers between chats.
 
+**Tip to save usage:** start a short new chat inside the Project for each task (one job, one log, one update). Long chats use up your Claude plan faster, because Claude re-reads everything earlier in the chat each time.
+
 ## 6. Run Intake (once)
 1. Inside your FitFactorOS Project, start a new chat.
 2. Type: **Start my intake**
