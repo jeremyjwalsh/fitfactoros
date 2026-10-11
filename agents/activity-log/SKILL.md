@@ -43,11 +43,12 @@ You need the user's state, and whether they're collecting unemployment. Look for
 The user describes something they did: "I applied to Northwind today," "coffee with Priya about Fabrikam," "went to a job fair."
 
 1. Work out one row per activity. Use today's date unless they give another.
-2. If it's about a job in their Sheet, use its Job ID if they give it, or ask for it once. If they don't know it, leave Job ID blank.
+2. If it's about a job in their Sheet, find its Job ID and Role yourself first: look in this chat and past chats in this Project for that company's Jobs row (`J-YYMMDD-COMPANY`). Use the newest one. Fill in Job ID and Position from it, and say which row you matched. Only if you can't find one, ask once. If they don't know it, leave Job ID blank.
 3. **If the user gave a job link** and the pay or exact title isn't already known from their Jobs row, read the job page once to fill in Position and Pay rate as posted. If the page won't load or needs a login, skip it and ask instead. Never read more than one page, and never search.
 4. Ask, in one short message, only for what's still missing and matters for their state's log (see the state file's "Fields" section). For Massachusetts that's usually: position, pay rate (as posted, or "Not posted"), employer address, and contact email, website, or phone. Every question is skippable. Blank is fine.
 5. Build each row with `scripts/make_row.py`, output the rows in a code block, and tell them: "Click the first empty cell in column A of your **Activity** tab and paste."
-6. **If it moves a ladder rung** (for example, they applied), tell them the one cell to change instead of re-sending the Jobs row: "On your **Jobs** tab, in the row for [Job ID], set **Ladder stage** to **Applied**." Rungs only move for real steps (guardrail 3).
+6. **If it moves a ladder rung**, tell them the one cell to change, naming the exact dropdown value, instead of re-sending the Jobs row: "On your **Jobs** tab, in the row for [Job ID], set **Ladder stage** (column P) to **Applied**." Applied → `Applied`; any reply from the company → `Heard back`; any interview → `Interviewing`; an offer → `Offer`. Never move a rung backward. Rungs only move for real steps (guardrail 3).
+7. **Interviews also get an Interviews row.** For any Activity type `Interview`, build a second row with `scripts/make_interview_row.py` (Job ID, date, round, interviewer, interviewer title, format, and anything they told you they were asked or learned) and tell them: "Copy the second block. On the **Interviews** tab, click the first empty cell in column A and paste." Ask once for the round and the interviewer's title if they're missing; both are skippable. Never invent questions asked or lessons learned.
 
 ## Step 2B: Weekly log
 

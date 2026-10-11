@@ -61,3 +61,21 @@ Between `Yes` (J) and the link (O) there are four blank cells (K, L, M, N), so e
 When the user copies cells from Google Sheets into the chat, they arrive tab-separated. If the header row is included, use it. If not, assume the column order above (Activity) and in the Jobs tab (A Job ID through U Notes). If a pasted row doesn't fit either layout, ask which tab it came from rather than guess.
 
 Older Sheets may have only columns A through L on the Activity tab. Treat missing M, N, and O as blank, and tell the user once: "Your Activity tab is missing three new columns. Add these headers in M1, N1, and O1: Pay rate, Employer address, Contact info."
+
+## Interviews tab: 11 columns, A through K
+
+One row per interview, built with `scripts/make_interview_row.py`. Keys, A to K: job_id, date, round, interviewer, interviewer_title, format, asked, learned, thank_you, email_link, notes.
+
+| Col | Field | What to write |
+|---|---|---|
+| A | Job ID | Same as the Jobs row, if found |
+| B | Date | The day of the interview, YYYY-MM-DD |
+| C | Round | Plain words: Recruiter screen, Hiring manager, Panel, Technical, Final, Other |
+| D | Interviewer | Name as the user gives it |
+| E | Interviewer title | If known |
+| F | Format | One of: Phone, Video, On-site |
+| G | Questions asked | Only what the user said they were asked, short, separated by "; " |
+| H | What I learned | Only what the user said they learned, short |
+| I | Thank-you sent | `Yes` or `No`, only if the user said |
+| J | Email link | Blank |
+| K | Notes | Next step, if known (for example, "Next: VP call Tuesday") |

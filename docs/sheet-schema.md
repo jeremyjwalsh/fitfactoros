@@ -1,6 +1,6 @@
 # Sheet schema
 
-FitFactorOS runs on one Google Sheet with five tabs. Every row about a specific opportunity carries the same **Job ID**, which is how the tabs join.
+FitFactorOS runs on one Google Sheet with five data tabs plus a **Dashboard** tab. Every row about a specific opportunity carries the same **Job ID**, which is how the tabs join.
 
 Import `sheet/fitfactoros-template.xlsx` into Google Sheets to get all five tabs with headers, dropdowns, and notes. Hover over any header to see what goes in that column.
 
@@ -12,6 +12,10 @@ Agents don't edit your sheet. They give you text to paste:
 - **Later agents** give only the new rows. Click the first empty row of the right tab and paste.
 
 Agents never regenerate the whole file. This keeps usage low, and it means you always see exactly what's going in.
+
+## Dashboard
+
+The first tab. It's all formulas, so it updates the moment you paste rows, and you never type in it except the yellow cell (your state's weekly work-search minimum). It shows this week's screened jobs and work-search activities, your Pursue / Maybe / Pass counts, **your own warm vs cold results**, and how many jobs sit on each rung of the ladder. Example rows are ignored. Rows must use the Job ID format below to count.
 
 ## Job ID
 

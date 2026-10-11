@@ -38,7 +38,7 @@ LISTS = {
     "path": ["Warm", "Cold"],
     "ladder": ["Picked", "Researched", "Found the right person", "Reached out to contact",
                "Sent a researched note", "Applied", "Heard back", "Interviewing", "Offer"],
-    "status": ["Active", "Passed"],
+    "status": ["Active", "Passed", "Closed – offer", "Closed – no", "Withdrawn"],
     "tag": ["Verified", "Estimated", "Inferred"],
     "source_type": ["Job posting", "Company site", "Filing", "News", "Person", "Your records", "Other"],
     "by": ["Agent"],
@@ -94,17 +94,15 @@ if tab == "jobs":
     if v["path"] == "Cold" and v.get("warm_contact"):
         fail("Cold path must leave warm_contact blank")
     if v["screen"] == "Pass":
-        if v["status"] != "Passed":
+        if v["status"] not in ("Passed", "Withdrawn", "Closed – no"):
             fail("Pass needs status=Passed")
         if v.get("next_step") or v.get("next_date"):
             fail("Pass leaves next_step and next_date blank")
-    else:
-        if v["status"] != "Active":
-            fail(f"{v['screen']} needs status=Active")
+    elif v["status"] == "Active":
         if not v.get("next_step") or not v.get("next_date"):
             fail(f"{v['screen']} needs next_step and next_date")
-    if v["screen"] == "Pursue" and v.get("ladder") not in ("Picked", "Researched"):
-        fail("Pursue needs ladder=Picked (or Researched after deep research)")
+    if v["screen"] == "Pursue" and not v.get("ladder"):
+        fail("Pursue needs a ladder stage: Picked, or the furthest real step reached (Researched, Applied, Interviewing, ...)")
     if not v.get("notes", "").startswith("Company fit"):
         fail("notes must start with 'Company fit'")
 else:

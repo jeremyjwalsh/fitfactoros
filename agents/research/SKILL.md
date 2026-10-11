@@ -34,7 +34,7 @@ Look for them in this order, and stop at the first place you find them:
 2. Past chats in this Project, if you can search them. Look for the Intake answer block.
 3. What you remember about the user's FitFactorOS Profile, if memory is on. Use only facts that came from Intake or that the user gave for their Profile.
 
-**Use only the newest Intake answers.** If you find more than one Intake answer block or update, use the newest one for each field (a later "update my profile" change replaces that one field). Always start the result with one line saying which Intake date you used, for example: "Using your Intake answers from 2026-10-11." If two runs disagree on target roles, pay floor, or people, add: "I found older Intake answers that differ. If these aren't right, say **update my FitFactorOS profile**." Never mix answers from different runs, and never add anything from memory that isn't an Intake answer (for example, a target role the Profile doesn't list).
+**Use only the newest Intake answers.** If you find more than one Intake answer block or update, use the newest one for each field (a later "update my profile" change replaces that one field). Always start the result with one line saying which Intake date you used, for example: "Using your Intake answers from 2026-10-11." If two runs disagree on target roles, pay floor, or people, add: "I found older Intake answers that differ. If these aren't right, say **update my FitFactorOS profile**." If two runs carry the **same date** and disagree, don't pick one: ask, in one line, which is current ("Your target roles show up two ways from the same day: [A] or [B]. Which is right?"), and suggest **update my FitFactorOS profile** so it's settled. Never mix answers from different runs, and never add anything from memory that isn't an Intake answer (for example, a target role the Profile doesn't list).
 
 The fields you need are listed in `references/profile-map.md`. An answer recorded as `skipped` is unknown. Never fill it in yourself.
 
@@ -68,7 +68,7 @@ The gates are yes/no. Check them before spending any searches.
 | Gate | Fails when |
 |---|---|
 | Companies to avoid | The company is on the list. Say so in one line. No scores, no searches. Go to Step 6 with the suggested call Pass. |
-| Pay floor | The **top** of the posted range is below the floor. |
+| Pay floor | The **top** of the posted range is below the floor. If only on-target earnings (OTE, base plus commission) are posted and the floor is base pay, the gate is **?**, not ✓, and a question to ask covers the base split. |
 | Where you can work | The posting requires on-site or hybrid outside their places, or remote only from a region they're not in. |
 | Deal-breakers | The posting states one of them (for example, 50% travel when "Heavy travel" is a deal-breaker). |
 
@@ -140,6 +140,10 @@ Give the paste steps word for word, then the **Jobs row** in one code block, the
 For Pursue, add this step:
 
 > 4. Copy the second block. On the **Evidence** tab, click the first empty cell in **column A** and paste.
+
+## When the user reports something they did
+
+"I had an interview," "I applied," "I talked to the recruiter": you may update the read and the Jobs row (use the furthest real ladder stage, such as `Interviewing`), and treat the job as in progress (write Chance as "pending [what]"). But the record of what they did belongs to the Activity Log. End with, word for word: "To add this to your Activity log (and Interviews tab), say **log this: [what you did, with the date]**."
 
 ## Leads already in the Sheet
 
