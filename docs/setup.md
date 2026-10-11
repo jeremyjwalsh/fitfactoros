@@ -12,13 +12,19 @@ In Claude, open **Settings** and turn on:
 - **Code execution and file creation** (under Capabilities). Skills don't work without it.
 - **Generate memory from chat history** and **Search and reference chats**. These let Claude use your Intake answers every time you fit factor a job, so you only answer them once.
 
+Then, in Claude's **connectors**, connect **Google Sheets**. This lets Claude read your Sheet when you say **show my dashboard**. Claude only reads it, never changes it.
+
 Research also needs **web search**. In a chat, open the tools menu next to the message box and make sure **Web search** is on.
 
 ## 3. Add the skills
-1. Download `fitfactoros-intake.zip`, `fitfactoros-research.zip`, and `fitfactoros-activity-log.zip` from this repository's `dist/` folder.
+1. Download all four skills (each download starts right away):
+   - [fitfactoros-intake.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-intake.zip)
+   - [fitfactoros-research.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-research.zip)
+   - [fitfactoros-activity-log.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-activity-log.zip)
+   - [fitfactoros-dashboard.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-dashboard.zip)
 2. In Claude, go to **Customize → Skills**.
-3. Click **+** and upload one ZIP file. Repeat for the others.
-4. Make sure all the FitFactorOS skills are switched on.
+3. Click **+** and upload one ZIP file. Repeat for the other three. Don't unzip them first.
+4. Make sure all four FitFactorOS skills are switched on.
 
 Anthropic's instructions: [Get started with Claude skills](https://support.claude.com/en/articles/12512180).
 
@@ -43,7 +49,7 @@ Anthropic's instructions: [Get started with Claude skills](https://support.claud
 
 **Permission prompts:** Claude may ask before it reads a web page, searches, or opens a job page in your browser. **Allow** those; that's the research. FitFactorOS never sends, writes, or deletes anything, so if a prompt asks to send an email or change a file, choose **Deny**.
 
-**Your Dashboard:** the first tab of your Sheet fills in by itself as you paste rows. For the full view (your top picks, each job's ladder, its evidence, who to write to), connect **Google Sheets** in Claude's connectors and say **show my dashboard** in your Project. Claude only reads your Sheet, never changes it, and makes a private page only you can see. Each view uses a little of your Claude plan.
+**Your Dashboard:** the first tab of your Sheet is a quick summary that fills in by itself as you paste rows. For the full view (your top picks, each job's ladder, its evidence, who to write to), say **show my dashboard** in your Project. Claude reads your Sheet through the Google Sheets connector from step 2 and makes a private page only you can see. Each view uses a little of your Claude plan.
 
 **Tip to save usage:** start a short new chat inside the Project for each task (one job, one log, one update). Long chats use up your Claude plan faster, because Claude re-reads everything earlier in the chat each time.
 
@@ -95,7 +101,7 @@ Every job you fit factored that week shows up as a job posting you reviewed, eve
 
 ## Getting updates
 FitFactorOS is still being built, and the skills get improved. When there's an update:
-1. Download the new ZIP files from the `dist/` folder.
+1. Download the new ZIP files using the links in step 3.
 2. In Claude, go to **Customize → Skills**, delete the old FitFactorOS skill (**⋮ → Delete**), and upload the new ZIP.
 
 Your Sheet and your answers stay as they are. You don't need to run Intake again.

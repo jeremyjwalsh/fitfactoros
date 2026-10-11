@@ -6,7 +6,7 @@ FitFactorOS helps you go after fewer jobs that fit you well, get a real person o
 
 It is free, open source, and built for people who don't think of themselves as technical. If you can use a spreadsheet and a chat window, you can use this.
 
-> **Status:** Early build. Intake and Research are in testing. The Activity Log (Massachusetts first) is built and ready for testing. See [Roadmap](#roadmap).
+> **Status:** Early build. Intake, Research, the Activity Log (Massachusetts first), and the Dashboard are in testing. See [Roadmap](#roadmap).
 
 ---
 
@@ -62,10 +62,11 @@ These are the rules every part of FitFactorOS follows. If a feature breaks one, 
 
 ### The hub: one Google Sheet
 
-Everything lives in one Google Sheet with five tabs. Every row that belongs to a specific opportunity carries the same **Job ID**, so the tabs join together.
+Everything lives in one Google Sheet. The first tab is a quick summary that fills in by itself; the other five hold your data. Every row that belongs to a specific opportunity carries the same **Job ID**, so the tabs join together.
 
 | Tab | What it holds |
 |---|---|
+| **Dashboard** | A quick summary that fills in by itself. For the full view, say "show my dashboard." |
 | **Profile** | Your answers from Intake: target roles, where you can work, pay floor, deal-breakers, dream companies, people you know. |
 | **Jobs** | One row per opportunity: company, role, fit score, warm path, ladder stage, next step. |
 | **Evidence** | Every research claim, tagged Verified / Estimated / Inferred, with source link and date. |
@@ -141,7 +142,7 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 1. Create or sign in to your Claude account.
 2. Copy the Sheet template into your Google Drive.
 3. Add the FitFactorOS skills to Claude and connect **Google Sheets** (so Claude can read your Sheet for your dashboard).
-4. Start a new chat and say **"Start my intake."**
+4. Create a Project called **FitFactorOS**, start a new chat inside it, and say **"Start my intake."**
 
 ### Things you can say
 
@@ -164,36 +165,34 @@ The [setup guide](docs/setup.md) walks through every step. Screenshots are comin
 
 ## Repository layout
 
-This is the planned layout. Files arrive as each phase ships.
+Folders marked *(planned)* arrive as each phase ships.
 
 ```
 fitfactoros/
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
-├── dist/
-│   ├── fitfactoros-intake.zip   # Ready-to-upload Intake skill
-│   ├── fitfactoros-research.zip # Ready-to-upload Research skill
-│   └── fitfactoros-activity-log.zip # Ready-to-upload Activity Log skill
+├── dist/                     # Ready-to-upload skills (one ZIP each)
+│   ├── fitfactoros-intake.zip
+│   ├── fitfactoros-research.zip
+│   ├── fitfactoros-activity-log.zip
+│   └── fitfactoros-dashboard.zip
 ├── docs/
 │   ├── setup.md              # Step-by-step setup for non-technical users
-│   ├── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
-│   ├── claim-tags.md         # Verified / Estimated / Inferred, with examples
-│   ├── science.md            # Longer version of "The science behind it"
-│   └── roadmap.md
+│   └── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
 ├── sheet/
 │   └── fitfactoros-template.xlsx   # Import into Google Sheets
 ├── agents/
 │   ├── shared/
-│   │   └── guardrails.md     # Rules every agent loads: humans send, tag claims, no fake rungs
+│   │   └── guardrails.md     # Rules every agent follows: humans send, tag claims, no fake rungs
 │   ├── intake/
-│   ├── job-finder/
 │   ├── research/             # Quick screen rubrics, deep research checklist, Jobs row map
-│   ├── outreach/             # Warm-path ladder, two-fact rule, draft templates
+│   ├── activity-log/
+│   │   ├── references/       # Activity row map
+│   │   └── states/           # One rules file per state (ma.md first) + _template.md
 │   ├── dashboard/            # "Show my dashboard": reads your Sheet, makes a private page
-│   └── activity-log/
-│       ├── references/       # Activity row map
-│       └── states/           # One rules file per state (ma.md first) + _template.md
+│   ├── job-finder/           # (planned)
+│   └── outreach/             # (planned) Warm-path ladder, two-fact rule, draft templates
 └── samples/
     ├── sample-profile.md     # Fictional job seeker
     └── fitfactoros-sample.xlsx
