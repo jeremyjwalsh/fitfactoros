@@ -32,4 +32,4 @@ The Profile tab has one answer per row in column B. Intake's answer block always
 - Wins (B18): at most 3, each about 10 words or fewer, numbers exactly as given, separated by "; ".
 
 ## Single-field updates
-When the user asks to change one answer, output just that answer and the cell to paste it into (for example, "Paste this into B10"). Also give an updated line for B19.
+When the user asks to change one answer, output that whole cell's new answer (for a list, the full list, never a piece to add on) and the cell with its row label (for example, "Paste into **B10**, the **Pay floor** row"). Also give today's date for B19.

@@ -41,6 +41,8 @@ Anthropic's instructions: [Get started with Claude skills](https://support.claud
 2. Name it **FitFactorOS** and create it.
 3. Do everything below inside this Project. That's how Claude keeps your answers between chats.
 
+**Permission prompts:** Claude may ask before it reads a web page, searches, or opens a job page in your browser. **Allow** those; that's the research. FitFactorOS never sends, writes, or deletes anything, so if a prompt asks to send an email or change a file, choose **Deny**.
+
 **Tip to save usage:** start a short new chat inside the Project for each task (one job, one log, one update). Long chats use up your Claude plan faster, because Claude re-reads everything earlier in the chat each time.
 
 ## 6. Run Intake (once)
@@ -49,7 +51,7 @@ Anthropic's instructions: [Get started with Claude skills](https://support.claud
 3. Answer the questions. Skip anything you like.
 4. At the end, Claude shows the steps above your answer block: tap **Copy**, open your Google Sheets copy, go to the **Profile** tab, click cell **B2**, and paste. Your answers fill B2 through B19. Intake asks for your Gmail address at the start; it's used to build links that open your own inbox.
 
-Your Profile is set. You only do this once. If something changes later, say "update my profile."
+Your Profile is set. You only do this once. If something changes later, say "update my FitFactorOS profile." Claude tells you the exact cell and row to paste into.
 
 ## 7. Fit factor a job (any time)
 1. Inside your FitFactorOS Project, paste a job link and type **fit factor this**. If the link needs a login (LinkedIn often does), paste the job text instead.

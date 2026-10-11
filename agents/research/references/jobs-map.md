@@ -13,7 +13,7 @@ Rows run across columns, so fields are separated by a **tab character**. Output 
 | E | Job link | The link, or `Pasted text` |
 | F | Source | One of: Job board, Company site, Referral, Conversation, Recruiter, Job Finder, Other. Use what the user said; if unclear, Job board for job-board links, Company site for company careers pages, otherwise Other. |
 | G | Suggested by | The person who sent it, if the user said. Otherwise blank. |
-| H | Location | As posted |
+| H | Location | The posted location that fits the user's Where you can work answer, as posted. If more are listed, add "(+N more)". Example: `Massachusetts - Remote (+10 more)`. |
 | I | Work mode | One of: Remote, Hybrid, On-site. Blank if the posting doesn't say. |
 | J | Pay range | Exactly as posted, or `Not posted`. Never an estimate in a quick read. |
 | K | Pay tag | `Verified` when pay is posted. Blank when not posted. |
@@ -42,6 +42,10 @@ Only when the user chooses Pursue, or after deep research. One row per claim tha
 | F | Source type | One of: Job posting, Company site, Filing, News, Person, Your records, Other. Use "Your records" for facts from the user's Intake answers. Use "Person" for something a person told the user. |
 | G | How we know | Verified: where it's stated in a primary source. Estimated: the method, or "reported by [source], not confirmed by the company." Inferred: the reasoning. |
 | H | Checked by | `Agent` |
+
+## Script keys (`scripts/make_row.py`)
+Jobs, A to U: job_id, date, company, role, link, source, suggested_by, location, work_mode, pay, pay_tag, fit, screen, path, warm_contact, ladder, next_step, next_date, status, email_link, notes.
+Evidence, A to H: job_id, date, claim, tag, link, source_type, how, by.
 
 ## Row rules
 - Blank cells are two tabs in a row. Never write "blank" or "skipped" in a Jobs or Evidence cell.

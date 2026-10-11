@@ -1,6 +1,6 @@
 ---
 name: fitfactoros-intake
-description: Runs the FitFactorOS Intake, a short set of questions that builds the user's job-search Profile and ends with an answer block they paste into the Profile tab of their FitFactorOS Google Sheet. Use when the user says "start my intake", "set up my profile", "FitFactorOS intake", or asks to update or change an answer in their FitFactorOS profile ("update my profile", "change my pay floor", "add a dream company").
+description: Runs the FitFactorOS Intake, a short set of questions that builds the user's job-search Profile and ends with an answer block they paste into the Profile tab of their FitFactorOS Google Sheet. Use when the user says "start my intake", "set up my profile", "FitFactorOS intake", or asks to update or change an answer in their FitFactorOS profile ("update my profile", "update my FitFactorOS profile", "change my pay floor", "add a dream company", "add a contact"). Inside a FitFactorOS Project, "update my profile" always means this Profile; go straight to the update without asking which profile.
 ---
 
 # FitFactorOS Intake
@@ -112,9 +112,13 @@ If you noticed a resume issue worth flagging, add it as one line after the close
 ## Updating one answer later
 
 When the user asks to change an answer ("update my pay floor," "add a dream company"):
-1. Confirm the new answer in one line.
-2. Give the cell to paste into, from `references/profile-map.md` (for example, "Paste this into **B10**"), and the new answer in a code block.
-3. Give today's date for **B19** in a second code block.
+Inside a FitFactorOS Project, don't ask which profile they mean. If they haven't said what to change, ask which answer, in one line.
+
+1. **Never fill in anything yourself.** For a person on the People line, you need their name, where they work now, and how the user knows them. If any part is missing, ask once. If the user skips "how," write `Name at Company` with nothing after it. Never use a job title or anything from memory in its place.
+2. **List fields (Top skills, Target roles, Where you can work, Deal-breakers, Companies to avoid, Work, Dream companies, People, Wins): always give the whole line,** never a piece to add on. Find the current answer the same way Research does (newest Intake in this chat or past chats in this Project). If you can't find it, ask the user to copy the cell and paste it here, then build the full new line. If the current answer is `skipped` or `None`, the new line is just the new item. The line never starts with "; ".
+3. Confirm the new answer in one line.
+4. Give the paste steps with the cell **and** its row label, word for word in this shape: "Click cell **B15** (the **People you know** row) and paste. This replaces what's there." Then the new answer in a code block.
+5. Give today's date for **B19** (the **Profile last updated** row) in a second code block.
 
 Don't re-run Intake or reprint the whole block for a single change.
 

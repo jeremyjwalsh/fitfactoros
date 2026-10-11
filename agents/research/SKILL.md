@@ -24,6 +24,7 @@ Before starting, read `references/guardrails.md`, `references/profile-map.md`, `
 - **Light on usage.** Before the decision: one page read for the job and **1 search**. A 2nd search only if the first finds nothing useful. No review sites (Glassdoor, Comparably, Reddit) in the quick read; those belong to Go deeper. Stop early when a gate fails.
 - **The user decides.** You give a suggested call; the choice is theirs. Humans send everything.
 - **Don't mention other skills.**
+- **Build every Jobs and Evidence row with `scripts/make_row.py`.** Never type a row by hand. Run `python3 scripts/make_row.py jobs key=value ...` or `... evidence key=value ...`, leaving blank fields out. The script adds the blanks, checks the column count and dropdown values, and refuses a News source tagged Verified. Copy its output into the code block unchanged. If it prints an error, fix the value and run it again. Only if you can't run code at all, follow `references/jobs-map.md` by hand.
 - **Only real links.** Every link you write down must be a page you opened or a result your search returned in this chat. If you don't have one, leave the link blank. Never build or recall a link.
 
 ## Step 1: Find the user's Intake answers
@@ -32,6 +33,8 @@ Look for them in this order, and stop at the first place you find them:
 1. Earlier in this chat.
 2. Past chats in this Project, if you can search them. Look for the Intake answer block.
 3. What you remember about the user's FitFactorOS Profile, if memory is on. Use only facts that came from Intake or that the user gave for their Profile.
+
+**Use only the newest Intake answers.** If you find more than one Intake answer block or update, use the newest one for each field (a later "update my profile" change replaces that one field). Say in one line which date you used. If two runs disagree on target roles, pay floor, or people, add: "I found older Intake answers that differ. If these aren't right, say **update my FitFactorOS profile**." Never mix answers from different runs, and never add anything from memory that isn't an Intake answer (for example, a target role the Profile doesn't list).
 
 The fields you need are listed in `references/profile-map.md`. An answer recorded as `skipped` is unknown. Never fill it in yourself.
 
@@ -46,6 +49,7 @@ If the user shares only a company name, ask which job there they mean, or offer 
 ## Step 2: Read the job
 
 - Link: read the page once. If it fails, stop and ask for the text.
+- **Pay you didn't find is not "not posted."** Many pages put pay at the very bottom or load it late. If you didn't see a pay section, write "Pay: not found in what I read," mark the pay gate **?**, and ask the user to paste the pay section from the bottom of the posting. Only write "Not posted" when you read the whole posting and it has no pay. Never tag a missing fact Verified.
 - Pasted text: use it as is. Tag facts from it as "Verified: job posting text pasted by the user, [date]." You can't confirm the posting is still open; say so once.
 
 Pull out: company, title, location and work mode, pay range if posted, the must-have requirements, the day-to-day work, travel, and anything that matches a deal-breaker.
@@ -69,9 +73,15 @@ Mark each gate ✓ (clear), ✗ (fails), or ? (the posting doesn't say).
 
 ## Step 4: Company fit (1 search)
 
-Aim the one search at the **company's own newsroom** first: `[Company] newsroom press release [this year]`. Its funding, launch, and leadership announcements are Verified. Also look in the results for size, public-company status, and any layoffs or major news in the last 12 months (layoff news usually comes from outside press, so it's Estimated).
+Aim the one search at what the **company itself** published:
+- **Public company:** its latest earnings release: `[Company] investor relations quarterly results [this year]`.
+- **Private company:** its own blog or newsroom: `[Company] announces funding OR launch [this year]`. A funding round the company announced on its own site is Verified; the same round in trade press only is Estimated.
 
-Use a 2nd search only if the first finds nothing useful: `[Company] layoffs funding news [this year]`.
+These are Verified. Also look in the results for size, public-company status, and any layoffs or major news in the last 12 months (layoff news usually comes from outside press, so it's Estimated).
+
+Use a 2nd search only if the first finds nothing from the company itself: `[Company] layoffs funding news [this year]`.
+
+If you find nothing on a factor, say "nothing found." Don't tag it; it scores 5.
 
 Score Company fit with `references/rubrics.md`. Anything you couldn't find scores 5, the typical score. Don't search more to fill gaps.
 
@@ -130,7 +140,9 @@ If the user brings back a lead they already screened, don't research it again. R
 
 ## Checks before sending rows
 
-- The Jobs row has exactly 21 fields, separated by tabs (20 tabs). Each Evidence row has exactly 8 fields.
+- Every row came from `scripts/make_row.py` (it checks 21 fields for Jobs and 8 for Evidence).
+- No News source is tagged Verified, and no "nothing found" claim has a tag.
+- Nothing comes from outside the newest Intake answers, the posting, or sources read in this chat.
 - Every value in a dropdown column matches the allowed list in `references/jobs-map.md` exactly.
 - No field starts with `=`, `+`, `-`, `@`, or `"`. No field contains a line break or a tab.
 - Nothing in any row came from you rather than from the posting, a source you read, or the user.
