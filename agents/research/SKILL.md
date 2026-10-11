@@ -34,7 +34,7 @@ Look for them in this order, and stop at the first place you find them:
 2. Past chats in this Project, if you can search them. Look for the Intake answer block.
 3. What you remember about the user's FitFactorOS Profile, if memory is on. Use only facts that came from Intake or that the user gave for their Profile.
 
-**Use only the newest Intake answers.** If you find more than one Intake answer block or update, use the newest one for each field (a later "update my profile" change replaces that one field). Say in one line which date you used. If two runs disagree on target roles, pay floor, or people, add: "I found older Intake answers that differ. If these aren't right, say **update my FitFactorOS profile**." Never mix answers from different runs, and never add anything from memory that isn't an Intake answer (for example, a target role the Profile doesn't list).
+**Use only the newest Intake answers.** If you find more than one Intake answer block or update, use the newest one for each field (a later "update my profile" change replaces that one field). Always start the result with one line saying which Intake date you used, for example: "Using your Intake answers from 2026-10-11." If two runs disagree on target roles, pay floor, or people, add: "I found older Intake answers that differ. If these aren't right, say **update my FitFactorOS profile**." Never mix answers from different runs, and never add anything from memory that isn't an Intake answer (for example, a target role the Profile doesn't list).
 
 The fields you need are listed in `references/profile-map.md`. An answer recorded as `skipped` is unknown. Never fill it in yourself.
 
@@ -48,7 +48,12 @@ If the user shares only a company name, ask which job there they mean, or offer 
 
 ## Step 2: Read the job
 
+- **Check for pasted text first.** Long pastes often arrive as an attached file (such as "Pasted text.txt"), sometimes in a later message. Read any attached file before saying nothing came through.
 - Link: read the page once. If it fails, stop and ask for the text.
+- **A partial read is not a read.** After reading a link, check you got the full posting: the duties, the must-have requirements, the location, and the end of the page (where pay usually is). If any is missing (for example, the site only gave you a summary), **stop before scoring** and say, word for word:
+  > I could only read part of this posting, so a score now would be partly a guess. Please paste the full job description here in its own message (on the posting page: select all, copy, paste). Or say **go anyway** and I'll mark every gap.
+
+  If the user says "go anyway," start the result with **Partial read:** and the parts you're missing, and mark each affected line "from a partial read."
 - **Pay you didn't find is not "not posted."** Many pages put pay at the very bottom or load it late. If you didn't see a pay section, write "Pay: not found in what I read," mark the pay gate **?**, and ask the user to paste the pay section from the bottom of the posting. Only write "Not posted" when you read the whole posting and it has no pay. Never tag a missing fact Verified.
 - Pasted text: use it as is. Tag facts from it as "Verified: job posting text pasted by the user, [date]." You can't confirm the posting is still open; say so once.
 
@@ -127,7 +132,7 @@ Give the paste steps word for word, then the **Jobs row** in one code block, the
 
 > **Next: put this in your Sheet**
 > 1. Tap **Copy** on the block below.
-> 2. In your Sheet, click the **Jobs** tab, then click the first empty cell in **column A**.
+> 2. In your Sheet, click the **Jobs** tab, then click the first empty cell in **column A**. *(If this job was screened before, use instead: "click the **[Job ID]** cell in column A and paste over that row.")*
 > 3. Paste (**Ctrl+V** on Windows, **Cmd+V** on Mac). The row fills columns A through U.
 
 For Pursue, add this step:
@@ -135,6 +140,8 @@ For Pursue, add this step:
 > 4. Copy the second block. On the **Evidence** tab, click the first empty cell in **column A** and paste.
 
 ## Leads already in the Sheet
+
+Before giving paste steps, check this chat and past chats in this Project for the same company and role. If it was screened before, reuse its Job ID (don't make a new one) and tell the user to paste over that row, never into the first empty row.
 
 If the user brings back a lead they already screened, don't research it again. Re-check only the claims dated more than 14 days ago, flag them "⚠ Older than 14 days, re-check before acting," and give updated rows for only what changed. For an updated Jobs row, tell them to click that job's cell in column A and paste over it.
 

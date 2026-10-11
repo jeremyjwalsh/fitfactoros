@@ -54,7 +54,9 @@ Anthropic's instructions: [Get started with Claude skills](https://support.claud
 Your Profile is set. You only do this once. If something changes later, say "update my FitFactorOS profile." Claude tells you the exact cell and row to paste into.
 
 ## 7. Fit factor a job (any time)
-1. Inside your FitFactorOS Project, paste a job link and type **fit factor this**. If the link needs a login (LinkedIn often does), paste the job text instead.
+1. Inside your FitFactorOS Project, paste a job link and type **fit factor this**.
+   - **For the best result, paste the job description too.** Many job sites (Ashby, Workday, LinkedIn) don't let Claude read the whole page. On the posting, select all, copy, and paste it **in its own message first**, then send the link with **fit factor this**. If Claude can only read part of a page, it stops and asks for the text rather than guessing.
+   - Scores can move a few points between runs on the same job. The suggested call is what to go by.
 2. Claude shows **Company fit**, then **Role fit**, the biggest blocker, and a suggested call.
 3. You decide: **Pursue**, **Pass**, or **Go deeper first**. Going deeper uses more of your Claude plan, so save it for jobs you're serious about.
 4. Claude gives you a row to paste on the **Jobs** tab. If you chose Pursue, you also get rows for the **Evidence** tab. Click the first empty cell in column A of each tab and paste. Every job gets recorded, even the ones you pass on, so you keep a dated record of your search.
