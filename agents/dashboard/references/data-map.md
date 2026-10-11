@@ -32,7 +32,7 @@ Read with the Google Sheets connector, values only. Skip every row whose Job ID 
 | `nextDate` | R Next step date | |
 | `cfit` | U Notes | The number after "Company fit" |
 | `gap` | U Notes | The text after "Blocker:" up to the next period |
-| `ev` | Evidence tab | Rows with this Job ID: `[V/E/I, Claim]`, newest first, at most 4 |
+| `ev` | Evidence tab | Rows with this Job ID: `[V/E/I, Claim]`, at most 4, picked in this order: (1) pay, (2) risks (layoffs, cuts, leadership changes, a hard requirement the user lacks), (3) what the role is and why it's open, (4) anything else. Within a group, newest Date checked first; on a tie, the row lower in the Sheet. |
 | `log` | Activity tab | The latest Activity row for this company, as "[type] on [date]: [result]" |
 | `flag` | your check | Only for a visible problem in the row, such as a date in Next step date that isn't a date. Say what to fix in plain words. |
 

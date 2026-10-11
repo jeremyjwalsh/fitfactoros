@@ -71,6 +71,9 @@ a{color:var(--accent-ink)}
 </style>
 <style>
 .parked{background:var(--i-bg);color:var(--i-fg)}
+.clamp{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.when{display:block;font-weight:500;color:var(--faint)}
+.nextbox{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--line)}
 </style>
 <!-- Claude fills only this block. Everything else stays as is. -->
 <script id="ffos-data" type="application/json">
@@ -143,8 +146,8 @@ function nextCell(j){
   if(j.call==="Pass")return '<span style="color:var(--faint);font-weight:500">Passed</span>';
   if(!j.next)return '<span style="color:var(--flag-fg)">No next step set</span>';
   const d=day(j.nextDate), due=d&&d<=today;
-  const when=j.call==="Maybe"&&d?`<span style="display:block;font-weight:500;color:var(--faint)">${due?"Revisit now":"Revisit "+fmt(d)}</span>`:"";
-  return esc(j.next)+when;
+  const when=j.call==="Maybe"&&d?`<span class="when">${due?"Revisit now":"Revisit "+fmt(d)}</span>`:"";
+  return `<span class="clamp">${esc(j.next)}</span>`+when;
 }
 function render(){
   document.querySelectorAll(".filters button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.f===filter)));
@@ -155,7 +158,7 @@ function render(){
     <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span class="co">${esc(j.co)}</span><span class="role">${esc(j.role)}</span>
      <span class="chips"><span class="pill ${callPill(j.call)}">${callLabel(j.call)}</span><span class="pill ${j.path==="Warm"?"warm":"cold"}">${j.path==="Warm"?"Warm":"Cold"}${j.contact?" · "+esc(j.contact):""}</span>${j.flag?'<span class="pill flag">Fix in Sheet</span>':""}</span></span>
     <span class="score"><span class="n">${j.fit??"–"}</span><span class="bar"><i style="width:${+j.fit||0}%"></i></span></span>
-    <span class="gap">${esc(j.gap)}</span>
+    <span class="gap"><span class="clamp">${esc(j.gap)}</span></span>
     <span class="next">${nextCell(j)}</span>
    </button>`).join("")||'<p class="empty">No jobs here yet. Say “fit factor this” with a job link to add one.</p>';
   document.querySelectorAll(".row").forEach(r=>r.onclick=()=>{picked=r.dataset.id;render();});
@@ -166,6 +169,7 @@ function render(){
   det.innerHTML=`
    <div style="display:flex;flex-direction:column;gap:4px"><div class="eyebrow">Selected</div><h2>${esc(s.co)}</h2><div class="sub">${esc(s.role)}${s.loc?" · "+esc(s.loc):""}</div></div>
    <div class="scorebig"><span class="n">${s.fit??"–"}</span><span class="pill ${callPill(s.call)}">${callLabel(s.call)}</span>${s.cfit!=null?`<span class="sub">Company fit ${s.cfit}</span>`:""}</div>
+   ${s.call!=="Pass"?`<div class="nextbox"><div class="k">Next step</div>${s.next?`<div>${esc(s.next)}</div>`:'<div class="empty">No next step set. Add one in the Jobs row (column Q).</div>'}${day(s.nextDate)?`<span class="when">${s.call==="Maybe"?(day(s.nextDate)<=today?"Revisit now":"Revisit "+fmt(day(s.nextDate))):"By "+fmt(day(s.nextDate))}</span>`:""}</div>`:""}
    <div style="display:flex;flex-direction:column;gap:8px"><div class="k">Biggest gap</div><div class="sub">${esc(s.gap||"None noted")}</div>${s.pay?`<div class="sub">Pay: ${esc(s.pay)}</div>`:""}
     ${s.flag?`<div><span class="pill flag">${esc(s.flag)}</span></div>`:""}</div>
    <div style="display:flex;flex-direction:column;gap:8px"><div class="k">Where it is on the ladder</div>
