@@ -73,6 +73,8 @@ a{color:var(--accent-ink)}
 .parked{background:var(--i-bg);color:var(--i-fg)}
 .clamp{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
 .when{display:block;font-weight:500;color:var(--faint)}
+details.say{font-size:13px;color:var(--muted)}details.say summary{cursor:pointer;font-weight:600;color:var(--fg);min-height:44px;display:flex;align-items:center}
+.saygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 24px;padding-top:4px}.saygrid b{color:var(--fg);font-weight:600}
 .nextbox{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--line)}
 </style>
 <!-- Claude fills only this block. Everything else stays as is. -->
@@ -103,6 +105,18 @@ __DATA__
     </div>
     <aside class="detail" id="detail" aria-live="polite"></aside>
   </div>
+  <details class="say" id="say">
+    <summary>Things you can say</summary>
+    <div class="saygrid">
+      <div><b>fit factor this</b> + a job link: score a new job</div>
+      <div><b>go deep</b>: deeper research on a job you're serious about</div>
+      <div><b>log this</b>: "I applied to…", "I had a call with…"</div>
+      <div><b>this week's work search log</b>: your weekly unemployment log</div>
+      <div><b>did I do enough this week?</b>: your count against the minimum</div>
+      <div><b>update my profile</b>: change one Intake answer</div>
+      <div><b>show my dashboard</b>: refresh this page</div>
+    </div>
+  </details>
   <div class="foot">A snapshot of your Sheet, read-only. Nothing here changes your Sheet. Say "show my dashboard" to refresh it.</div>
 </div>
 

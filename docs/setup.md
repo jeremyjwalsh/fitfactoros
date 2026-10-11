@@ -80,6 +80,19 @@ Every job you fit factored that week shows up as a job posting you reviewed, eve
 
 **Claude never submits your certification. You do that yourself.** FitFactorOS has rules for **Massachusetts** so far. In other states you still get the log, but "Counts for unemployment" stays blank. This isn't legal advice; check your state's unemployment agency for what it requires.
 
+## Things you can say
+
+| Say this | What happens |
+|---|---|
+| **start my intake** | Builds your Profile (about 10 minutes) |
+| **update my profile** (or "change my pay floor," "add a contact") | Changes one answer |
+| **fit factor this** + a job link | Company fit, then Role fit, then you decide |
+| **go deep** | Deeper research on a job you're serious about |
+| **log this** (or "I applied to…," "I had a call with…") | Activity rows to paste |
+| **this week's work search log** | Your weekly unemployment log |
+| **did I do enough this week?** | Your count against your state's minimum |
+| **show my dashboard** (or "where do I stand?") | Your top picks, ladders, and this week, on a private page |
+
 ## Getting updates
 FitFactorOS is still being built, and the skills get improved. When there's an update:
 1. Download the new ZIP files from the `dist/` folder.
@@ -92,7 +105,7 @@ Your Sheet and your answers stay as they are. You don't need to run Intake again
 2. Select column D, click **Data → Data validation**, and add **Reviewed job posting** to the list.
 
 ## Coming in later phases
-Connecting Google Drive and Gmail (so the weekly log can read your Sheet without copying), the Job Finder, Outreach, and more. See the [Roadmap](../README.md#roadmap).
+The weekly log reading your Sheet through Google Sheets (so you don't have to copy rows), the Job Finder, Outreach, and more. See the [Roadmap](../README.md#roadmap).
 
 ## Your data
 Your answers are saved in your own Google Sheet. FitFactorOS has no server of its own and collects nothing. Your chats with Claude go through Anthropic like any Claude chat, and if Claude's memory feature is on, Claude may remember details between chats. You can control that in Claude's settings. Anthropic's privacy policy covers the rest.

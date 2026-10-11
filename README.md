@@ -140,8 +140,23 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 
 1. Create or sign in to your Claude account.
 2. Copy the Sheet template into your Google Drive.
-3. Add the FitFactorOS skills to Claude and connect Google Drive and Gmail.
+3. Add the FitFactorOS skills to Claude and connect **Google Sheets** (so Claude can read your Sheet for your dashboard).
 4. Start a new chat and say **"Start my intake."**
+
+### Things you can say
+
+Say these inside your FitFactorOS Project, one task per chat.
+
+| Say this | What happens |
+|---|---|
+| **start my intake** | Builds your Profile (about 10 minutes) |
+| **update my profile** (or "change my pay floor," "add a contact") | Changes one answer |
+| **fit factor this** + a job link | Company fit, then Role fit, then you decide |
+| **go deep** | Deeper research on a job you're serious about |
+| **log this** (or "I applied to…," "I had a call with…") | Activity rows to paste |
+| **this week's work search log** | Your weekly unemployment log |
+| **did I do enough this week?** | Your count against your state's minimum |
+| **show my dashboard** (or "where do I stand?") | Your top picks, ladders, and this week, on a private page |
 
 The [setup guide](docs/setup.md) walks through every step. Screenshots are coming after the first round of testing.
 
