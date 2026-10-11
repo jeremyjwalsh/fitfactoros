@@ -175,11 +175,10 @@ fitfactoros/
 │   ├── job-finder/
 │   ├── research/             # Quick screen rubrics, deep research checklist, Jobs row map
 │   ├── outreach/             # Warm-path ladder, two-fact rule, draft templates
+│   ├── dashboard/            # "Show my dashboard": reads your Sheet, makes a private page
 │   └── activity-log/
 │       ├── references/       # Activity row map
 │       └── states/           # One rules file per state (ma.md first) + _template.md
-├── dashboard/
-│   └── index.html            # Standalone dashboard with ladder view
 └── samples/
     ├── sample-profile.md     # Fictional job seeker
     └── fitfactoros-sample.xlsx
@@ -209,7 +208,7 @@ Each file in `agents/activity-log/states/` records one state's work-search requi
 | 3 | Activity Log (Massachusetts first, then more states) | Testing |
 | 4 | Job Finder | Planned |
 | 5 | Outreach (warm-path ladder, two-fact rule) | Planned |
-| 6 | Dashboard with per-opportunity ladders and your own warm vs cold results | Planned |
+| 6 | Dashboard with per-opportunity ladders and your own warm vs cold results | Testing |
 
 **V2 (future)**
 

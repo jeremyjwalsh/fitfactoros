@@ -21,9 +21,9 @@ Rows run across columns, so fields are separated by a **tab character**. Output 
 | M | Screen result | The **user's decision**: Pursue, Maybe, or Pass. If they skipped the question, Maybe. |
 | N | Path | One of: Warm, Cold |
 | O | Warm contact | The name exactly as in their Intake answers. Blank if Cold. |
-| P | Ladder stage | `Picked` if the user chose Pursue. `Researched` after deep research. Otherwise blank. Allowed: Picked, Researched, Found the right person, Reached out to contact, Sent a researched note, Applied, Heard back, Interviewing, Offer. |
+| P | Ladder stage | `Researched` for every screened lead: Pursue, Maybe, or Pass. A fit factor read is real research, so it earns that rung. Only use a later rung (such as `Interviewing`) when the user says that step already happened. Allowed: Picked, Researched, Found the right person, Reached out to contact, Sent a researched note, Applied, Heard back, Interviewing, Offer. |
 | Q | Next step | One short action. Pursue: "Reach out to [contact]" if Warm, or "Find the right person" if Cold. Maybe: the one question that settles it. Pass: blank. |
-| R | Next step date | Today, YYYY-MM-DD, for Pursue or Maybe. Blank for Pass. |
+| R | Next step date | YYYY-MM-DD. Pursue: today. Maybe: the date to come back to it (the user's date if they gave one, otherwise one week from today). Blank for Pass. |
 | S | Status | `Active` for Pursue or Maybe. `Passed` for Pass. |
 | T | Email link | Blank. A later agent fills this. |
 | U | Notes | "Company fit N/100. Blocker: [the blocker line]." Use "Company fit not checked" when a gate failed. After deep research, see deep-research.md. |

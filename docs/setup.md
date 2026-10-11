@@ -43,7 +43,7 @@ Anthropic's instructions: [Get started with Claude skills](https://support.claud
 
 **Permission prompts:** Claude may ask before it reads a web page, searches, or opens a job page in your browser. **Allow** those; that's the research. FitFactorOS never sends, writes, or deletes anything, so if a prompt asks to send an email or change a file, choose **Deny**.
 
-**Your Dashboard:** the first tab of your Sheet. It fills in by itself as you paste rows. Bookmark that tab to check your week at a glance.
+**Your Dashboard:** the first tab of your Sheet fills in by itself as you paste rows. For the full view (your top picks, each job's ladder, its evidence, who to write to), connect **Google Sheets** in Claude's connectors and say **show my dashboard** in your Project. Claude only reads your Sheet, never changes it, and makes a private page only you can see. Each view uses a little of your Claude plan.
 
 **Tip to save usage:** start a short new chat inside the Project for each task (one job, one log, one update). Long chats use up your Claude plan faster, because Claude re-reads everything earlier in the chat each time.
 

@@ -101,8 +101,8 @@ if tab == "jobs":
     elif v["status"] == "Active":
         if not v.get("next_step") or not v.get("next_date"):
             fail(f"{v['screen']} needs next_step and next_date")
-    if v["screen"] == "Pursue" and not v.get("ladder"):
-        fail("Pursue needs a ladder stage: Picked, or the furthest real step reached (Researched, Applied, Interviewing, ...)")
+    if not v.get("ladder"):
+        v["ladder"] = "Researched"  # every screened lead has been researched
     if not v.get("notes", "").startswith("Company fit"):
         fail("notes must start with 'Company fit'")
 else:

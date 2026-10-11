@@ -126,8 +126,9 @@ After the user answers, give the rows. **Every lead gets a Jobs row**, including
 - **Pursue:** the Jobs row and the Evidence rows. Two pastes.
 - **Never an Activity row.** The Jobs row is the record of the lead. The Activity tab is for things the user does beyond screening (applying, outreach, interviews).
 
-- **Pursue:** Screen result `Pursue`, Ladder stage `Picked`, Status `Active`.
-- **Pass:** Screen result `Pass`, Status `Passed`.
+- **Pursue:** Screen result `Pursue`, Ladder stage `Researched`, Status `Active`.
+- **Maybe:** Screen result `Maybe`, Ladder stage `Researched`, Status `Active`. Next step is the one question that would settle it; Next step date is when to come back (one week out unless the user gives a date). The dashboard shows these as **Parked**.
+- **Pass:** Screen result `Pass`, Ladder stage `Researched`, Status `Passed`.
 - **Go deeper first:** tell the user in one line that this uses noticeably more of their Claude plan (about 8–15 searches), then follow `references/deep-research.md`. It ends with the same question and then the rows.
 
 Give the paste steps word for word, then the **Jobs row** in one code block, then (Pursue only) the **Evidence rows** in a second code block. Follow `references/jobs-map.md` exactly.
