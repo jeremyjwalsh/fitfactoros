@@ -75,6 +75,14 @@ a{color:var(--accent-ink)}
 .when{display:block;font-weight:500;color:var(--faint)}
 details.say{font-size:13px;color:var(--muted)}details.say summary{cursor:pointer;font-weight:600;color:var(--fg);min-height:44px;display:flex;align-items:center}
 .saygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 24px;padding-top:4px}.saygrid b{color:var(--fg);font-weight:600}
+@media print{
+ .detail{position:static}
+ .main{grid-template-columns:1fr}
+ .filters{display:none}
+ .row,.tile,.detail,.nextbox,.ev{break-inside:avoid}
+ .clamp{display:block;-webkit-line-clamp:unset;overflow:visible}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
 .nextbox{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--line)}
 </style>
 <!-- Claude fills only this block. Everything else stays as is. -->
@@ -85,12 +93,12 @@ __DATA__
 <div class="wrap">
   <div class="head">
     <div style="display:flex;flex-direction:column;gap:6px">
-      <div class="eyebrow" id="stamp"></div>
+      <div class="eyebrow" id="stamp">__STAMP__</div>
       <h1>Your top picks</h1>
     </div>
     <div class="legend"><span class="pill V">Verified</span><span class="pill E">Estimated</span><span class="pill I">Inferred</span></div>
   </div>
-  <div class="strip" id="strip"></div>
+  <div class="strip" id="strip">__STRIP__</div>
   <div class="main">
     <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
       <div class="filters" role="group" aria-label="Filter jobs">
@@ -101,9 +109,9 @@ __DATA__
         <button type="button" id="f-pass" data-f="pass" aria-pressed="false">Passed</button>
       </div>
       <div class="cols"><span>#</span><span>COMPANY · ROLE</span><span>FIT SCORE</span><span>BIGGEST GAP</span><span>NEXT STEP</span></div>
-      <div class="list" id="list"></div>
+      <div class="list" id="list">__LIST__</div>
     </div>
-    <aside class="detail" id="detail" aria-live="polite"></aside>
+    <aside class="detail" id="detail" aria-live="polite">__DETAIL__</aside>
   </div>
   <details class="say" id="say">
     <summary>Things you can say</summary>
@@ -199,4 +207,5 @@ function render(){
 document.getElementById("stamp").textContent=`FitFactorOS · ${D.sheet||"Your Sheet"} · read ${fmt(today)}`;
 document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{filter=b.dataset.f;try{localStorage.setItem("ffos-filter",filter);}catch(e){}render();});
 strip(); render();
+window.addEventListener("beforeprint",()=>{const d=document.getElementById("say");if(d)d.open=true;});
 </script>
