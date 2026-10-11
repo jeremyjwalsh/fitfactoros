@@ -57,6 +57,8 @@ Your Profile is set. You only do this once. If something changes later, say "upd
 1. Inside your FitFactorOS Project, paste a job link and type **fit factor this**.
    - **For the best result, paste the job description too.** Many job sites (Ashby, Workday, LinkedIn) don't let Claude read the whole page. On the posting, select all, copy, and paste it **in its own message first**, then send the link with **fit factor this**. If Claude can only read part of a page, it stops and asks for the text rather than guessing.
    - Scores can move a few points between runs on the same job. The suggested call is what to go by.
+   - **Optional: Claude in Chrome.** This browser add-on lets Claude open job pages in your own Chrome, which helps on sites like Ashby and Workday. It acts in your real browser with your sign-ins, and it asks before opening a page. Skip it if you'd rather not; pasting the job description works just as well.
+   - **Keep a Fit Report:** after **Go deeper first**, if you see **Create a doc** under Claude's reply, tap it to save the report as a doc you can keep or share.
 2. Claude shows **Company fit**, then **Role fit**, the biggest blocker, and a suggested call.
 3. You decide: **Pursue**, **Pass**, or **Go deeper first**. Going deeper uses more of your Claude plan, so save it for jobs you're serious about.
 4. Claude gives you a row to paste on the **Jobs** tab. If you chose Pursue, you also get rows for the **Evidence** tab. Click the first empty cell in column A of each tab and paste. Every job gets recorded, even the ones you pass on, so you keep a dated record of your search.

@@ -53,6 +53,8 @@ If the user shares only a company name, ask which job there they mean, or offer 
 - **A partial read is not a read.** After reading a link, check you got the full posting: the duties, the must-have requirements, the location, and the end of the page (where pay usually is). If any is missing (for example, the site only gave you a summary), **stop before scoring** and say, word for word:
   > I could only read part of this posting, so a score now would be partly a guess. Please paste the full job description here in its own message (on the posting page: select all, copy, paste). Or say **go anyway** and I'll mark every gap.
 
+  If a browser tool is available in this chat (such as Claude in Chrome), add one more line: "Or say **use my browser** and I'll open the page there." Pasting the job description stays the first choice, because a browser read can still miss the bottom of the page.
+
   If the user says "go anyway," start the result with **Partial read:** and the parts you're missing, and mark each affected line "from a partial read."
 - **Pay you didn't find is not "not posted."** Many pages put pay at the very bottom or load it late. If you didn't see a pay section, write "Pay: not found in what I read," mark the pay gate **?**, and ask the user to paste the pay section from the bottom of the posting. Only write "Not posted" when you read the whole posting and it has no pay. Never tag a missing fact Verified.
 - Pasted text: use it as is. Tag facts from it as "Verified: job posting text pasted by the user, [date]." You can't confirm the posting is still open; say so once.
@@ -141,7 +143,7 @@ For Pursue, add this step:
 
 ## Leads already in the Sheet
 
-Before giving paste steps, check this chat and past chats in this Project for the same company and role. If it was screened before, reuse its Job ID (don't make a new one) and tell the user to paste over that row, never into the first empty row.
+Before giving paste steps, check this chat and past chats in this Project for the same company and role. If it was screened more than once, use the **newest** screen (its scores, call, and next step), not an earlier one. If it was screened before, reuse its Job ID (don't make a new one) and tell the user to paste over that row, never into the first empty row.
 
 If the user brings back a lead they already screened, don't research it again. Re-check only the claims dated more than 14 days ago, flag them "⚠ Older than 14 days, re-check before acting," and give updated rows for only what changed. For an updated Jobs row, tell them to click that job's cell in column A and paste over it.
 

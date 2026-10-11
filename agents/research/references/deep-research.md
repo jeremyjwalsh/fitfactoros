@@ -54,18 +54,18 @@ Group them by who can answer:
 Keep 4 questions total for a 30-minute call, most important first. Say to ask the most important one early, not at the end.
 
 ## Output: the Fit Report
-Short and plain, in this order. Tag every claim Verified, Estimated, or Inferred, with the date checked.
+Easy to read first, proof second. Short sections, plain sentences, tables only for scores. Every claim still carries a tag, but keep it light: end the line with **(V)**, **(E)**, or **(I)**. Put the key under the header once: *(V) Verified · (E) Estimated · (I) Inferred, my judgment.* Judgment calls get (I) every time, including the reasons behind a score. The full source and date for each claim go in the Evidence rows, not in the report body.
 
-1. **Header:** Company, job title, today's date. Then: "Quick read: Company N, Role N, retired."
-2. **Recommendation**, in capitals (for example, **PURSUE NOW** or **ASK FIRST: office days?**), with one sentence on why.
-3. **Confidence** and **What would change my mind**, one line each.
-4. **Scores**, three separate lines, never blended: Company fit N/100, Role fit N/100, Chance High/Medium/Low.
-5. **Material gap / blocker:** one line.
-6. **Biggest risk** found in the checks, if it's serious.
-7. **Company diligence:** one line per check, in the order of the seven checks, each ending with its tag. Name any check that couldn't be done. End with "Research checks: N of 7."
-8. **Company fit table:** factor, score, why (a few words), tag.
-9. **Role fit table:** factor, score, why (a few words), tag.
-10. **Questions to ask:** the 4 questions, grouped by who can answer.
+1. **Header:** Company, job title, today's date, "Using your Intake answers from [date]," and "Quick read: Company N, Role N, retired." Then the tag key. Then "Research checks: N of 7," naming any that came up thin.
+2. **Verdict**, in capitals (for example, **PURSUE NOW** or **PASS: HARD REQUIREMENT**), then **one plain sentence** a friend would say (for example, "Good company, wrong seat.").
+3. **⚠ The one thing to know:** a single callout for the most important finding, if there is one: a serious risk, a surprise, or a possible path in. Two or three sentences. Leave it out if nothing rises to that level.
+4. **The company:** a short paragraph (what it does, size, money, momentum), then the **leadership sequence** in one or two lines (who left, who arrived, which seats are open). One small table for funding rounds only if there's more than one round.
+5. **Scores**, one small table: Company fit N/100, Role fit N/100, Chance High/Medium/Low, each with a few words of reading. Never blended, no decimals.
+6. **Why these scores:** one line per factor that moved a score away from 5 (score, a few words why, tag). Skip factors that stayed at 5.
+7. **Material gap / blocker:** one line.
+8. **Confidence** and **What would change my mind:** one line each.
+9. **Questions to ask:** the 4 questions, grouped by who can answer.
+10. **If you want [Company] anyway:** for a Pass or Ask first only. One or two lines on the next move toward the company, not this job (for example, a different team or role the checks turned up, or the question to ask a contact there). Leave it out if there's no real move.
 
 No blended priority score and no resume score. Fit, Chance, and the resume stay separate.
 
