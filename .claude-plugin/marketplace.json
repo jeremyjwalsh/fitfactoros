@@ -1,0 +1,15 @@
+{
+  "name": "fitfactoros",
+  "description": "FitFactorOS: a free, open-source job search system for people tired of applying into the void.",
+  "owner": {
+    "name": "Jeremy Walsh",
+    "url": "https://github.com/jeremyjwalsh"
+  },
+  "plugins": [
+    {
+      "name": "fitfactoros",
+      "source": "./plugins/fitfactoros",
+      "description": "Intake, Research (\"fit factor this\"), Activity Log, and Dashboard skills for your FitFactorOS Google Sheet."
+    }
+  ]
+}
