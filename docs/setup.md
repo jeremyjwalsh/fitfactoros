@@ -5,7 +5,9 @@
 **What you'll need:** a Claude account, a Google account, and about 20 minutes.
 
 ## 1. Create or sign in to your Claude account
-Go to [claude.ai](https://claude.ai) and sign up or sign in. Skills are available on the Free, Pro, and Max plans, according to Anthropic's help center. Which plan works best for FitFactorOS is being measured during this test.
+Go to [claude.ai](https://claude.ai) and sign up or sign in.
+
+**Which plan?** Plugins, the easiest way to add FitFactorOS, need a paid plan (Pro, Max, Team, or Enterprise), according to Anthropic's help center. On the Free plan you can still add the four skills by hand (step 3, Option B), but you won't get updates automatically. Which plan works best for FitFactorOS is being measured during this test.
 
 ## 2. Turn on the settings FitFactorOS needs
 In Claude, open **Settings** and turn on:
@@ -16,7 +18,22 @@ Then, in Claude's **connectors**, connect **Google Sheets**. This lets Claude re
 
 Research also needs **web search**. In a chat, open the tools menu next to the message box and make sure **Web search** is on.
 
-## 3. Add the skills
+## 3. Add FitFactorOS to Claude
+
+**Already added the four FitFactorOS skills from ZIP files?** Remove them first, or two copies will both answer "fit factor this." In **Customize → Skills**, open each FitFactorOS skill and choose **⋮ → Delete**. Your Sheet and your Intake answers aren't affected.
+
+### Option A: add the plugin (Pro plan or above, recommended)
+1. In Claude, go to **Customize → Plugins**.
+2. Click **Add**, then **Add marketplace**.
+3. Choose **Add from a repository** and enter: `jeremyjwalsh/fitfactoros`
+4. Find **FitFactorOS** in your plugins list and click **Add**.
+5. Optional but recommended: open the FitFactorOS marketplace and turn on **Sync automatically**, so you get updates without doing anything.
+
+All four skills (Intake, Research, Activity Log, Dashboard) come in one plugin.
+
+Anthropic's instructions: [Plugins](https://claude.com/docs/plugins/overview).
+
+### Option B: add the skills by hand (Free plan, or if Option A doesn't show for you)
 1. Download all four skills (each download starts right away):
    - [fitfactoros-intake.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-intake.zip)
    - [fitfactoros-research.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-research.zip)
@@ -100,7 +117,11 @@ Every job you fit factored that week shows up as a job posting you reviewed, eve
 | **show my dashboard** (or "where do I stand?") | Your top picks, ladders, and this week, on a private page |
 
 ## Getting updates
-FitFactorOS is still being built, and the skills get improved. When there's an update:
+FitFactorOS is still being built, and the skills get improved. See [CHANGELOG.md](../CHANGELOG.md) for what changed.
+
+**If you added the plugin (Option A):** updates come to you. With **Sync automatically** on, there's nothing to do. Otherwise, go to **Customize → Plugins** and choose **Check for updates**.
+
+**If you added the skills by hand (Option B):**
 1. Download the new ZIP files using the links in step 3.
 2. In Claude, go to **Customize → Skills**, delete the old FitFactorOS skill (**⋮ → Delete**), and upload the new ZIP.
 

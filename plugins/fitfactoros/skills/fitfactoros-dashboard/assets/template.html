@@ -1,0 +1,211 @@
+<title>FitFactorOS Dashboard</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: summary strip, then ranked list beside a detail panel (from the Sept 24 mockup) */
+:root{
+  --bg:#F4F2EC; --surface:#FBFAF7; --panel:#FFFFFF; --line:#E2DED5; --fg:#1C1F23; --muted:#4F4C45; --faint:#5A5750; --track:#E4E0D6;
+  --accent:#1F5FA8; --accent-ink:#16467D; --on-accent:#FFFFFF;
+  --v-bg:#DCE8F5; --v-fg:#16467D; --e-bg:#F7E3CF; --e-fg:#8A430A; --i-bg:#E6E3DC; --i-fg:#4A4740;
+  --warm-bg:#F7E3CF; --warm-fg:#8A430A; --flag-bg:#FBE4E1; --flag-fg:#8E2A1E;
+  --display:'Fraunces',Georgia,serif; --body:'IBM Plex Sans',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#17191C; --surface:#1E2125; --panel:#23272C; --line:#353A41; --fg:#ECEAE4; --muted:#B5B1A8; --faint:#A39F96; --track:#353A41;
+  --accent:#6FA3E0; --accent-ink:#9CC2EE; --on-accent:#0E1A2A;
+  --v-bg:#1D3350; --v-fg:#B9D4F3; --e-bg:#4A3018; --e-fg:#F2C9A0; --i-bg:#33312C; --i-fg:#D3CFC6;
+  --warm-bg:#4A3018; --warm-fg:#F2C9A0; --flag-bg:#4A2320; --flag-fg:#F4B8AF; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17191C; --surface:#1E2125; --panel:#23272C; --line:#353A41; --fg:#ECEAE4; --muted:#B5B1A8; --faint:#A39F96; --track:#353A41;
+  --accent:#6FA3E0; --accent-ink:#9CC2EE; --on-accent:#0E1A2A;
+  --v-bg:#1D3350; --v-fg:#B9D4F3; --e-bg:#4A3018; --e-fg:#F2C9A0; --i-bg:#33312C; --i-fg:#D3CFC6;
+  --warm-bg:#4A3018; --warm-fg:#F2C9A0; --flag-bg:#4A2320; --flag-fg:#F4B8AF; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.45}
+.wrap{max-width:1280px;margin:0 auto;padding-inline:20px;padding-block:32px 48px;display:flex;flex-direction:column;gap:24px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;color:var(--faint);text-transform:uppercase}
+h1{margin:0;font-family:var(--display);font-size:clamp(30px,4vw,40px);font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+h2{margin:0;font-family:var(--display);font-size:26px;font-weight:600;text-wrap:balance}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+.legend{display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.V{background:var(--v-bg);color:var(--v-fg)} .E{background:var(--e-bg);color:var(--e-fg)} .I{background:var(--i-bg);color:var(--i-fg)}
+.warm{background:var(--warm-bg);color:var(--warm-fg)} .cold{background:var(--i-bg);color:var(--i-fg)} .flag{background:var(--flag-bg);color:var(--flag-fg)}
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.big{font-family:var(--mono);font-size:26px;font-variant-numeric:tabular-nums}
+.sub{font-size:13px;color:var(--muted)}
+.meter{display:flex;gap:4px;margin-top:4px}.meter span{flex:1;height:6px;border-radius:3px;background:var(--track)}.meter span.on{background:var(--accent)}
+.main{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:24px;align-items:start}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{min-height:44px;padding:0 18px;border-radius:999px;font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.cols,.row{display:grid;grid-template-columns:28px minmax(0,2.3fr) minmax(0,1.1fr) minmax(0,1.6fr) minmax(0,1.3fr);gap:16px;align-items:center}
+.cols{padding:0 16px;font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--faint)}
+.list{display:flex;flex-direction:column;gap:8px}
+.row{width:100%;min-height:68px;padding:10px 16px;box-sizing:border-box;text-align:left;border-radius:10px;background:var(--surface);border:2px solid var(--line);font:inherit;color:inherit;cursor:pointer}
+.row[aria-pressed="true"]{background:var(--panel);border-color:var(--accent)}
+.row:focus-visible,.filters button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.rank{font-family:var(--mono);color:var(--faint)}
+.co{font-weight:600}.role{font-size:13px;color:var(--muted)}
+.score{display:flex;flex-direction:column;gap:6px}
+.score .n{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:var(--track);border-radius:3px}.bar i{display:block;height:6px;border-radius:3px;background:var(--accent)}
+.gap{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.next{font-size:13px;font-weight:600;overflow-wrap:anywhere}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.detail{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:20px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px)}
+.k{font-size:13px;font-weight:600}
+.scorebig{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}.scorebig .n{font-family:var(--mono);font-size:44px}
+.ladder{display:flex;flex-direction:column;gap:2px;margin:0;padding:0;list-style:none}
+.ladder li{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--faint);padding:3px 0}
+.ladder li::before{content:"";width:10px;height:10px;border-radius:50%;border:2px solid var(--line);flex-shrink:0}
+.ladder li.done{color:var(--muted)}.ladder li.done::before{background:var(--track);border-color:var(--track)}
+.ladder li.now{color:var(--fg);font-weight:600}.ladder li.now::before{background:var(--accent);border-color:var(--accent)}
+.ev{display:flex;gap:10px;align-items:flex-start}.ev .pill{width:76px;text-align:center;flex-shrink:0;padding:3px 0}
+.ev span:last-child{font-size:13px;color:var(--muted)}
+.empty{font-size:13px;color:var(--faint)}
+.sec{display:flex;flex-direction:column;gap:10px;padding-top:16px;border-top:1px solid var(--line)}
+a{color:var(--accent-ink)}
+.foot{font-size:12px;color:var(--faint)}
+@media (max-width:900px){.main{grid-template-columns:1fr}.detail{position:static}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.cols{display:none}.row{grid-template-columns:24px minmax(0,1fr) 72px;}.row .gap,.row .next{grid-column:2 / -1}}
+</style>
+<style>
+.parked{background:var(--i-bg);color:var(--i-fg)}
+.clamp{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.when{display:block;font-weight:500;color:var(--faint)}
+details.say{font-size:13px;color:var(--muted)}details.say summary{cursor:pointer;font-weight:600;color:var(--fg);min-height:44px;display:flex;align-items:center}
+.saygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 24px;padding-top:4px}.saygrid b{color:var(--fg);font-weight:600}
+@media print{
+ .detail{position:static}
+ .main{grid-template-columns:1fr}
+ .filters{display:none}
+ .row,.tile,.detail,.nextbox,.ev{break-inside:avoid}
+ .clamp{display:block;-webkit-line-clamp:unset;overflow:visible}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.nextbox{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--line)}
+</style>
+<!-- Claude fills only this block. Everything else stays as is. -->
+<script id="ffos-data" type="application/json">
+__DATA__
+</script>
+
+<div class="wrap">
+  <div class="head">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div class="eyebrow" id="stamp">__STAMP__</div>
+      <h1>Your top picks</h1>
+    </div>
+    <div class="legend"><span class="pill V">Verified</span><span class="pill E">Estimated</span><span class="pill I">Inferred</span></div>
+  </div>
+  <div class="strip" id="strip">__STRIP__</div>
+  <div class="main">
+    <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+      <div class="filters" role="group" aria-label="Filter jobs">
+        <button type="button" id="f-open" data-f="open" aria-pressed="true">Open</button>
+        <button type="button" id="f-pursue" data-f="pursue" aria-pressed="false">Pursuing</button>
+        <button type="button" id="f-parked" data-f="parked" aria-pressed="false">Parked</button>
+        <button type="button" id="f-warm" data-f="warm" aria-pressed="false">Warm path</button>
+        <button type="button" id="f-pass" data-f="pass" aria-pressed="false">Passed</button>
+      </div>
+      <div class="cols"><span>#</span><span>COMPANY · ROLE</span><span>FIT SCORE</span><span>BIGGEST GAP</span><span>NEXT STEP</span></div>
+      <div class="list" id="list">__LIST__</div>
+    </div>
+    <aside class="detail" id="detail" aria-live="polite">__DETAIL__</aside>
+  </div>
+  <details class="say" id="say">
+    <summary>Things you can say</summary>
+    <div class="saygrid">
+      <div><b>fit factor this</b> + a job link: score a new job</div>
+      <div><b>go deep</b>: deeper research on a job you're serious about</div>
+      <div><b>log this</b>: "I applied to…", "I had a call with…"</div>
+      <div><b>this week's work search log</b>: your weekly unemployment log</div>
+      <div><b>did I do enough this week?</b>: your count against the minimum</div>
+      <div><b>update my profile</b>: change one Intake answer</div>
+      <div><b>show my dashboard</b>: refresh this page</div>
+    </div>
+  </details>
+  <div class="foot">A snapshot of your Sheet, read-only. Nothing here changes your Sheet. Say "show my dashboard" to refresh it.</div>
+</div>
+
+<script>
+const RUNGS=["Picked","Researched","Found the right person","Reached out to contact","Sent a researched note","Applied","Heard back","Interviewing","Offer"];
+const TAGS={V:"Verified",E:"Estimated",I:"Inferred"};
+let D={jobs:[],activities:[]};
+try{D=Object.assign(D,JSON.parse(document.getElementById("ffos-data").textContent));}catch(e){}
+const JOBS=(D.jobs||[]).slice();
+const ORDER={Pursue:0,Maybe:1,Pass:2};
+JOBS.sort((a,b)=>(ORDER[a.call]??1)-(ORDER[b.call]??1)||(b.fit||0)-(a.fit||0));
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const day=s=>{const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(s||"");return m?new Date(+m[1],m[2]-1,+m[3]):null;};
+const fmt=d=>d.toLocaleDateString("en-US",{month:"short",day:"numeric"});
+const today=day(D.readAt)||new Date(); today.setHours(0,0,0,0);
+const ws=new Date(today); ws.setDate(today.getDate()-today.getDay());
+const we=new Date(ws); we.setDate(ws.getDate()+6);
+const inWeek=s=>{const d=day(s);return d&&d>=ws&&d<=we;};
+const callPill=c=>c==="Pursue"?"V":c==="Maybe"?"parked":"I";
+const callLabel=c=>c==="Maybe"?"Parked":c;
+let filter="open", picked=JOBS[0]&&JOBS[0].id;
+try{const s=localStorage.getItem("ffos-filter");if(s)filter=s;}catch(e){}
+
+function strip(){
+  const acts=D.activities||[];
+  const counted=acts.filter(a=>inWeek(a.date)&&a.counts==="Yes").length;
+  const screened=JOBS.filter(j=>inWeek(j.date)).length;
+  const warm=JOBS.filter(j=>j.path==="Warm"), cold=JOBS.filter(j=>j.path!=="Warm");
+  const far=l=>l.filter(j=>RUNGS.indexOf(j.stage)>=RUNGS.indexOf("Interviewing")).length;
+  const last=acts.filter(a=>a.date).sort((a,b)=>a.date<b.date?1:-1)[0];
+  const min=+D.weeklyMin||0;
+  const meter=min?`<div class="meter" aria-hidden="true">${Array.from({length:min},(_,i)=>`<span class="${i<counted?"on":""}"></span>`).join("")}</div>`:"";
+  document.getElementById("strip").innerHTML=`
+   <div class="tile"><div class="eyebrow">This week · ${fmt(ws)}–${fmt(we)}</div><div class="big">${counted}${min?" of "+min:""}</div><div class="sub">Activities logged that count for unemployment</div>${meter}</div>
+   <div class="tile"><div class="eyebrow">Screened this week</div><div class="big">${screened}</div><div class="sub">Jobs you fit factored, Passes included</div></div>
+   <div class="tile"><div class="eyebrow">Warm vs cold</div><div class="big">${warm.length} · ${cold.length}</div><div class="sub">Reached Interviewing: warm ${far(warm)}, cold ${far(cold)}</div></div>
+   <div class="tile"><div class="eyebrow">Last step taken</div><div class="big" style="font-size:18px;font-family:var(--body);font-weight:600">${last?esc(last.type+(last.co?", "+last.co:"")):"Nothing logged yet"}</div><div class="sub">${last?esc(fmt(day(last.date))+(last.result?" · "+last.result:"")):"Say “log this” after your next step"}</div></div>`;
+}
+function shown(){return JOBS.filter(j=>filter==="pass"?j.call==="Pass":filter==="pursue"?j.call==="Pursue":filter==="parked"?j.call==="Maybe":filter==="warm"?j.path==="Warm":j.call!=="Pass");}
+function nextCell(j){
+  if(j.call==="Pass")return '<span style="color:var(--faint);font-weight:500">Passed</span>';
+  if(!j.next)return '<span style="color:var(--flag-fg)">No next step set</span>';
+  const d=day(j.nextDate), due=d&&d<=today;
+  const when=j.call==="Maybe"&&d?`<span class="when">${due?"Revisit now":"Revisit "+fmt(d)}</span>`:"";
+  return `<span class="clamp">${esc(j.next)}</span>`+when;
+}
+function render(){
+  document.querySelectorAll(".filters button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.f===filter)));
+  const list=shown(); if(!list.find(j=>j.id===picked)&&list.length)picked=list[0].id;
+  document.getElementById("list").innerHTML=list.map((j,i)=>`
+   <button type="button" class="row" id="row-${esc(j.id)}" data-id="${esc(j.id)}" aria-pressed="${j.id===picked}">
+    <span class="rank">${i+1}</span>
+    <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span class="co">${esc(j.co)}</span><span class="role">${esc(j.role)}</span>
+     <span class="chips"><span class="pill ${callPill(j.call)}">${callLabel(j.call)}</span><span class="pill ${j.path==="Warm"?"warm":"cold"}">${j.path==="Warm"?"Warm":"Cold"}${j.contact?" · "+esc(j.contact):""}</span>${j.flag?'<span class="pill flag">Fix in Sheet</span>':""}</span></span>
+    <span class="score"><span class="n">${j.fit??"–"}</span><span class="bar"><i style="width:${+j.fit||0}%"></i></span></span>
+    <span class="gap"><span class="clamp">${esc(j.gap)}</span></span>
+    <span class="next">${nextCell(j)}</span>
+   </button>`).join("")||'<p class="empty">No jobs here yet. Say “fit factor this” with a job link to add one.</p>';
+  document.querySelectorAll(".row").forEach(r=>r.onclick=()=>{picked=r.dataset.id;render();});
+  const s=JOBS.find(j=>j.id===picked);
+  const det=document.getElementById("detail");
+  if(!s){det.innerHTML='<div class="eyebrow">Selected</div><p class="empty">Pick a job to see its ladder, evidence and who to write to.</p>';return;}
+  const idx=RUNGS.indexOf(s.stage);
+  det.innerHTML=`
+   <div style="display:flex;flex-direction:column;gap:4px"><div class="eyebrow">Selected</div><h2>${esc(s.co)}</h2><div class="sub">${esc(s.role)}${s.loc?" · "+esc(s.loc):""}</div></div>
+   <div class="scorebig"><span class="n">${s.fit??"–"}</span><span class="pill ${callPill(s.call)}">${callLabel(s.call)}</span>${s.cfit!=null?`<span class="sub">Company fit ${s.cfit}</span>`:""}</div>
+   ${s.call!=="Pass"?`<div class="nextbox"><div class="k">Next step</div>${s.next?`<div>${esc(s.next)}</div>`:'<div class="empty">No next step set. Add one in the Jobs row (column Q).</div>'}${day(s.nextDate)?`<span class="when">${s.call==="Maybe"?(day(s.nextDate)<=today?"Revisit now":"Revisit "+fmt(day(s.nextDate))):"By "+fmt(day(s.nextDate))}</span>`:""}</div>`:""}
+   <div style="display:flex;flex-direction:column;gap:8px"><div class="k">Biggest gap</div><div class="sub">${esc(s.gap||"None noted")}</div>${s.pay?`<div class="sub">Pay: ${esc(s.pay)}</div>`:""}
+    ${s.flag?`<div><span class="pill flag">${esc(s.flag)}</span></div>`:""}</div>
+   <div style="display:flex;flex-direction:column;gap:8px"><div class="k">Where it is on the ladder</div>
+    ${idx<0?'<div class="empty">No rung set in your Sheet yet. Add a Ladder stage to the Jobs row.</div>':""}
+    <ol class="ladder">${RUNGS.map((r,i)=>`<li class="${i===idx?"now":i<idx?"done":""}">${r}</li>`).join("")}</ol></div>
+   <div class="sec"><div class="k">What we know</div>
+    ${s.ev&&s.ev.length?s.ev.map(e=>`<div class="ev"><span class="pill ${esc(e[0])}">${TAGS[e[0]]||"Inferred"}</span><span>${esc(e[1])}</span></div>`).join(""):'<div class="empty">No Evidence rows yet. A Maybe gets a Jobs row only; Evidence comes with a Pursue or a deep read.</div>'}
+    ${s.log?`<div class="sub">Logged: ${esc(s.log)}</div>`:""}</div>
+   <div class="sec"><div class="k">Who to write to</div>
+    <div>${s.contact?esc(s.contact)+" (warm path)":'<span class="empty">No warm contact yet. Cold path.</span>'}</div>
+    ${/^https?:\/\//.test(s.link||"")?`<a href="${esc(s.link)}" target="_blank" rel="noopener">Open the job posting</a>`:""}</div>`;
+}
+document.getElementById("stamp").textContent=`FitFactorOS · ${D.sheet||"Your Sheet"} · read ${fmt(today)}`;
+document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{filter=b.dataset.f;try{localStorage.setItem("ffos-filter",filter);}catch(e){}render();});
+strip(); render();
+window.addEventListener("beforeprint",()=>{const d=document.getElementById("say");if(d)d.open=true;});
+</script>

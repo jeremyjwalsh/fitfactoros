@@ -137,12 +137,14 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 
 ## Getting started
 
-**What you'll need:** a Claude account (plan details in the [setup guide](docs/setup.md)), a Google account, and about 20 minutes.
+**What you'll need:** a paid Claude plan (Pro or above) for the easiest setup, a Google account, and about 20 minutes. On the Free plan you can still add the skills by hand; the [setup guide](docs/setup.md) covers both.
 
 1. Create or sign in to your Claude account.
 2. Copy the Sheet template into your Google Drive.
-3. Add the FitFactorOS skills to Claude and connect **Google Sheets** (so Claude can read your Sheet for your dashboard).
+3. Add FitFactorOS to Claude: in **Customize → Plugins**, choose **Add → Add marketplace** and enter `jeremyjwalsh/fitfactoros`, then add the **FitFactorOS** plugin. Connect **Google Sheets** too, so Claude can read your Sheet for your dashboard.
 4. Create a Project called **FitFactorOS**, start a new chat inside it, and say **"Start my intake."**
+
+Adding FitFactorOS as a plugin means you get updates without reinstalling anything.
 
 ### Things you can say
 
@@ -170,39 +172,43 @@ Folders marked *(planned)* arrive as each phase ships.
 ```
 fitfactoros/
 ├── README.md
+├── CHANGELOG.md              # What changed in each release
 ├── LICENSE
 ├── CONTRIBUTING.md
-├── dist/                     # Ready-to-upload skills (one ZIP each)
+├── .claude-plugin/
+│   └── marketplace.json      # Lets Claude add this repo as a plugin marketplace
+├── plugins/
+│   └── fitfactoros/          # The FitFactorOS plugin
+│       ├── .claude-plugin/
+│       │   └── plugin.json
+│       └── skills/
+│           ├── fitfactoros-intake/
+│           ├── fitfactoros-research/      # Quick screen rubrics, deep research checklist, Jobs row map
+│           ├── fitfactoros-activity-log/
+│           │   ├── references/            # Activity row map
+│           │   └── states/                # One rules file per state (ma.md first) + _template.md
+│           └── fitfactoros-dashboard/     # "Show my dashboard": reads your Sheet, makes a private page
+├── dist/                     # The same skills as ZIPs, for the Free plan
 │   ├── fitfactoros-intake.zip
 │   ├── fitfactoros-research.zip
 │   ├── fitfactoros-activity-log.zip
 │   └── fitfactoros-dashboard.zip
 ├── docs/
 │   ├── setup.md              # Step-by-step setup for non-technical users
-│   └── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
+│   ├── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
+│   └── guardrails.md         # Rules every agent follows: humans send, tag claims, no fake rungs
 ├── sheet/
 │   └── fitfactoros-template.xlsx   # Import into Google Sheets
-├── agents/
-│   ├── shared/
-│   │   └── guardrails.md     # Rules every agent follows: humans send, tag claims, no fake rungs
-│   ├── intake/
-│   ├── research/             # Quick screen rubrics, deep research checklist, Jobs row map
-│   ├── activity-log/
-│   │   ├── references/       # Activity row map
-│   │   └── states/           # One rules file per state (ma.md first) + _template.md
-│   ├── dashboard/            # "Show my dashboard": reads your Sheet, makes a private page
-│   ├── job-finder/           # (planned)
-│   └── outreach/             # (planned) Warm-path ladder, two-fact rule, draft templates
 └── samples/
     ├── sample-profile.md     # Fictional job seeker
     └── fitfactoros-sample.xlsx
 ```
 
-Each agent folder contains a `SKILL.md` (the agent's instructions) and a `references/` folder for the rubrics, checklists, and templates it reads.
+Each skill folder contains a `SKILL.md` (the agent's instructions) and a `references/` folder for the rubrics, checklists, and templates it reads. Job Finder and Outreach get their own skill folders when they ship.
 
 ### State rules for the Activity Log
 
-Each file in `agents/activity-log/states/` records one state's work-search requirements: minimum activities per week, how the benefit week is defined, the state portal, required fields for each activity, how long records must be kept, which activity types count, a link to the official source for every rule, and the date the rules were last checked. The agent warns you if a state's rules haven't been checked in over 90 days.
+Each file in `plugins/fitfactoros/skills/fitfactoros-activity-log/states/` records one state's work-search requirements: minimum activities per week, how the benefit week is defined, the state portal, required fields for each activity, how long records must be kept, which activity types count, a link to the official source for every rule, and the date the rules were last checked. The agent warns you if a state's rules haven't been checked in over 90 days.
 
 "Counts for unemployment" stays blank unless the state file backs it up with an official source. States without a file still get a weekly log; it just doesn't mark anything as counting.
 
@@ -220,7 +226,7 @@ Each file in `agents/activity-log/states/` records one state's work-search requi
 | 1 | Sheet template + Intake agent | Testing |
 | 2 | Research: quick screen, deep research on request, Jobs and Evidence rows | Testing |
 | 3 | Activity Log (Massachusetts first, then more states) | Testing |
-| 4 | Job Finder | Planned |
+| 4 | Job Finder: a short list picked for you, and you can still bring your own leads (a job someone suggested, or one you found) | Planned |
 | 5 | Outreach (warm-path ladder, two-fact rule) | Planned |
 | 6 | Dashboard with per-opportunity ladders and your own warm vs cold results | Testing |
 
@@ -229,6 +235,8 @@ Each file in `agents/activity-log/states/` records one state's work-search requi
 - **Interview Prep**: research on each person you'll meet, voice mock interviews, and a debrief after every round that feeds prep for the next one.
 - **Materials**: help tailoring your resume and cover letter to a specific role, reviewing your version rather than replacing it.
 - **Follow-up**: reminders and drafts for thank-you notes and check-ins, timed to your ladder.
+- **Negotiation**: compare offers side by side against the pay floor and deal-breakers from your Intake.
+- **Close the loop**: wrap up your search. Thank the people who helped, close out open applications, and see your own warm-path vs cold-path results.
 - **Momentum check-in**: a short weekly check-in that shows your real progress and offers encouragement. It is not therapy; it points to real support when that's what you need.
 
 ---
@@ -273,6 +281,14 @@ Contributions are welcome, especially **state rules files** for the Activity Log
 
 Not technical? You can still help. Share feedback through the [feedback form](https://forms.gle/JAvtLkWR3unQQZQ77). No GitHub account needed.
 
+## Feedback and support
+
+FitFactorOS is built and maintained by one person, on a best-effort basis. Questions, bugs, and ideas all go through the [feedback form](https://forms.gle/JAvtLkWR3unQQZQ77). I read every response, but I can't promise a reply or a fix by any date.
+
+FitFactorOS is a free tool. It is not a promise of support, and it is not a promise of a job. It helps you spend your effort where it counts; the search, and every decision in it, stays yours.
+
+See [CHANGELOG.md](CHANGELOG.md) for what changed in each update.
+
 ## License
 
 [MIT](LICENSE)
@@ -280,3 +296,5 @@ Not technical? You can still help. Share feedback through the [feedback form](ht
 ## About
 
 Built by [Jeremy Walsh](https://github.com/jeremyjwalsh).
+
+Thank you to [JobFinderOS](https://github.com/matthewprice/JobFinderOS) by Matt Price, which showed what an open-source, agent-based job search could look like and inspired this project.
