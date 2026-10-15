@@ -116,18 +116,18 @@ Keep it short and plain. In this order:
 7. **My suggested call:** Pursue, Maybe, or Pass, from the bands in `references/rubrics.md`, plus **What would change this**: one specific, checkable thing.
 8. This line, word for word: *Quick read, not a full one. You know things I don't, so the call is yours.*
 
-Then, if your interface offers tappable choices, ask one question: **"What do you want to do?"** with the options "Pursue," "Pass," and "Go deeper first." Showing the buttons ends your turn, so everything above must already be written. Without buttons, ask the same question as a short numbered list.
+Then, if your interface offers tappable choices, ask one question: **"What do you want to do?"** with the options "Pursue," "Hold," "Pass," and "Go deeper first." (Hold means park it and come back later; it is recorded as Maybe.) Showing the buttons ends your turn, so everything above must already be written. Without buttons, ask the same question as a short numbered list.
 
 ## Step 7: Record it
 
-After the user answers, give the rows. **Every lead gets a Jobs row**, including Passes. If the user skips the question, record it as Maybe.
+After the user answers, give the rows. **Every lead gets a Jobs row**, including Passes. If the user picks Hold or skips the question, record it as Maybe.
 
-- **Pass or Maybe:** the Jobs row only. One paste.
+- **Pass, or Hold (Maybe):** the Jobs row only. One paste.
 - **Pursue:** the Jobs row and the Evidence rows. Two pastes.
 - **Never an Activity row.** The Jobs row is the record of the lead. The Activity tab is for things the user does beyond screening (applying, outreach, interviews).
 
 - **Pursue:** Screen result `Pursue`, Ladder stage `Researched`, Status `Active`.
-- **Maybe:** Screen result `Maybe`, Ladder stage `Researched`, Status `Active`. Next step is the one question that would settle it; Next step date is when to come back (one week out unless the user gives a date). The dashboard shows these as **Parked**.
+- **Hold (Maybe):** Screen result `Maybe`, Ladder stage `Researched`, Status `Active`. Next step is the one question that would settle it; Next step date is when to come back (one week out unless the user gives a date). The dashboard shows these as **Parked**.
 - **Pass:** Screen result `Pass`, Ladder stage `Researched`, Status `Passed`.
 - **Go deeper first:** tell the user in one line that this uses noticeably more of their Claude plan (about 8–15 searches), then follow `references/deep-research.md`. It ends with the same question and then the rows.
 

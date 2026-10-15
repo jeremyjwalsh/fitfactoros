@@ -87,7 +87,7 @@ Your Profile is set. You only do this once. If something changes later, say "upd
    - **Optional: Claude in Chrome.** This browser add-on lets Claude open job pages in your own Chrome, which helps on sites like Ashby and Workday. It acts in your real browser with your sign-ins, and it asks before opening a page. Skip it if you'd rather not; pasting the job description works just as well.
    - **Keep a Fit Report:** after **Go deeper first**, if you see **Create a doc** under Claude's reply, tap it to save the report as a doc you can keep or share.
 2. Claude shows **Company fit**, then **Role fit**, the biggest blocker, and a suggested call.
-3. You decide: **Pursue**, **Pass**, or **Go deeper first**. Going deeper uses more of your Claude plan, so save it for jobs you're serious about.
+3. You decide: **Pursue**, **Hold** (park it and come back in a week), **Pass**, or **Go deeper first**. Going deeper uses more of your Claude plan, so save it for jobs you're serious about.
 4. Claude gives you a row to paste on the **Jobs** tab. If you chose Pursue, you also get rows for the **Evidence** tab. Click the first empty cell in column A of each tab and paste. Every job gets recorded, even the ones you pass on, so you keep a dated record of your search.
 
 If Claude says it doesn't have your answers, check that you're inside your FitFactorOS Project and that the memory settings in step 2 are on.

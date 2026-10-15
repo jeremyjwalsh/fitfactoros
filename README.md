@@ -10,6 +10,50 @@ It is free, open source, and built for people who don't think of themselves as t
 
 ---
 
+## A note from Jeremy
+
+First off, welcome! And thank you for giving FitFactorOS a try.
+
+I built this because, well, I needed it.
+
+After spending much of my career helping companies and people get more out of technology, I found myself on the other side of the table: looking for my next opportunity. And let me tell you, the job search process can be brutal.
+
+Apply. Wait. Hear nothing. Repeat.
+
+Somewhere along the way, I started wondering if there was a better way. Instead of applying to more jobs, what if we focused on finding the right jobs? What if we used AI to do the heavy lifting on research, find real human connections, and help us recognize progress even when the inbox is painfully quiet?
+
+That's how FitFactorOS started.
+
+I'm not a software developer by trade, and this is my first open-source project. It's a work in progress, built with AI, curiosity, and probably more coffee than I'd care to admit. There will be bumps along the way. If you find one, please [tell me](https://forms.gle/JAvtLkWR3unQQZQ77). If you have an idea to make it better, I'd love to hear it.
+
+FitFactorOS is free because I believe a good tool should be available to anyone trying to get back on their feet. If it helps you find your next opportunity, wonderful. If you share it with someone else who needs it, even better.
+
+One last thing: AI can help with the research, but you're still in the driver's seat. You decide what matters, who to contact, and when to hit Send.
+
+Be kind to yourself during the process. The job search doesn't define your worth, and even a small step forward is still a step.
+
+Thanks for being here. Now, let's find you something worth pursuing.
+
+Jeremy
+
+*P.S. If this thing ever makes you laugh, gives you a little confidence, or saves you from applying to a job you would've hated, I'd call that a pretty good day.*
+
+---
+
+## What to expect
+
+1. **Set up once (about 20 minutes).** Add FitFactorOS to Claude, copy the Sheet template into your Google Drive, and answer the Intake questions. Every question can be skipped.
+2. **Bring a job.** A link a friend sent you, or one you found yourself. Paste it (and the job description, for the best result) and say **"fit factor this."**
+3. **Get a quick read.** Company fit, then Role fit, the biggest blocker, and a suggested call. Every claim is tagged Verified, Estimated, or Inferred.
+4. **You decide.** **Pursue**, **Hold** (park it and come back in a week), **Pass**, or **Go deeper first**: a fuller look at the company (leadership changes, funding, market position, competitors) and then the role. Going deeper uses more of your Claude plan, so save it for jobs you're serious about.
+5. **Keep the record.** Claude gives you a row to paste into your Sheet. Every job you look at gets recorded, even the ones you pass on.
+6. **Log what you do.** Say "I applied to…" or "I had a call with…" to log it. If you're collecting unemployment, say "this week's work search log" for your weekly log.
+7. **See where you stand.** Say **"show my dashboard"** for your top picks, each job's next step, and your progress this week.
+
+Coming next: a morning email with your one next move, and Claude adding rows to your Sheet for you instead of you pasting them. See the [Roadmap](#roadmap).
+
+---
+
 ## Why this exists
 
 ### The fear: the black hole and the doom loop
@@ -235,6 +279,8 @@ Each file in `plugins/fitfactoros/skills/fitfactoros-activity-log/states/` recor
 - **Interview Prep**: research on each person you'll meet, voice mock interviews, and a debrief after every round that feeds prep for the next one.
 - **Materials**: help tailoring your resume and cover letter to a specific role, reviewing your version rather than replacing it.
 - **Follow-up**: reminders and drafts for thank-you notes and check-ins, timed to your ladder.
+- **Morning email**: an opt-in email draft each weekday with your one next move, jobs to revisit, and new leads worth a look. It's a draft to yourself; nothing is sent for you.
+- **No more copy and paste**: Claude adds rows to your Sheet for you, after you OK them, instead of you pasting each one.
 - **Negotiation**: compare offers side by side against the pay floor and deal-breakers from your Intake.
 - **Close the loop**: wrap up your search. Thank the people who helped, close out open applications, and see your own warm-path vs cold-path results.
 - **Momentum check-in**: a short weekly check-in that shows your real progress and offers encouragement. It is not therapy; it points to real support when that's what you need.

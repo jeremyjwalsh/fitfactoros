@@ -2,6 +2,12 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-15 (afternoon)
+
+- README: new **A note from Jeremy** and **What to expect** sections near the top. Roadmap adds the morning email and "no more copy and paste."
+- Research: a new **Hold** choice next to Pursue, Pass, and Go deeper first. Hold parks the job (recorded as Maybe) with a revisit date a week out.
+- Intake: opens with a short thank-you.
+
 ## 2026-10-15
 
 ### Setup clarifications (same day)

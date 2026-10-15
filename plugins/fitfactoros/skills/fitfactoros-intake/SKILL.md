@@ -31,7 +31,9 @@ If there are no tappable choices, ask the same questions as short numbered lists
 ## The conversation (5 turns)
 
 ### Turn 1: Welcome, Sheet check, Gmail, and resume
-In 3 sentences or fewer: this takes about 10 minutes; every question can be skipped; you won't send or submit anything, and the answers end up in their own Sheet.
+Start with this line, word for word: *Thanks for giving FitFactorOS a try. I built it for people in the middle of a job search, and I'm rooting for you. — Jeremy*
+
+Then, in 3 sentences or fewer: this takes about 10 minutes; every question can be skipped; you won't send or submit anything, and the answers end up in their own Sheet.
 
 Then add this line word for word: *Tip: run this inside your FitFactorOS Project in Claude, so I can use your answers every time you ask me to fit factor a job.*
 
