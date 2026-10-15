@@ -1,0 +1,13 @@
+{
+  "name": "fitfactoros",
+  "displayName": "FitFactorOS",
+  "description": "A job search system for people who are tired of applying into the void. Fewer, better-fit roles, a real person attached before you apply, and every step visible. You send everything yourself.",
+  "author": {
+    "name": "Jeremy Walsh",
+    "url": "https://github.com/jeremyjwalsh"
+  },
+  "homepage": "https://github.com/jeremyjwalsh/fitfactoros",
+  "repository": "https://github.com/jeremyjwalsh/fitfactoros",
+  "license": "MIT",
+  "keywords": ["job search", "careers", "unemployment", "google sheets"]
+}
