@@ -144,7 +144,7 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 3. Add FitFactorOS to Claude: in **Customize → Plugins**, choose **Add → Add marketplace** and enter `jeremyjwalsh/fitfactoros`, then add the **FitFactorOS** plugin. Connect **Google Sheets** too, so Claude can read your Sheet for your dashboard.
 4. Create a Project called **FitFactorOS**, start a new chat inside it, and say **"Start my intake."**
 
-Adding FitFactorOS as a plugin means you get updates without reinstalling anything.
+Adding FitFactorOS as a plugin means updates take one click (**Check for updates**), with no reinstalling. Skip the "Try in chat" button: always use FitFactorOS from a new chat inside your FitFactorOS Project.
 
 ### Things you can say
 

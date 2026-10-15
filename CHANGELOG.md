@@ -4,6 +4,11 @@ What changed in each FitFactorOS update, newest first. Your Sheet and your Intak
 
 ## 2026-10-15
 
+### Setup clarifications (same day)
+- Setup guide: clearer plugin steps (where the **+** is, how to check it installed), how to **Check for updates**, and why to skip "Try in chat."
+- **Sync automatically** is optional: it needs a GitHub account and access for Claude's GitHub app. Everyone else uses **Check for updates**.
+- The old `agents/` folder was removed. Everything in it now lives in `plugins/fitfactoros/skills/`.
+
 ### New way to install: plugin marketplace
 - FitFactorOS is now a Claude plugin. On a Pro plan or above, add it once in **Customize → Plugins → Add → Add marketplace** with `jeremyjwalsh/fitfactoros`, and updates reach you without reinstalling. See the [setup guide](docs/setup.md), step 3.
 - The four skill ZIPs in `dist/` are still here for the Free plan, built from the same files as the plugin.

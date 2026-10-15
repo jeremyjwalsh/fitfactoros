@@ -24,10 +24,12 @@ Research also needs **web search**. In a chat, open the tools menu next to the m
 
 ### Option A: add the plugin (Pro plan or above, recommended)
 1. In Claude, go to **Customize → Plugins**.
-2. Click **Add**, then **Add marketplace**.
-3. Choose **Add from a repository** and enter: `jeremyjwalsh/fitfactoros`
-4. Find **FitFactorOS** in your plugins list and click **Add**.
-5. Optional but recommended: open the FitFactorOS marketplace and turn on **Sync automatically**, so you get updates without doing anything.
+2. Click **Add** (top right), then **Add marketplace**.
+3. Enter `jeremyjwalsh/fitfactoros`. Leave **Sync automatically** off unless you have a GitHub account (see "Getting updates" below). Click **Sync**.
+4. Click **Discover**. Find the **FitFactorOS** card (it may be partway down the page, under "New plugins") and click its **+**.
+5. Click **Yours**. FitFactorOS should be listed under "From marketplaces you added." If it isn't, it isn't installed yet: go back to step 4.
+
+**Skip "Try in chat."** It opens a chat outside your FitFactorOS Project, where Claude can't find your Intake answers. Always use FitFactorOS from a new chat inside your Project (see "5. Create your FitFactorOS Project" below).
 
 All four skills (Intake, Research, Activity Log, Dashboard) come in one plugin.
 
@@ -119,7 +121,12 @@ Every job you fit factored that week shows up as a job posting you reviewed, eve
 ## Getting updates
 FitFactorOS is still being built, and the skills get improved. See [CHANGELOG.md](../CHANGELOG.md) for what changed.
 
-**If you added the plugin (Option A):** updates come to you. With **Sync automatically** on, there's nothing to do. Otherwise, go to **Customize → Plugins** and choose **Check for updates**.
+**If you added the plugin (Option A):**
+1. Go to **Customize → Plugins**, click **Add**, then **Manage marketplaces**.
+2. Click the **⋮** next to **fitfactoros**, then **Check for updates**.
+3. Start a new chat in your Project to use the new version. Chats you already had open may keep the old one.
+
+The "Synced commit" code under fitfactoros shows which version you have. If you have a GitHub account, you can turn on **Sync automatically** in that same menu so updates arrive on their own. Claude will ask you to give its GitHub app access to the FitFactorOS repository first.
 
 **If you added the skills by hand (Option B):**
 1. Download the new ZIP files using the links in step 3.
