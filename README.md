@@ -183,13 +183,13 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 
 ## Getting started
 
-**What you'll need:** a paid Claude plan (Pro or above) for the easiest setup, a Google account, and about 20 minutes. On the Free plan you can still add the skills by hand; the [setup guide](docs/setup.md) covers both.
+**What you'll need:** a Claude account, a Google account, and about 20 minutes. FitFactorOS works on the Free plan; a paid plan (Pro or above) adds one-click install and updates and the scheduled morning email. The [setup guide](docs/setup.md) compares the two and covers both.
 
 **Built for Claude.** FitFactorOS is built and tested on Claude. The skills use the open SKILL.md format, so parts of it may work in other AI tools (ChatGPT, for example), but that hasn't been tested. The one-click install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
 
 1. Create or sign in to your Claude account.
 2. Download the Sheet template and save it as a Google Sheet in your Drive (the [setup guide](docs/setup.md) shows how).
-3. Add FitFactorOS to Claude: in **Customize → Plugins**, choose **Add → Add marketplace** and enter `jeremyjwalsh/fitfactoros`, then add the **FitFactorOS** plugin. Connect **Google Sheets** too, so Claude can read your Sheet for your dashboard.
+3. Add FitFactorOS to Claude: in **Customize → Plugins**, choose **Add → Add marketplace** and enter `jeremyjwalsh/fitfactoros`, then add the **FitFactorOS** plugin. **On the Free plan,** upload the five skills by hand instead ([setup guide, step 3, Option B](docs/setup.md#option-b-add-the-skills-by-hand-free-plan-or-if-option-a-doesnt-show-for-you)). Connect **Google Sheets** too, so Claude can read your Sheet for your dashboard.
 4. Create a Project called **FitFactorOS**, start a new chat inside it, and say **"Start my intake."**
 
 Adding FitFactorOS as a plugin means updates take one click (**Check for updates**), with no reinstalling. Skip the "Try in chat" button: always use FitFactorOS from a new chat inside your FitFactorOS Project.

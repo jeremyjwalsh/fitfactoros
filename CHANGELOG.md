@@ -2,6 +2,11 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-16 (evening)
+
+### Docs
+- **Free plan, made clearer.** The setup guide now has a Free vs paid table: what works on each, how updates work, and tips to make Free plan usage go further. The README's Getting started now gives the Free plan path in step 3 instead of only the plugin.
+
 ## 2026-10-16 (later)
 
 ### Activity Log

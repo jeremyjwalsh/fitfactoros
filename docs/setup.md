@@ -9,7 +9,22 @@
 ## 1. Create or sign in to your Claude account
 Go to [claude.ai](https://claude.ai) and sign up or sign in.
 
-**Which plan?** Plugins, the easiest way to add FitFactorOS, need a paid plan (Pro, Max, Team, or Enterprise), according to Anthropic's help center. On the Free plan you can still add the five skills by hand (step 3, Option B), but you won't get updates automatically. Which plan works best for FitFactorOS is being measured during this test.
+**Which plan?** FitFactorOS works on the Free plan. A paid plan (Pro, Max, Team, or Enterprise) makes setup and updates easier and adds the scheduled morning email.
+
+| | Free plan | Paid plan (Pro or above) |
+|---|---|---|
+| Add FitFactorOS | Upload the five skills by hand (step 3, Option B) | One-click plugin (step 3, Option A) |
+| Get updates | Delete the old skills and upload the new ZIPs (see "Getting updates") | One click: **Check for updates** |
+| Intake, fit factor this, log this, check my week, dashboard | Yes | Yes |
+| Morning email | Yes, when you say **morning email** | Yes, and it can arrive on its own every weekday |
+| Usage limits | Lower. Research is the heaviest step, so you may hit a limit partway through. | Higher |
+
+Plugins and scheduled tasks need a paid plan, according to Anthropic's help center. Which plan works best for FitFactorOS is being measured during this test.
+
+**On the Free plan, to make your usage go further:**
+- Start a new chat in your Project for each task, so each chat stays short.
+- Let the quick fit read finish before saying **go deep**, and go deep only on jobs you're serious about.
+- If you hit a limit, Claude tells you when you can continue. Come back to the same chat and say **keep going**.
 
 ## 2. Turn on the settings FitFactorOS needs
 In Claude, open **Settings** and turn on:
