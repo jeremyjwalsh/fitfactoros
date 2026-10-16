@@ -9,7 +9,7 @@
     {
       "name": "fitfactoros",
       "source": "./plugins/fitfactoros",
-      "description": "Intake, Research (\"fit factor this\"), Activity Log, and Dashboard skills for your FitFactorOS Google Sheet."
+      "description": "Intake, Research (\"fit factor this\"), Activity Log, Dashboard, and an optional Morning Email for your FitFactorOS Google Sheet."
     }
   ]
 }
