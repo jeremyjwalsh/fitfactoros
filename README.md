@@ -42,7 +42,7 @@ Jeremy
 
 ## What to expect
 
-1. **Set up once (about 20 minutes).** Add FitFactorOS to Claude, copy the Sheet template into your Google Drive, and answer the Intake questions. Every question can be skipped.
+1. **Set up once (about 20 minutes).** Add FitFactorOS to Claude, download the Sheet template and save it as a Google Sheet in your Drive, and answer the Intake questions. Every question can be skipped.
 2. **Bring a job.** A link a friend sent you, or one you found yourself. Paste it (and the job description, for the best result) and say **"fit factor this."**
 3. **Get a quick read.** Company fit, then Role fit, the biggest blocker, and a suggested call. Every claim is tagged Verified, Estimated, or Inferred.
 4. **You decide.** **Pursue**, **Hold** (park it and come back in a week), **Pass**, or **Go deeper first**: a fuller look at the company (leadership changes, funding, market position, competitors) and then the role. Going deeper uses more of your Claude plan, so save it for jobs you're serious about.
@@ -188,7 +188,7 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 **Built for Claude.** FitFactorOS is built and tested on Claude. The skills use the open SKILL.md format, so parts of it may work in other AI tools (ChatGPT, for example), but that hasn't been tested. The one-click install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
 
 1. Create or sign in to your Claude account.
-2. Copy the Sheet template into your Google Drive.
+2. Download the Sheet template and save it as a Google Sheet in your Drive (the [setup guide](docs/setup.md) shows how).
 3. Add FitFactorOS to Claude: in **Customize → Plugins**, choose **Add → Add marketplace** and enter `jeremyjwalsh/fitfactoros`, then add the **FitFactorOS** plugin. Connect **Google Sheets** too, so Claude can read your Sheet for your dashboard.
 4. Create a Project called **FitFactorOS**, start a new chat inside it, and say **"Start my intake."**
 

@@ -1,6 +1,6 @@
-# Morning email: design (Part 18, Phase 2 draft)
+# Morning email: design
 
-Status: design approved Oct 15 (Phase 2). Built in Phase 3.
+Status: built and in testing (October 2026). This page explains how the email decides what to show.
 
 Checked so far: the layout displays correctly in Gmail on desktop and phone (Verified, Oct 15 test draft).
 

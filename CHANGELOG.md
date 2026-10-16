@@ -17,6 +17,7 @@ What changed in each FitFactorOS update, newest first. Your Sheet and your Intak
 
 ### Also
 - README: "Coming next" now matches the Roadmap (Job Finder and Outreach). Job Finder and Outreach are marked *(planned)* in the agents table. The V2 "Momentum check-in" is now a **Friday look-back** in the morning email, since the email already covers the daily check-in.
+- Plugin description now lists the morning email. README and setup guide say "download the Sheet template and save it as a Google Sheet" instead of "copy," since there's no Make a copy link. Morning email design page heading updated.
 - New page: [Want to go further?](docs/learn-more.md), with free official Anthropic courses and help pages on Projects, Skills, and scheduled tasks. Linked from the README and the setup guide.
 
 ## 2026-10-15 (evening)
