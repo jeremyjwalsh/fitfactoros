@@ -122,6 +122,8 @@ Look for it in **Drafts**, not your inbox. Old drafts aren't deleted for you, so
 
 ## Things you can say
 
+The one-page [cheat sheet](cheat-sheet.md) groups these by when you'd use them.
+
 | Say this | What happens |
 |---|---|
 | **start my intake** | Builds your Profile (about 10 minutes) |

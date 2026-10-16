@@ -198,6 +198,8 @@ Adding FitFactorOS as a plugin means updates take one click (**Check for updates
 
 Say these inside your FitFactorOS Project, one task per chat.
 
+Keep the one-page [cheat sheet](docs/cheat-sheet.md) handy: it groups these by when you'd use them.
+
 | Say this | What happens |
 |---|---|
 | **start my intake** | Builds your Profile (about 10 minutes) |
