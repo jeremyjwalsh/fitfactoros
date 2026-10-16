@@ -2,6 +2,28 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-16
+
+### New: the activity check
+- Say **check my week** (or "what did I miss?"). Claude reads your Google Calendar and Gmail for the week, read-only, lists what looks like job-search activity you haven't logged yet (interviews, recruiter calls, applications, emails you sent), and asks about each one. **Only what you confirm becomes a row.** It never changes, labels, or replies to anything, and never mentions events or emails that aren't about your search.
+- The weekly log offers the same check before it builds your log.
+- **log this** now fills in details from that day's calendar when it's connected (Zoom or phone, names, email addresses, the next interview if one is booked), and says what it used.
+- Needs Gmail and Google Calendar connected in Claude. Without them, everything works as before.
+
+### Morning email
+- **Clearer top section.** A label says what it is: **A thought for today**, **Today's soundtrack**, or **A little lightness**. A quote shows on its own with a short credit, and the full source in small print.
+- **"What it means today."** Every quote and song is followed by a plain sentence tying it to your day, so nobody has to look up the source to get it. Well-known and lesser-known sources are both still in the mix.
+- A thin line now separates the inspiration from your job-search summary. "Today's one move" is now **Your one move**.
+- The middle tile now reads **Activities counted** (or **Activities logged** if you're not collecting unemployment).
+- When the list is shorter than the **Needs attention** number, the section is titled **Top items needing attention** and ends with "Plus N more in your Sheet," so the numbers add up.
+- A move that's more than a day overdue now adds: "Already done? Say **log this** and update the Next step in your Jobs tab." The email only knows what's in your Sheet, so a move repeats until its Next step or date changes.
+- **Footer.** With no dashboard link saved, the button says **Open your Sheet** and a line underneath says how to get the full dashboard in Claude. With a dashboard link saved, the line says how to refresh it.
+- On a phone, Gmail can't open links inside a draft. Setup now says this once, instead of the email saying it every day.
+
+### Also
+- New one-page [cheat sheet](docs/cheat-sheet.md) of everything you can say, grouped by when you'd use it. Linked from the README and the setup guide.
+- Roadmap: added the activity check (Phase 8, testing) and, last on the V2 list, hands-off updates.
+
 ## 2026-10-15 (night)
 
 ### Morning email setup

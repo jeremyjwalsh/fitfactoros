@@ -98,6 +98,10 @@ If Claude says it doesn't have your answers, check that you're inside your FitFa
 ## 8. Log your activity (any time)
 Tell Claude what you did, inside your FitFactorOS Project: **"I applied to Northwind today"** or **"had coffee with Priya about Fabrikam."** Claude may ask a few quick questions (all skippable), then gives you a row for the **Activity** tab. Click the first empty cell in column A and paste.
 
+If **Google Calendar** is connected, Claude fills in details from that day's calendar (Zoom or phone, names, email addresses, and any next interview already booked) and tells you what it used.
+
+Missed a few things? Say **check my week**. Claude reads your calendar and email for the week (read-only), lists what looks like job-search activity you haven't logged, and asks about each one. Only what you confirm becomes a row. Connect **Gmail** and **Google Calendar** in **Customize → Connectors** to use it.
+
 ## 9. Build your weekly log
 Say **"this week's work search log."** Claude asks you to copy your **Activity** rows and **Jobs** rows for the week into the chat (copying the whole tab is fine). You get:
 - a log in your state's format, ready to copy into your weekly certification,
@@ -132,6 +136,7 @@ The one-page [cheat sheet](cheat-sheet.md) groups these by when you'd use them.
 | **go deep** | Deeper research on a job you're serious about |
 | **log this** (or "I applied to…," "I had a call with…") | Activity rows to paste |
 | **this week's work search log** | Your weekly unemployment log |
+| **check my week** (or "what did I miss?") | Checks your calendar and email for activity you haven't logged, and asks before adding anything |
 | **did I do enough this week?** | Your count against your state's minimum |
 | **show my dashboard** (or "where do I stand?") | Your top picks, ladders, and this week, on a private page |
 | **set up my morning email** | An optional weekday email draft with your one next move |

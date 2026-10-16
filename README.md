@@ -207,6 +207,7 @@ Keep the one-page [cheat sheet](docs/cheat-sheet.md) handy: it groups these by w
 | **fit factor this** + a job link | Company fit, then Role fit, then you decide |
 | **go deep** | Deeper research on a job you're serious about |
 | **log this** (or "I applied to…," "I had a call with…") | Activity rows to paste |
+| **check my week** (or "what did I miss?") | Claude checks your calendar and email (read-only) for activity you haven't logged, and asks before adding anything |
 | **this week's work search log** | Your weekly unemployment log |
 | **did I do enough this week?** | Your count against your state's minimum |
 | **show my dashboard** (or "where do I stand?") | Your top picks, ladders, and this week, on a private page |
@@ -288,6 +289,7 @@ Each file in `plugins/fitfactoros/skills/fitfactoros-activity-log/states/` recor
 | 5 | Outreach (warm-path ladder, two-fact rule) | Planned |
 | 6 | Dashboard with per-opportunity ladders and your own warm vs cold results | Testing |
 | 7 | Morning email: an opt-in weekday draft with your one next move | Testing |
+| 8 | Activity check: reads your calendar and email (read-only) for job-search activity you haven't logged, and asks you about each one. Nothing is logged until you confirm. | Testing |
 
 **V2 (future)**
 
@@ -298,6 +300,7 @@ Each file in `plugins/fitfactoros/skills/fitfactoros-activity-log/states/` recor
 - **Negotiation**: compare offers side by side against the pay floor and deal-breakers from your Intake.
 - **Close the loop**: wrap up your search. Thank the people who helped, close out open applications, and see your own warm-path vs cold-path results.
 - **Friday look-back**: on Fridays, the morning email adds a short look back at your week: what moved, what you learned, and how your warm and cold paths are doing. It is not therapy; it points to real support when that's what you need.
+- **Hands-off updates (last on the list)**: Claude notices what happened in your calendar and email and updates your Sheet on its own, within limits you set, and tells you what it changed. This comes last on purpose: each earlier step (drafting, then asking, then adding rows after you OK them) has to prove Claude reads your week correctly first, and the guardrails get a clear update before it ships.
 
 ---
 
