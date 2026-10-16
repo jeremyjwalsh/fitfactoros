@@ -51,7 +51,7 @@ Jeremy
 7. **See where you stand.** Say **"show my dashboard"** for your top picks, each job's next step, and your progress this week.
 8. **Optional: a morning email.** Say **"set up my morning email"** for a one-minute weekday email in your Gmail Drafts: how you're doing, what needs attention, and the one thing to do today. It's a draft to you and is never sent.
 
-Coming next: Claude adding rows to your Sheet for you instead of you pasting them. See the [Roadmap](#roadmap).
+Coming next: **Job Finder**, a short list of roles picked for you, and **Outreach**, which finds the right person and drafts a note for you to send. See the [Roadmap](#roadmap).
 
 ---
 
@@ -125,9 +125,9 @@ Emails you send and receive are linked from the sheet with `=HYPERLINK(...)` for
 | Agent | What it does | What it never does |
 |---|---|---|
 | **Intake** | Asks 9 short questions to build your Profile. Every question is skippable. | Guess answers you didn't give. |
-| **Job Finder** | Finds roles that match your Profile and your deal-breakers. | Apply to anything. |
+| **Job Finder** *(planned)* | Finds roles that match your Profile and your deal-breakers. | Apply to anything. |
 | **Research** | Scores each role and company, runs a diligence checklist, and tags every claim. | Present an inference as a fact. |
-| **Outreach** | Finds your warmest path to a person and drafts a short note. | Send the note. |
+| **Outreach** *(planned)* | Finds your warmest path to a person and drafts a short note. | Send the note. |
 | **Activity Log** | Logs your real activity and builds a weekly work-search log from your Jobs and Activity tabs, formatted for your state's rules when FitFactorOS has them. | Submit anything to a state portal, or give legal advice. |
 | **Morning Email** | Optional. Each weekday, saves one email draft to you: how you're doing, what needs attention, and today's one move, with a quote or song picked to suit you. | Send anything, or draft to anyone but you. |
 
@@ -295,7 +295,7 @@ Each file in `plugins/fitfactoros/skills/fitfactoros-activity-log/states/` recor
 - **No more copy and paste**: Claude adds rows to your Sheet for you, after you OK them, instead of you pasting each one.
 - **Negotiation**: compare offers side by side against the pay floor and deal-breakers from your Intake.
 - **Close the loop**: wrap up your search. Thank the people who helped, close out open applications, and see your own warm-path vs cold-path results.
-- **Momentum check-in**: a short weekly check-in that shows your real progress and offers encouragement. It is not therapy; it points to real support when that's what you need.
+- **Friday look-back**: on Fridays, the morning email adds a short look back at your week: what moved, what you learned, and how your warm and cold paths are doing. It is not therapy; it points to real support when that's what you need.
 
 ---
 

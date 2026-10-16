@@ -168,7 +168,7 @@ Then click **D10** and replace the note with: *Counts only Activity rows marked 
 New to Claude, or curious how the pieces fit? [Want to go further?](learn-more.md) has a few free official Anthropic courses and help pages on Projects, Skills, and scheduled tasks.
 
 ## Coming in later phases
-The weekly log reading your Sheet through Google Sheets (so you don't have to copy rows), the Job Finder, Outreach, and more. See the [Roadmap](../README.md#roadmap).
+The Job Finder and Outreach come next. Later, the weekly log will read your Sheet directly, the way the dashboard and morning email already do, so you won't have to copy rows. See the [Roadmap](../README.md#roadmap).
 
 ## Your data
 Your answers are saved in your own Google Sheet. FitFactorOS has no server of its own and collects nothing. Your chats with Claude go through Anthropic like any Claude chat, and if Claude's memory feature is on, Claude may remember details between chats. You can control that in Claude's settings. Anthropic's privacy policy covers the rest.
