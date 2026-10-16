@@ -213,6 +213,8 @@ Say these inside your FitFactorOS Project, one task per chat.
 
 The [setup guide](docs/setup.md) walks through every step. Screenshots are coming after the first round of testing.
 
+**New to Claude?** [Want to go further?](docs/learn-more.md) lists a few free official Anthropic courses and help pages on Projects, Skills, and scheduled tasks.
+
 ---
 
 ## Repository layout
@@ -249,6 +251,7 @@ fitfactoros/
 │   ├── setup.md              # Step-by-step setup for non-technical users
 │   ├── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
 │   ├── morning-email.md      # How the morning email decides what to show
+│   ├── learn-more.md         # Free official Anthropic courses and help pages
 │   └── guardrails.md         # Rules every agent follows: humans send, tag claims, no fake rungs
 ├── sheet/
 │   └── fitfactoros-template.xlsx   # Import into Google Sheets

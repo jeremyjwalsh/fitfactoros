@@ -32,6 +32,17 @@ STATES = ["Momentum", "Steady", "Quiet stretch", "Overwhelmed"]
 MATCHES = ["Strong", "Possible"]
 
 
+
+def screened_line(t):
+    """Jobs screened (Dashboard B7) shown on its own, never added to the counted number."""
+    n = t.get("screened") or 0
+    if n <= 0:
+        return ""
+    jobs = "1 job" if n == 1 else "%d jobs" % n
+    if isinstance(t.get("weeklyMin"), int):
+        return "Also %s screened this week. Your weekly log can add any that aren't in your Activity tab yet." % jobs
+    return "Also %s screened this week." % jobs
+
 def stop(msg):
     print("STOP: " + msg)
     sys.exit(1)
@@ -129,6 +140,8 @@ def check(d):
     for k in ("inFlight", "thisWeek", "needsAttention"):
         if not isinstance(t.get(k), int):
             stop("tiles.%s must be a whole number" % k)
+    if not isinstance(t.get("screened", 0), int):
+        stop("tiles.screened must be a whole number (Dashboard B7)")
     att = d.get("attention") or []
     cap = 2 if d["state"] == "Overwhelmed" else 3
     if len(att) > cap:
@@ -190,9 +203,12 @@ def build_html(d):
     p.append('<tr><td style="%s">How am I doing &middot; this week</td></tr>' % LABEL)
     p.append('<tr><td style="padding:0 28px 8px 28px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>')
     p.append(tile % ("#1f1d1a", t["inFlight"], "In flight"))
-    p.append(tile % ("#1f1d1a", wk, "This week"))
+    p.append(tile % ("#1f1d1a", wk, "Counted" if isinstance(t.get("weeklyMin"), int) else "Logged"))
     p.append(tile % (na_color, t["needsAttention"], "Needs attention"))
     p.append('</tr></table></td></tr>')
+    sl = screened_line(t)
+    if sl:
+        p.append('<tr><td style="padding:4px 28px 0 28px;font-size:13px;color:#6b665d;">%s</td></tr>' % esc(sl))
     if d.get("lastStep"):
         p.append('<tr><td style="padding:4px 28px 20px 28px;font-size:13px;color:#6b665d;">Last real step: %s</td></tr>' % esc(d["lastStep"]))
     # attention
@@ -243,7 +259,9 @@ def build_text(d):
         out.append(d["move"]["why"])
     wk = str(t["thisWeek"]) + (" of %d" % t["weeklyMin"] if isinstance(t.get("weeklyMin"), int) else "")
     out += ["", "HOW AM I DOING (this week)",
-            "In flight: %d | This week: %s | Needs attention: %d" % (t["inFlight"], wk, t["needsAttention"])]
+            "In flight: %d | %s: %s | Needs attention: %d" % (t["inFlight"], "Counted" if isinstance(t.get("weeklyMin"), int) else "Logged", wk, t["needsAttention"])]
+    if screened_line(t):
+        out.append(screened_line(t))
     if d.get("lastStep"):
         out.append("Last real step: " + d["lastStep"])
     out += ["", "WHAT DESERVES ATTENTION"]

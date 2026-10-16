@@ -2,6 +2,22 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-15 (night)
+
+### Morning email setup
+- The sign question now says **zodiac sign**. Not sure of yours? Give your birthday month and day instead (never the year). Claude works out the sign and saves only the sign.
+- The sign and the dashboard link are now two separate, simpler questions (four questions in all, every one skippable).
+- The ready-by time is written as **Weekdays at 7:00 am**, so Google Sheets keeps it as text instead of turning it into a time value. Existing entries still work.
+
+### Morning email: the weekly number
+- The middle tile is now **Counted**: only activities that count for unemployment, against your weekly minimum ("2 of 3"). Jobs screened this week show on their own line underneath. Before, the two were added together, so the same job could count twice and the tile could read "7 of 3." It now matches your dashboard page.
+
+### Your Sheet
+- **Dashboard B10** ("On track this week?") now uses counting activities only, for the same reason. **Older Sheets:** the [setup guide](docs/setup.md) has the one-cell fix.
+
+### Also
+- New page: [Want to go further?](docs/learn-more.md), with free official Anthropic courses and help pages on Projects, Skills, and scheduled tasks. Linked from the README and the setup guide.
+
 ## 2026-10-15 (evening)
 
 ### New: the morning email (optional)

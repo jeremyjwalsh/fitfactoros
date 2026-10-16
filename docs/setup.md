@@ -112,7 +112,7 @@ Every job you fit factored that week shows up as a job posting you reviewed, eve
 A one-minute weekday email that lands in your Gmail **Drafts**: how you're doing, what needs attention, and the one thing to do today, with a quote, a song, or something funny at the top. It's a draft to you and is never sent.
 
 1. Connect **Gmail** and **Google Sheets** in Claude (**Customize → Connectors**), if you haven't already.
-2. In your FitFactorOS Project, say **set up my morning email** and answer three quick questions. All can be skipped.
+2. In your FitFactorOS Project, say **set up my morning email** and answer four quick questions. All can be skipped.
 3. Paste the 4 answers it gives you into your Sheet's **Profile** tab, starting at **B20**.
 4. On Pro and above, Claude sets it up as a weekday scheduled task and makes your first one right away. On the Free plan, say **morning email** any morning to get the same draft.
 
@@ -155,6 +155,15 @@ Your Sheet and your answers stay as they are. You don't need to run Intake again
 **If you set up your Sheet before the Activity Log came out,** make two small changes on the **Activity** tab:
 1. Type these headers: **M1** Pay rate, **N1** Employer address, **O1** Contact info.
 2. Select column D, click **Data → Data validation**, and add **Reviewed job posting** to the list.
+
+**If you set up your Sheet before the October 15 (night) update,** fix one cell on the **Dashboard** tab so screened jobs aren't counted twice. Click **B10** and replace what's there with:
+
+```
+=IF(B8>=B9,"On track","Need "&(B9-B8)&" more")
+```
+
+## Want to go further?
+New to Claude, or curious how the pieces fit? [Want to go further?](learn-more.md) has a few free official Anthropic courses and help pages on Projects, Skills, and scheduled tasks.
 
 ## Coming in later phases
 The weekly log reading your Sheet through Google Sheets (so you don't have to copy rows), the Job Finder, Outreach, and more. See the [Roadmap](../README.md#roadmap).

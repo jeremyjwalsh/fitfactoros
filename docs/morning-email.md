@@ -67,7 +67,7 @@ Three numbers in a row:
 | Tile | Where it comes from |
 |---|---|
 | **In flight** | Jobs tab: Status = Active and Screen result = Pursue |
-| **This week** | Dashboard tab B7 + B8, shown against B9 ("2 of 3"). Same numbers the Dashboard shows, so they always agree. |
+| **Counted** | Dashboard tab B8 (activities that count for unemployment), shown against B9 ("2 of 3"). Jobs screened (B7) appears on its own line underneath, never added in, so a screened job is never counted twice. |
 | **Needs attention** | Parked Maybes due back + Pursue jobs with an overdue Next step date |
 
 Below the tiles, the **last real step**: the newest Activity row (type, company, date).
@@ -140,7 +140,8 @@ The user says **set up my morning email** (Intake mentions it in one line at the
 
 1. Which sparks do you want? (Quote, Music, Humor, Surprise me)
 2. What time should it be ready? (default 7:00 am their time)
-3. Your star sign, just for fun (never a birthday; it only steers the picks), and your dashboard link if you've made one (otherwise the button opens your Sheet's Dashboard tab)
+3. Your zodiac sign, just for fun (or your birthday month and day, never the year; only the sign is saved, and it only steers the picks)
+4. Your dashboard link, if you've made one (otherwise the button opens your Sheet's Dashboard tab)
 
 Answers go into four new Profile rows (B20 to B23). Then the skill creates the scheduled task, or on Free, explains how to ask for it on demand.
 

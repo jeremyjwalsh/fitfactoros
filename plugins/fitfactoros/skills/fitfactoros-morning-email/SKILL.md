@@ -27,17 +27,35 @@ Then ask, in one turn, all skippable:
 
 - **Q1. What would you like at the top each morning?** Multi-select: "A quote," "A song," "Something funny," "Surprise me." (Skipped counts as Surprise me.)
 - **Q2. What time should it be ready?** Single select: "6:30 am," "7:00 am," "8:00 am." Default 7:00 am.
-- **Q3.** *(Typed, optional)* Two things, both optional:
-  1. Your star sign, just for fun. Say it like this, word for word: *"It quietly helps pick quotes and songs that suit you. The email never mentions it."* Ask only for the sign, never a birthday.
-  2. Your dashboard link, if you've made one. Without it, the button opens your Sheet's Dashboard tab.
+- **Q3. What's your zodiac sign?** *(Typed, optional.)* Say it like this, word for word: *"Just for fun. It quietly helps pick quotes and songs that suit you, and the email never mentions it. Not sure of your sign? Tell me your birthday month and day instead (no year needed)."*
+- **Q4. Do you have a dashboard link?** *(Typed, optional.)* Say it like this, word for word: *"If you've made a FitFactorOS dashboard, paste its link. If not, skip this and the button will open your Sheet's Dashboard tab."*
 
-Record Q1 as "Quote; Music; Humor" style (Surprise me as "Surprise me"). Record the sign as one of the 12 sign names, or `skipped`. Then give the paste steps, word for word in this shape:
+Record Q1 as "Quote; Music; Humor" style (Surprise me as "Surprise me"). Record the sign as one of the 12 sign names, or `skipped`.
+
+**If they give a month and day for Q3:** turn it into the sign with the table below, tell them the sign in one short line, and save only the sign. Never save, repeat, or write down the month and day. Never ask for the year. If they give a year anyway, ignore it (guardrail 6). If the date is the first or last day of a sign, say it's on the edge between the two signs and ask which one they go by.
+
+| Sign | Dates |
+|---|---|
+| Aries | Mar 21 – Apr 19 |
+| Taurus | Apr 20 – May 20 |
+| Gemini | May 21 – Jun 20 |
+| Cancer | Jun 21 – Jul 22 |
+| Leo | Jul 23 – Aug 22 |
+| Virgo | Aug 23 – Sep 22 |
+| Libra | Sep 23 – Oct 22 |
+| Scorpio | Oct 23 – Nov 21 |
+| Sagittarius | Nov 22 – Dec 21 |
+| Capricorn | Dec 22 – Jan 19 |
+| Aquarius | Jan 20 – Feb 18 |
+| Pisces | Feb 19 – Mar 20 |
+
+Then give the paste steps, word for word in this shape:
 
 **Next: add these to your Sheet**
 1. Open the **Profile** tab and click cell **B20** (the **Morning email sparks** row).
 2. Paste the block below. It fills **B20 through B23**.
 
-Then a code block of exactly 4 lines: sparks, sign or `skipped`, ready-by time (like `7:00 am`), dashboard link or `skipped`. No line may start with `=`, `+`, `-`, `@`, or `"`.
+Then a code block of exactly 4 lines: sparks, sign or `skipped`, ready-by time written as `Weekdays at 7:00 am` (the words stop Google Sheets turning it into a time value), dashboard link or `skipped`. No line may start with `=`, `+`, `-`, `@`, or `"`.
 
 *Older Sheets:* if rows 20 to 23 of the Profile tab have no labels, tell the user to type **Morning email sparks**, **Sign (optional)**, **Morning email ready by**, and **Dashboard link** into A20 through A23 first, and to move any notes in those rows further down.
 
@@ -83,7 +101,7 @@ If Gmail or Sheets can't be reached in a scheduled run, don't guess. Finish with
 
 - The draft is addressed only to Profile B2.
 - The one move names a real company or row, or is rule 5 or 6.
-- Every count matches the Sheet. "This week" uses Dashboard B7 + B8.
+- Every count matches the Sheet. "Counted" uses Dashboard B8 only, never B7 + B8. Jobs screened (B7) is its own line.
 - Leads: at most 2, none when Overwhelmed or when 3 or more items need attention, never a Long shot.
 - The spark doesn't explain why it was picked, doesn't name a star sign, and has no lyrics.
 - The quote or song came from the script, copied exactly.
