@@ -162,6 +162,8 @@ Your Sheet and your answers stay as they are. You don't need to run Intake again
 =IF(B8>=B9,"On track","Need "&(B9-B8)&" more")
 ```
 
+Then click **D10** and replace the note with: *Counts only Activity rows marked Yes. Screened jobs count once your weekly log adds them as Reviewed job posting rows.*
+
 ## Want to go further?
 New to Claude, or curious how the pieces fit? [Want to go further?](learn-more.md) has a few free official Anthropic courses and help pages on Projects, Skills, and scheduled tasks.
 
