@@ -198,7 +198,7 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 
 **What you'll need:** a Claude account and about 20 minutes. A Google account only if you want the Sheet or Connected mode. FitFactorOS works on the Free plan; a paid plan (Pro or above) gives you more usage, optional one-click install and updates, and the scheduled morning email.
 
-1. Create or sign in to your Claude account, and turn on **Code execution and file creation** in **Settings → Capabilities**.
+1. Create or sign in to your Claude account, and turn on **Cloud code execution and file creation** in **Settings → Capabilities**.
 2. Add the FitFactorOS skills to Claude ([setup guide, step 3](docs/setup.md#3-add-fitfactoros-to-claude)). On any plan, download the skill files and upload them in **Customize → Skills**. On a paid plan, you can add the plugin instead.
 3. Create a Project called **FitFactorOS**, start a new chat inside it, and say **"Start my intake."** Save the answers Claude gives you in your Project's files.
 4. Start a new chat in the Project, paste a job description and link, and say **"fit factor this."**

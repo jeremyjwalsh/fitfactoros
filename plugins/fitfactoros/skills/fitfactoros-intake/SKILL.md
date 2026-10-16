@@ -88,8 +88,8 @@ Give these in this order:
    This is how I find your answers every time you say **fit factor this**, in any chat in this Project.
    1. Tap **Copy** on the block below.
    2. Open your FitFactorOS Project: click its name at the top of this chat, or find it under **Projects** in the left sidebar.
-   3. In the **Files** area of the Project page, click **+**, then **Add text content**.
-   4. Paste. Name it **My FitFactorOS answers** and save.
+   3. On the right of the Project page, find **Context** and click its **Add** button, then **Add text content**.
+   4. Type **My FitFactorOS answers** as the **Title**, paste into **Content**, and click **Add Content**.
 
    **Using the FitFactorOS Sheet too?** Open your Sheet in Google Sheets, click the **Profile** tab, click cell **B2**, and paste (**Ctrl+V** on Windows, **Cmd+V** on Mac). Your answers fill **B2 through B19**. No Sheet yet? That's fine. You can set it up later: [setup guide, "Keep a record in your Sheet"](https://github.com/jeremyjwalsh/fitfactoros/blob/main/docs/setup.md#7-keep-a-record-in-your-sheet-optional).
 
@@ -115,7 +115,7 @@ Inside a FitFactorOS Project, don't ask which profile they mean. If they haven't
 3. Confirm the new answer in one line.
 4. Give the paste steps with the cell **and** its row label, word for word in this shape: "Click cell **B15** (the **People you know** row) and paste. This replaces what's there." Then the new answer in a code block.
 5. Give today's date for **B19** (the **Profile last updated** row) in a second code block.
-6. Then this line, word for word: *Saved your answers in your Project? Open **My FitFactorOS answers** there and change the same line, and the date on the last line, so fit factor uses the new answer.*
+6. Then this line, word for word: *Saved your answers in your Project? Open **My FitFactorOS answers** (under **Context** on the Project page) and change the same line, and the date on the last line, so fit factor uses the new answer.*
 
 Don't re-run Intake or reprint the whole block for a single change.
 

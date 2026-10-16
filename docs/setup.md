@@ -44,13 +44,13 @@ What we checked in Anthropic's help center (October 16, 2026): skills, Projects 
 - If you hit a limit, Claude tells you when you can continue. Come back to the same chat and say **keep going**.
 
 ## 2. Turn on the settings FitFactorOS needs
-Click your name or initials at the bottom left of Claude, then **Settings → Capabilities**, and turn on:
-- **Code execution and file creation.** Skills don't work without it.
+Click your name or initials at the bottom left of Claude, then **Settings**. In the Settings window, click **Capabilities**, and turn on:
+- **Cloud code execution and file creation** (under the "Code execution and file creation" heading). Skills don't work without it.
 - *Paid plans, optional:* **Search and reference chats**, so Claude can also look through your past chats in the Project. The Free plan doesn't have this setting, and you don't need it: step 5 saves your answers in your Project instead.
 
-> **Screenshot coming:** Settings → Capabilities, with "Code execution and file creation" switched on.
+> **Screenshot coming:** Settings → Capabilities, with "Cloud code execution and file creation" switched on.
 
-Research also needs **web search**. In a chat, click the **+** (or slider) button at the bottom left of the message box and make sure **Web search** is on.
+Research also uses **web search**. Claude normally searches on its own and may ask first; click **Allow**. If Claude says it can't search the web, click **+** under the message box and look for a **Web search** switch.
 
 You don't need to connect anything to Google yet. That's step 8, and it's optional.
 
@@ -67,11 +67,11 @@ You don't need a GitHub account for this. You're only downloading files.
    - [fitfactoros-activity-log.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-activity-log.zip) (add when you want to log activity)
    - [fitfactoros-dashboard.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-dashboard.zip) (add when you want the dashboard page)
    - [fitfactoros-morning-email.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-morning-email.zip) (Connected mode only)
-2. Go to [claude.ai/customize](https://claude.ai/customize) and click **Skills**.
-3. Click **+**, then **Create skill**, then **Upload a skill**, and choose one of the .zip files. Repeat for each one.
-4. Make sure the FitFactorOS skills are switched on.
+2. In Claude's left menu, click **Customize** (or go to [claude.ai/customize](https://claude.ai/customize)), with **Skills** selected at the top.
+3. Click the black **+ Add** button at the top right, then **Upload skill**, and choose one of the .zip files. Repeat for each one.
+4. Click **Yours** (next to *Discover*) to see your own skills. If a FitFactorOS skill says **Disabled**, click its **Turn on** button.
 
-> **Screenshot coming:** Customize → Skills, with the + menu open on "Upload a skill."
+> **Screenshot coming:** Customize → Skills, with the + Add menu open on "Upload skill."
 
 > [!IMPORTANT]
 > **Mac with Safari: you may have folders, not .zip files.** Safari often unzips downloads for you. If your Downloads folder shows a folder called `fitfactoros-intake` instead of `fitfactoros-intake.zip`, Claude can't use it. Hold **Control** and click the folder (or right-click it), choose **Compress "fitfactoros-intake"**, and upload the new .zip file it makes. Do the same for each skill.
@@ -95,8 +95,8 @@ Anthropic's instructions: [Plugins](https://claude.com/docs/plugins/overview).
 ## 4. Create your FitFactorOS Project
 A Project is a folder in Claude that keeps your FitFactorOS chats and answers together.
 
-1. In Claude's left menu, click **Projects** (or go to [claude.ai/projects](https://claude.ai/projects)), then **New project**.
-2. Name it **FitFactorOS** and create it.
+1. In Claude's left menu, click **Projects** (or go to [claude.ai/projects](https://claude.ai/projects)), then **New project** (top right).
+2. Under **What are you working on?**, type **FitFactorOS**, and click **Create project**.
 3. Do everything below inside this Project.
 
 > **Screenshot coming:** the Projects page with the New project button.
@@ -109,9 +109,9 @@ A Project is a folder in Claude that keeps your FitFactorOS chats and answers to
 1. Inside your FitFactorOS Project, start a new chat.
 2. Type: **Start my intake**
 3. Answer the questions. Skip anything you like.
-4. At the end, Claude shows your answers in a block. **Save it in your Project:** tap **Copy**, open your Project page, click **+** in the **Files** area, choose **Add text content**, paste, and name it **My FitFactorOS answers**. That's how Claude finds your answers in every new chat.
+4. At the end, Claude shows your answers in a block. **Save it in your Project:** tap **Copy**, open your Project page, find **Context** on the right and click its **Add** button, choose **Add text content** (not GitHub or Drive), type **My FitFactorOS answers** as the **Title**, paste into **Content**, and click **Add Content**. That's how Claude finds your answers in every new chat.
 
-> **Screenshot coming:** the Project page, with the Files area's + menu open on "Add text content."
+> **Screenshot coming:** the Project page, with the Context → Add menu open on "Add text content."
 
 Your Profile is set. If something changes later, say **update my profile**. Claude tells you which line to change.
 
@@ -124,7 +124,7 @@ Your Profile is set. If something changes later, say **update my profile**. Clau
 3. You decide: **Pursue**, **Hold** (park it and come back in a week), or **Pass**. When a job looks promising, Claude may also offer **Go deeper first**. It asks before starting, because going deeper uses much more of your plan (see the table in step 1).
 4. Claude gives you a row for the **Jobs** tab of your Sheet (and, for Pursue, rows for the **Evidence** tab). No Sheet yet? Copy it into a note, or set up the Sheet in step 7.
 
-If Claude says it doesn't have your answers, check that you're inside your FitFactorOS Project and that **My FitFactorOS answers** is saved in its Files (step 5).
+If Claude says it doesn't have your answers, check that you're inside your FitFactorOS Project and that **My FitFactorOS answers** is listed under **Context** on the Project page (step 5).
 
 ## 7. Keep a record in your Sheet (optional)
 The FitFactorOS Sheet keeps every job you look at, your evidence, and your activity in one place. You paste rows into it yourself. You need a Google account.
@@ -154,13 +154,17 @@ Connecting lets Claude **read** parts of your Google account for three extras: t
 
 **What FitFactorOS does with it.** FitFactorOS's instructions only read: it never sends, changes, labels, or deletes anything in your Gmail, Calendar, or Sheet. That's a rule FitFactorOS follows, not a limit Google enforces. If Claude ever asks to send an email or change a file during FitFactorOS, choose **Deny** and tell us through the [feedback form](https://forms.gle/JAvtLkWR3unQQZQ77).
 
-If that's more access than you're comfortable with, stay in Basic mode. Everything that matters most works without it.
+**You can make it read-only yourself.** Each connector has **Tool permissions**: go to [claude.ai/customize/connectors](https://claude.ai/customize/connectors), click **Yours**, and click the connector. Its tools are split into **Read only tools** and **Write/delete tools**, and each group has a setting: **Always allow**, **Needs approval**, **Blocked**, or **Custom**. Set **Write/delete tools** to **Blocked**, and Claude can't change anything through that connection, whatever any instructions say. FitFactorOS works fine that way for **Google Sheets** and **Google Calendar**, because it only reads them. For **Gmail**, the morning email needs to save one draft, so if you use it, choose **Custom** and leave only the draft tool allowed.
+
+> **Screenshot coming:** a Google connector's page with Write/delete tools set to Blocked.
+
+If that's still more access than you're comfortable with, stay in Basic mode. Everything that matters most works without it.
 
 **To connect:** go to [claude.ai/customize/connectors](https://claude.ai/customize/connectors) and connect the Google service you want. Or just ask for the feature (for example, **show my dashboard**) and Claude takes you to Google's sign-in when it needs it.
 
 **To disconnect:**
 1. Go to [claude.ai/customize/connectors](https://claude.ai/customize/connectors).
-2. Click the Google connector, then **Disconnect**, and confirm.
+2. Click **Yours**, click the Google connector, then **Disconnect** (top right), and confirm.
 3. To remove it on Google's side too: go to [myaccount.google.com/connections](https://myaccount.google.com/connections), find Claude, and remove its access.
 
 > **Screenshot coming:** Customize → Connectors, with a Google connector open and the Disconnect button.

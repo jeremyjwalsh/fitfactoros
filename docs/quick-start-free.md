@@ -21,11 +21,12 @@ Go to **[claude.ai](https://claude.ai)** and sign up. Choose the free plan if it
 ## 2. Turn on one setting
 FitFactorOS won't work without this.
 
-1. Click your name or initials at the bottom left, then **Settings**.
-2. Click **Capabilities**.
-3. Switch on **Code execution and file creation**.
+1. Click your name or initials at the bottom left, then **Settings**. A Settings window opens.
+2. In its left menu, click **Capabilities**.
+3. Under the **Code execution and file creation** heading, switch on **Cloud code execution and file creation**.
+4. Close the Settings window with the **×** at its top right.
 
-> **Screenshot coming:** Settings → Capabilities, with "Code execution and file creation" switched on.
+> **Screenshot coming:** Settings → Capabilities, with "Cloud code execution and file creation" switched on.
 
 That's the only setting you need today. (The setup guide mentions other memory settings. You can skip them on the Free plan; step 6 below does the same job.)
 
@@ -47,15 +48,17 @@ Leave them as they are. **Don't open or unzip them.**
 > To stop Safari doing this next time: in Safari, click **Safari → Settings → General** and untick **Open "safe" files after downloading**. Or download with Chrome or Firefox, which don't unzip.
 
 ## 4. Add the two files to Claude
-1. Go to **[claude.ai/customize](https://claude.ai/customize)** and click **Skills**.
-2. Click **+**, then **Create skill**, then **Upload a skill**.
+1. In the left menu, click **Customize** (or go to **[claude.ai/customize](https://claude.ai/customize)**). Make sure **Skills** is selected at the top.
+2. Click the black **+ Add** button at the top right, then **Upload skill**.
 3. Choose `fitfactoros-intake.zip` from your Downloads.
 4. Do steps 2 and 3 again for `fitfactoros-research.zip`.
-5. Check that both FitFactorOS skills are in the list and switched on.
+5. Click **Yours** (next to *Discover*, near the top) to see your own skills. Both FitFactorOS skills should be listed. If one says **Disabled**, click its **Turn on** button.
 
-> **Screenshot coming:** Customize → Skills, with the + menu open on "Upload a skill."
+> **Screenshot coming:** Customize → Skills, with the + Add menu open on "Upload skill."
 >
-> **Screenshot coming:** the Skills list with both FitFactorOS skills switched on.
+> **Screenshot coming:** Customize → Skills → Yours, with both FitFactorOS skills turned on.
+
+The Skills page opens on *Discover*, a showcase of other skills. You can ignore it.
 
 A "skill" is a set of instructions Claude follows when you ask for that task. You've just given Claude two of them.
 
@@ -63,8 +66,9 @@ A "skill" is a set of instructions Claude follows when you ask for that task. Yo
 A Project is a folder in Claude that keeps your FitFactorOS chats and your answers together.
 
 1. In the left menu, click **Projects** (or go to [claude.ai/projects](https://claude.ai/projects)).
-2. Click **New project**.
-3. Name it **FitFactorOS** and create it.
+2. Click **New project** (top right).
+3. Under **What are you working on?**, type **FitFactorOS**. You can leave the other boxes empty.
+4. Click **Create project**.
 
 > **Screenshot coming:** the Projects page with the New project button.
 
@@ -77,10 +81,11 @@ A Project is a folder in Claude that keeps your FitFactorOS chats and your answe
 4. At the end, Claude shows a block of your answers. **Save it in your Project** (Claude shows these steps too):
    - Tap **Copy** on the block.
    - Open your FitFactorOS Project page (click its name at the top of the chat, or go to **Projects → FitFactorOS**).
-   - In the **Files** area, click **+**, then **Add text content**.
-   - Paste, name it **My FitFactorOS answers**, and save.
+   - On the right of the Project page, find **Context** and click its **Add** button, then **Add text content**. (Not *GitHub* or *Drive*.)
+   - In **Title**, type **My FitFactorOS answers**. Click in **Content** and paste.
+   - Click **Add Content**.
 
-> **Screenshot coming:** the Project page, with the Files area's + menu open on "Add text content."
+> **Screenshot coming:** the Project page, with the Context → Add menu open on "Add text content."
 
 This is how Claude remembers your answers in every new chat. You only do Intake once.
 
@@ -88,12 +93,9 @@ Claude will also mention a Google Sheet. **You can skip that today.**
 
 ## 7. Fit factor your job
 1. In your FitFactorOS Project, start a **new** chat.
-2. Make sure web search is on: click the **+** (or the slider button) at the bottom left of the message box and switch on **Web search**.
-3. **Paste the job description first, in its own message.** On the job posting: select all (**Ctrl+A** on Windows, **Cmd+A** on Mac), copy, then paste here and send. Many job sites don't let Claude read the whole page, so this gives the best result.
-4. Then send the job link and the words **fit factor this**.
-5. If Claude asks to search the web or open a page, click **Allow**.
-
-> **Screenshot coming:** the + menu under the message box with Web search switched on.
+2. **Paste the job description first, in its own message.** On the job posting: select all (**Ctrl+A** on Windows, **Cmd+A** on Mac), copy, then paste here and send. Many job sites don't let Claude read the whole page, so this gives the best result.
+3. Then send the job link and the words **fit factor this**.
+4. If Claude asks to search the web or open a page, click **Allow**. That's the research.
 
 You get **Company fit**, then **Role fit**, the biggest thing in your way, questions to ask, and a suggested call. **The call is yours:** Pursue, Hold (come back later), or Pass.
 
@@ -118,8 +120,10 @@ The Free plan has a usage limit that **resets every five hours**, according to A
 | What you see | What to do |
 |---|---|
 | The upload says it can't read the file | You probably uploaded a folder, not a .zip. See the Safari box in step 3. |
+| You can't find the skills you uploaded | On the Skills page, click **Yours**, not *Discover*. |
 | Claude doesn't seem to know FitFactorOS | Check step 2 (the setting is on) and step 4 (both skills switched on). Then start a new chat in your Project. |
-| "I don't have your FitFactorOS answers yet" | Make sure you're in your FitFactorOS Project and that **My FitFactorOS answers** is in its Files (step 6). Or paste your answer block into the chat. |
+| "I don't have your FitFactorOS answers yet" | Make sure you're in your FitFactorOS Project and that **My FitFactorOS answers** is listed under **Context** on the Project page (step 6). Or paste your answer block into the chat. |
+| Claude says it can't search the web | Click **+** under the message box and look for a **Web search** switch. Turn it on and try again. |
 | Claude says it could only read part of the posting | Paste the job description in its own message (step 7, part 3). |
 | A message about a usage limit | See "When you hit a usage limit" above. |
 | Anything asks for a GitHub account | You don't need one. Close that page and come back here. |

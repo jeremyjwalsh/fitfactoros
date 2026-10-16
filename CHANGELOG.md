@@ -2,6 +2,19 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-16 (night, later): click paths checked against Claude
+
+Every click in the quick start was checked against the real Claude screens. Five didn't match and are fixed in the quick start, the setup guide, the README, and Intake.
+
+- **Uploading a skill:** it's **Customize → Skills → + Add → Upload skill**. Your own skills are under **Yours**, not *Discover*, and a turned-off skill shows a **Turn on** button.
+- **Saving your Intake answers in your Project:** it's **Context → Add → Add text content** on the right of the Project page (there's no "Files" area), then fill in **Title** and **Content** and click **Add Content**. The guide warns not to pick GitHub or Drive from that menu.
+- **The setting** is labeled **Cloud code execution and file creation**.
+- **Web search:** there's no switch to turn on first; Claude searches on its own. That step is gone, and "Claude says it can't search the web" is in the troubleshooting table instead.
+- **New project:** the box to type the name in is labeled **What are you working on?**, and the button is **Create project**.
+- **Connected mode:** each Google connector has **Tool permissions**. Setting **Write/delete tools** to **Blocked** makes that connection read-only, enforced by Claude. The setup guide now explains how, and which FitFactorOS features still work that way. Disconnecting is under **Customize → Connectors → Yours**.
+
+**To update:** delete the old **fitfactoros-intake** skill and upload the new file (plugin users: **Check for updates**).
+
 ## 2026-10-16 (night): first-timer setup
 
 From a first-time tester on the Free plan. This round fixes the first 20 minutes; nothing new was added to what FitFactorOS does.
