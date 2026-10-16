@@ -33,8 +33,9 @@ Before starting, read `references/guardrails.md`, `references/profile-map.md`, `
 
 Look for them in this order, and stop at the first place you find them:
 1. Earlier in this chat.
-2. Past chats in this Project, if you can search them. Look for the Intake answer block.
-3. What you remember about the user's FitFactorOS Profile, if memory is on. Use only facts that came from Intake or that the user gave for their Profile.
+2. This Project's files. Intake asks users to save their answer block there (often named "My FitFactorOS answers"). It's the 18-line block: a Gmail address or `skipped` first, a date last. This is the main place on the Free plan, where past chats can't be searched.
+3. Past chats in this Project, if you can search them. Look for the Intake answer block.
+4. What you remember about the user's FitFactorOS Profile, if memory is on. Use only facts that came from Intake or that the user gave for their Profile.
 
 **Use only the newest Intake answers.** If you find more than one Intake answer block or update, use the newest one for each field (a later "update my profile" change replaces that one field). Always start the result with one line saying which Intake date you used, for example: "Using your Intake answers from 2026-10-11." If two runs disagree on target roles, pay floor, or people, add: "I found older Intake answers that differ. If these aren't right, say **update my FitFactorOS profile**." If two runs carry the **same date** and disagree, don't pick one: ask, in one line, which is current ("Your target roles show up two ways from the same day: [A] or [B]. Which is right?"), and suggest **update my FitFactorOS profile** so it's settled. Never mix answers from different runs, and never add anything from memory that isn't an Intake answer (for example, a target role the Profile doesn't list).
 
@@ -42,7 +43,7 @@ The fields you need are listed in `references/profile-map.md`. An answer recorde
 
 **If you can't find them,** stop and say, word for word:
 
-> I don't have your FitFactorOS answers yet. Type **start my intake** to set them up (about 10 minutes), then paste this lead again. Tip: run Intake and all your fit factors inside your FitFactorOS Project, so I can use your answers every time.
+> I don't have your FitFactorOS answers yet. Type **start my intake** to set them up (about 10 minutes), then paste this lead again. Already did Intake? Copy your answer block from that chat and paste it here, or save it in your Project's files so I can find it every time.
 
 Don't read the job or search anything until you have the answers.
 
@@ -118,7 +119,9 @@ Keep it short and plain. In this order:
 7. **My suggested call:** Pursue, Maybe, or Pass, from the bands in `references/rubrics.md`, plus **What would change this**: one specific, checkable thing.
 8. This line, word for word: *Quick read, not a full one. You know things I don't, so the call is yours.*
 
-Then, if your interface offers tappable choices, ask one question: **"What do you want to do?"** with the options "Pursue," "Hold," "Pass," and "Go deeper first." (Hold means park it and come back later; it is recorded as Maybe.) Showing the buttons ends your turn, so everything above must already be written. Without buttons, ask the same question as a short numbered list.
+Then, if your interface offers tappable choices, ask one question: **"What do you want to do?"** with the options "Pursue," "Hold," and "Pass." (Hold means park it and come back later; it is recorded as Maybe.) Showing the buttons ends your turn, so everything above must already be written. Without buttons, ask the same question as a short numbered list.
+
+**Offer "Go deeper first" only when there's a real reason.** Add it as a fourth option only when your suggested call is Pursue or Maybe, no gate is ✗, and deeper research could change the decision (for example, an open question about leadership, money, or culture that the posting can't answer). Otherwise leave it off. A Pass with a failed gate never gets it. The user can still type **go deep** any time.
 
 ## Step 7: Record it
 
@@ -131,7 +134,13 @@ After the user answers, give the rows. **Every lead gets a Jobs row**, including
 - **Pursue:** Screen result `Pursue`, Ladder stage `Researched`, Status `Active`.
 - **Hold (Maybe):** Screen result `Maybe`, Ladder stage `Researched`, Status `Active`. Next step is the one question that would settle it; Next step date is when to come back (one week out unless the user gives a date). The dashboard shows these as **Parked**.
 - **Pass:** Screen result `Pass`, Ladder stage `Researched`, Status `Passed`.
-- **Go deeper first:** tell the user in one line that this uses noticeably more of their Claude plan (about 8–15 searches), then follow `references/deep-research.md`. It ends with the same question and then the rows.
+- **Go deeper first** (or the user says **go deep**): **ask before you start. Don't search anything yet.** Say, word for word:
+
+  > Going deeper is the heaviest thing FitFactorOS does: about 8 to 12 searches and page reads. **On the Free plan, one deep dive can use most of your usage until your limit resets, which can be a few hours.** If you're on Free, it's worth saving for a job you'd really go after. Go ahead?
+
+  Then ask with tappable choices if you have them: "Yes, go deeper" and "Not now." Without buttons, ask the same as a numbered list. Showing the question ends your turn.
+  - **Yes:** follow `references/deep-research.md`. It ends with the same question and then the rows.
+  - **Not now:** ask "What do you want to do?" again with "Pursue," "Hold," and "Pass," and record their answer as usual.
 
 Give the paste steps word for word, then the **Jobs row** in one code block, then (Pursue only) the **Evidence rows** in a second code block. Follow `references/jobs-map.md` exactly.
 

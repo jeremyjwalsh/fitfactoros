@@ -1,11 +1,19 @@
 # Deep research
 
-Only when the user chooses "Go deeper first." Budget: about 8–15 searches and page reads. Tell the user once before starting that it uses more of their Claude plan.
+Only when the user chooses "Go deeper first" and has said yes to the usage question in SKILL.md, Step 7. Don't ask it again here.
+
+## Budget: always finish with a verdict
+A deep dive that runs out of usage halfway leaves the user with nothing. So:
+- **Hard cap: 12 searches and page reads in all.** Don't re-read the posting or repeat a search from the quick read.
+- **Run the checks in this order,** most decision-changing first: 1 Leadership, 3 Major news, 2 Funding, 5 Careers page, 6 Reviews, 4 Market position, 7 Competitors.
+- **After about 5 searches, write two lines in the chat before going on:** "So far: [what you've found that matters]. Leaning: [Pursue now / Ask first / Pass] (I)." If the chat is cut off by a usage limit after that, the user still has a conclusion.
+- **Stop at 10.** Whatever checks are left count as "couldn't be done" (see below). Spend what's left on the Fit Report.
+- **Keep the Fit Report short:** about 400 words before the questions, and up to 8 Evidence rows.
 
 The quick read's scores are **retired**, not averaged. Deep research scores from scratch. Keep the old scores only as a note ("Quick read: Company 62, Role 71, retired").
 
 ## The seven checks
-Run all seven. Report how many were done: "Research checks: 7 of 7."
+Aim to run all seven, within the budget above. Report how many were done: "Research checks: 7 of 7."
 
 1. **Leadership changes, last 18 months.** Build the sequence, not just today's names: who held the senior seats 18 months ago, who holds them now, and who left. Watch for a role that was created and then removed, a title that was lowered, or a wave of exits after a new CEO. Name who left, not only who arrived.
 2. **Funding:** every round, with dates, amounts, and who led the latest one. For public companies: the latest results and the trend.
@@ -71,4 +79,4 @@ No blended priority score and no resume score. Fit, Chance, and the resume stay 
 
 Then ask the same question as the quick read ("Pursue," "Pass"), and after the user answers, give:
 1. The **Jobs row** (all 21 fields), using the user's decision for Screen result and Status. Ladder stage is `Researched`. Fit score is the Role fit. Notes: "Company fit N/100. Blocker: [line]. Deep [date]: Chance [High/Medium/Low]; [your recommendation]." If this lead was already recorded, tell the user: *"On the Jobs tab, click this job's cell in column A and paste. It replaces the old row."* Otherwise, paste at the first empty cell in column A.
-2. **New Evidence rows** only, up to 12, pasted at the first empty cell in column A of the Evidence tab.
+2. **New Evidence rows** only, up to 8, pasted at the first empty cell in column A of the Evidence tab.

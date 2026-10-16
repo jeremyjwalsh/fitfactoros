@@ -2,6 +2,40 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-16 (night): first-timer setup
+
+From a first-time tester on the Free plan. This round fixes the first 20 minutes; nothing new was added to what FitFactorOS does.
+
+### New: Free plan quick start
+- [docs/quick-start-free.md](docs/quick-start-free.md): Intake and **fit factor this** only, with exact clicks, nothing connected, and no GitHub account. Covers the Mac Safari problem (it unzips the skill files for you, so the upload fails) and what to do when you hit a usage limit. Linked at the top of the README and from Getting started. It doubles as a workshop handout.
+
+### Two modes, said up front
+- **Basic** (nothing connected; you copy results by hand) and **Connected** (optional: Google Sheets for the dashboard, and Gmail and Calendar separately for **check my week** and the morning email). Intake and fit factor never need a connection.
+- Connecting Google moved out of the early setup steps into its own optional step, which explains plainly what Google's permission allows (it's wider than what FitFactorOS uses), what FitFactorOS does with it, and how to disconnect in Claude and on Google's side.
+
+### Intake
+- No longer asks you to set up the Google Sheet before you start. The Gmail question is optional and comes after the resume.
+- At the end, you save your answer block in your **Project's files** ("My FitFactorOS answers"). Pasting it into the Sheet is now optional. **Why:** on the Free plan, Claude can't search your past chats, so this is how fit factor finds your answers every time.
+- The closing no longer suggests the morning email.
+
+### Research
+- Looks for your answers in your Project's files first (after the current chat).
+- **Go deeper first** is offered only when the job looks promising (a Pursue or Maybe with no failed gate). You can still say **go deep** any time.
+- **Asks before going deeper,** and says plainly that on the Free plan one deep dive can use most of your usage until your limit resets.
+- Deep dives now always end with a verdict: a hard cap of 12 searches and page reads, the most decision-changing checks first, a two-line "So far / Leaning" note partway through in case a usage limit cuts the chat off, and a shorter report (up to 8 Evidence rows instead of 12).
+
+### Setup guide and README
+- The README's Getting started leads with the Free plan path. The plugin is now an optional extra for paid plans, and the guide says you don't need a GitHub account for either path.
+- The setup guide drops **Search and reference chats** as a requirement. It's a paid-plan setting, so Free users couldn't find it.
+- The Free vs paid table now says what a deep dive costs on Free, and what we checked in Anthropic's help center.
+- Placeholders mark where screenshots will go (Settings, Customize → Skills, Projects, Project files, Connectors).
+- Fixes for older Sheets moved to their own section at the end of the setup guide.
+
+### For testers
+- New [observer sheet](docs/testing/observer-sheet.md) for watching a first-time setup, and a [usage test](docs/testing/usage-test.md) for measuring what each step uses.
+
+**To update:** delete the old **fitfactoros-intake** and **fitfactoros-research** skills and upload the new files (plugin users: **Check for updates**). Your Sheet and answers carry over. If you did Intake before this update, save your answer block in your Project's files once (copy it from your Intake chat).
+
 ## 2026-10-16 (evening)
 
 ### Docs

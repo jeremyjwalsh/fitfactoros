@@ -1,6 +1,6 @@
 ---
 name: fitfactoros-intake
-description: Runs the FitFactorOS Intake, a short set of questions that builds the user's job-search Profile and ends with an answer block they paste into the Profile tab of their FitFactorOS Google Sheet. Use when the user says "start my intake", "set up my profile", "FitFactorOS intake", or asks to update or change an answer in their FitFactorOS profile ("update my profile", "update my FitFactorOS profile", "change my pay floor", "add a dream company", "add a contact"). Inside a FitFactorOS Project, "update my profile" always means this Profile; go straight to the update without asking which profile.
+description: Runs the FitFactorOS Intake, a short set of questions that builds the user's job-search Profile and ends with an answer block they save in their FitFactorOS Project and, if they use it, paste into the Profile tab of their FitFactorOS Google Sheet. Use when the user says "start my intake", "set up my profile", "FitFactorOS intake", or asks to update or change an answer in their FitFactorOS profile ("update my profile", "update my FitFactorOS profile", "change my pay floor", "add a dream company", "add a contact"). Inside a FitFactorOS Project, "update my profile" always means this Profile; go straight to the update without asking which profile.
 ---
 
 # FitFactorOS Intake
@@ -30,25 +30,18 @@ If there are no tappable choices, ask the same questions as short numbered lists
 
 ## The conversation (5 turns)
 
-### Turn 1: Welcome, Sheet check, Gmail, and resume
+### Turn 1: Welcome, resume, and Gmail
 Start with this line, word for word: *Thanks for giving FitFactorOS a try. I built it for people in the middle of a job search, and I'm rooting for you. — Jeremy*
 
 Then, in 3 sentences or fewer: this takes about 10 minutes; every question can be skipped; you won't send or submit anything, and the answers end up in their own Sheet.
 
 Then add this line word for word: *Tip: run this inside your FitFactorOS Project in Claude, so I can use your answers every time you ask me to fit factor a job.*
 
-Then give the Sheet check, word for word:
-
-> **Before we start: is your FitFactorOS Sheet set up in Google Sheets?** You'll paste your answers there at the end. If it isn't, take 2 minutes now:
-> 1. Download the Sheet: [fitfactoros-template.xlsx](https://github.com/jeremyjwalsh/fitfactoros/raw/main/sheet/fitfactoros-template.xlsx)
-> 2. Go to [drive.google.com](https://drive.google.com), click **New → File upload**, and choose the file you just downloaded.
-> 3. Open it, then click **File → Save as Google Sheets**. A new copy opens in its own tab. Use that copy from now on, not the .xlsx file.
->
-> Step-by-step help: [setup guide](https://github.com/jeremyjwalsh/fitfactoros/blob/main/docs/setup.md).
+Then add this line word for word: *You don't need anything else set up to start. At the end, I'll show you where to save your answers.*
 
 Then ask, in one message:
-1. The Gmail address they'll use with FitFactorOS. Say why: *"It's used only to build links that open your own inbox, and it goes in your own Sheet."*
-2. Their resume (PDF or Word), or "skip" to go without it.
+1. Their resume (PDF or Word), or "skip" to go without it.
+2. *(Optional)* The Gmail address they'll use with FitFactorOS. Say why: *"Only if you'll use the FitFactorOS Google Sheet: it builds links that open your own inbox. Skip it if you're not sure."*
 
 If they give no Gmail address, record it as `skipped` and don't ask again.
 
@@ -91,18 +84,18 @@ Give these in this order:
 
 1. **Steps first, above the block.** Word for word:
 
-   **Next: put this in your Sheet**
+   **Next: save your answers in your Project (do this now)**
+   This is how I find your answers every time you say **fit factor this**, in any chat in this Project.
    1. Tap **Copy** on the block below.
-   2. Open your FitFactorOS Sheet in Google Sheets (the Google Sheets copy, not the .xlsx file you downloaded).
-   3. Click the **Profile** tab at the bottom of the screen.
-   4. Click cell **B2** (column B, row 2).
-   5. Paste (**Ctrl+V** on Windows, **Cmd+V** on Mac). Your answers fill **B2 through B19**, one per row.
+   2. Open your FitFactorOS Project: click its name at the top of this chat, or find it under **Projects** in the left sidebar.
+   3. In the **Files** area of the Project page, click **+**, then **Add text content**.
+   4. Paste. Name it **My FitFactorOS answers** and save.
 
-2. Then this line, word for word: **No Sheet yet?** [Download it here](https://github.com/jeremyjwalsh/fitfactoros/raw/main/sheet/fitfactoros-template.xlsx), upload it to Google Drive (**New → File upload**), open it, and click **File → Save as Google Sheets**. Then do the steps above. More help: [setup guide, step 4](https://github.com/jeremyjwalsh/fitfactoros/blob/main/docs/setup.md#4-copy-the-sheet-template-into-google-drive).
-3. **The block**, in a single code block: **exactly 18 lines**, answers only, no field names, following every rule in `references/profile-map.md`. The first line is the Gmail address; the last line is today's date as YYYY-MM-DD.
-4. **Preview table below the block**, with two columns, **Field** and **Your answer**, covering all 18 fields in the order in `references/profile-map.md`. Introduce it in a few words, such as "Here's what goes where."
-5. Close in 2–3 sentences: their Profile is set. If the Gmail address was skipped, tell them the inbox links won't work until they type it into cell B2. Then this, word for word: **Next:** any time you find a job you're considering, paste the link here in your FitFactorOS Project and say **fit factor this**.
-6. Then this line, word for word: *Optional: say **set up my morning email** for a one-minute weekday email with your one next move. It's saved as a draft to you and never sent.*
+   **Using the FitFactorOS Sheet too?** Open your Sheet in Google Sheets, click the **Profile** tab, click cell **B2**, and paste (**Ctrl+V** on Windows, **Cmd+V** on Mac). Your answers fill **B2 through B19**. No Sheet yet? That's fine. You can set it up later: [setup guide, "Keep a record in your Sheet"](https://github.com/jeremyjwalsh/fitfactoros/blob/main/docs/setup.md#7-keep-a-record-in-your-sheet-optional).
+
+2. **The block**, in a single code block: **exactly 18 lines**, answers only, no field names, following every rule in `references/profile-map.md`. The first line is the Gmail address; the last line is today's date as YYYY-MM-DD.
+3. **Preview table below the block**, with two columns, **Field** and **Your answer**, covering all 18 fields in the order in `references/profile-map.md`. Introduce it in a few words, such as "Here's what goes where."
+4. Close in 2–3 sentences: their Profile is set. Then this, word for word: **Next:** start a new chat in your FitFactorOS Project, paste a job link (and the job description, for the best result), and say **fit factor this**.
 
 If you noticed a resume issue worth flagging, add it as one line after the close.
 
@@ -118,10 +111,11 @@ When the user asks to change an answer ("update my pay floor," "add a dream comp
 Inside a FitFactorOS Project, don't ask which profile they mean. If they haven't said what to change, ask which answer, in one line.
 
 1. **Never fill in anything yourself.** For a person on the People line, you need their name, where they work now, and how the user knows them. If any part is missing, ask once. If the user skips "how," write `Name at Company` with nothing after it. Never use a job title or anything from memory in its place.
-2. **List fields (Top skills, Target roles, Where you can work, Deal-breakers, Companies to avoid, Work, Dream companies, People, Wins): always give the whole line,** never a piece to add on. Find the current answer the same way Research does (newest Intake in this chat or past chats in this Project). If you can't find it, ask the user to copy the cell and paste it here, then build the full new line. If the current answer is `skipped` or `None`, the new line is just the new item. The line never starts with "; ".
+2. **List fields (Top skills, Target roles, Where you can work, Deal-breakers, Companies to avoid, Work, Dream companies, People, Wins): always give the whole line,** never a piece to add on. Find the current answer the same way Research does (newest Intake in this chat, the "My FitFactorOS answers" file in this Project, or past chats in this Project). If you can't find it, ask the user to copy the cell and paste it here, then build the full new line. If the current answer is `skipped` or `None`, the new line is just the new item. The line never starts with "; ".
 3. Confirm the new answer in one line.
 4. Give the paste steps with the cell **and** its row label, word for word in this shape: "Click cell **B15** (the **People you know** row) and paste. This replaces what's there." Then the new answer in a code block.
 5. Give today's date for **B19** (the **Profile last updated** row) in a second code block.
+6. Then this line, word for word: *Saved your answers in your Project? Open **My FitFactorOS answers** there and change the same line, and the date on the last line, so fit factor uses the new answer.*
 
 Don't re-run Intake or reprint the whole block for a single change.
 

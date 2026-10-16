@@ -17,7 +17,7 @@ Do it the same day. The details are still fresh, and the morning email stops nud
 | Say this | What you get |
 |---|---|
 | **fit factor this** + the job link | Company fit, then Role fit. You decide: pursue, park as a maybe, or pass |
-| **go deep** | Deeper research on a job you're serious about |
+| **go deep** | Deeper research on a job you're serious about. Claude asks first: on the Free plan, one deep dive can use most of your usage until your limit resets. |
 
 ## End of the week (Saturday or Sunday)
 

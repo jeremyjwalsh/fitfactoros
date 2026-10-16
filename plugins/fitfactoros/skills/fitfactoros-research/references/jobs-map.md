@@ -30,7 +30,7 @@ Rows run across columns, so fields are separated by a **tab character**. Output 
 
 ## Evidence tab: 8 columns, A through H
 
-Only when the user chooses Pursue, or after deep research. One row per claim that drove the result. Quick read: 3–6 rows. Deep research: up to 12.
+Only when the user chooses Pursue, or after deep research. One row per claim that drove the result. Quick read: 3–6 rows. Deep research: up to 8.
 
 | Col | Field | What to write |
 |---|---|---|

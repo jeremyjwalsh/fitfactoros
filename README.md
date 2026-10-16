@@ -8,6 +8,8 @@ It is free, open source, and built for people who don't think of themselves as t
 
 > **Status:** Early build. Intake, Research, the Activity Log (Massachusetts first), and the Dashboard are in testing. See [Roadmap](#roadmap).
 
+> **Want to try it?** New to Claude or on the Free plan: [Free plan quick start](docs/quick-start-free.md) (about 20 minutes, no Google or GitHub account needed). Everyone else: [Getting started](#getting-started).
+
 ---
 
 ## A note from Jeremy
@@ -42,11 +44,11 @@ Jeremy
 
 ## What to expect
 
-1. **Set up once (about 20 minutes).** Add FitFactorOS to Claude, download the Sheet template and save it as a Google Sheet in your Drive, and answer the Intake questions. Every question can be skipped.
+1. **Set up once (about 20 minutes).** Add FitFactorOS to Claude and answer the Intake questions. Every question can be skipped. New to Claude? Use the [Free plan quick start](docs/quick-start-free.md).
 2. **Bring a job.** A link a friend sent you, or one you found yourself. Paste it (and the job description, for the best result) and say **"fit factor this."**
 3. **Get a quick read.** Company fit, then Role fit, the biggest blocker, and a suggested call. Every claim is tagged Verified, Estimated, or Inferred.
-4. **You decide.** **Pursue**, **Hold** (park it and come back in a week), **Pass**, or **Go deeper first**: a fuller look at the company (leadership changes, funding, market position, competitors) and then the role. Going deeper uses more of your Claude plan, so save it for jobs you're serious about.
-5. **Keep the record.** Claude gives you a row to paste into your Sheet. Every job you look at gets recorded, even the ones you pass on.
+4. **You decide.** **Pursue**, **Hold** (park it and come back in a week), or **Pass**. For a promising job, you can also **go deeper first**: a fuller look at the company (leadership changes, funding, market position, competitors) and then the role. Going deeper uses much more of your Claude plan (on Free, it can use most of your usage until your limit resets), so Claude asks before it starts.
+5. **Keep the record.** Claude gives you a row to paste into your Google Sheet (or a note). Every job you look at gets recorded, even the ones you pass on.
 6. **Log what you do.** Say "I applied to…" or "I had a call with…" to log it. If you're collecting unemployment, say "this week's work search log" for your weekly log.
 7. **See where you stand.** Say **"show my dashboard"** for your top picks, each job's next step, and your progress this week.
 8. **Optional: a morning email.** Say **"set up my morning email"** for a one-minute weekday email in your Gmail Drafts: how you're doing, what needs attention, and the one thing to do today. It's a draft to you and is never sent.
@@ -183,16 +185,28 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 
 ## Getting started
 
-**What you'll need:** a Claude account, a Google account, and about 20 minutes. FitFactorOS works on the Free plan; a paid plan (Pro or above) adds one-click install and updates and the scheduled morning email. The [setup guide](docs/setup.md) compares the two and covers both.
+### New to Claude, or on the Free plan? Start here.
 
-**Built for Claude.** FitFactorOS is built and tested on Claude. The skills use the open SKILL.md format, so parts of it may work in other AI tools (ChatGPT, for example), but that hasn't been tested. The one-click install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
+**➜ [Free plan quick start](docs/quick-start-free.md)**: your first job fit read in about 20 minutes. You need a free Claude account and one job link. No Google account, no GitHub account, no connections.
 
-1. Create or sign in to your Claude account.
-2. Download the Sheet template and save it as a Google Sheet in your Drive (the [setup guide](docs/setup.md) shows how).
-3. Add FitFactorOS to Claude: in **Customize → Plugins**, choose **Add → Add marketplace** and enter `jeremyjwalsh/fitfactoros`, then add the **FitFactorOS** plugin. **On the Free plan,** upload the five skills by hand instead ([setup guide, step 3, Option B](docs/setup.md#option-b-add-the-skills-by-hand-free-plan-or-if-option-a-doesnt-show-for-you)). Connect **Google Sheets** too, so Claude can read your Sheet for your dashboard.
-4. Create a Project called **FitFactorOS**, start a new chat inside it, and say **"Start my intake."**
+### Two ways to use it
 
-Adding FitFactorOS as a plugin means updates take one click (**Check for updates**), with no reinstalling. Skip the "Try in chat" button: always use FitFactorOS from a new chat inside your FitFactorOS Project.
+- **Basic** (where everyone starts): nothing connected. Claude gives you results and rows of text, and you copy what you want into your Sheet or a note. Intake and **fit factor this** work fully in Basic.
+- **Connected** (optional, later): connect Google Sheets so Claude can read your Sheet for the dashboard page, and, separately, Gmail and Google Calendar for **check my week** and the morning email. Connect only what you want, and disconnect any time. The [setup guide, step 8](docs/setup.md#8-connected-mode-optional-any-time-later) explains what the Google permission allows.
+
+### The full setup
+
+**What you'll need:** a Claude account and about 20 minutes. A Google account only if you want the Sheet or Connected mode. FitFactorOS works on the Free plan; a paid plan (Pro or above) gives you more usage, optional one-click install and updates, and the scheduled morning email.
+
+1. Create or sign in to your Claude account, and turn on **Code execution and file creation** in **Settings → Capabilities**.
+2. Add the FitFactorOS skills to Claude ([setup guide, step 3](docs/setup.md#3-add-fitfactoros-to-claude)). On any plan, download the skill files and upload them in **Customize → Skills**. On a paid plan, you can add the plugin instead.
+3. Create a Project called **FitFactorOS**, start a new chat inside it, and say **"Start my intake."** Save the answers Claude gives you in your Project's files.
+4. Start a new chat in the Project, paste a job description and link, and say **"fit factor this."**
+5. Later, if you want: set up your Google Sheet, and Connected mode.
+
+**Built for Claude.** FitFactorOS is built and tested on Claude. The skills use the open SKILL.md format, so parts of it may work in other AI tools (ChatGPT, for example), but that hasn't been tested. The plugin install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
+
+Always use FitFactorOS from a new chat inside your FitFactorOS Project.
 
 ### Things you can say
 
@@ -205,7 +219,7 @@ Keep the one-page [cheat sheet](docs/cheat-sheet.md) handy: it groups these by w
 | **start my intake** | Builds your Profile (about 10 minutes) |
 | **update my profile** (or "change my pay floor," "add a contact") | Changes one answer |
 | **fit factor this** + a job link | Company fit, then Role fit, then you decide |
-| **go deep** | Deeper research on a job you're serious about |
+| **go deep** | Deeper research on a job you're serious about. Claude asks first, because it uses much more of your plan. |
 | **log this** (or "I applied to…," "I had a call with…") | Activity rows to paste |
 | **check my week** (or "what did I miss?") | Claude checks your calendar and email (read-only) for activity you haven't logged, and asks before adding anything |
 | **this week's work search log** | Your weekly unemployment log |
@@ -214,7 +228,7 @@ Keep the one-page [cheat sheet](docs/cheat-sheet.md) handy: it groups these by w
 | **set up my morning email** | An optional weekday email draft with your one next move (scheduled on Pro and above) |
 | **morning email** | Today's email draft, any time |
 
-The [setup guide](docs/setup.md) walks through every step. Screenshots are coming after the first round of testing.
+The [setup guide](docs/setup.md) walks through every step. Screenshots are coming after the next round of testing.
 
 **New to Claude?** [Want to go further?](docs/learn-more.md) lists a few free official Anthropic courses and help pages on Projects, Skills, and scheduled tasks.
 
@@ -251,7 +265,10 @@ fitfactoros/
 │   ├── fitfactoros-dashboard.zip
 │   └── fitfactoros-morning-email.zip
 ├── docs/
+│   ├── quick-start-free.md   # Free plan quick start: Intake and fit factor, nothing connected
 │   ├── setup.md              # Step-by-step setup for non-technical users
+│   ├── cheat-sheet.md        # One page of everything you can say
+│   ├── testing/              # Observer sheet and usage test for people running test sessions
 │   ├── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
 │   ├── morning-email.md      # How the morning email decides what to show
 │   ├── learn-more.md         # Free official Anthropic courses and help pages
