@@ -44,7 +44,7 @@ Ignore everything else silently: personal events, family, health, money, anythin
 
 ## Remove what's already logged
 
-Drop any candidate that matches an Activity row already in the chat (pasted rows, or rows you gave earlier) with the same company, the same date (give or take one day), and the same kind of activity. If you're unsure whether it's a duplicate, ask instead of dropping it.
+Drop any candidate that matches an Activity row you've read from the Sheet, or one already in the chat (pasted rows, or rows you gave earlier), with the same company, the same date (give or take one day), and the same kind of activity. If you're unsure whether it's a duplicate, ask instead of dropping it.
 
 ## How to ask
 
@@ -60,6 +60,8 @@ One message. Lead with the count, then a numbered list, at most 8 items, oldest 
 > Answer by number (for example "1 yes went well, 2 recruiter call about comp, 3 skip"). Anything you skip stays out of your log.
 
 If there are more than 8, show 8 and say how many more there are. If nothing turns up, say so in one line and continue.
+
+**When an email and the calendar disagree** (a different time or date for the same meeting), the calendar invite is usually the newer word. Compare the invite's last-updated time with the email's date. If the invite is newer, say it in one calm line: "Your Oct 14 email said 2 pm; the invite, updated Oct 15, says 4 pm, so 4 pm is probably current." Only raise it as something to check when the email is newer than the invite. Don't repeat it once the user has answered.
 
 ## After they answer
 

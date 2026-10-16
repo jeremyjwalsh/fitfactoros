@@ -2,6 +2,18 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-16 (later)
+
+### Activity Log
+- **The weekly log and "check my week" now read your Sheet themselves** when Google Sheets is connected (read-only, never changing it). No more copying your Activity and Jobs tabs into the chat. Without the connection, copy and paste still works.
+- "check my week" now only shows what isn't in your Activity tab yet.
+- When an email and a calendar invite disagree about a time, the check now trusts the newer one and says so calmly, instead of warning you every time.
+
+### Morning email
+- New **Coming up** line under "How am I doing": up to 2 interviews or next steps in the next 2 to 7 days, so a big day doesn't first show up the day before.
+- **Last real step** now says what happened for "Other" activities ("Met with the recruiter about pay") instead of just "Other."
+- Once you reach your weekly minimum, the middle tile says **Goal met**.
+
 ## 2026-10-16
 
 ### New: the activity check

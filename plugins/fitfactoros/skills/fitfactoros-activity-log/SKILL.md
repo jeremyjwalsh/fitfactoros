@@ -23,8 +23,8 @@ Before starting, read `references/guardrails.md` and `references/sheet-map.md`. 
 - **No legal or benefits advice.** Don't tell the user whether they're eligible, whether a week will be approved, or what to do about a claim problem. Point to the official source linked in the state file.
 - **Keep the user's words.** Write results plainly and factually. Don't upgrade "recruiter replied" to "advanced to the next round."
 - **Build every Activity row with `scripts/make_row.py`.** Never type a row by hand. Pass each non-blank field as `key=value` and leave blank fields out; the script adds the blanks and checks there are exactly 15 columns. Copy its output into the code block unchanged. If it prints an error, fix the value and run it again. Only if you can't run code at all, follow "How to build a row" in `references/sheet-map.md`.
-- **No running totals in Log it.** Don't tell the user how many activities they have this week unless they've pasted the week's rows. You can't see their Sheet, so a count from this chat alone may be wrong.
-- **Light on usage.** No web searches. Everything comes from the state file, what the user tells or pastes, at most **one page read** per job in Log it (see Step 2A), and the activity check's reads (one calendar list and at most two Gmail searches per run, see `references/activity-check.md`). Ask for missing details in one turn, not one at a time.
+- **No running totals in Log it.** Don't tell the user how many activities they have this week unless you've read or been given the week's rows. A count from this chat alone may be wrong.
+- **Light on usage.** No web searches. Everything comes from the state file, what the user tells or pastes, at most **one page read** per job in Log it (see Step 2A), one read-only read of the Activity and Jobs tabs when Google Sheets is connected, and the activity check's reads (one calendar list and at most two Gmail searches per run, see `references/activity-check.md`). Ask for missing details in one turn, not one at a time.
 - **Calendar and email are read-only and ask-first.** Never log an event or email the user hasn't confirmed. Never change, label, or reply to anything. Never mention a non-job event or email.
 - **Skip example rows.** Ignore any pasted row whose Job ID ends in `-EXAMPLE` or whose Notes start with `EXAMPLE ROW`, even if its date falls in the week.
 - **Say where anything outside the pasted rows came from.** If you notice something from elsewhere (earlier chats, what you remember about the user, an email) that may affect an entry, such as a possible duplicate application, raise it as a question, name the source, and tag it Verified, Estimated, or Inferred. Never state a company's or agency's policy as fact without a source link. Don't drop or move an entry on your own; the user decides.
@@ -56,11 +56,10 @@ The user describes something they did: "I applied to Northwind today," "coffee w
 ## Step 2B: Weekly log
 
 1. **Pick the week.** Use the state file's benefit week. "This week" means the current week, even if it isn't over yet. "Last week" means the most recently finished week. If they don't say, use the most recently finished week and ask. Say the dates back to them. If the week isn't over yet, say so once: "This week runs through [end date], so this is a log so far."
-2. **Get the rows.** Ask the user to copy and paste into the chat:
-   - their **Activity** rows for that week, and
-   - their **Jobs** rows added that week.
-
-   Tell them: "Copying the whole tab is fine too. I'll pick out the right week." Never ask them to paste their Profile.
+2. **Get the rows.**
+   - **If Google Sheets is connected,** read the Sheet yourself, read-only: `Activity!A2:O500` and `Jobs!A2:U300`. Find it from a link in this chat or the Project, or search Drive for a file named like "FitFactorOS" (ask which one if there are several). Say one line: "I read your Activity and Jobs tabs (read-only)." Never write to the Sheet.
+   - **Otherwise,** ask the user to copy and paste their **Activity** rows for that week and their **Jobs** rows added that week. Tell them: "Copying the whole tab is fine too. I'll pick out the right week."
+   - Never ask them to paste their Profile.
 3. **Offer the activity check.** If Google Calendar or Gmail is connected, ask once: "Want me to check your calendar and email for anything you haven't logged this week?" On a yes, follow `references/activity-check.md`, then add the rows the user confirms to the week before you build the entries.
 4. **Build the entries.**
    - Every Activity row dated inside the week is one entry.
@@ -80,7 +79,7 @@ The user describes something they did: "I applied to Northwind today," "coffee w
 
 ## Step 2C: Check my week
 
-The user says **check my week** or **what did I miss?** Follow `references/activity-check.md` for the current benefit week. Ask them to paste the week's Activity rows first ("so I don't show you things you've already logged"); if they'd rather not, go ahead and say duplicates are possible. End with the confirmed rows to paste, and any Jobs cells to change for interviews already booked.
+The user says **check my week** or **what did I miss?** Follow `references/activity-check.md` for the current benefit week. First get the week's Activity rows, so you only show what's missing: if Google Sheets is connected, read `Activity!A2:O500` yourself, read-only (find the Sheet as in Step 2B); otherwise ask them to paste the week's Activity rows. If they'd rather not, go ahead and say duplicates are possible. End with the confirmed rows to paste, and any Jobs cells to change for interviews already booked.
 
 ## Step 3: Stop
 

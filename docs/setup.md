@@ -103,7 +103,7 @@ If **Google Calendar** is connected, Claude fills in details from that day's cal
 Missed a few things? Say **check my week**. Claude reads your calendar and email for the week (read-only), lists what looks like job-search activity you haven't logged, and asks about each one. Only what you confirm becomes a row. Connect **Gmail** and **Google Calendar** in **Customize → Connectors** to use it.
 
 ## 9. Build your weekly log
-Say **"this week's work search log."** Claude asks you to copy your **Activity** rows and **Jobs** rows for the week into the chat (copying the whole tab is fine). You get:
+Say **"this week's work search log."** If Google Sheets is connected, Claude reads your **Activity** and **Jobs** tabs itself (read-only, it never changes your Sheet). If not, it asks you to copy them into the chat (copying the whole tab is fine). If Gmail or Google Calendar is connected, it first offers to check them for anything you haven't logged (see step 8). You get:
 - a log in your state's format, ready to copy into your weekly certification,
 - a count against your state's weekly minimum, and a plain warning if you're short,
 - rows to add to your Activity tab, so your records stay complete.
@@ -175,7 +175,7 @@ Then click **D10** and replace the note with: *Counts only Activity rows marked 
 New to Claude, or curious how the pieces fit? [Want to go further?](learn-more.md) has a few free official Anthropic courses and help pages on Projects, Skills, and scheduled tasks.
 
 ## Coming in later phases
-The Job Finder and Outreach come next. Later, the weekly log will read your Sheet directly, the way the dashboard and morning email already do, so you won't have to copy rows. See the [Roadmap](../README.md#roadmap).
+The Job Finder and Outreach come next. Later, Claude will add rows to your Sheet for you after you OK them, so you won't have to paste them. See the [Roadmap](../README.md#roadmap).
 
 ## Your data
 Your answers are saved in your own Google Sheet. FitFactorOS has no server of its own and collects nothing. Your chats with Claude go through Anthropic like any Claude chat, and if Claude's memory feature is on, Claude may remember details between chats. You can control that in Claude's settings. Anthropic's privacy policy covers the rest.

@@ -6,7 +6,7 @@ Say these in a new chat inside your FitFactorOS Project. Plain words work; you d
 
 | Say this | What you get |
 |---|---|
-| **log this** + a sentence or two ("Had the Redis test today, felt solid") | Activity rows to paste, and the one Jobs cell to change if a step moved |
+| **log this** + a sentence or two ("Had the Northwind interview today, felt solid") | Activity rows to paste, and the one Jobs cell to change if a step moved |
 | **I applied to…** / **I had a call with…** | Same as log this |
 | **check my week** (or "what did I miss?") | Claude checks your calendar and email, read-only, lists what looks like job-search activity you haven't logged, and asks about each one. Only what you confirm becomes a row. |
 
@@ -26,7 +26,7 @@ Do it the same day. The details are still fresh, and the morning email stops nud
 | **this week's work search log** | Your weekly log in your state's format, ready to copy into your certification |
 | **did I do enough this week?** | Your count against your state's weekly minimum |
 
-Copy your **Activity** and **Jobs** tabs into the chat when asked. The whole tabs are fine; Claude picks out the week. If Gmail or Google Calendar is connected, Claude offers to check them for anything you missed first. You also get rows for any jobs you screened but haven't logged yet.
+If Google Sheets is connected, Claude reads your **Activity** and **Jobs** tabs itself (read-only). If not, copy them into the chat when asked; the whole tabs are fine and Claude picks out the week. If Gmail or Google Calendar is connected, Claude offers to check them for anything you missed first. You also get rows for any jobs you screened but haven't logged yet.
 
 ## Any time
 

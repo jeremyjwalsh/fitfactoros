@@ -19,8 +19,9 @@ If a tab is missing or empty, treat it as no rows. Never stop the email because 
 - **Pursue jobs:** Screen result = Pursue and Status = Active.
 - **Due:** Next step date is today or earlier.
 - **Needs attention** = Pursue jobs that are Due + Maybe jobs (Status = Active) that are Due.
-- **Tiles:** `inFlight` = number of Pursue jobs. `thisWeek` = Dashboard B8 (counting activities only; the tile reads "Activities counted"). `screened` = Dashboard B7 (jobs screened this week). Never add the two together: screened jobs become Reviewed job posting rows in the Activity tab, so adding them would count the same job twice. `weeklyMin` = Dashboard B9, only if Profile B17 is "Yes"; otherwise leave it out. `needsAttention` as above.
-- **Last real step:** the newest Activity row by Date, written "[Activity type] · [Company] · [Mon D]". If none, leave `lastStep` out.
+- **Tiles:** `inFlight` = number of Pursue jobs. `thisWeek` = Dashboard B8 (counting activities only; the tile reads "Activities counted", or "Goal met" once it reaches the weekly minimum). `screened` = Dashboard B7 (jobs screened this week). Never add the two together: screened jobs become Reviewed job posting rows in the Activity tab, so adding them would count the same job twice. `weeklyMin` = Dashboard B9, only if Profile B17 is "Yes"; otherwise leave it out. `needsAttention` as above.
+- **Last real step:** the newest Activity row by Date, written "[Activity type] · [Company] · [Mon D]". When the type is Other, use its Result instead of the type, shortened to 60 characters at a word ("Met with the recruiter about pay · Northwind · Oct 15"). If none, leave `lastStep` out.
+- **Coming up:** up to 2 things dated 2 to 7 days from today, soonest first: Interviews rows (written "[Company] — [Round] · [Ddd Mon D]"), then Pursue jobs' Next steps ("[Company] — [Next step] · [Ddd Mon D]"). Today and tomorrow are left out; rule 1 of the one move covers them. If none, leave `comingUp` out.
 
 ## Search state (first match wins)
 
@@ -147,6 +148,7 @@ Pick one, rotating by date (day of month mod 4):
   "move": {"title": "…", "why": "…"},
   "tiles": {"inFlight": 0, "thisWeek": 0, "weeklyMin": 3, "screened": 0, "needsAttention": 0},
   "lastStep": "…",
+  "comingUp": ["…"],
   "attention": [{"title": "…", "detail": "…"}],
   "attentionEmpty": "…",
   "moveIsDue": true,

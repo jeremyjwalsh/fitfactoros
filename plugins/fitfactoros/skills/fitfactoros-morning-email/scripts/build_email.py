@@ -148,6 +148,9 @@ def check(d):
     cap = 2 if d["state"] == "Overwhelmed" else 3
     if len(att) > cap:
         stop("attention has %d items; the limit in state %s is %d" % (len(att), d["state"], cap))
+    cu = d.get("comingUp") or []
+    if not isinstance(cu, list) or len(cu) > 2:
+        stop("comingUp must be a list of at most 2 items")
     more = d.get("attentionMore", 0)
     if not isinstance(more, int) or more < 0:
         stop("attentionMore must be a whole number, 0 or more")
@@ -171,6 +174,19 @@ def check(d):
 LABEL_TOP = 'padding:18px 28px 10px 28px;font-size:12px;font-weight:bold;letter-spacing:1px;color:#2b5d4f;text-transform:uppercase;'
 SPARK_LABEL = {"Quote": "A thought for today", "Music": "Today&rsquo;s soundtrack", "Humor": "A little lightness"}
 SPARK_LABEL_TXT = {"Quote": "A THOUGHT FOR TODAY", "Music": "TODAY'S SOUNDTRACK", "Humor": "A LITTLE LIGHTNESS"}
+def goal_met(t):
+    return isinstance(t.get("weeklyMin"), int) and t["thisWeek"] >= t["weeklyMin"]
+
+
+def counted_label(t, html_out=False):
+    """Tile label. Once the weekly minimum is met, the tile says so instead."""
+    if not isinstance(t.get("weeklyMin"), int):
+        return "Activities logged"
+    if goal_met(t):
+        return '<span style="color:#2b5d4f;font-weight:bold;">Goal met</span>' if html_out else "Activities counted (goal met)"
+    return "Activities counted"
+
+
 def att_label(d):
     """It's a shortlist whenever the tile counts more than the list shows."""
     return "Top items needing attention" if (d.get("attentionMore") or 0) > 0 else "What deserves attention"
@@ -247,14 +263,17 @@ def build_html(d):
     p.append('<tr><td style="%s">How am I doing &middot; this week</td></tr>' % LABEL)
     p.append('<tr><td style="padding:0 28px 8px 28px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>')
     p.append(tile % ("#1f1d1a", t["inFlight"], "In flight"))
-    p.append(tile % ("#1f1d1a", wk, "Activities counted" if isinstance(t.get("weeklyMin"), int) else "Activities logged"))
+    p.append(tile % ("#1f1d1a", wk, counted_label(t, html_out=True)))
     p.append(tile % (na_color, t["needsAttention"], "Needs attention"))
     p.append('</tr></table></td></tr>')
     sl = screened_line(t)
     if sl:
         p.append('<tr><td style="padding:4px 28px 0 28px;font-size:13px;color:#6b665d;">%s</td></tr>' % esc(sl))
     if d.get("lastStep"):
-        p.append('<tr><td style="padding:4px 28px 20px 28px;font-size:13px;color:#6b665d;">Last real step: %s</td></tr>' % esc(d["lastStep"]))
+        p.append('<tr><td style="padding:4px 28px 0 28px;font-size:13px;color:#6b665d;">Last real step: %s</td></tr>' % esc(d["lastStep"]))
+    for c in (d.get("comingUp") or [])[:2]:
+        p.append('<tr><td style="padding:4px 28px 0 28px;font-size:13px;color:#1f1d1a;"><b style="color:#2b5d4f;">Coming up:</b> %s</td></tr>' % esc(c))
+    p.append('<tr><td style="padding:0 0 20px 0;font-size:0;line-height:0;">&nbsp;</td></tr>')
     # attention
     p.append('<tr><td style="%s">%s</td></tr>' % (LABEL, att_label(d)))
     att = d.get("attention") or []
@@ -311,11 +330,13 @@ def build_text(d):
         out.append(d["move"]["why"])
     wk = str(t["thisWeek"]) + (" of %d" % t["weeklyMin"] if isinstance(t.get("weeklyMin"), int) else "")
     out += ["", "HOW AM I DOING (this week)",
-            "In flight: %d | %s: %s | Needs attention: %d" % (t["inFlight"], "Activities counted" if isinstance(t.get("weeklyMin"), int) else "Activities logged", wk, t["needsAttention"])]
+            "In flight: %d | %s: %s | Needs attention: %d" % (t["inFlight"], counted_label(t), wk, t["needsAttention"])]
     if screened_line(t):
         out.append(screened_line(t))
     if d.get("lastStep"):
         out.append("Last real step: " + d["lastStep"])
+    for c in (d.get("comingUp") or [])[:2]:
+        out.append("Coming up: " + c)
     out += ["", att_label(d).upper()]
     att = d.get("attention") or []
     out += ["%s - %s" % (a.get("title"), a.get("detail")) for a in att] or [d.get("attentionEmpty") or "Nothing waiting on you right now."]

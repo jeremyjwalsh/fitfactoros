@@ -69,10 +69,10 @@ Three numbers in a row:
 | Tile | Where it comes from |
 |---|---|
 | **In flight** | Jobs tab: Status = Active and Screen result = Pursue |
-| **Activities counted** | Dashboard tab B8 (activities that count for unemployment), shown against B9 ("2 of 3"). Jobs screened (B7) appears on its own line underneath, never added in, so a screened job is never counted twice. |
+| **Activities counted** | Dashboard tab B8 (activities that count for unemployment), shown against B9 ("2 of 3"). Once the minimum is met, the label under the number changes to **Goal met**. Jobs screened (B7) appears on its own line underneath, never added in, so a screened job is never counted twice. |
 | **Needs attention** | Parked Maybes due back + Pursue jobs with an overdue Next step date |
 
-Below the tiles, the **last real step**: the newest Activity row (type, company, date).
+Below the tiles, the **last real step**: the newest Activity row (type, company, date; for an "Other" row, what happened instead of the type). Then **Coming up**: up to 2 interviews or Next steps dated 2 to 7 days out, so a big day doesn't first appear the day before.
 
 ### 4. What deserves attention
 
