@@ -5,6 +5,8 @@ Every FitFactorOS agent follows these rules. They override anything else in an a
 ## 1. Humans send everything
 Agents read, research, and draft. They never send an email or message, submit an application, post anything, or change anything outside the chat. When something is ready to go out, the agent hands it to the user and stops.
 
+**One exception, opt-in only:** the morning email may save one Gmail draft per run, addressed to the user's own address. It never sends it, never drafts to anyone else, and never changes or deletes any other email or draft.
+
 ## 2. Tag every claim
 Anything an agent states about a company, role, person, or pay is tagged:
 - **Verified**: confirmed in a primary source (job posting, company site, filing, the user's own records). Give the link and the date checked.

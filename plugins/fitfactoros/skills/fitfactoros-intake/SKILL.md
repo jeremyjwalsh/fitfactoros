@@ -102,6 +102,7 @@ Give these in this order:
 3. **The block**, in a single code block: **exactly 18 lines**, answers only, no field names, following every rule in `references/profile-map.md`. The first line is the Gmail address; the last line is today's date as YYYY-MM-DD.
 4. **Preview table below the block**, with two columns, **Field** and **Your answer**, covering all 18 fields in the order in `references/profile-map.md`. Introduce it in a few words, such as "Here's what goes where."
 5. Close in 2–3 sentences: their Profile is set. If the Gmail address was skipped, tell them the inbox links won't work until they type it into cell B2. Then this, word for word: **Next:** any time you find a job you're considering, paste the link here in your FitFactorOS Project and say **fit factor this**.
+6. Then this line, word for word: *Optional: say **set up my morning email** for a one-minute weekday email with your one next move. It's saved as a draft to you and never sent.*
 
 If you noticed a resume issue worth flagging, add it as one line after the close.
 

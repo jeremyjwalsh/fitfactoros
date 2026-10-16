@@ -4,10 +4,12 @@
 
 **What you'll need:** a Claude account, a Google account, and about 20 minutes.
 
+**Built for Claude.** FitFactorOS is built and tested on Claude. The skills use the open SKILL.md format, so parts of it may work in other AI tools (ChatGPT, for example), but that hasn't been tested. The one-click install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
+
 ## 1. Create or sign in to your Claude account
 Go to [claude.ai](https://claude.ai) and sign up or sign in.
 
-**Which plan?** Plugins, the easiest way to add FitFactorOS, need a paid plan (Pro, Max, Team, or Enterprise), according to Anthropic's help center. On the Free plan you can still add the four skills by hand (step 3, Option B), but you won't get updates automatically. Which plan works best for FitFactorOS is being measured during this test.
+**Which plan?** Plugins, the easiest way to add FitFactorOS, need a paid plan (Pro, Max, Team, or Enterprise), according to Anthropic's help center. On the Free plan you can still add the five skills by hand (step 3, Option B), but you won't get updates automatically. Which plan works best for FitFactorOS is being measured during this test.
 
 ## 2. Turn on the settings FitFactorOS needs
 In Claude, open **Settings** and turn on:
@@ -20,7 +22,7 @@ Research also needs **web search**. In a chat, open the tools menu next to the m
 
 ## 3. Add FitFactorOS to Claude
 
-**Already added the four FitFactorOS skills from ZIP files?** Remove them first, or two copies will both answer "fit factor this." In **Customize → Skills**, open each FitFactorOS skill and choose **⋮ → Delete**. Your Sheet and your Intake answers aren't affected.
+**Already added the FitFactorOS skills from ZIP files?** Remove them first, or two copies will both answer "fit factor this." In **Customize → Skills**, open each FitFactorOS skill and choose **⋮ → Delete**. Your Sheet and your Intake answers aren't affected.
 
 ### Option A: add the plugin (Pro plan or above, recommended)
 1. In Claude, go to **Customize → Plugins**.
@@ -31,19 +33,20 @@ Research also needs **web search**. In a chat, open the tools menu next to the m
 
 **Skip "Try in chat."** It opens a chat outside your FitFactorOS Project, where Claude can't find your Intake answers. Always use FitFactorOS from a new chat inside your Project (see "5. Create your FitFactorOS Project" below).
 
-All four skills (Intake, Research, Activity Log, Dashboard) come in one plugin.
+All five skills (Intake, Research, Activity Log, Dashboard, Morning Email) come in one plugin.
 
 Anthropic's instructions: [Plugins](https://claude.com/docs/plugins/overview).
 
 ### Option B: add the skills by hand (Free plan, or if Option A doesn't show for you)
-1. Download all four skills (each download starts right away):
+1. Download all five skills (each download starts right away):
    - [fitfactoros-intake.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-intake.zip)
    - [fitfactoros-research.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-research.zip)
    - [fitfactoros-activity-log.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-activity-log.zip)
    - [fitfactoros-dashboard.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-dashboard.zip)
+   - [fitfactoros-morning-email.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-morning-email.zip) (optional; the weekday schedule needs a paid plan, but you can ask for one any time)
 2. In Claude, go to **Customize → Skills**.
-3. Click **+** and upload one ZIP file. Repeat for the other three. Don't unzip them first.
-4. Make sure all four FitFactorOS skills are switched on.
+3. Click **+** and upload one ZIP file. Repeat for the others. Don't unzip them first.
+4. Make sure all the FitFactorOS skills are switched on.
 
 Anthropic's instructions: [Get started with Claude skills](https://support.claude.com/en/articles/12512180).
 
@@ -105,6 +108,18 @@ Every job you fit factored that week shows up as a job posting you reviewed, eve
 
 **Claude never submits your certification. You do that yourself.** FitFactorOS has rules for **Massachusetts** so far. In other states you still get the log, but "Counts for unemployment" stays blank. This isn't legal advice; check your state's unemployment agency for what it requires.
 
+## 10. Optional: the morning email
+A one-minute weekday email that lands in your Gmail **Drafts**: how you're doing, what needs attention, and the one thing to do today, with a quote, a song, or something funny at the top. It's a draft to you and is never sent.
+
+1. Connect **Gmail** and **Google Sheets** in Claude (**Customize → Connectors**), if you haven't already.
+2. In your FitFactorOS Project, say **set up my morning email** and answer three quick questions. All can be skipped.
+3. Paste the 4 answers it gives you into your Sheet's **Profile** tab, starting at **B20**.
+4. On Pro and above, Claude sets it up as a weekday scheduled task and makes your first one right away. On the Free plan, say **morning email** any morning to get the same draft.
+
+Look for it in **Drafts**, not your inbox. Old drafts aren't deleted for you, so delete each one after you read it. To stop, say **stop my morning email**.
+
+**Older Sheets:** if your Profile tab has no labels in rows 20 to 23, type **Morning email sparks**, **Sign (optional)**, **Morning email ready by**, and **Dashboard link** into A20 through A23 first, and move any notes in those rows further down.
+
 ## Things you can say
 
 | Say this | What happens |
@@ -117,6 +132,9 @@ Every job you fit factored that week shows up as a job posting you reviewed, eve
 | **this week's work search log** | Your weekly unemployment log |
 | **did I do enough this week?** | Your count against your state's minimum |
 | **show my dashboard** (or "where do I stand?") | Your top picks, ladders, and this week, on a private page |
+| **set up my morning email** | An optional weekday email draft with your one next move |
+| **morning email** | Today's email draft, any time |
+| **stop my morning email** | Turns the weekday email off |
 
 ## Getting updates
 FitFactorOS is still being built, and the skills get improved. See [CHANGELOG.md](../CHANGELOG.md) for what changed.

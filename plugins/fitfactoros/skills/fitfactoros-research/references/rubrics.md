@@ -17,7 +17,7 @@ When one search finds little, most factors sit at 5 and Company fit lands near 5
 ## Company fit = (Stability × 3.5) + (Momentum × 2.5) + (Leadership × 2) + (Pull × 2)
 
 **Stability**
-- 9–10: Verified: public and profitable, or recently well funded (a round the company itself announced counts), with no layoffs in the last 12 months.
+- 9–10: Verified: public and profitable, or recently well funded (a round the company itself announced counts), and no layoffs found in the last 12 months. The "no layoffs found" part is always Inferred; the 9–10 rests on the Verified part.
 - 6–8: Funded and growing, with some mixed news.
 - 5: Typical, or not enough found to say.
 - 1–4: Layoffs in the last 12 months (especially in this team's area) or money trouble.

@@ -19,6 +19,8 @@ Before starting, read `references/guardrails.md`, `references/profile-map.md`, `
   - **Verified** only from a primary source you read in this chat: the job posting, the company's own site or press release, an official filing, or the user's Intake answers.
   - **A news story, data site, or blog reporting something is Estimated,** even from a well-known outlet. Write "reported by [source], not confirmed by the company" in How we know.
   - **Inferred** is your judgment, with the reasoning.
+  - **A comparison is a judgment, so it's Inferred,** even when both sides are Verified. "The posting asks for 5+ years in customer success" is Verified (the posting). "Your must-haves are covered by your 23 years in customer success" is Inferred (your reading of the posting against their answers). The same goes for "matches your target roles," "fits your pay floor," and "no deal-breakers."
+  - **Not finding something is never a fact.** "Nothing found" is not a tag and never goes in the Tag column. Write what you looked for as an Inferred claim, for example: "No layoffs or major news found in the last 12 months" (Inferred; How we know: "One search on [date] for [query]; no reports found, which isn't proof there were none").
 - **Don't guess pay, headcount, revenue, or retention.** If it isn't published, say "not posted" and name who can answer it.
 - **A posting is live only if you read it in this chat.** If a page won't load or needs a login (LinkedIn and Indeed often do), say so and ask the user to paste the job text. Never pass off a search snippet as the posting.
 - **Light on usage.** Before the decision: one page read for the job and **1 search**. A 2nd search only if the first finds nothing useful. No review sites (Glassdoor, Comparably, Reddit) in the quick read; those belong to Go deeper. Stop early when a gate fails.
@@ -88,7 +90,7 @@ These are Verified. Also look in the results for size, public-company status, an
 
 Use a 2nd search only if the first finds nothing from the company itself: `[Company] layoffs funding news [this year]`.
 
-If you find nothing on a factor, say "nothing found." Don't tag it; it scores 5.
+If you find nothing on a factor, say so as an Inferred claim (see "Not finding something is never a fact" above). It scores 5.
 
 Score Company fit with `references/rubrics.md`. Anything you couldn't find scores 5, the typical score. Don't search more to fill gaps.
 
@@ -155,7 +157,8 @@ If the user brings back a lead they already screened, don't research it again. R
 ## Checks before sending rows
 
 - Every row came from `scripts/make_row.py` (it checks 21 fields for Jobs and 8 for Evidence).
-- No News source is tagged Verified, and no "nothing found" claim has a tag.
+- No News source is tagged Verified. Every "nothing found" or "no news" claim is tagged Inferred, and no row uses "Nothing found" as a tag.
+- Every comparison between the posting and the user's answers (must-haves covered, target role match, pay floor met, no deal-breakers) is tagged Inferred.
 - Nothing comes from outside the newest Intake answers, the posting, or sources read in this chat.
 - Every value in a dropdown column matches the allowed list in `references/jobs-map.md` exactly.
 - No field starts with `=`, `+`, `-`, `@`, or `"`. No field contains a line break or a tab.

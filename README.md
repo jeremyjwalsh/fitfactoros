@@ -49,8 +49,9 @@ Jeremy
 5. **Keep the record.** Claude gives you a row to paste into your Sheet. Every job you look at gets recorded, even the ones you pass on.
 6. **Log what you do.** Say "I applied to…" or "I had a call with…" to log it. If you're collecting unemployment, say "this week's work search log" for your weekly log.
 7. **See where you stand.** Say **"show my dashboard"** for your top picks, each job's next step, and your progress this week.
+8. **Optional: a morning email.** Say **"set up my morning email"** for a one-minute weekday email in your Gmail Drafts: how you're doing, what needs attention, and the one thing to do today. It's a draft to you and is never sent.
 
-Coming next: a morning email with your one next move, and Claude adding rows to your Sheet for you instead of you pasting them. See the [Roadmap](#roadmap).
+Coming next: Claude adding rows to your Sheet for you instead of you pasting them. See the [Roadmap](#roadmap).
 
 ---
 
@@ -128,6 +129,7 @@ Emails you send and receive are linked from the sheet with `=HYPERLINK(...)` for
 | **Research** | Scores each role and company, runs a diligence checklist, and tags every claim. | Present an inference as a fact. |
 | **Outreach** | Finds your warmest path to a person and drafts a short note. | Send the note. |
 | **Activity Log** | Logs your real activity and builds a weekly work-search log from your Jobs and Activity tabs, formatted for your state's rules when FitFactorOS has them. | Submit anything to a state portal, or give legal advice. |
+| **Morning Email** | Optional. Each weekday, saves one email draft to you: how you're doing, what needs attention, and today's one move, with a quote or song picked to suit you. | Send anything, or draft to anyone but you. |
 
 #### The Intake questions
 
@@ -183,6 +185,8 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 
 **What you'll need:** a paid Claude plan (Pro or above) for the easiest setup, a Google account, and about 20 minutes. On the Free plan you can still add the skills by hand; the [setup guide](docs/setup.md) covers both.
 
+**Built for Claude.** FitFactorOS is built and tested on Claude. The skills use the open SKILL.md format, so parts of it may work in other AI tools (ChatGPT, for example), but that hasn't been tested. The one-click install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
+
 1. Create or sign in to your Claude account.
 2. Copy the Sheet template into your Google Drive.
 3. Add FitFactorOS to Claude: in **Customize → Plugins**, choose **Add → Add marketplace** and enter `jeremyjwalsh/fitfactoros`, then add the **FitFactorOS** plugin. Connect **Google Sheets** too, so Claude can read your Sheet for your dashboard.
@@ -204,6 +208,8 @@ Say these inside your FitFactorOS Project, one task per chat.
 | **this week's work search log** | Your weekly unemployment log |
 | **did I do enough this week?** | Your count against your state's minimum |
 | **show my dashboard** (or "where do I stand?") | Your top picks, ladders, and this week, on a private page |
+| **set up my morning email** | An optional weekday email draft with your one next move (scheduled on Pro and above) |
+| **morning email** | Today's email draft, any time |
 
 The [setup guide](docs/setup.md) walks through every step. Screenshots are coming after the first round of testing.
 
@@ -231,15 +237,18 @@ fitfactoros/
 │           ├── fitfactoros-activity-log/
 │           │   ├── references/            # Activity row map
 │           │   └── states/                # One rules file per state (ma.md first) + _template.md
-│           └── fitfactoros-dashboard/     # "Show my dashboard": reads your Sheet, makes a private page
+│           ├── fitfactoros-dashboard/     # "Show my dashboard": reads your Sheet, makes a private page
+│           └── fitfactoros-morning-email/ # Optional weekday email draft; checked quotes and songs lists
 ├── dist/                     # The same skills as ZIPs, for the Free plan
 │   ├── fitfactoros-intake.zip
 │   ├── fitfactoros-research.zip
 │   ├── fitfactoros-activity-log.zip
-│   └── fitfactoros-dashboard.zip
+│   ├── fitfactoros-dashboard.zip
+│   └── fitfactoros-morning-email.zip
 ├── docs/
 │   ├── setup.md              # Step-by-step setup for non-technical users
 │   ├── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
+│   ├── morning-email.md      # How the morning email decides what to show
 │   └── guardrails.md         # Rules every agent follows: humans send, tag claims, no fake rungs
 ├── sheet/
 │   └── fitfactoros-template.xlsx   # Import into Google Sheets
@@ -273,13 +282,13 @@ Each file in `plugins/fitfactoros/skills/fitfactoros-activity-log/states/` recor
 | 4 | Job Finder: a short list picked for you, and you can still bring your own leads (a job someone suggested, or one you found) | Planned |
 | 5 | Outreach (warm-path ladder, two-fact rule) | Planned |
 | 6 | Dashboard with per-opportunity ladders and your own warm vs cold results | Testing |
+| 7 | Morning email: an opt-in weekday draft with your one next move | Testing |
 
 **V2 (future)**
 
 - **Interview Prep**: research on each person you'll meet, voice mock interviews, and a debrief after every round that feeds prep for the next one.
 - **Materials**: help tailoring your resume and cover letter to a specific role, reviewing your version rather than replacing it.
 - **Follow-up**: reminders and drafts for thank-you notes and check-ins, timed to your ladder.
-- **Morning email**: an opt-in email draft each weekday with your one next move, jobs to revisit, and new leads worth a look. It's a draft to yourself; nothing is sent for you.
 - **No more copy and paste**: Claude adds rows to your Sheet for you, after you OK them, instead of you pasting each one.
 - **Negotiation**: compare offers side by side against the pay floor and deal-breakers from your Intake.
 - **Close the loop**: wrap up your search. Thank the people who helped, close out open applications, and see your own warm-path vs cold-path results.

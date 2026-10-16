@@ -114,6 +114,14 @@ else:
         fail("a News source can't be Verified; use Estimated ('reported by ..., not confirmed by the company')")
     if v["tag"] == "Verified" and v["source_type"] in ("Other",):
         fail("Verified needs a primary source: Job posting, Company site, Filing, Person, or Your records")
+    low = v["claim"].lower()
+    absence = ("nothing found", "not found", "none found", "no news", "no reports", "found no ")
+    if (any(w in low for w in absence) or re.search(r"\bno \w+( \w+)? found\b", low)) and v["tag"] != "Inferred":
+        fail("a claim about something not found must be tagged Inferred (not finding it isn't proof)")
+    judgment = ("covered by", "covers the", "matches your", "fits your", "meets your", "clears your",
+                "no deal-breaker", "no dealbreaker")
+    if v["tag"] == "Verified" and any(w in low for w in judgment):
+        fail("a comparison with the user's answers is a judgment; tag it Inferred")
 
 row = [v.get(k, "") for k in keys]
 line = "\t".join(row)

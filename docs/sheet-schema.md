@@ -57,6 +57,12 @@ One answer per row. Column A is the field, column B is your answer. Column C sho
 | 17 | Collecting unemployment? | Intake Q8 (powers the Activity Log only) |
 | 18 | Wins with numbers | Intake Q9 (optional) |
 | 19 | Profile last updated | Intake |
+| 20 | Morning email sparks | Morning email setup (optional) |
+| 21 | Sign (optional) | Morning email setup (optional). Quietly steers which quote or song is picked; the email never mentions it. |
+| 22 | Morning email ready by | Morning email setup (optional) |
+| 23 | Dashboard link | Morning email setup (optional) |
+
+Rows 20 to 23 are only for the optional morning email. **Older Sheets:** type the four labels into A20 through A23 before pasting. If the "How to use this tab" notes sit in those rows, move them further down first.
 
 ## Jobs
 

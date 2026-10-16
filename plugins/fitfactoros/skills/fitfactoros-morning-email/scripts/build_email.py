@@ -1,0 +1,295 @@
+#!/usr/bin/env python3
+"""FitFactorOS morning email helper.
+
+Three commands:
+
+  seed  "<picks from Profile B20>" YYYY-MM-DD
+        Prints today's seed (Quote, Music or Humor). Rotates by date.
+
+  pick  quotes|songs "<theme>,<theme>" YYYY-MM-DD
+        Prints one entry from references/quotes.md or references/songs.md
+        whose themes best match, rotating by date among the best matches.
+
+  build data.json OUTDIR
+        Checks data.json against the rules and writes OUTDIR/email.html,
+        OUTDIR/email.txt and OUTDIR/subject.txt. Prints STOP and exits 1
+        if something breaks a rule.
+
+Standard library only.
+"""
+import datetime
+import html
+import json
+import os
+import re
+import sys
+import urllib.parse
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+REFS = os.path.join(HERE, "..", "references")
+SEEDS = ["Quote", "Music", "Humor"]
+STATES = ["Momentum", "Steady", "Quiet stretch", "Overwhelmed"]
+MATCHES = ["Strong", "Possible"]
+
+
+def stop(msg):
+    print("STOP: " + msg)
+    sys.exit(1)
+
+
+def day_number(date_str):
+    try:
+        d = datetime.date.fromisoformat(date_str)
+    except ValueError:
+        stop("date must be YYYY-MM-DD, got %r" % date_str)
+    return d.toordinal()
+
+
+# ---------- seed ----------
+def cmd_seed(picks, date_str):
+    raw = [p.strip().lower() for p in re.split(r"[;,]", picks or "") if p.strip()]
+    chosen = []
+    if not raw or "skipped" in raw or any("surprise" in p for p in raw):
+        chosen = list(SEEDS)
+    else:
+        for s in SEEDS:
+            if s.lower() in raw:
+                chosen.append(s)
+    if not chosen:
+        chosen = list(SEEDS)
+    print(chosen[day_number(date_str) % len(chosen)])
+
+
+# ---------- pick ----------
+def read_list(kind):
+    path = os.path.join(REFS, "quotes.md" if kind == "quotes" else "songs.md")
+    rows = []
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            if not line.startswith("|") or line.startswith("|---") or line.startswith("| ID"):
+                continue
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            if len(cells) < 4:
+                continue
+            themes = {t.strip().lower() for t in cells[-1].split(",") if t.strip()}
+            rows.append((cells, themes))
+    if not rows:
+        stop("no entries found in " + path)
+    return rows
+
+
+def cmd_pick(kind, themes, date_str):
+    if kind not in ("quotes", "songs"):
+        stop("pick needs 'quotes' or 'songs'")
+    want = {t.strip().lower() for t in themes.split(",") if t.strip()}
+    rows = read_list(kind)
+    scored = sorted(((len(t & want), i, c) for i, (c, t) in enumerate(rows)), key=lambda x: (-x[0], x[1]))
+    best = scored[0][0]
+    # Best matches first; widen to weaker matches until there are at least 3
+    # choices, so the pick changes from day to day.
+    pool = []
+    for floor in range(best, 0 if best else -1, -1):
+        pool = [c for s, _, c in scored if s >= floor]
+        if len(pool) >= 3:
+            break
+    if not pool:
+        pool = [c for _, _, c in scored]
+    cells = pool[day_number(date_str) % len(pool)]
+    if kind == "quotes":
+        print(json.dumps({"id": cells[0], "text": cells[1], "source": cells[2]}))
+    else:
+        print(json.dumps({"id": cells[0], "title": cells[1], "artist": cells[2]}))
+
+
+# ---------- build ----------
+def esc(s):
+    return html.escape(str(s or ""), quote=True)
+
+
+def check(d):
+    for k in ("date", "state", "spark", "move", "tiles", "dashboardUrl", "closing"):
+        if k not in d:
+            stop("data.json is missing '%s'" % k)
+    if d["state"] not in STATES:
+        stop("state must be one of %s" % STATES)
+    sp = d["spark"]
+    if sp.get("seed") not in SEEDS:
+        stop("spark.seed must be Quote, Music or Humor")
+    if not sp.get("headline") or len(sp["headline"]) > 60:
+        stop("spark.headline is required and must be 60 characters or fewer")
+    if not sp.get("body") or len(sp["body"]) > 260:
+        stop("spark.body is required and must be 260 characters or fewer")
+    if sp["seed"] == "Quote" and not (sp.get("quote") or {}).get("source"):
+        stop("Quote seed needs spark.quote with text and source from references/quotes.md")
+    if sp["seed"] == "Music" and not (sp.get("song") or {}).get("title"):
+        stop("Music seed needs spark.song from references/songs.md")
+    if not d["move"].get("title"):
+        stop("move.title is required")
+    t = d["tiles"]
+    for k in ("inFlight", "thisWeek", "needsAttention"):
+        if not isinstance(t.get(k), int):
+            stop("tiles.%s must be a whole number" % k)
+    att = d.get("attention") or []
+    cap = 2 if d["state"] == "Overwhelmed" else 3
+    if len(att) > cap:
+        stop("attention has %d items; the limit in state %s is %d" % (len(att), d["state"], cap))
+    leads = d.get("leads") or []
+    if leads and (d["state"] == "Overwhelmed" or t["needsAttention"] >= 3):
+        stop("leads must be empty when Overwhelmed or when 3 or more items need attention")
+    if len(leads) > 2:
+        stop("at most 2 leads")
+    for l in leads:
+        if l.get("match") not in MATCHES:
+            stop("each lead's match must be Strong or Possible")
+    if not str(d["dashboardUrl"]).startswith("https://"):
+        stop("dashboardUrl must start with https://")
+    blob = json.dumps(d)
+    if "{{" in blob or "TODO" in blob or "EXAMPLE" in blob:
+        stop("data.json still has a placeholder or an example row")
+
+
+LABEL = 'padding:20px 28px 8px 28px;font-size:12px;font-weight:bold;letter-spacing:1px;color:#2b5d4f;text-transform:uppercase;border-top:1px solid #eee9e0;'
+
+
+def nice_date(date_str):
+    d = datetime.date.fromisoformat(date_str)
+    return d.strftime("%A, %B ") + str(d.day)
+
+
+def build_html(d):
+    sp, t = d["spark"], d["tiles"]
+    p = []
+    p.append('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#f4f2ee" style="font-family:Arial,Helvetica,sans-serif;"><tr><td align="center" style="padding:24px 0;">')
+    p.append('<table role="presentation" width="600" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="max-width:600px;width:100%;border:1px solid #e2ddd4;">')
+    p.append('<tr><td style="padding:26px 28px 4px 28px;font-size:12px;letter-spacing:1px;color:#8a8478;text-transform:uppercase;">FitFactorOS &middot; %s</td></tr>' % esc(nice_date(d["date"])))
+    p.append('<tr><td style="padding:4px 28px 6px 28px;font-family:Georgia,\'Times New Roman\',serif;font-size:24px;line-height:1.3;color:#1f1d1a;">%s</td></tr>' % esc(sp["headline"]))
+    p.append('<tr><td style="padding:0 28px 14px 28px;font-family:Georgia,\'Times New Roman\',serif;font-size:17px;line-height:1.55;color:#3a3732;">%s</td></tr>' % esc(sp["body"]))
+    if sp["seed"] == "Music":
+        s = sp["song"]
+        url = "https://www.youtube.com/results?search_query=" + urllib.parse.quote_plus("%s %s" % (s["title"], s["artist"]))
+        why = (" &mdash; " + esc(s["why"])) if s.get("why") else ""
+        p.append('<tr><td style="padding:0 28px 22px 28px;font-size:14px;line-height:1.5;color:#3a3732;">&#9835; <b>Today&rsquo;s soundtrack:</b> <a href="%s" style="color:#2b5d4f;">%s &middot; %s</a>%s</td></tr>' % (esc(url), esc(s["title"]), esc(s["artist"]), why))
+    elif sp["seed"] == "Quote":
+        q = sp["quote"]
+        p.append('<tr><td style="padding:0 28px 22px 28px;font-family:Georgia,\'Times New Roman\',serif;font-size:15px;line-height:1.5;font-style:italic;color:#6b665d;">&ldquo;%s&rdquo; &mdash; %s</td></tr>' % (esc(q["text"]), esc(q["source"])))
+    else:
+        p.append('<tr><td style="padding:0 0 8px 0;"></td></tr>')
+    mv = d["move"]
+    p.append('<tr><td style="padding:0 28px 24px 28px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td bgcolor="#e8f1ed" style="border-left:4px solid #2b5d4f;padding:16px 18px;">')
+    p.append('<div style="font-size:12px;font-weight:bold;letter-spacing:1px;color:#2b5d4f;text-transform:uppercase;padding-bottom:6px;">Today&rsquo;s one move</div>')
+    p.append('<div style="font-size:17px;line-height:1.45;color:#1f1d1a;"><b>%s</b></div>' % esc(mv["title"]))
+    if mv.get("why"):
+        p.append('<div style="font-size:14px;line-height:1.5;color:#3a3732;padding-top:4px;">%s</div>' % esc(mv["why"]))
+    p.append('</td></tr></table></td></tr>')
+    # tiles
+    wk = str(t["thisWeek"])
+    if isinstance(t.get("weeklyMin"), int):
+        wk += ' <span style="font-size:15px;color:#8a8478;font-weight:normal;">of %d</span>' % t["weeklyMin"]
+    na_color = "#a06a00" if t["needsAttention"] else "#1f1d1a"
+    tile = '<td width="33%%" align="center" bgcolor="#f7f5f1" style="padding:14px 4px;border:1px solid #eee9e0;"><div style="font-size:26px;font-weight:bold;color:%s;">%s</div><div style="font-size:12px;color:#8a8478;">%s</div></td>'
+    p.append('<tr><td style="%s">How am I doing &middot; this week</td></tr>' % LABEL)
+    p.append('<tr><td style="padding:0 28px 8px 28px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>')
+    p.append(tile % ("#1f1d1a", t["inFlight"], "In flight"))
+    p.append(tile % ("#1f1d1a", wk, "This week"))
+    p.append(tile % (na_color, t["needsAttention"], "Needs attention"))
+    p.append('</tr></table></td></tr>')
+    if d.get("lastStep"):
+        p.append('<tr><td style="padding:4px 28px 20px 28px;font-size:13px;color:#6b665d;">Last real step: %s</td></tr>' % esc(d["lastStep"]))
+    # attention
+    p.append('<tr><td style="%s">What deserves attention</td></tr>' % LABEL)
+    att = d.get("attention") or []
+    p.append('<tr><td style="padding:0 28px 18px 28px;font-size:15px;line-height:1.5;color:#1f1d1a;">')
+    if att:
+        p.append('<table role="presentation" width="100%" cellpadding="0" cellspacing="0">')
+        for i, a in enumerate(att):
+            border = "" if i == 0 else "border-top:1px solid #f1ede6;"
+            p.append('<tr><td style="padding:8px 0;%s"><b>%s</b><br><span style="font-size:13px;color:#8a8478;">%s</span></td></tr>' % (border, esc(a.get("title")), esc(a.get("detail"))))
+        p.append('</table>')
+    else:
+        p.append('<p style="margin:4px 0;color:#6b665d;">%s</p>' % esc(d.get("attentionEmpty") or "Nothing waiting on you right now."))
+    p.append('</td></tr>')
+    # leads
+    if d.get("leadsNote") is not None or d.get("leads"):
+        p.append('<tr><td style="%s">Worth a look</td></tr>' % LABEL)
+        p.append('<tr><td style="padding:0 28px 6px 28px;font-size:15px;line-height:1.5;color:#1f1d1a;">')
+        leads = d.get("leads") or []
+        if leads:
+            p.append('<table role="presentation" width="100%" cellpadding="0" cellspacing="0">')
+            for l in leads:
+                col = "#2b5d4f" if l["match"] == "Strong" else "#a06a00"
+                p.append('<tr><td style="padding:6px 0;"><b>%s</b><br><span style="font-size:13px;color:#8a8478;">%s &middot; %s</span></td><td align="right" style="padding:6px 0;vertical-align:top;"><span style="font-size:12px;font-weight:bold;color:%s;">%s</span></td></tr>' % (esc(l.get("role")), esc(l.get("co")), esc(l.get("loc")), col, esc(l["match"])))
+            p.append('</table><p style="margin:6px 0 0 0;font-size:13px;color:#8a8478;">Quick matches only. Say &ldquo;fit factor this&rdquo; for the full check.</p>')
+        else:
+            p.append('<p style="margin:4px 0;color:#6b665d;">%s</p>' % esc(d.get("leadsNote") or "Nothing new worth your time today."))
+        p.append('</td></tr>')
+    # footer
+    p.append('<tr><td style="padding:22px 28px 6px 28px;"><table role="presentation" width="100%%" cellpadding="0" cellspacing="0"><tr><td align="center" bgcolor="#2b5d4f" style="border-radius:4px;padding:13px 20px;"><a href="%s" style="color:#ffffff;font-size:15px;font-weight:bold;text-decoration:none;">Open your dashboard &rarr;</a></td></tr></table></td></tr>' % esc(d["dashboardUrl"]))
+    p.append('<tr><td align="center" style="padding:10px 28px 26px 28px;font-size:13px;color:#8a8478;font-style:italic;">%s</td></tr>' % esc(d["closing"]))
+    p.append('</table></td></tr></table>')
+    return "\n".join(p)
+
+
+def build_text(d):
+    sp, t = d["spark"], d["tiles"]
+    out = [nice_date(d["date"]).upper(), "", sp["headline"], sp["body"], ""]
+    if sp["seed"] == "Music":
+        s = sp["song"]
+        out += ["Today's soundtrack: %s - %s" % (s["title"], s["artist"]),
+                "https://www.youtube.com/results?search_query=" + urllib.parse.quote_plus("%s %s" % (s["title"], s["artist"])), ""]
+    elif sp["seed"] == "Quote":
+        out += ['"%s" - %s' % (sp["quote"]["text"], sp["quote"]["source"]), ""]
+    out += ["TODAY'S ONE MOVE", d["move"]["title"]]
+    if d["move"].get("why"):
+        out.append(d["move"]["why"])
+    wk = str(t["thisWeek"]) + (" of %d" % t["weeklyMin"] if isinstance(t.get("weeklyMin"), int) else "")
+    out += ["", "HOW AM I DOING (this week)",
+            "In flight: %d | This week: %s | Needs attention: %d" % (t["inFlight"], wk, t["needsAttention"])]
+    if d.get("lastStep"):
+        out.append("Last real step: " + d["lastStep"])
+    out += ["", "WHAT DESERVES ATTENTION"]
+    att = d.get("attention") or []
+    out += ["%s - %s" % (a.get("title"), a.get("detail")) for a in att] or [d.get("attentionEmpty") or "Nothing waiting on you right now."]
+    if d.get("leadsNote") is not None or d.get("leads"):
+        out += ["", "WORTH A LOOK"]
+        leads = d.get("leads") or []
+        if leads:
+            out += ["%s - %s - %s - %s" % (l["role"], l["co"], l["loc"], l["match"]) for l in leads]
+            out.append('Quick matches only. Say "fit factor this" for the full check.')
+        else:
+            out.append(d.get("leadsNote") or "Nothing new worth your time today.")
+    out += ["", "Open your dashboard: " + d["dashboardUrl"], d["closing"]]
+    return "\n".join(out)
+
+
+def cmd_build(path, outdir):
+    with open(path, encoding="utf-8") as f:
+        d = json.load(f)
+    check(d)
+    os.makedirs(outdir, exist_ok=True)
+    day = datetime.date.fromisoformat(d["date"])
+    move = d["move"]["title"]
+    if ":" in move[:40]:
+        move = move.split(":", 1)[0]
+    elif len(move) > 50:
+        move = move[:50].rsplit(" ", 1)[0] + "..."
+    subject = "Your morning · %s %s · %s" % (day.strftime("%a %b"), day.day, move)
+    for name, body in (("email.html", build_html(d)), ("email.txt", build_text(d)), ("subject.txt", subject)):
+        with open(os.path.join(outdir, name), "w", encoding="utf-8") as f:
+            f.write(body)
+    print("OK: wrote email.html, email.txt, subject.txt to " + outdir)
+
+
+def main(a):
+    if len(a) == 3 and a[0] == "seed":
+        cmd_seed(a[1], a[2])
+    elif len(a) == 4 and a[0] == "pick":
+        cmd_pick(a[1], a[2], a[3])
+    elif len(a) == 3 and a[0] == "build":
+        cmd_build(a[1], a[2])
+    else:
+        print(__doc__)
+        sys.exit(2)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

@@ -54,7 +54,7 @@ Group them by who can answer:
 Keep 4 questions total for a 30-minute call, most important first. Say to ask the most important one early, not at the end.
 
 ## Output: the Fit Report
-Easy to read first, proof second. Short sections, plain sentences, tables only for scores. Every claim still carries a tag, but keep it light: end the line with **(V)**, **(E)**, or **(I)**. Put the key under the header once: *(V) Verified · (E) Estimated · (I) Inferred, my judgment.* Judgment calls get (I) every time, including the reasons behind a score. The full source and date for each claim go in the Evidence rows, not in the report body.
+Easy to read first, proof second. Short sections, plain sentences, tables only for scores. Every claim still carries a tag, but keep it light: end the line with **(V)**, **(E)**, or **(I)**. Put the key under the header once: *(V) Verified · (E) Estimated · (I) Inferred, my judgment.* Judgment calls get (I) every time, including the reasons behind a score, any comparison with the user's answers ("your experience covers the must-haves"), and anything you looked for and didn't find ("no layoffs found"). The full source and date for each claim go in the Evidence rows, not in the report body.
 
 1. **Header:** Company, job title, today's date, "Using your Intake answers from [date]," and "Quick read: Company N, Role N, retired." Then the tag key. Then "Research checks: N of 7," naming any that came up thin.
 2. **Verdict**, in capitals (for example, **PURSUE NOW** or **PASS: HARD REQUIREMENT**), then **one plain sentence** a friend would say (for example, "Good company, wrong seat.").
