@@ -2,6 +2,23 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-16 (late): no black box, simpler first fit factor
+
+### What fit factor weighs
+- New README section, **What fit factor weighs**: the four gates, what goes into Company fit and Role fit and how much each counts, and what Go deeper adds. It links to the full scoring rules.
+- Every quick read now shows the factor scores behind each number, for example *Weighed: Stability 6, Momentum 5, Leadership 5, Pull 9*.
+- The quick start says in one sentence what each score looks at.
+
+### Bringing a job
+- Just paste the job link (or the job description) and say **fit factor this**. You no longer need to paste the description first.
+- When Claude can't read a job page, it now gives numbered steps to copy and paste the description, with the keyboard shortcuts for Windows and Mac. The same goes for a page it could only partly read.
+
+### Small fixes
+- README status line now lists the Morning Email and the activity check as in testing, matching the Roadmap.
+- Setup guide: "FitFactorOS never changes your Sheet" (it's FitFactorOS's rule, not something Claude prevents).
+
+**To update:** delete the old **fitfactoros-intake** and **fitfactoros-research** skills and upload the new files (plugin users: **Check for updates**).
+
 ## 2026-10-16 (night, later): click paths checked against Claude
 
 Every click in the quick start was checked against the real Claude screens. Five didn't match and are fixed in the quick start, the setup guide, the README, and Intake.

@@ -6,7 +6,7 @@ FitFactorOS helps you go after fewer jobs that fit you well, get a real person o
 
 It is free, open source, and built for people who don't think of themselves as technical. If you can use a spreadsheet and a chat window, you can use this.
 
-> **Status:** Early build. Intake, Research, the Activity Log (Massachusetts first), and the Dashboard are in testing. See [Roadmap](#roadmap).
+> **Status:** Early build. Intake, Research, the Activity Log (Massachusetts first), the Dashboard, the Morning Email, and the activity check are in testing. See [Roadmap](#roadmap).
 
 > **Want to try it?** New to Claude or on the Free plan: [Free plan quick start](docs/quick-start-free.md) (about 20 minutes, no Google or GitHub account needed). Everyone else: [Getting started](#getting-started).
 
@@ -45,7 +45,7 @@ Jeremy
 ## What to expect
 
 1. **Set up once (about 20 minutes).** Add FitFactorOS to Claude and answer the Intake questions. Every question can be skipped. New to Claude? Use the [Free plan quick start](docs/quick-start-free.md).
-2. **Bring a job.** A link a friend sent you, or one you found yourself. Paste it (and the job description, for the best result) and say **"fit factor this."**
+2. **Bring a job.** A link a friend sent you, or one you found yourself. Paste the link (or the job description) and say **"fit factor this."** If Claude can't read the whole page, it tells you how to copy and paste the description.
 3. **Get a quick read.** Company fit, then Role fit, the biggest blocker, and a suggested call. Every claim is tagged Verified, Estimated, or Inferred.
 4. **You decide.** **Pursue**, **Hold** (park it and come back in a week), or **Pass**. For a promising job, you can also **go deeper first**: a fuller look at the company (leadership changes, funding, market position, competitors) and then the role. Going deeper uses much more of your Claude plan (on Free, it can use most of your usage until your limit resets), so Claude asks before it starts.
 5. **Keep the record.** Claude gives you a row to paste into your Google Sheet (or a note). Every job you look at gets recorded, even the ones you pass on.
@@ -146,6 +146,23 @@ Emails you send and receive are linked from the sheet with `=HYPERLINK(...)` for
    *Your answer only powers the Activity Log, and it goes in your own Sheet.*
 9. *(Optional)* Two or three wins from your career, with numbers.
 
+#### What fit factor weighs
+
+No black box. Here's what goes into each score, so you can dig in wherever you want more.
+
+Before any scoring, four yes/no gates: companies you want to avoid, your pay floor, where you can work, and your deal-breakers. A failed gate means a suggested Pass.
+
+| Company fit | Weight | Role fit | Weight |
+|---|---|---|---|
+| **Stability**: money, profitability or funding, recent layoffs | 35% | **Role match**: the posting's must-haves compared with your background | 40% |
+| **Momentum**: new funding, launches, big customer wins | 25% | **Work you want**: the day-to-day compared with the work that makes you lose track of time | 30% |
+| **Leadership**: senior team changes in the last 18 months | 20% | **Level and pay**: the level compared with your experience, and posted pay compared with your floor | 30% |
+| **Pull**: a dream company, or one you've said you're excited about | 20% | | |
+
+Each factor scores 1 to 10, where 5 means typical. Anything not verified can't score above 6. The full rules are in [rubrics.md](plugins/fitfactoros/skills/fitfactoros-research/references/rubrics.md).
+
+**Go deeper** adds the full leadership history (who left, who arrived), every funding round and who led it, 12 months of news, market position, the live careers page, employee reviews for a read on culture, competitors, and a separate **Chance of getting it** (High, Medium, or Low). The checklist is in [deep-research.md](plugins/fitfactoros/skills/fitfactoros-research/references/deep-research.md).
+
 #### The warm-path ladder
 
 For each role, Outreach looks for the warmest route, in this order:
@@ -201,7 +218,7 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 1. Create or sign in to your Claude account, and turn on **Cloud code execution and file creation** in **Settings → Capabilities**.
 2. Add the FitFactorOS skills to Claude ([setup guide, step 3](docs/setup.md#3-add-fitfactoros-to-claude)). On any plan, download the skill files and upload them in **Customize → Skills**. On a paid plan, you can add the plugin instead.
 3. Create a Project called **FitFactorOS**, start a new chat inside it, and say **"Start my intake."** Save the answers Claude gives you in your Project's files.
-4. Start a new chat in the Project, paste a job description and link, and say **"fit factor this."**
+4. Start a new chat in the Project, paste a job link, and say **"fit factor this."**
 5. Later, if you want: set up your Google Sheet, and Connected mode.
 
 **Built for Claude.** FitFactorOS is built and tested on Claude. The skills use the open SKILL.md format, so parts of it may work in other AI tools (ChatGPT, for example), but that hasn't been tested. The plugin install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.

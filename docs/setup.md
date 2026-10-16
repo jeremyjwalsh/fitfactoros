@@ -12,7 +12,7 @@
 |---|---|---|
 | What you connect | Nothing | Google, only the parts you choose (see step 8) |
 | Intake and **fit factor this** | Yes | Yes |
-| Your record of jobs and activity | Claude gives you rows; you paste them into your Sheet (or a note) | Same. Claude never changes your Sheet. |
+| Your record of jobs and activity | Claude gives you rows; you paste them into your Sheet (or a note) | Same. FitFactorOS never changes your Sheet. |
 | Dashboard page (**show my dashboard**) | Yes, if you copy your Sheet's tabs into the chat | Yes. With Google Sheets connected, Claude reads your Sheet itself. |
 | **check my week** (finds activity you forgot to log) | No | Yes, with Gmail and Google Calendar connected |
 | Morning email | No | Yes, with Gmail and Google Sheets connected |
@@ -39,7 +39,7 @@ What we checked in Anthropic's help center (October 16, 2026): skills, Projects 
 
 **On the Free plan, to make your usage go further:**
 - Start a new chat in your Project for each task, so each chat stays short.
-- Paste the job description, so Claude doesn't have to hunt for it.
+- If Claude asks for the job description, paste it in, so it doesn't have to hunt for it.
 - Let the quick fit read finish. Go deeper only on jobs you're serious about.
 - If you hit a limit, Claude tells you when you can continue. Come back to the same chat and say **keep going**.
 
@@ -116,7 +116,7 @@ A Project is a folder in Claude that keeps your FitFactorOS chats and answers to
 Your Profile is set. If something changes later, say **update my profile**. Claude tells you which line to change.
 
 ## 6. Fit factor a job (any time)
-1. Inside your FitFactorOS Project, start a new chat. **Paste the job description first, in its own message** (on the posting: select all, copy, paste). Then send the job link and type **fit factor this**.
+1. Inside your FitFactorOS Project, start a new chat. Paste the job link (or the job description itself) and type **fit factor this**.
    - Many job sites (Ashby, Workday, LinkedIn) don't let Claude read the whole page. If Claude can only read part of a page, it stops and asks for the text rather than guessing.
    - Scores can move a few points between runs on the same job. The suggested call is what to go by.
    - **Optional: Claude in Chrome.** This browser add-on lets Claude open job pages in your own Chrome, which helps on sites like Ashby and Workday. It acts in your real browser with your sign-ins, and it asks before opening a page. Skip it if you'd rather not; pasting the job description works just as well.

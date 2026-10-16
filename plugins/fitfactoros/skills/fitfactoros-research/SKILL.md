@@ -52,9 +52,16 @@ If the user shares only a company name, ask which job there they mean, or offer 
 ## Step 2: Read the job
 
 - **Check for pasted text first.** Long pastes often arrive as an attached file (such as "Pasted text.txt"), sometimes in a later message. Read any attached file before saying nothing came through.
-- Link: read the page once. If it fails, stop and ask for the text.
+- Link: read the page once. If it won't load or needs a login, stop and say, word for word:
+  > I couldn't read that page (many job sites block me). To get the job description to me:
+  > 1. Open the job posting in your browser.
+  > 2. Select everything on the page: **Ctrl+A** on Windows, **Cmd+A** on Mac.
+  > 3. Copy it: **Ctrl+C** or **Cmd+C**.
+  > 4. Come back here, paste it (**Ctrl+V** or **Cmd+V**), and send.
+  >
+  > Don't worry about the extra menus and buttons that come along; I'll pick out the job.
 - **A partial read is not a read.** After reading a link, check you got the full posting: the duties, the must-have requirements, the location, and the end of the page (where pay usually is). If any is missing (for example, the site only gave you a summary), **stop before scoring** and say, word for word:
-  > I could only read part of this posting, so a score now would be partly a guess. Please paste the full job description here in its own message (on the posting page: select all, copy, paste). Or say **go anyway** and I'll mark every gap.
+  > I could only read part of this posting, so a score now would be partly a guess. To get me the whole thing: open the posting, select everything (**Ctrl+A** on Windows, **Cmd+A** on Mac), copy (**Ctrl+C** or **Cmd+C**), and paste it here. Don't worry about the extra menus that come along. Or say **go anyway** and I'll mark every gap.
 
   If a browser tool is available in this chat (such as Claude in Chrome), add one more line: "Or say **use my browser** and I'll open the page there." Pasting the job description stays the first choice, because a browser read can still miss the bottom of the page.
 
@@ -110,8 +117,8 @@ Name one **blocker**: the single biggest thing between this person and an offer,
 
 Keep it short and plain. In this order:
 
-1. **Company fit: [N]/100.** One sentence on why, then 2–4 short lines, each ending with its tag.
-2. **Role fit: [N]/100.** One sentence on why, then 2–4 short lines, each ending with its tag.
+1. **Company fit: [N]/100.** One sentence on why, then 2–4 short lines, each ending with its tag. Then this line, filled in from your scores: *Weighed: Stability [n], Momentum [n], Leadership [n], Pull [n] (each out of 10; 5 is typical).*
+2. **Role fit: [N]/100.** One sentence on why, then 2–4 short lines, each ending with its tag. Then: *Weighed: Role match [n], Work you want [n], Level and pay [n] (each out of 10; 5 is typical).*
 3. **Blocker:** one line.
 4. **Questions to ask:** 2 short questions, most important first, each aimed at who can answer (recruiter, hiring manager, or their contact). Aim at the blocker and the biggest unknown, such as pay not posted or office days.
 5. **Gates:** Pay, Location, Deal-breakers, each ✓, ✗, or ?, with a few words each.

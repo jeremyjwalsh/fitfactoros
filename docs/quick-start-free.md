@@ -5,7 +5,7 @@
 **What you need**
 - A computer. Setup is much easier on a laptop or desktop than on a phone.
 - An email address for a free Claude account.
-- One job you're curious about: the link, and ideally the job description.
+- One job you're curious about: the link is enough.
 
 **What you don't need:** a paid plan, a GitHub account, a Google account, or any connections to your email or files. This is **Basic mode**: Claude gives you results, and you keep what you want by copying it. You can add more later, or never.
 
@@ -93,11 +93,11 @@ Claude will also mention a Google Sheet. **You can skip that today.**
 
 ## 7. Fit factor your job
 1. In your FitFactorOS Project, start a **new** chat.
-2. **Paste the job description first, in its own message.** On the job posting: select all (**Ctrl+A** on Windows, **Cmd+A** on Mac), copy, then paste here and send. Many job sites don't let Claude read the whole page, so this gives the best result.
-3. Then send the job link and the words **fit factor this**.
+2. Paste the job link (or the job description itself) and type **fit factor this**.
+3. Many job sites don't let Claude read the whole page. If that happens, Claude stops and tells you exactly how to copy the job description and paste it in. It won't guess.
 4. If Claude asks to search the web or open a page, click **Allow**. That's the research.
 
-You get **Company fit**, then **Role fit**, the biggest thing in your way, questions to ask, and a suggested call. **The call is yours:** Pursue, Hold (come back later), or Pass.
+You get **Company fit**, then **Role fit**, the biggest thing in your way, questions to ask, and a suggested call. Company fit looks at the company's stability, momentum, and leadership, and whether it's a company you're excited about. Role fit looks at whether you meet the must-haves, whether it's work you'd enjoy, and level and pay. ([What fit factor weighs](../README.md#what-fit-factor-weighs) has the details.) **The call is yours:** Pursue, Hold (come back later), or Pass.
 
 Claude then gives you a row of text for a spreadsheet. On Basic mode, you can ignore it, or copy it into a note or document so you have a record of the jobs you've looked at.
 
@@ -112,7 +112,7 @@ The Free plan has a usage limit that **resets every five hours**, according to A
 - **When the time comes,** go back to the **same chat** and type **keep going**. Don't start the job over; that uses more.
 - **To make your usage last:**
   - Start a new chat for each job. Long chats use more, because Claude re-reads everything earlier in the chat each time.
-  - Paste the job description, so Claude doesn't have to hunt for it.
+  - If Claude asks for the job description, paste it in, so it doesn't have to hunt for it.
   - Let the quick read finish. Go deeper only on a job you'd really go after.
 
 ## If you get stuck
@@ -124,7 +124,7 @@ The Free plan has a usage limit that **resets every five hours**, according to A
 | Claude doesn't seem to know FitFactorOS | Check step 2 (the setting is on) and step 4 (both skills switched on). Then start a new chat in your Project. |
 | "I don't have your FitFactorOS answers yet" | Make sure you're in your FitFactorOS Project and that **My FitFactorOS answers** is listed under **Context** on the Project page (step 6). Or paste your answer block into the chat. |
 | Claude says it can't search the web | Click **+** under the message box and look for a **Web search** switch. Turn it on and try again. |
-| Claude says it could only read part of the posting | Paste the job description in its own message (step 7, part 3). |
+| Claude says it could only read part of the posting | Follow its steps: on the job posting, select all (**Ctrl+A** on Windows, **Cmd+A** on Mac), copy, and paste it into the chat. |
 | A message about a usage limit | See "When you hit a usage limit" above. |
 | Anything asks for a GitHub account | You don't need one. Close that page and come back here. |
 | Anything asks to send an email or change a file | Choose **Deny**. FitFactorOS never does either. |
