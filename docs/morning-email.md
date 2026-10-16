@@ -33,7 +33,7 @@ With a little inspiration and fun along the way. It takes one minute to read.
 
 ### 1. Spark
 
-A short headline and one or two sentences, written fresh each day by Claude. It's built from:
+A labeled section at the top: **A thought for today** (a quote), **Today's soundtrack** (a song), or **A little lightness** (humor). A quote or song is followed by **What it means today:**, one or two plain sentences tying it to the user's real day, so nobody has to look up the source to get it. Well-known and lesser-known sources are both welcome; discovery is part of the point. A thin line then separates the inspiration from the job-search part. The spark is built from:
 
 1. **Today's seed**, one of the kinds the user picked at setup (see "Seeds"). It rotates by date, so it changes without Claude needing to remember yesterday. This is the harmonica principle: surprise someone just enough to change their frame of mind.
 2. **Their real week**, read from the Sheet (see "Reading the week honestly").
@@ -45,7 +45,7 @@ Rules:
 - Never claims progress the Sheet doesn't show.
 - Never makes someone feel behind on a hard week. Tone follows the rules in "Reading the week honestly."
 
-### 2. Today's one move (the most prominent block)
+### 2. Your one move (the most prominent block)
 
 One action, chosen from real data in this order. The first rule that matches wins:
 
@@ -60,6 +60,8 @@ One action, chosen from real data in this order. The first rule that matches win
 
 The move always names a real company or row. If no rule matches, it uses 5 or 6. It never invents a contact, a deadline, or a task.
 
+The email only knows what's in the Sheet, so a move repeats until its Next step or date changes. When a move is more than a day overdue, it adds: "Already done? Say **log this** and update the Next step in your Jobs tab."
+
 ### 3. How am I doing (this week)
 
 Three numbers in a row:
@@ -67,15 +69,17 @@ Three numbers in a row:
 | Tile | Where it comes from |
 |---|---|
 | **In flight** | Jobs tab: Status = Active and Screen result = Pursue |
-| **Counted** | Dashboard tab B8 (activities that count for unemployment), shown against B9 ("2 of 3"). Jobs screened (B7) appears on its own line underneath, never added in, so a screened job is never counted twice. |
+| **Activities counted** | Dashboard tab B8 (activities that count for unemployment), shown against B9 ("2 of 3"). Jobs screened (B7) appears on its own line underneath, never added in, so a screened job is never counted twice. |
 | **Needs attention** | Parked Maybes due back + Pursue jobs with an overdue Next step date |
 
 Below the tiles, the **last real step**: the newest Activity row (type, company, date).
 
 ### 4. What deserves attention
 
-- **In flight:** each Pursue job with its Next step, soonest date first, up to 3.
-- **Parked, due back:** Maybes with Next step date today or earlier, up to 3, each with "Decide: pursue, re-park, or pass."
+- **In flight:** each Pursue job with its Next step, soonest date first.
+- **Parked, due back:** Maybes with Next step date today or earlier, each with "Decide: pursue, re-park, or pass."
+- Up to 3 items in all (2 on a busy day), leaving out the job that's already the one move.
+- When the Needs attention tile counts more than the list shows, the section is titled **Top items needing attention** and ends with "Plus N more in your Sheet," so the numbers always add up.
 
 Empty lists say so plainly in one line rather than vanishing.
 
@@ -91,9 +95,12 @@ Empty lists say so plainly in one line rather than vanishing.
 
 ### 6. Footer
 
-The dashboard button, then one closing line, for example: *One good move beats twenty random applications.*
+One button, one line under it, then one closing line, for example: *One good move beats twenty random applications.*
 
-The button opens the dashboard link saved at setup, or, if there isn't one, the Sheet's Dashboard tab. No images.
+- **No dashboard link saved (Profile B23 skipped):** the button says **Open your Sheet** and opens the live data. The line under it: *Want the full picture? Open your FitFactorOS Project in Claude and say "show my dashboard".*
+- **A Claude dashboard link saved:** the button says **Open your dashboard**. The line under it: *This opens your last snapshot. To refresh it, say "show my dashboard" in your FitFactorOS Project in Claude.*
+
+No images. On a phone, Gmail can't open links inside a draft; setup tells the user this once (tap the button on a computer, or send the draft to yourself first) instead of repeating it every morning.
 
 ## Reading the week honestly
 

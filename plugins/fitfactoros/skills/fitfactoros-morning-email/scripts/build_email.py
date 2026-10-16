@@ -126,10 +126,12 @@ def check(d):
     sp = d["spark"]
     if sp.get("seed") not in SEEDS:
         stop("spark.seed must be Quote, Music or Humor")
-    if not sp.get("headline") or len(sp["headline"]) > 60:
-        stop("spark.headline is required and must be 60 characters or fewer")
-    if not sp.get("body") or len(sp["body"]) > 260:
-        stop("spark.body is required and must be 260 characters or fewer")
+    if sp["seed"] == "Humor" and not sp.get("headline"):
+        stop("Humor seed needs spark.headline (the setup line)")
+    if sp.get("headline") and len(sp["headline"]) > 60:
+        stop("spark.headline must be 60 characters or fewer")
+    if not sp.get("body") or len(sp["body"]) > 220:
+        stop("spark.body is required and must be 220 characters or fewer")
     if sp["seed"] == "Quote" and not (sp.get("quote") or {}).get("source"):
         stop("Quote seed needs spark.quote with text and source from references/quotes.md")
     if sp["seed"] == "Music" and not (sp.get("song") or {}).get("title"):
@@ -146,6 +148,11 @@ def check(d):
     cap = 2 if d["state"] == "Overwhelmed" else 3
     if len(att) > cap:
         stop("attention has %d items; the limit in state %s is %d" % (len(att), d["state"], cap))
+    more = d.get("attentionMore", 0)
+    if not isinstance(more, int) or more < 0:
+        stop("attentionMore must be a whole number, 0 or more")
+    if more and len(att) + more + (1 if d.get("moveIsDue") else 0) != t["needsAttention"]:
+        stop("attention items + attentionMore + the one move (if it is Due) must add up to tiles.needsAttention")
     leads = d.get("leads") or []
     if leads and (d["state"] == "Overwhelmed" or t["needsAttention"] >= 3):
         stop("leads must be empty when Overwhelmed or when 3 or more items need attention")
@@ -159,6 +166,32 @@ def check(d):
     blob = json.dumps(d)
     if "{{" in blob or "TODO" in blob or "EXAMPLE" in blob:
         stop("data.json still has a placeholder or an example row")
+
+
+LABEL_TOP = 'padding:18px 28px 10px 28px;font-size:12px;font-weight:bold;letter-spacing:1px;color:#2b5d4f;text-transform:uppercase;'
+SPARK_LABEL = {"Quote": "A thought for today", "Music": "Today&rsquo;s soundtrack", "Humor": "A little lightness"}
+SPARK_LABEL_TXT = {"Quote": "A THOUGHT FOR TODAY", "Music": "TODAY'S SOUNDTRACK", "Humor": "A LITTLE LIGHTNESS"}
+def att_label(d):
+    """It's a shortlist whenever the tile counts more than the list shows."""
+    return "Top items needing attention" if (d.get("attentionMore") or 0) > 0 else "What deserves attention"
+
+
+def more_line(d):
+    n = d.get("attentionMore") or 0
+    if n <= 0:
+        return ""
+    return "Plus %d more in your Sheet." % n
+
+
+def button_label(url):
+    return "Open your dashboard" if "claude.ai" in url else "Open your Sheet"
+
+
+def dash_note(url):
+    """Second way in: the rich dashboard lives in Claude, so point there in words."""
+    if "claude.ai" in url:
+        return 'This opens your last snapshot. To refresh it, say "show my dashboard" in your FitFactorOS Project in Claude.'
+    return 'Want the full picture? Open your FitFactorOS Project in Claude and say "show my dashboard".'
 
 
 LABEL = 'padding:20px 28px 8px 28px;font-size:12px;font-weight:bold;letter-spacing:1px;color:#2b5d4f;text-transform:uppercase;border-top:1px solid #eee9e0;'
@@ -175,21 +208,32 @@ def build_html(d):
     p.append('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#f4f2ee" style="font-family:Arial,Helvetica,sans-serif;"><tr><td align="center" style="padding:24px 0;">')
     p.append('<table role="presentation" width="600" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="max-width:600px;width:100%;border:1px solid #e2ddd4;">')
     p.append('<tr><td style="padding:26px 28px 4px 28px;font-size:12px;letter-spacing:1px;color:#8a8478;text-transform:uppercase;">FitFactorOS &middot; %s</td></tr>' % esc(nice_date(d["date"])))
-    p.append('<tr><td style="padding:4px 28px 6px 28px;font-family:Georgia,\'Times New Roman\',serif;font-size:24px;line-height:1.3;color:#1f1d1a;">%s</td></tr>' % esc(sp["headline"]))
-    p.append('<tr><td style="padding:0 28px 14px 28px;font-family:Georgia,\'Times New Roman\',serif;font-size:17px;line-height:1.55;color:#3a3732;">%s</td></tr>' % esc(sp["body"]))
-    if sp["seed"] == "Music":
-        s = sp["song"]
-        url = "https://www.youtube.com/results?search_query=" + urllib.parse.quote_plus("%s %s" % (s["title"], s["artist"]))
-        why = (" &mdash; " + esc(s["why"])) if s.get("why") else ""
-        p.append('<tr><td style="padding:0 28px 22px 28px;font-size:14px;line-height:1.5;color:#3a3732;">&#9835; <b>Today&rsquo;s soundtrack:</b> <a href="%s" style="color:#2b5d4f;">%s &middot; %s</a>%s</td></tr>' % (esc(url), esc(s["title"]), esc(s["artist"]), why))
-    elif sp["seed"] == "Quote":
+    serif = "font-family:Georgia,'Times New Roman',serif;"
+    p.append('<tr><td style="%s">%s</td></tr>' % (LABEL_TOP, SPARK_LABEL[sp["seed"]]))
+    if sp["seed"] == "Quote":
         q = sp["quote"]
-        p.append('<tr><td style="padding:0 28px 22px 28px;font-family:Georgia,\'Times New Roman\',serif;font-size:15px;line-height:1.5;font-style:italic;color:#6b665d;">&ldquo;%s&rdquo; &mdash; %s</td></tr>' % (esc(q["text"]), esc(q["source"])))
+        author = q["source"].split(",")[0].strip()
+        p.append('<tr><td style="padding:2px 28px 4px 28px;%sfont-size:22px;line-height:1.35;color:#1f1d1a;">&ldquo;%s&rdquo;</td></tr>' % (serif, esc(q["text"])))
+        p.append('<tr><td style="padding:0 28px 2px 28px;font-size:14px;color:#3a3732;">&mdash; %s</td></tr>' % esc(author))
+        rest = q["source"][len(author):].lstrip(", ").strip()
+        if rest:
+            p.append('<tr><td style="padding:0 28px 14px 28px;font-size:12px;color:#8a8478;">%s</td></tr>' % esc(rest))
+    elif sp["seed"] == "Music":
+        s_ = sp["song"]
+        url = "https://www.youtube.com/results?search_query=" + urllib.parse.quote_plus("%s %s" % (s_["title"], s_["artist"]))
+        p.append('<tr><td style="padding:2px 28px 2px 28px;%sfont-size:22px;line-height:1.35;color:#1f1d1a;">&#9835; <a href="%s" style="color:#1f1d1a;text-decoration:none;">%s</a></td></tr>' % (serif, esc(url), esc(s_["title"])))
+        p.append('<tr><td style="padding:0 28px 2px 28px;font-size:14px;color:#3a3732;">%s</td></tr>' % esc(s_["artist"]))
+        if s_.get("why"):
+            p.append('<tr><td style="padding:0 28px 14px 28px;font-size:12px;color:#8a8478;">%s</td></tr>' % esc(s_["why"]))
     else:
-        p.append('<tr><td style="padding:0 0 8px 0;"></td></tr>')
+        p.append('<tr><td style="padding:2px 28px 10px 28px;%sfont-size:22px;line-height:1.35;color:#1f1d1a;">%s</td></tr>' % (serif, esc(sp["headline"])))
+    lead = '<b style="color:#2b5d4f;">What it means today:</b> ' if sp["seed"] != "Humor" else ""
+    p.append('<tr><td style="padding:6px 28px 24px 28px;%sfont-size:16px;line-height:1.55;color:#3a3732;">%s%s</td></tr>' % (serif, lead, esc(sp["body"])))
+    # operational half
+    p.append('<tr><td style="padding:0 28px 22px 28px;"><div style="border-top:1px solid #eee9e0;font-size:0;line-height:0;">&nbsp;</div></td></tr>')
     mv = d["move"]
     p.append('<tr><td style="padding:0 28px 24px 28px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td bgcolor="#e8f1ed" style="border-left:4px solid #2b5d4f;padding:16px 18px;">')
-    p.append('<div style="font-size:12px;font-weight:bold;letter-spacing:1px;color:#2b5d4f;text-transform:uppercase;padding-bottom:6px;">Today&rsquo;s one move</div>')
+    p.append('<div style="font-size:12px;font-weight:bold;letter-spacing:1px;color:#2b5d4f;text-transform:uppercase;padding-bottom:6px;">Your one move</div>')
     p.append('<div style="font-size:17px;line-height:1.45;color:#1f1d1a;"><b>%s</b></div>' % esc(mv["title"]))
     if mv.get("why"):
         p.append('<div style="font-size:14px;line-height:1.5;color:#3a3732;padding-top:4px;">%s</div>' % esc(mv["why"]))
@@ -203,7 +247,7 @@ def build_html(d):
     p.append('<tr><td style="%s">How am I doing &middot; this week</td></tr>' % LABEL)
     p.append('<tr><td style="padding:0 28px 8px 28px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>')
     p.append(tile % ("#1f1d1a", t["inFlight"], "In flight"))
-    p.append(tile % ("#1f1d1a", wk, "Counted" if isinstance(t.get("weeklyMin"), int) else "Logged"))
+    p.append(tile % ("#1f1d1a", wk, "Activities counted" if isinstance(t.get("weeklyMin"), int) else "Activities logged"))
     p.append(tile % (na_color, t["needsAttention"], "Needs attention"))
     p.append('</tr></table></td></tr>')
     sl = screened_line(t)
@@ -212,7 +256,7 @@ def build_html(d):
     if d.get("lastStep"):
         p.append('<tr><td style="padding:4px 28px 20px 28px;font-size:13px;color:#6b665d;">Last real step: %s</td></tr>' % esc(d["lastStep"]))
     # attention
-    p.append('<tr><td style="%s">What deserves attention</td></tr>' % LABEL)
+    p.append('<tr><td style="%s">%s</td></tr>' % (LABEL, att_label(d)))
     att = d.get("attention") or []
     p.append('<tr><td style="padding:0 28px 18px 28px;font-size:15px;line-height:1.5;color:#1f1d1a;">')
     if att:
@@ -221,6 +265,8 @@ def build_html(d):
             border = "" if i == 0 else "border-top:1px solid #f1ede6;"
             p.append('<tr><td style="padding:8px 0;%s"><b>%s</b><br><span style="font-size:13px;color:#8a8478;">%s</span></td></tr>' % (border, esc(a.get("title")), esc(a.get("detail"))))
         p.append('</table>')
+        if more_line(d):
+            p.append('<p style="margin:8px 0 0 0;font-size:13px;color:#8a8478;">%s</p>' % esc(more_line(d)))
     else:
         p.append('<p style="margin:4px 0;color:#6b665d;">%s</p>' % esc(d.get("attentionEmpty") or "Nothing waiting on you right now."))
     p.append('</td></tr>')
@@ -239,34 +285,42 @@ def build_html(d):
             p.append('<p style="margin:4px 0;color:#6b665d;">%s</p>' % esc(d.get("leadsNote") or "Nothing new worth your time today."))
         p.append('</td></tr>')
     # footer
-    p.append('<tr><td style="padding:22px 28px 6px 28px;"><table role="presentation" width="100%%" cellpadding="0" cellspacing="0"><tr><td align="center" bgcolor="#2b5d4f" style="border-radius:4px;padding:13px 20px;"><a href="%s" style="color:#ffffff;font-size:15px;font-weight:bold;text-decoration:none;">Open your dashboard &rarr;</a></td></tr></table></td></tr>' % esc(d["dashboardUrl"]))
-    p.append('<tr><td align="center" style="padding:10px 28px 26px 28px;font-size:13px;color:#8a8478;font-style:italic;">%s</td></tr>' % esc(d["closing"]))
+    p.append('<tr><td style="padding:22px 28px 6px 28px;"><table role="presentation" width="100%%" cellpadding="0" cellspacing="0"><tr><td align="center" bgcolor="#2b5d4f" style="border-radius:4px;padding:13px 20px;"><a href="%s" style="color:#ffffff;font-size:15px;font-weight:bold;text-decoration:none;">%s &rarr;</a></td></tr></table></td></tr>' % (esc(d["dashboardUrl"]), button_label(d["dashboardUrl"])))
+    p.append('<tr><td align="center" style="padding:6px 28px 4px 28px;font-size:13px;line-height:1.5;color:#3a3732;">%s</td></tr>' % esc(dash_note(d["dashboardUrl"])))
+    p.append('<tr><td align="center" style="padding:14px 28px 26px 28px;font-size:13px;color:#8a8478;font-style:italic;">%s</td></tr>' % esc(d["closing"]))
     p.append('</table></td></tr></table>')
     return "\n".join(p)
 
 
 def build_text(d):
     sp, t = d["spark"], d["tiles"]
-    out = [nice_date(d["date"]).upper(), "", sp["headline"], sp["body"], ""]
+    out = [nice_date(d["date"]).upper(), "", SPARK_LABEL_TXT[sp["seed"]]]
     if sp["seed"] == "Music":
-        s = sp["song"]
-        out += ["Today's soundtrack: %s - %s" % (s["title"], s["artist"]),
-                "https://www.youtube.com/results?search_query=" + urllib.parse.quote_plus("%s %s" % (s["title"], s["artist"])), ""]
+        s_ = sp["song"]
+        out += ["%s - %s" % (s_["title"], s_["artist"]),
+                "https://www.youtube.com/results?search_query=" + urllib.parse.quote_plus("%s %s" % (s_["title"], s_["artist"]))]
+        if s_.get("why"):
+            out.append(s_["why"])
     elif sp["seed"] == "Quote":
-        out += ['"%s" - %s' % (sp["quote"]["text"], sp["quote"]["source"]), ""]
-    out += ["TODAY'S ONE MOVE", d["move"]["title"]]
+        out += ['"%s"' % sp["quote"]["text"], "- " + sp["quote"]["source"]]
+    else:
+        out.append(sp["headline"])
+    out += [("What it means today: " if sp["seed"] != "Humor" else "") + sp["body"], "", "----", ""]
+    out += ["YOUR ONE MOVE", d["move"]["title"]]
     if d["move"].get("why"):
         out.append(d["move"]["why"])
     wk = str(t["thisWeek"]) + (" of %d" % t["weeklyMin"] if isinstance(t.get("weeklyMin"), int) else "")
     out += ["", "HOW AM I DOING (this week)",
-            "In flight: %d | %s: %s | Needs attention: %d" % (t["inFlight"], "Counted" if isinstance(t.get("weeklyMin"), int) else "Logged", wk, t["needsAttention"])]
+            "In flight: %d | %s: %s | Needs attention: %d" % (t["inFlight"], "Activities counted" if isinstance(t.get("weeklyMin"), int) else "Activities logged", wk, t["needsAttention"])]
     if screened_line(t):
         out.append(screened_line(t))
     if d.get("lastStep"):
         out.append("Last real step: " + d["lastStep"])
-    out += ["", "WHAT DESERVES ATTENTION"]
+    out += ["", att_label(d).upper()]
     att = d.get("attention") or []
     out += ["%s - %s" % (a.get("title"), a.get("detail")) for a in att] or [d.get("attentionEmpty") or "Nothing waiting on you right now."]
+    if att and more_line(d):
+        out.append(more_line(d))
     if d.get("leadsNote") is not None or d.get("leads"):
         out += ["", "WORTH A LOOK"]
         leads = d.get("leads") or []
@@ -275,7 +329,7 @@ def build_text(d):
             out.append('Quick matches only. Say "fit factor this" for the full check.')
         else:
             out.append(d.get("leadsNote") or "Nothing new worth your time today.")
-    out += ["", "Open your dashboard: " + d["dashboardUrl"], d["closing"]]
+    out += ["", button_label(d["dashboardUrl"]) + ": " + d["dashboardUrl"], dash_note(d["dashboardUrl"]), "", d["closing"]]
     return "\n".join(out)
 
 

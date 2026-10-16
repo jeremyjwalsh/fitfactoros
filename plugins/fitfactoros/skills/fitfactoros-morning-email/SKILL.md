@@ -73,7 +73,7 @@ Find the session's scheduling tool (search the tool list for "trigger" or "sched
 
 Then run Mode B once now, so they see their first email today.
 
-Close with two lines: the draft lands in **Drafts**, not the inbox; and old drafts aren't deleted for them, so they can delete each one after reading.
+Close with three lines: the draft lands in **Drafts**, not the inbox; old drafts aren't deleted for them, so they can delete each one after reading; and on a phone, Gmail can't open links inside a draft, so tap the button on a computer or send the draft to themselves first.
 
 ### Stop it
 
@@ -86,7 +86,7 @@ Used by the scheduled task, or when the user says "morning email."
 1. **Read** the Sheet ranges in `references/email-rules.md` (read the Sheet link from the task prompt, or find the Sheet as in Mode A).
 2. **Work out** the counts, the search state, the one move, and the attention list, exactly as the rules file says.
 3. **New leads:** run the one Gmail search in the rules file, unless the state skips the section.
-4. **Spark:** get the seed, pick themes, and pick the quote or song with the script, then write the headline and body.
+4. **Spark:** get the seed, pick themes, and pick the quote or song with the script, then write the body (what it means today), plus a headline for Humor only.
 5. **Build:** save `data.json`, then run:
    ```
    python3 scripts/build_email.py build data.json out
@@ -101,7 +101,9 @@ If Gmail or Sheets can't be reached in a scheduled run, don't guess. Finish with
 
 - The draft is addressed only to Profile B2.
 - The one move names a real company or row, or is rule 5 or 6.
-- Every count matches the Sheet. "Counted" uses Dashboard B8 only, never B7 + B8. Jobs screened (B7) is its own line.
+- Shown attention items + `attentionMore` + the one move (if Due) equals Needs attention.
+- Every count matches the Sheet. "Activities counted" uses Dashboard B8 only, never B7 + B8. Jobs screened (B7) is its own line.
 - Leads: at most 2, none when Overwhelmed or when 3 or more items need attention, never a Long shot.
 - The spark doesn't explain why it was picked, doesn't name a star sign, and has no lyrics.
+- For Quote and Music, the body says in plain words what it means for today, so nobody has to look the source up.
 - The quote or song came from the script, copied exactly.
