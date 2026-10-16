@@ -2,7 +2,7 @@
 
 **A job search system for people who are tired of applying into the void.**
 
-FitFactorOS helps you go after fewer jobs that fit you well, get a real person on your side before you apply, and see your progress at every step. It runs on one Google Sheet and a set of AI agents that read, research, and draft for you. **You send everything yourself.** The agents never send, submit, or post.
+FitFactorOS helps you go after fewer jobs that fit you well, get a real person on your side before you apply, and see your progress at every step. It runs on a set of AI agents in Claude that read, research, and draft, with an optional Google Sheet to keep your record for you. **You send everything yourself.** The agents never send, submit, or post.
 
 It is free, open source, and built for people who don't think of themselves as technical. If you can use a spreadsheet and a chat window, you can use this.
 
@@ -51,7 +51,7 @@ Jeremy
 5. **Keep the record.** Claude gives you a row to paste into your Google Sheet (or a note). Every job you look at gets recorded, even the ones you pass on.
 6. **Log what you do.** Say "I applied to…" or "I had a call with…" to log it. If you're collecting unemployment, say "this week's work search log" for your weekly log.
 7. **See where you stand.** Say **"show my dashboard"** for your top picks, each job's next step, and your progress this week.
-8. **Optional: a morning email.** Say **"set up my morning email"** for a one-minute weekday email in your Gmail Drafts: how you're doing, what needs attention, and the one thing to do today. It's a draft to you and is never sent.
+8. **Optional: a morning email.** With Gmail connected, say **"set up my morning email"** for a one-minute weekday email in your Gmail Drafts: how you're doing, what needs attention, and the one thing to do today. It's a draft to you and is never sent.
 
 Coming next: **Job Finder**, a short list of roles picked for you, and **Outreach**, which finds the right person and drafts a note for you to send. See the [Roadmap](#roadmap).
 
@@ -101,7 +101,7 @@ These are the rules every part of FitFactorOS follows. If a feature breaks one, 
 - **Keep it simple.** Built for non-technical people. Questions come as tappable choices where possible, and every question can be skipped.
 - **Only real progress counts.** Every rung on your ladder is something you actually did or something that actually happened. No fake rungs, no points for opening the app.
 - **Light by design.** Claude plans have usage limits. FitFactorOS spends your usage only where it changes a decision: a quick screen first, deep research only on jobs you choose to pursue, and never researching the same thing twice.
-- **Your data stays yours.** Your information lives in your own Google Sheet. This repository contains no personal data; it ships with a fictional sample profile.
+- **Your data stays yours.** Your information lives in your own Claude Project and, if you use it, your own Google Sheet. This repository contains no personal data; it ships with a fictional sample profile.
 
 ---
 
@@ -109,7 +109,7 @@ These are the rules every part of FitFactorOS follows. If a feature breaks one, 
 
 ### The hub: one Google Sheet
 
-Everything lives in one Google Sheet. The first tab is a quick summary that fills in by itself; the other five hold your data. Every row that belongs to a specific opportunity carries the same **Job ID**, so the tabs join together.
+Your record lives in one Google Sheet. It's optional at first: you can start with Intake and fit factor alone and add the Sheet later. The first tab is a quick summary that fills in by itself; the other five hold your data. Every row that belongs to a specific opportunity carries the same **Job ID**, so the tabs join together.
 
 | Tab | What it holds |
 |---|---|
@@ -221,11 +221,11 @@ Keep the one-page [cheat sheet](docs/cheat-sheet.md) handy: it groups these by w
 | **fit factor this** + a job link | Company fit, then Role fit, then you decide |
 | **go deep** | Deeper research on a job you're serious about. Claude asks first, because it uses much more of your plan. |
 | **log this** (or "I applied to…," "I had a call with…") | Activity rows to paste |
-| **check my week** (or "what did I miss?") | Claude checks your calendar and email (read-only) for activity you haven't logged, and asks before adding anything |
+| **check my week** (or "what did I miss?") | *Connected mode.* Claude checks your calendar and email (read-only) for activity you haven't logged, and asks before adding anything |
 | **this week's work search log** | Your weekly unemployment log |
 | **did I do enough this week?** | Your count against your state's minimum |
 | **show my dashboard** (or "where do I stand?") | Your top picks, ladders, and this week, on a private page |
-| **set up my morning email** | An optional weekday email draft with your one next move (scheduled on Pro and above) |
+| **set up my morning email** | *Connected mode.* An optional weekday email draft with your one next move (scheduled on Pro and above) |
 | **morning email** | Today's email draft, any time |
 
 The [setup guide](docs/setup.md) walks through every step. Screenshots are coming after the next round of testing.

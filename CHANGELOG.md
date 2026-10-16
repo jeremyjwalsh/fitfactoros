@@ -25,6 +25,7 @@ From a first-time tester on the Free plan. This round fixes the first 20 minutes
 - Deep dives now always end with a verdict: a hard cap of 12 searches and page reads, the most decision-changing checks first, a two-line "So far / Leaning" note partway through in case a usage limit cuts the chat off, and a shorter report (up to 8 Evidence rows instead of 12).
 
 ### Setup guide and README
+- The README no longer says FitFactorOS "runs on" a Google Sheet: the Sheet is optional at first, your answers live in your Claude Project, and **check my week** and the morning email are marked as Connected mode.
 - The README's Getting started leads with the Free plan path. The plugin is now an optional extra for paid plans, and the guide says you don't need a GitHub account for either path.
 - The setup guide drops **Search and reference chats** as a requirement. It's a paid-plan setting, so Free users couldn't find it.
 - The Free vs paid table now says what a deep dive costs on Free, and what we checked in Anthropic's help center.
