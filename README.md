@@ -241,7 +241,7 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 4. Start a new chat in the Project, paste a job link, and say **"fit factor this."**
 5. Later, if you want: set up your Google Sheet, and Connected mode.
 
-**Built for Claude.** FitFactorOS is built and tested on Claude. The skills use the open SKILL.md format, so parts of it may work in other AI tools (ChatGPT, for example), but only one early test has been done. In that test, typing **fit factor this** in ChatGPT got ChatGPT's own kind of score, not FitFactorOS's. It followed the FitFactorOS rules only after being told to read the skill files first. The plugin install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
+**Built for Claude.** FitFactorOS is built and tested on Claude. The rules are written in plain, open instructions (the SKILL.md format), so other AI tools can follow them too. In an early test with one job, ChatGPT followed the fit factor rules and reached the same suggested call as Claude, with scores within a few points. Two catches: ChatGPT only did this when told to read the skill files from GitHub first (just typing **fit factor this** got its own kind of score), and the other skills haven't been tried there. The plugin install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
 
 Always use FitFactorOS from a new chat inside your FitFactorOS Project.
 

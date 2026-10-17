@@ -2,6 +2,11 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-17 (evening): ChatGPT test result
+
+- The README and setup guide now say what the ChatGPT test found: after being told to read the skill files from GitHub, ChatGPT followed the fit factor rules and reached the same suggested call as Claude on one job, with scores within a few points. Just typing **fit factor this** there still gets ChatGPT's own kind of score, and the other skills haven't been tried in ChatGPT.
+- No skill changed, so there's nothing to reinstall.
+
 ## 2026-10-17 (later afternoon): latest results, clearer location check
 
 - **Company fit uses the company's latest reported quarter.** If the newest results Research finds are more than about four months old, it uses its one extra search to look for the newer quarter. It links the company's main page, not a translated copy.
