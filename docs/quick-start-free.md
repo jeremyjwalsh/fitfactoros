@@ -2,12 +2,20 @@
 
 **Get your first job fit read in about 20 minutes.** This page covers the two parts of FitFactorOS you need first: **Intake** (a few questions about what you want) and **fit factor this** (an honest read on one job). Everything else can wait.
 
+**Here's what you'll get at the end** (an example, with a made-up job):
+
+<a href="images/example-fit-factor.png"><img src="images/example-fit-factor.png" alt="Example fit factor result: Company fit 67, Role fit 84, tagged claims, gates, a warm path, and the suggested call Pursue" width="420"></a>
+
+Later, if you want, you can add a [dashboard and a morning email](../README.md#what-you-get) too.
+
 **What you need**
 - A computer. Setup is much easier on a laptop or desktop than on a phone.
 - An email address for a free Claude account.
 - One job you're curious about: the link is enough.
 
 **What you don't need:** a paid plan, a GitHub account, a Google account, or any connections to your email or files. This is **Basic mode**: Claude gives you results, and you keep what you want by copying it. You can add more later, or never.
+
+*Pictures in this guide were taken on a paid account in October 2026. The Free plan may look slightly different, and Claude's menus change from time to time.*
 
 **You stay in charge.** FitFactorOS never sends, submits, or posts anything. It reads, researches, and writes drafts for you.
 
@@ -26,7 +34,7 @@ FitFactorOS won't work without this.
 3. Under the **Code execution and file creation** heading, switch on **Cloud code execution and file creation**.
 4. Close the Settings window with the **×** at its top right.
 
-> **Screenshot coming:** Settings → Capabilities, with "Cloud code execution and file creation" switched on.
+<img src="images/settings-capabilities.png" alt="Settings window with Capabilities selected and Cloud code execution and file creation switched on" width="560">
 
 That's the only setting you need today. (The setup guide mentions other memory settings. You can skip them on the Free plan; step 6 below does the same job.)
 
@@ -54,9 +62,11 @@ Leave them as they are. **Don't open or unzip them.**
 4. Do steps 2 and 3 again for `fitfactoros-research.zip`.
 5. Click **Yours** (next to *Discover*, near the top) to see your own skills. Both FitFactorOS skills should be listed. If one says **Disabled**, click its **Turn on** button.
 
-> **Screenshot coming:** Customize → Skills, with the + Add menu open on "Upload skill."
->
-> **Screenshot coming:** Customize → Skills → Yours, with both FitFactorOS skills turned on.
+<img src="images/skills-add-menu.png" alt="Customize page, Skills selected, with the + Add menu open showing Upload skill" width="640">
+
+<img src="images/skills-yours.png" alt="Customize, Skills, Yours: four FitFactorOS skills, each with a Turn on button" width="640">
+
+*Above: these skills are turned off, so each shows **Turn on**. Once turned on, the button goes away.*
 
 The Skills page opens on *Discover*, a showcase of other skills. You can ignore it.
 
@@ -70,7 +80,7 @@ A Project is a folder in Claude that keeps your FitFactorOS chats and your answe
 3. Under **What are you working on?**, type **FitFactorOS**. You can leave the other boxes empty.
 4. Click **Create project**.
 
-> **Screenshot coming:** the Projects page with the New project button.
+<img src="images/create-project.png" alt="Create a project form: What are you working on?, and the Create project button" width="380">
 
 **Always use FitFactorOS from inside this Project.** If you're ever lost, click **Projects**, then **FitFactorOS**, and start a new chat there.
 
@@ -85,7 +95,9 @@ A Project is a folder in Claude that keeps your FitFactorOS chats and your answe
    - In **Title**, type **My FitFactorOS answers**. Click in **Content** and paste.
    - Click **Add Content**.
 
-> **Screenshot coming:** the Project page, with the Context → Add menu open on "Add text content."
+<img src="images/project-context-add.png" alt="Project page: the Add button next to Context, with Add text content in its menu" width="300">
+
+<img src="images/add-text-content.png" alt="Add text content form with Title and Content boxes and the Add Content button" width="460">
 
 This is how Claude remembers your answers in every new chat. You only do Intake once.
 

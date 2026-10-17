@@ -10,6 +10,18 @@ It is free, open source, and built for people who don't think of themselves as t
 
 > **Want to try it?** New to Claude or on the Free plan: [Free plan quick start](docs/quick-start-free.md) (about 20 minutes, no Google or GitHub account needed). Everyone else: [Getting started](#getting-started).
 
+## What you get
+
+*Examples with a made-up job seeker, Alex Sample, and made-up companies. Click a picture to see it full size.*
+
+| **A fit read on any job** | **Your dashboard** | **An optional morning email** |
+|---|---|---|
+| <a href="docs/images/example-fit-factor.png"><img src="docs/images/example-fit-factor.png" alt="Example fit factor result: Company fit 67, Role fit 84, tagged claims, gates, a warm path, and the suggested call Pursue" width="260"></a> | <a href="docs/images/example-dashboard.png"><img src="docs/images/example-dashboard.png" alt="Example dashboard: this week's progress, top picks with fit scores, and one job's ladder and tagged evidence" width="260"></a> | <a href="docs/images/example-morning-email.png"><img src="docs/images/example-morning-email.png" alt="Example morning email: a quote for the day, your one move, how the week is going, and what needs attention" width="260"></a> |
+| Paste a job link and say **fit factor this**. You get Company fit, Role fit, what's in your way, and a suggested call, with every claim tagged. | Say **show my dashboard** for your top picks, where each job stands on its ladder, and your week so far. | A one-minute weekday draft in your Gmail: one thing to do today, and how you're doing. Never sent. |
+
+The dashboard and email pictures come from FitFactorOS's own dashboard and email code, run on the made-up sample. The fit read is laid out the way Claude shows it in a chat.
+
+
 ---
 
 ## A note from Jeremy
@@ -245,7 +257,7 @@ Keep the one-page [cheat sheet](docs/cheat-sheet.md) handy: it groups these by w
 | **set up my morning email** | *Connected mode.* An optional weekday email draft with your one next move (scheduled on Pro and above) |
 | **morning email** | Today's email draft, any time |
 
-The [setup guide](docs/setup.md) walks through every step. Screenshots are coming after the next round of testing.
+The [setup guide](docs/setup.md) walks through every step, with pictures of each screen.
 
 **New to Claude?** [Want to go further?](docs/learn-more.md) lists a few free official Anthropic courses and help pages on Projects, Skills, and scheduled tasks.
 
@@ -286,6 +298,7 @@ fitfactoros/
 │   ├── setup.md              # Step-by-step setup for non-technical users
 │   ├── cheat-sheet.md        # One page of everything you can say
 │   ├── testing/              # Observer sheet and usage test for people running test sessions
+│   ├── images/               # Screenshots used in the guides
 │   ├── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
 │   ├── morning-email.md      # How the morning email decides what to show
 │   ├── learn-more.md         # Free official Anthropic courses and help pages

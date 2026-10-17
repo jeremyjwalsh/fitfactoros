@@ -2,6 +2,13 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-16 (evening): pictures in the guides
+
+- **New "What you get" section near the top of the README:** example pictures of a fit read, the dashboard, and the morning email, so you can see the payoff before you set anything up. The quick start opens with the example fit read. All use the made-up sample (Alex Sample, Fabrikam Health). The dashboard and email pictures were made by FitFactorOS's own dashboard and email code; the fit read is laid out the way Claude shows it in a chat.
+- The Free plan quick start and the setup guide now show a picture of each screen: the Capabilities setting, the Skills **+ Add** menu, your uploaded skills under **Yours**, the new-project form, the Project's **Context → Add** menu, the **Add text content** form, and a Google connector's **Tool permissions** (with the **Blocked** option and the **Disconnect** button).
+- Pictures are cropped to the part that matters and were taken on a paid account; the Free plan may look slightly different. They live in `docs/images/`.
+- No skill changed in this update, so there's nothing to reinstall.
+
 ## 2026-10-16 (late): no black box, simpler first fit factor
 
 ### What fit factor weighs

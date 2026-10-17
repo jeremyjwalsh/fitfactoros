@@ -2,7 +2,7 @@
 
 > **On the Free plan, or new to Claude? Start with the [Free plan quick start](quick-start-free.md) instead.** It gets you to your first job fit read in about 20 minutes, with no Google connection and no GitHub. Come back here when you want more.
 >
-> Menu names in Claude change from time to time. If a step doesn't match what you see, tell us through the [feedback form](https://forms.gle/JAvtLkWR3unQQZQ77).
+> Pictures were taken on a paid account in October 2026; the Free plan may look slightly different. Menu names in Claude change from time to time. If a step doesn't match what you see, tell us through the [feedback form](https://forms.gle/JAvtLkWR3unQQZQ77).
 
 **Built for Claude.** FitFactorOS is built and tested on Claude. The skills use the open SKILL.md format, so parts of it may work in other AI tools (ChatGPT, for example), but that hasn't been tested. The one-click install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
 
@@ -48,7 +48,7 @@ Click your name or initials at the bottom left of Claude, then **Settings**. In 
 - **Cloud code execution and file creation** (under the "Code execution and file creation" heading). Skills don't work without it.
 - *Paid plans, optional:* **Search and reference chats**, so Claude can also look through your past chats in the Project. The Free plan doesn't have this setting, and you don't need it: step 5 saves your answers in your Project instead.
 
-> **Screenshot coming:** Settings → Capabilities, with "Cloud code execution and file creation" switched on.
+<img src="images/settings-capabilities.png" alt="Settings window with Capabilities selected and Cloud code execution and file creation switched on" width="560">
 
 Research also uses **web search**. Claude normally searches on its own and may ask first; click **Allow**. If Claude says it can't search the web, click **+** under the message box and look for a **Web search** switch.
 
@@ -71,7 +71,7 @@ You don't need a GitHub account for this. You're only downloading files.
 3. Click the black **+ Add** button at the top right, then **Upload skill**, and choose one of the .zip files. Repeat for each one.
 4. Click **Yours** (next to *Discover*) to see your own skills. If a FitFactorOS skill says **Disabled**, click its **Turn on** button.
 
-> **Screenshot coming:** Customize → Skills, with the + Add menu open on "Upload skill."
+<img src="images/skills-add-menu.png" alt="Customize page, Skills selected, with the + Add menu open showing Upload skill" width="640">
 
 > [!IMPORTANT]
 > **Mac with Safari: you may have folders, not .zip files.** Safari often unzips downloads for you. If your Downloads folder shows a folder called `fitfactoros-intake` instead of `fitfactoros-intake.zip`, Claude can't use it. Hold **Control** and click the folder (or right-click it), choose **Compress "fitfactoros-intake"**, and upload the new .zip file it makes. Do the same for each skill.
@@ -99,7 +99,7 @@ A Project is a folder in Claude that keeps your FitFactorOS chats and answers to
 2. Under **What are you working on?**, type **FitFactorOS**, and click **Create project**.
 3. Do everything below inside this Project.
 
-> **Screenshot coming:** the Projects page with the New project button.
+<img src="images/create-project.png" alt="Create a project form: What are you working on?, and the Create project button" width="380">
 
 **Permission prompts:** Claude may ask before it searches or reads a web page. **Allow** those; that's the research. FitFactorOS never sends, writes, or deletes anything, so if a prompt asks to send an email or change a file, choose **Deny**.
 
@@ -111,7 +111,9 @@ A Project is a folder in Claude that keeps your FitFactorOS chats and answers to
 3. Answer the questions. Skip anything you like.
 4. At the end, Claude shows your answers in a block. **Save it in your Project:** tap **Copy**, open your Project page, find **Context** on the right and click its **Add** button, choose **Add text content** (not GitHub or Drive), type **My FitFactorOS answers** as the **Title**, paste into **Content**, and click **Add Content**. That's how Claude finds your answers in every new chat.
 
-> **Screenshot coming:** the Project page, with the Context → Add menu open on "Add text content."
+<img src="images/project-context-add.png" alt="Project page: the Add button next to Context, with Add text content in its menu" width="300">
+
+<img src="images/add-text-content.png" alt="Add text content form with Title and Content boxes and the Add Content button" width="460">
 
 Your Profile is set. If something changes later, say **update my profile**. Claude tells you which line to change.
 
@@ -156,7 +158,9 @@ Connecting lets Claude **read** parts of your Google account for three extras: t
 
 **You can make it read-only yourself.** Each connector has **Tool permissions**: go to [claude.ai/customize/connectors](https://claude.ai/customize/connectors), click **Yours**, and click the connector. Its tools are split into **Read only tools** and **Write/delete tools**, and each group has a setting: **Always allow**, **Needs approval**, **Blocked**, or **Custom**. Set **Write/delete tools** to **Blocked**, and Claude can't change anything through that connection, whatever any instructions say. FitFactorOS works fine that way for **Google Sheets** and **Google Calendar**, because it only reads them. For **Gmail**, the morning email needs to save one draft, so if you use it, choose **Custom** and leave only the draft tool allowed.
 
-> **Screenshot coming:** a Google connector's page with Write/delete tools set to Blocked.
+<img src="images/connector-tool-permissions.png" alt="Google Sheets connector page: Disconnect button, and Tool permissions with Write/delete tools options Always allow, Needs approval, Blocked, Custom" width="640">
+
+*Above: the Google Sheets connector page, with the Write/delete tools menu open. Choose **Blocked**.*
 
 If that's still more access than you're comfortable with, stay in Basic mode. Everything that matters most works without it.
 
@@ -167,7 +171,7 @@ If that's still more access than you're comfortable with, stay in Basic mode. Ev
 2. Click **Yours**, click the Google connector, then **Disconnect** (top right), and confirm.
 3. To remove it on Google's side too: go to [myaccount.google.com/connections](https://myaccount.google.com/connections), find Claude, and remove its access.
 
-> **Screenshot coming:** Customize → Connectors, with a Google connector open and the Disconnect button.
+The **Disconnect** button is at the top right of the connector's page (shown in the picture above).
 
 Disconnecting doesn't touch your Sheet, your Project, or your answers. You're back in Basic mode.
 
