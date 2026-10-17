@@ -32,7 +32,7 @@ When one search finds little, most factors sit at 5 and Company fit lands near 5
 **Leadership**
 - 9–10: Verified stable senior team, with no major exits in 18 months.
 - 6–8: One or two changes that look normal.
-- 5: Nothing found either way.
+- 5: Nothing found either way. Leaders being named or quoted in a current press release isn't evidence of 18 months without exits; it stays 5 unless you found the team's history.
 - 1–4: Heavy turnover, a new CEO followed by departures, or leaders of this team's area recently gone.
 
 **Pull**
