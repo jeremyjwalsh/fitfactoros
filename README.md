@@ -179,7 +179,7 @@ Before any scoring, four yes/no gates: companies you want to avoid, your pay flo
 | **Leadership**: senior team changes in the last 18 months | 20% | **Level and pay**: the level compared with your experience, and posted pay compared with your floor | 30% |
 | **Pull**: a dream company, or one you've said you're excited about | 20% | | |
 
-Each factor scores 1 to 10, where 5 means typical. Anything not verified can't score above 6. The full rules are in [rubrics.md](plugins/fitfactoros/skills/fitfactoros-research/references/rubrics.md).
+Each factor scores 1 to 10, where 5 means typical. A factor can score above 6 only when the facts behind it are verified: the job posting, your Intake answers, or the company's own announcements. The full rules are in [rubrics.md](plugins/fitfactoros/skills/fitfactoros-research/references/rubrics.md).
 
 **Go deeper** adds the full leadership history (who left, who arrived), every funding round and who led it, 12 months of news, market position, the live careers page, employee reviews for a read on culture, competitors, and a separate **Chance of getting it** (High, Medium, or Low). The checklist is in [deep-research.md](plugins/fitfactoros/skills/fitfactoros-research/references/deep-research.md).
 
@@ -241,7 +241,7 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 4. Start a new chat in the Project, paste a job link, and say **"fit factor this."**
 5. Later, if you want: set up your Google Sheet, and Connected mode.
 
-**Built for Claude.** FitFactorOS is built and tested on Claude. The skills use the open SKILL.md format, so parts of it may work in other AI tools (ChatGPT, for example), but that hasn't been tested. The plugin install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
+**Built for Claude.** FitFactorOS is built and tested on Claude. The skills use the open SKILL.md format, so parts of it may work in other AI tools (ChatGPT, for example), but only one early test has been done. In that test, typing **fit factor this** in ChatGPT got ChatGPT's own kind of score, not FitFactorOS's. It followed the FitFactorOS rules only after being told to read the skill files first. The plugin install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
 
 Always use FitFactorOS from a new chat inside your FitFactorOS Project.
 

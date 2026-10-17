@@ -32,7 +32,7 @@ Aim to run all seven, within the budget above. Report how many were done: "Resea
 - **Insiders:** what a person the user talked to says about their own job, team, or manager is Verified (name and date). What they say about company-wide numbers (revenue, runway, retention) is Estimated. If the user said a number and the insider agreed, it's still the user's number.
 - If a pay, headcount, revenue, or retention number is too weak to act on, don't print it. Say what the source is, why it's weak, and who can answer.
 
-## Scores (1–10 each; same rules as rubrics.md: 5 is typical, not verified caps at 6)
+## Scores (1–10 each; same rules as rubrics.md: 5 is typical, unverified facts cap at 6)
 
 **Company fit, out of 100:** Product and market ×2, Leadership stability ×2, Money and stability ×2, Customers and momentum ×1.5, Culture (from reviews) ×1.5, Career upside ×1.
 

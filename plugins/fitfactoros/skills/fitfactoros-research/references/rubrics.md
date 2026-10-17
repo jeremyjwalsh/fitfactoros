@@ -4,7 +4,8 @@ Two scores, shown in this order: **Company fit**, then **Role fit**. Each factor
 
 ## Scoring rules
 - **5 means typical.** Most jobs and most companies are a 5 on most factors. That's not a bad score; it's an honest one.
-- **Not verified caps at 6.** If a factor rests on an Inferred claim or a guess, it can't score above 6.
+- **Unverified facts cap at 6.** A factor can go above 6 only when the facts it rests on are Verified. If a fact underneath is a guess, comes from a partial read, or comes from a news story rather than the company, the factor can't score above 6.
+- **Comparing two Verified facts doesn't trigger the cap.** Role fit always compares the posting with the user's Intake answers. That comparison is still tagged Inferred, because it's your judgment, but when both sides are Verified the factor can score 7–10. (If the comparison alone capped the score, Role fit could never pass 60 and no job could reach Pursue.)
 - **9–10 needs a verified reason,** named in the why line.
 - **If more than 2 factors in one score are 9 or higher, re-check them.** That's usually generous scoring.
 - **A skipped Intake answer caps the factor that depends on it at 6.**
@@ -56,7 +57,7 @@ When one search finds little, most factors sit at 5 and Company fit lands near 5
 **Level and pay:** the level compared with their experience; posted pay compared with their pay floor.
 - 9–10: Posted pay is clearly above the floor, and the level matches their experience.
 - 6–8: Pay is at or near the floor, or the level is one notch off.
-- 5: Pay not posted and the level fits. Don't guess the pay.
+- 5: Pay not posted and the level fits. Don't guess the pay. Score it the same way when only on-target earnings (base plus commission) are posted and the pay floor is base pay: the base isn't known, so don't guess the split.
 - 1–4: Clearly too junior, or a big stretch in level.
 
 ## Suggested call

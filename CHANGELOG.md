@@ -2,6 +2,19 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-17 (later): Role fit can score high again
+
+### Scoring fix
+- **The bug:** two rules in Research worked against each other. One said comparing the job with your answers is a judgment, so it's tagged Inferred. Another said anything Inferred can't score above 6. Every Role fit factor is a comparison, so read literally, Role fit could never go above 60, and no job could ever get the suggested call **Pursue** (it needs 70). A strict run applied both rules and scored a strong match 57.
+- **The fix:** the cap now applies to the facts underneath, not to the comparison. If the posting was fully read and your Intake answers are there, a Role fit factor can score 7 to 10. Comparisons are still tagged Inferred, because they're still judgments. A factor still can't go above 6 when a fact behind it is a guess, a partial read, or a news story.
+- **Pay shown only as on-target earnings (base plus commission):** when your pay floor is base pay, Level and pay now scores as "pay not posted" (5) instead of guessing the split. The pay gate was already **?** in this case.
+- The README's "What fit factor weighs" section says the same thing in plain words.
+
+### ChatGPT note
+- The README and setup guide no longer say ChatGPT is untested. One early test found that typing **fit factor this** in ChatGPT got ChatGPT's own kind of score, not FitFactorOS's. It followed the FitFactorOS rules only after being told to read the skill files first.
+
+**To update:** delete the old **fitfactoros-research** skill and upload the new file (plugin users: **Check for updates**). Your Sheet and Intake answers carry over.
+
 ## 2026-10-17: a clearer opening
 
 - New opening at the top of the README, from tester feedback: what FitFactorOS does in plain words (evaluate a job against your experience, priorities, and deal-breakers), what going further adds, the optional tracking tools, and that you stay in control.
