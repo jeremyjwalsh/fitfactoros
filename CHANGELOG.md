@@ -2,6 +2,11 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-17: a clearer opening
+
+- New opening at the top of the README, from tester feedback: what FitFactorOS does in plain words (evaluate a job against your experience, priorities, and deal-breakers), what going further adds, the optional tracking tools, and that you stay in control.
+- No skill changed, so there's nothing to reinstall.
+
 ## 2026-10-16 (evening): pictures in the guides
 
 - **New "What you get" section near the top of the README:** example pictures of a fit read, the dashboard, and the morning email, so you can see the payoff before you set anything up. The quick start opens with the example fit read. All use the made-up sample (Alex Sample, Fabrikam Health). The dashboard and email pictures were made by FitFactorOS's own dashboard and email code; the fit read is laid out the way Claude shows it in a chat.

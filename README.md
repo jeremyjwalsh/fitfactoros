@@ -1,10 +1,18 @@
 # FitFactorOS
 
-**A job search system for people who are tired of applying into the void.**
+### Find jobs worth pursuing. Know why they're a fit.
 
-FitFactorOS helps you go after fewer jobs that fit you well, get a real person on your side before you apply, and see your progress at every step. It runs on a set of AI agents in Claude that read, research, and draft, with an optional Google Sheet to keep your record for you. **You send everything yourself.** The agents never send, submit, or post.
+FitFactorOS is a free, open-source tool that helps you evaluate job opportunities against your experience, priorities, and deal-breakers.
 
-It is free, open source, and built for people who don't think of themselves as technical. If you can use a spreadsheet and a chat window, you can use this.
+Paste a job posting, answer a few questions, and get a clear assessment of how well the company and role fit you—including potential red flags and what to investigate next.
+
+Want to go further? FitFactorOS can research the company, its products, leadership, and competitive position to help you make a more informed decision.
+
+And if you want help managing your search, optional tools can track opportunities, contacts, applications, interviews, and progress.
+
+**You stay in control.** FitFactorOS doesn't apply for jobs or send messages on your behalf.
+
+<sub>Built for Claude today. Free and open source. The core Fit Factor assessment works on Claude's free plan; a few extras work best on a paid Claude plan.</sub>
 
 > **Status:** Early build. Intake, Research, the Activity Log (Massachusetts first), the Dashboard, the Morning Email, and the activity check are in testing. See [Roadmap](#roadmap).
 
