@@ -23,7 +23,7 @@ Before starting, read `references/guardrails.md`, `references/profile-map.md`, `
   - **Not finding something is never a fact.** "Nothing found" is not a tag and never goes in the Tag column. Write what you looked for as an Inferred claim, for example: "No layoffs or major news found in the last 12 months" (Inferred; How we know: "One search on [date] for [query]; no reports found, which isn't proof there were none").
 - **Don't guess pay, headcount, revenue, or retention.** If it isn't published, say "not posted" and name who can answer it.
 - **A posting is live only if you read it in this chat.** If a page won't load or needs a login (LinkedIn and Indeed often do), say so and ask the user to paste the job text. Never pass off a search snippet as the posting.
-- **Light on usage.** Before the decision: one page read for the job and **1 search**. A 2nd search only if the first finds nothing useful. No review sites (Glassdoor, Comparably, Reddit) in the quick read; those belong to Go deeper. Stop early when a gate fails.
+- **Light on usage.** Before the decision: one page read for the job and **1 search**. A 2nd search only if the first finds nothing useful, or only finds an out-of-date quarterly release. No review sites (Glassdoor, Comparably, Reddit) in the quick read; those belong to Go deeper. Stop early when a gate fails.
 - **The user decides.** You give a suggested call; the choice is theirs. Humans send everything.
 - **Don't mention other skills.**
 - **Build every Jobs and Evidence row with `scripts/make_row.py`.** Never type a row by hand. Run `python3 scripts/make_row.py jobs key=value ...` or `... evidence key=value ...`, leaving blank fields out. The script adds the blanks, checks the column count and dropdown values, and refuses a News source tagged Verified. Copy its output into the code block unchanged. If it prints an error, fix the value and run it again. Only if you can't run code at all, follow `references/jobs-map.md` by hand.
@@ -80,7 +80,7 @@ The gates are yes/no. Check them before spending any searches.
 |---|---|
 | Companies to avoid | The company is on the list. Say so in one line. No scores, no searches. Go to Step 6 with the suggested call Pass. |
 | Pay floor | The **top** of the posted range is below the floor. If only on-target earnings (OTE, base plus commission) are posted and the floor is base pay, the gate is **?**, not ✓, and a question to ask covers the base split. |
-| Where you can work | The posting requires on-site or hybrid outside their places, or remote only from a region they're not in. |
+| Where you can work | The posting requires on-site or hybrid outside their places, or remote only from a region they're not in. ✓ only when both the place and the work mode fit their answer. If the place fits but the posting doesn't say remote, hybrid, or on-site, it's **?**. |
 | Deal-breakers | The posting states one of them (for example, 50% travel when "Heavy travel" is a deal-breaker). |
 
 Mark each gate ✓ (clear), ✗ (fails), or ? (the posting doesn't say).
@@ -92,12 +92,12 @@ Mark each gate ✓ (clear), ✗ (fails), or ? (the posting doesn't say).
 ## Step 4: Company fit (1 search)
 
 Aim the one search at what the **company itself** published:
-- **Public company:** its latest earnings release: `[Company] investor relations quarterly results [this year]`.
+- **Public company:** its latest earnings release: `[Company] investor relations quarterly results [this year]`. Use the latest quarter the company has reported. Check the release date: companies report every three months, so if the newest release you found is more than about four months old, a newer one probably exists. Use your 2nd search to find it. Link the company's main page for the release, not a translated copy (a link with a country code such as `/es-mx/`).
 - **Private company:** its own blog or newsroom: `[Company] announces funding OR launch [this year]`. A funding round the company announced on its own site is Verified; the same round in trade press only is Estimated.
 
 These are Verified. Also look in the results for size, public-company status, and any layoffs or major news in the last 12 months (layoff news usually comes from outside press, so it's Estimated).
 
-Use a 2nd search only if the first finds nothing from the company itself: `[Company] layoffs funding news [this year]`.
+Use a 2nd search only for the newer quarter (above), or if the first finds nothing from the company itself: `[Company] layoffs funding news [this year]`.
 
 If you find nothing on a factor, say so as an Inferred claim (see "Not finding something is never a fact" above). It scores 5.
 

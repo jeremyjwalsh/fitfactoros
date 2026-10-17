@@ -2,6 +2,13 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-10-17 (later afternoon): latest results, clearer location check
+
+- **Company fit uses the company's latest reported quarter.** If the newest results Research finds are more than about four months old, it uses its one extra search to look for the newer quarter. It links the company's main page, not a translated copy.
+- **The location gate checks how you'd work, not just where.** It's ✓ only when both the place and the work mode (remote, hybrid, or office) fit your answer. If the place fits but the posting doesn't say, it's **?**, and the suggested call stays at Maybe or below until you know.
+
+**To update:** delete the old **fitfactoros-research** skill and upload the new file (plugin users: **Check for updates**).
+
 ## 2026-10-17 (afternoon): Research finds your answers in your Sheet
 
 - **Your Sheet's Profile tab is now on Research's list of places to find your Intake answers**, after your Project and before past chats. It only reads the Sheet, never changes it. The first line of every result now says where your answers came from, for example *"Using your Intake answers from 2026-10-11 (from your Sheet's Profile tab)."*
