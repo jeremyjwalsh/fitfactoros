@@ -2,6 +2,12 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-11-06 (afternoon): Fit Check, the two-minute way in
+
+- **New: Fit Check.** Paste one line into your AI, add a job link, answer six quick questions, and get a fit read with nothing installed. It reads [fit-check.md](fit-check.md), which uses the same scoring rules as the full setup, so the two never drift apart. Still being tested, so the README says so.
+- **Names:** FitFactorOS now has two ways in. **Fit Check** is the quick read; **Fit Track** is the full system (your saved answers, the Sheet, resume tailoring, the activity log, the dashboard, and the morning email). Nothing was renamed; Fit Track is the setup you already have.
+- No skill changed, so there's nothing to reinstall.
+
 ## 2026-11-06: tailor your resume, apply cold, and stage checklists
 
 ### Tailor your resume (new skill: Materials)
