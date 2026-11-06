@@ -14,7 +14,7 @@ And if you want help managing your search, optional tools can track opportunitie
 
 <sub>Built for Claude today. Free and open source. The core Fit Factor assessment works on Claude's free plan; a few extras work best on a paid Claude plan.</sub>
 
-> **Status:** Early build. Intake, Research, the Activity Log (Massachusetts first), the Dashboard, the Morning Email, and the activity check are in testing. See [Roadmap](#roadmap).
+> **Status:** Early build. Intake, Research, resume tailoring, the Activity Log (Massachusetts first), the Dashboard, the Morning Email, and the activity check are in testing. Stage checklists are new. See [Roadmap](#roadmap).
 
 > **Want to try it?** New to Claude or on the Free plan: [Free plan quick start](docs/quick-start-free.md) (about 20 minutes, no Google or GitHub account needed). Everyone else: [Getting started](#getting-started).
 
@@ -54,6 +54,8 @@ One last thing: AI can help with the research, but you're still in the driver's 
 
 Be kind to yourself during the process. The job search doesn't define your worth, and even a small step forward is still a step.
 
+One tip from my own search: record your interviews, with permission. A meeting note-taker made a big difference for me. My debriefs after each round, the exact numbers a recruiter said out loud, and my prep for the next round all came from my notes instead of my memory. I use Granola. I have no connection to the company, and it's one option among many. Whatever you use, ask everyone on the call before you record; some states, including Massachusetts, require it. There's more in the [stage checklists](docs/stage-checklists.md#a-meeting-note-taker-optional).
+
 Thanks for being here. Now, let's find you something worth pursuing.
 
 Jeremy
@@ -67,13 +69,15 @@ Jeremy
 1. **Set up once (about 20 minutes).** Add FitFactorOS to Claude and answer the Intake questions. Every question can be skipped. New to Claude? Use the [Free plan quick start](docs/quick-start-free.md).
 2. **Bring a job.** A link a friend sent you, or one you found yourself. Paste the link (or the job description) and say **"fit factor this."** If Claude can't read the whole page, it tells you how to copy and paste the description.
 3. **Get a quick read.** Company fit, then Role fit, the biggest blocker, and a suggested call. Every claim is tagged Verified, Estimated, or Inferred.
-4. **You decide.** **Pursue**, **Hold** (park it and come back in a week), or **Pass**. For a promising job, you can also **go deeper first**: a fuller look at the company (leadership changes, funding, market position, competitors) and then the role. Going deeper uses much more of your Claude plan (on Free, it can use most of your usage until your limit resets), so Claude asks before it starts.
-5. **Keep the record.** Claude gives you a row to paste into your Google Sheet (or a note). Every job you look at gets recorded, even the ones you pass on.
-6. **Log what you do.** Say "I applied to…" or "I had a call with…" to log it. If you're collecting unemployment, say "this week's work search log" for your weekly log.
-7. **See where you stand.** Say **"show my dashboard"** for your top picks, each job's next step, and your progress this week.
-8. **Optional: a morning email.** With Gmail connected, say **"set up my morning email"** for a one-minute weekday email in your Gmail Drafts: how you're doing, what needs attention, and the one thing to do today. It's a draft to you and is never sent.
+4. **You decide.** **Pursue**, **Hold** (park it and come back in a week), or **Pass**. No one you know at the company? Pursue comes in two kinds: **find the right person** first, or **apply cold**. For a promising job, you can also **go deeper first**: a fuller look at the company (leadership changes, funding, market position, competitors) and then the role. Going deeper uses much more of your Claude plan (on Free, it can use most of your usage until your limit resets), so Claude asks before it starts.
+5. **Tailor your resume.** After a Pursue, say **tailor my resume**. Claude compares your resume with the posting: what matches, what's missing, what to move up. It drafts a new version only if you ask, and only from what's on your resume or what you tell it. You save it as a PDF yourself.
+6. **Keep the record.** Claude gives you a row to paste into your Google Sheet (or a note). Every job you look at gets recorded, even the ones you pass on.
+7. **Log what you do.** Say "I applied to…" or "I had a call with…" to log it. If you're collecting unemployment, say "this week's work search log" for your weekly log.
+8. **Follow the checklist for each stage.** Short [stage checklists](docs/stage-checklists.md) for applying, interviews, waiting, the offer, negotiating, and accepting. The dashboard links the right one for each job.
+9. **See where you stand.** Say **"show my dashboard"** for your top picks, each job's next step, and your progress this week.
+10. **Optional: a morning email.** With Gmail connected, say **"set up my morning email"** for a one-minute weekday email in your Gmail Drafts: how you're doing, what needs attention, and the one thing to do today. It's a draft to you and is never sent.
 
-Coming next: **Job Finder**, a short list of roles picked for you, and **Outreach**, which finds the right person and drafts a note for you to send. See the [Roadmap](#roadmap).
+Coming next: **Outreach**, which helps you find the right person and drafts a note for you to send. **Job Finder**, a short list of roles picked for you, comes last, once everything after finding a job is solid. See the [Roadmap](#roadmap).
 
 ---
 
@@ -102,7 +106,7 @@ Greenhouse offers a "My Dream Job" feature that lets a candidate flag one role p
 FitFactorOS is built on three moves:
 
 1. **Fewer, better-fit roles.** Every job is researched and scored against *your* criteria before you spend time on it.
-2. **A human attached before you apply.** For every role you pursue, the system helps you find the best path to a real person, starting with people you already know.
+2. **A human attached before you apply, when there is one.** For every role you pursue, start with the warmest path to a real person: people you already know first. When there's nobody to find, applying cold with a tailored resume is a real path, not a dead end.
 3. **Every step visible.** Each opportunity gets its own short ladder. You always know what you've done and what the next step is.
 
 ---
@@ -117,7 +121,7 @@ These are the rules every part of FitFactorOS follows. If a feature breaks one, 
   - **Verified**: confirmed from a primary source (the job posting, the company's site, a filing, your own records), with a link and the date checked.
   - **Estimated**: a number or range worked out from comparable data (for example, a pay band from similar postings), with the method stated.
   - **Inferred**: a judgment drawn from the evidence, with the reasoning stated. Never presented as fact.
-- **Warm path first.** Before you apply, find the warmest route to a person. When you can, reach out first and apply 2–3 days later, so your contact has a chance to flag you before your application lands in the pile.
+- **Warm path first.** Before you apply, find the warmest route to a person. When you can, reach out first and apply 2–3 days later, so your contact has a chance to flag you before your application lands in the pile. When there's no one to find, apply cold, with your resume tailored to the job.
 - **Keep it simple.** Built for non-technical people. Questions come as tappable choices where possible, and every question can be skipped.
 - **Only real progress counts.** Every rung on your ladder is something you actually did or something that actually happened. No fake rungs, no points for opening the app.
 - **Light by design.** Claude plans have usage limits. FitFactorOS spends your usage only where it changes a decision: a quick screen first, deep research only on jobs you choose to pursue, and never researching the same thing twice.
@@ -149,6 +153,7 @@ Emails you send and receive are linked from the sheet with `=HYPERLINK(...)` for
 | **Intake** | Asks 9 short questions to build your Profile. Every question is skippable. | Guess answers you didn't give. |
 | **Job Finder** *(planned)* | Finds roles that match your Profile and your deal-breakers. | Apply to anything. |
 | **Research** | Scores each role and company, runs a diligence checklist, and tags every claim. | Present an inference as a fact. |
+| **Materials** | Compares your resume with a job you're pursuing: what matches, what's missing, what to move up. Drafts a tailored version only if you ask. | Invent experience, titles, numbers, or tools, or replace your resume unless you ask. |
 | **Outreach** *(planned)* | Finds your warmest path to a person and drafts a short note. | Send the note. |
 | **Activity Log** | Logs your real activity and builds a weekly work-search log from your Jobs and Activity tabs, formatted for your state's rules when FitFactorOS has them. | Submit anything to a state portal, or give legal advice. |
 | **Morning Email** | Optional. Each weekday, saves one email draft to you: how you're doing, what needs attention, and today's one move, with a quote or song picked to suit you. | Send anything, or draft to anyone but you. |
@@ -185,21 +190,21 @@ Each factor scores 1 to 10, where 5 means typical. A factor can score above 6 on
 
 #### The warm-path ladder
 
-For each role, Outreach looks for the warmest route, in this order:
+For each role, look for the warmest route, in this order. Today you do this yourself, with your Intake list of people you know (Research flags a match). **Outreach**, planned, will help find the person and draft the note.
 
 1. **You know someone there.**
 2. **You know someone who knows someone there.**
 3. **You share a background** with someone there (former employer, school, community).
 4. **A direct, researched note** to the right person.
-5. **Cold application**, only when nothing above is available.
+5. **Apply cold.** When nothing above is available, or the posting is closing soon. It's a real path, not a dead end: tailor your resume first (say **tailor my resume**), apply, and log it.
 
-Every outreach draft follows the **two-fact rule**: it includes two specific, checkable facts that show you did your homework and explain why you're writing to *this* person about *this* role.
+When Outreach ships, every outreach draft will follow the **two-fact rule**: it includes two specific, checkable facts that show you did your homework and explain why you're writing to *this* person about *this* role.
 
 ### The dashboard and the ladders
 
 The dashboard shows your top opportunities, why each one scored the way it did, what's known about it (with tags), and who to write to.
 
-Each opportunity also gets its own **ladder**: a short, visible sequence of real steps. Warm paths have fewer rungs because a person is already in the loop.
+Each opportunity also gets its own **ladder**: a short, visible sequence of real steps. Warm paths have fewer rungs because a person is already in the loop. Rungs marked *(optional)* can be skipped: applying cold goes straight from Researched to Applied, and the dashboard never shows a skipped rung as done.
 
 ```
 Warm path                          Cold path
@@ -208,11 +213,15 @@ Offer                              Offer
 Interviewing                       Interviewing
 Heard back                         Heard back
 Applied (with referral)            Applied
-Reached out to your contact        Sent a researched note
-Picked                             Found the right person
-                                   Researched
-                                   Picked
+Reached out to your contact        Sent a researched note (optional)
+  (optional)                       Found the right person (optional)
+Researched                         Researched
+Picked                             Picked
 ```
+
+Tailoring your resume isn't a rung: it's preparation, and a rung moves only when something real happens outside the chat. It shows up as the job's **Next step** ("Tailor your resume, then apply") until you apply.
+
+Each rung after Applied has a short [checklist](docs/stage-checklists.md): Applied, Heard back, Interviewing, and Offer (with Negotiate and Accept or decline under it).
 
 "Heard back" counts whether the answer is yes or no. A closed loop is real progress; the black hole is the thing we're fighting.
 
@@ -230,6 +239,8 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 
 - **Basic** (where everyone starts): nothing connected. Claude gives you results and rows of text, and you copy what you want into your Sheet or a note. Intake and **fit factor this** work fully in Basic.
 - **Connected** (optional, later): connect Google Sheets so Claude can read your Sheet for the dashboard page, and, separately, Gmail and Google Calendar for **check my week** and the morning email. Connect only what you want, and disconnect any time. The [setup guide, step 8](docs/setup.md#8-connected-mode-optional-any-time-later) explains what the Google permission allows.
+
+**Why connect Google?** It saves copying and pasting, and it catches what slips through. **show my dashboard** reads your Sheet itself. **check my week** finds calls and interviews you forgot to log, and flags things like an interview time that differs between the invite and the email. The morning email tells you the one thing to do today. [A made-up example](docs/setup.md#why-connect-google) walks through it. First-timers and Free plan users: start in Basic; this can wait.
 
 ### The full setup
 
@@ -257,6 +268,7 @@ Keep the one-page [cheat sheet](docs/cheat-sheet.md) handy: it groups these by w
 | **update my profile** (or "change my pay floor," "add a contact") | Changes one answer |
 | **fit factor this** + a job link | Company fit, then Role fit, then you decide |
 | **go deep** | Deeper research on a job you're serious about. Claude asks first, because it uses much more of your plan. |
+| **tailor my resume** | What on your resume matches a job, what's missing, and what to move up. A draft only if you ask. |
 | **log this** (or "I applied to…," "I had a call with…") | Activity rows to paste |
 | **check my week** (or "what did I miss?") | *Connected mode.* Claude checks your calendar and email (read-only) for activity you haven't logged, and asks before adding anything |
 | **this week's work search log** | Your weekly unemployment log |
@@ -290,6 +302,7 @@ fitfactoros/
 │       └── skills/
 │           ├── fitfactoros-intake/
 │           ├── fitfactoros-research/      # Quick screen rubrics, deep research checklist, Jobs row map
+│           ├── fitfactoros-materials/     # "Tailor my resume": review first, draft only on request
 │           ├── fitfactoros-activity-log/
 │           │   ├── references/            # Activity row map
 │           │   └── states/                # One rules file per state (ma.md first) + _template.md
@@ -298,6 +311,7 @@ fitfactoros/
 ├── dist/                     # The same skills as ZIPs, for the Free plan
 │   ├── fitfactoros-intake.zip
 │   ├── fitfactoros-research.zip
+│   ├── fitfactoros-materials.zip
 │   ├── fitfactoros-activity-log.zip
 │   ├── fitfactoros-dashboard.zip
 │   └── fitfactoros-morning-email.zip
@@ -305,6 +319,7 @@ fitfactoros/
 │   ├── quick-start-free.md   # Free plan quick start: Intake and fit factor, nothing connected
 │   ├── setup.md              # Step-by-step setup for non-technical users
 │   ├── cheat-sheet.md        # One page of everything you can say
+│   ├── stage-checklists.md   # A short checklist for each stage, from applying to the offer
 │   ├── testing/              # Observer sheet and usage test for people running test sessions
 │   ├── images/               # Screenshots used in the guides
 │   ├── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
@@ -315,10 +330,11 @@ fitfactoros/
 │   └── fitfactoros-template.xlsx   # Import into Google Sheets
 └── samples/
     ├── sample-profile.md     # Fictional job seeker
+    ├── sample-resume.md      # Fictional resume, for testing "tailor my resume"
     └── fitfactoros-sample.xlsx
 ```
 
-Each skill folder contains a `SKILL.md` (the agent's instructions) and a `references/` folder for the rubrics, checklists, and templates it reads. Job Finder and Outreach get their own skill folders when they ship.
+Each skill folder contains a `SKILL.md` (the agent's instructions) and a `references/` folder for the rubrics, checklists, and templates it reads. Outreach and Job Finder get their own skill folders when they ship.
 
 ### State rules for the Activity Log
 
@@ -340,19 +356,23 @@ Each file in `plugins/fitfactoros/skills/fitfactoros-activity-log/states/` recor
 | 1 | Sheet template + Intake agent | Testing |
 | 2 | Research: quick screen, deep research on request, Jobs and Evidence rows | Testing |
 | 3 | Activity Log (Massachusetts first, then more states) | Testing |
-| 4 | Job Finder: a short list picked for you, and you can still bring your own leads (a job someone suggested, or one you found) | Planned |
-| 5 | Outreach (warm-path ladder, two-fact rule) | Planned |
+| 4 | Job Finder: a short list picked for you, and you can still bring your own leads (a job someone suggested, or one you found) | Planned, built last |
+| 5 | Outreach (warm-path ladder, two-fact rule) | Planned, next |
 | 6 | Dashboard with per-opportunity ladders and your own warm vs cold results | Testing |
 | 7 | Morning email: an opt-in weekday draft with your one next move | Testing |
 | 8 | Activity check: reads your calendar and email (read-only) for job-search activity you haven't logged, and asks you about each one. Nothing is logged until you confirm. | Testing |
+| 9 | Materials: tailor your resume to a job you're pursuing, reviewing your version first and drafting only on request. Apply cold becomes a real path. | Testing |
+| 10 | Stage checklists: applying, interviews, waiting, the offer, negotiating, accepting or declining | Done (first version) |
+
+**Build order from here:** finish and test Materials and the checklists, then Outreach. Job Finder comes last, once everything after finding a job is solid. Phase numbers are labels, not the order.
 
 **V2 (future)**
 
-- **Interview Prep**: research on each person you'll meet, voice mock interviews, and a debrief after every round that feeds prep for the next one.
-- **Materials**: help tailoring your resume and cover letter to a specific role, reviewing your version rather than replacing it.
-- **Follow-up**: reminders and drafts for thank-you notes and check-ins, timed to your ladder.
+- **Interview Prep**: research on each person you'll meet, voice mock interviews, and a debrief after every round that feeds prep for the next one. *For now, the [Interviewing checklist](docs/stage-checklists.md#interviewing) covers it.*
+- **Cover letters**: the same review-first approach as the resume.
+- **Follow-up**: reminders and drafts for thank-you notes and check-ins, timed to your ladder. *For now, see the [Waiting checklist](docs/stage-checklists.md#waiting).*
 - **No more copy and paste**: Claude adds rows to your Sheet for you, after you OK them, instead of you pasting each one.
-- **Negotiation**: compare offers side by side against the pay floor and deal-breakers from your Intake.
+- **Negotiation**: compare offers side by side against the pay floor and deal-breakers from your Intake. *For now, see the [Offer](docs/stage-checklists.md#offer) and [Negotiate](docs/stage-checklists.md#negotiate) checklists.*
 - **Close the loop**: wrap up your search. Thank the people who helped, close out open applications, and see your own warm-path vs cold-path results.
 - **Friday look-back**: on Fridays, the morning email adds a short look back at your week: what moved, what you learned, and how your warm and cold paths are doing. It is not therapy; it points to real support when that's what you need.
 - **Hands-off updates (last on the list)**: Claude notices what happened in your calendar and email and updates your Sheet on its own, within limits you set, and tells you what it changed. This comes last on purpose: each earlier step (drafting, then asking, then adding rows after you OK them) has to prove Claude reads your week correctly first, and the guardrails get a clear update before it ships.

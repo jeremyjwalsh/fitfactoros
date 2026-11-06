@@ -34,6 +34,7 @@ When one search finds little, most factors sit at 5 and Company fit lands near 5
 - 6–8: One or two changes that look normal.
 - 5: Nothing found either way. Leaders being named or quoted in a current press release isn't evidence of 18 months without exits; it stays 5 unless you found the team's history.
 - 1–4: Heavy turnover, a new CEO followed by departures, or leaders of this team's area recently gone.
+- **A team being built from scratch** (the posting says new team, first hire, or "build the function") is both a chance and a risk. Score it as neither: it doesn't move Leadership or Work you want. Mention it in one Inferred line, and make one of the Questions to ask about it (who it reports to, and what budget and headcount are approved).
 
 **Pull**
 - 9: The company is on their dream companies list.

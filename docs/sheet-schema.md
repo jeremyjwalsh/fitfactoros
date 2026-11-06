@@ -85,8 +85,8 @@ One row per opportunity.
 | Screen result | | Pursue, Maybe, Pass |
 | Path | | Warm, Cold |
 | Warm contact | The person you'll reach out to | |
-| Ladder stage | Last real step completed | Picked, Researched, Found the right person, Reached out to contact, Sent a researched note, Applied, Heard back, Interviewing, Offer |
-| Next step | | |
+| Ladder stage | Last real step completed. Skipping rungs is fine: applying cold goes straight from Researched to Applied. | Picked, Researched, Found the right person, Reached out to contact, Sent a researched note, Applied, Heard back, Interviewing, Offer |
+| Next step | The one next move. After a Pursue: Reach out to [contact], Find the right person, or Tailor your resume, then apply. | |
 | Next step date | YYYY-MM-DD | |
 | Status | | Active, Closed – offer, Closed – no, Withdrawn, Passed |
 | Email link | HYPERLINK formula | |

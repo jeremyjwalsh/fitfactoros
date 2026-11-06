@@ -22,7 +22,7 @@ Rows run across columns, so fields are separated by a **tab character**. Output 
 | N | Path | One of: Warm, Cold |
 | O | Warm contact | The name exactly as in their Intake answers. Blank if Cold. |
 | P | Ladder stage | `Researched` for every screened lead: Pursue, Maybe, or Pass. A fit factor read is real research, so it earns that rung. Only use a later rung (such as `Interviewing`) when the user says that step already happened. Allowed: Picked, Researched, Found the right person, Reached out to contact, Sent a researched note, Applied, Heard back, Interviewing, Offer. |
-| Q | Next step | One short action. Pursue: "Reach out to [contact]" if Warm, or "Find the right person" if Cold. Maybe: the one question that settles it. Pass: blank. |
+| Q | Next step | One short action. Pursue: "Reach out to [contact]" if Warm. If Cold: "Find the right person" or "Tailor your resume, then apply," whichever the user chose. Maybe: the one question that settles it. Pass: blank. |
 | R | Next step date | YYYY-MM-DD. Pursue: today. Maybe: the date to come back to it (the user's date if they gave one, otherwise one week from today). Blank for Pass. |
 | S | Status | `Active` for Pursue or Maybe. `Passed` for Pass. |
 | T | Email link | Blank. A later agent fills this. |

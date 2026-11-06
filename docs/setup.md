@@ -30,6 +30,7 @@ Go to [claude.ai](https://claude.ai) and sign up or sign in.
 | Get updates | Delete the old skills and upload the new files (see "Getting updates") | With the plugin: one click, **Check for updates** |
 | Intake and fit factor this | Yes | Yes |
 | **Go deeper** on a job | Yes, but **one deep dive can use most of your usage until your limit resets, which can be a few hours.** Claude asks first. Save it for a job you'd really go after. | Yes, with more room |
+| **Tailor my resume** for a job | Yes. With no searches, a review uses less than a quick fit read (our estimate, not yet measured); a full draft uses more. Do it in the chat where you fit factored the job. | Yes |
 | Log activity, weekly log, dashboard, check my week | Yes | Yes |
 | Morning email | Yes, when you say **morning email** | Yes, and it can arrive on its own every weekday |
 | How Claude finds your Intake answers | From the answers you save in your Project (step 5) | The same, plus searching your past chats |
@@ -64,6 +65,7 @@ You don't need a GitHub account for this. You're only downloading files.
 1. Download the skills. Each download starts right away. **Don't open or unzip them.**
    - [fitfactoros-intake.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-intake.zip) (needed)
    - [fitfactoros-research.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-research.zip) (needed)
+   - [fitfactoros-materials.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-materials.zip) (add when you want to tailor your resume for a job)
    - [fitfactoros-activity-log.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-activity-log.zip) (add when you want to log activity)
    - [fitfactoros-dashboard.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-dashboard.zip) (add when you want the dashboard page)
    - [fitfactoros-morning-email.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-morning-email.zip) (Connected mode only)
@@ -80,7 +82,7 @@ You don't need a GitHub account for this. You're only downloading files.
 Anthropic's instructions: [Use skills in Claude](https://support.claude.com/en/articles/12512180).
 
 ### Paid plans: add the plugin instead (optional)
-On Pro or above, you can add all five skills at once as a plugin, and get updates in one click. **You don't need a GitHub account.**
+On Pro or above, you can add all six skills at once as a plugin, and get updates in one click. **You don't need a GitHub account.**
 
 1. Go to [claude.ai/customize](https://claude.ai/customize) and click **Plugins**.
 2. Click **Add** (top right), then **Add marketplace**.
@@ -117,14 +119,18 @@ A Project is a folder in Claude that keeps your FitFactorOS chats and answers to
 
 Your Profile is set. If something changes later, say **update my profile**. Claude tells you which line to change.
 
+**Optional: save your resume in the Project too.** Same place: **Context → Add**, then upload your resume file. When you say **tailor my resume** later, Claude finds it there instead of asking you to attach it each time.
+
 ## 6. Fit factor a job (any time)
 1. Inside your FitFactorOS Project, start a new chat. Paste the job link (or the job description itself) and type **fit factor this**.
    - Many job sites (Ashby, Workday, LinkedIn) don't let Claude read the whole page. If Claude can only read part of a page, it stops and asks for the text rather than guessing.
    - Scores can move a few points between runs on the same job. The suggested call is what to go by.
    - **Optional: Claude in Chrome.** This browser add-on lets Claude open job pages in your own Chrome, which helps on sites like Ashby and Workday. It acts in your real browser with your sign-ins, and it asks before opening a page. Skip it if you'd rather not; pasting the job description works just as well.
 2. Claude shows **Company fit**, then **Role fit**, the biggest blocker, and a suggested call.
-3. You decide: **Pursue**, **Hold** (park it and come back in a week), or **Pass**. When a job looks promising, Claude may also offer **Go deeper first**. It asks before starting, because going deeper uses much more of your plan (see the table in step 1).
+3. You decide: **Pursue**, **Hold** (park it and come back in a week), or **Pass**. If you don't know anyone at the company (a **cold** path), Pursue comes in two kinds: **find the right person** first (the stronger route), or **apply cold**. Applying cold is a real path, not a dead end. When a job looks promising, Claude may also offer **Go deeper first**. It asks before starting, because going deeper uses much more of your plan (see the table in step 1).
 4. Claude gives you a row for the **Jobs** tab of your Sheet (and, for Pursue, rows for the **Evidence** tab). No Sheet yet? Copy it into a note, or set up the Sheet in step 7.
+
+5. After a Pursue, say **tailor my resume** in the same chat. Claude shows what on your resume matches the job, what's missing, and what to move up. It drafts a new version only if you ask, using only what's on your resume or what you tell it. You paste what you want into your own resume and save it as a PDF. Then the [stage checklists](stage-checklists.md) cover applying, interviews, waiting, and the offer.
 
 If Claude says it doesn't have your answers, check that you're inside your FitFactorOS Project and that **My FitFactorOS answers** is listed under **Context** on the Project page (step 5).
 
@@ -151,6 +157,16 @@ To add a row Claude gives you: click the first empty cell in **column A** of the
 
 ## 8. Connected mode (optional, any time later)
 Connecting lets Claude **read** parts of your Google account for three extras: the dashboard page without copying and pasting (Google Sheets), **check my week** (Gmail and Google Calendar), and the morning email (Gmail and Google Sheets). Connect only the ones you want. Intake and fit factor never need them.
+
+### Why connect Google?
+
+Basic mode does the important part. Connecting saves you work and catches what slips through the cracks in a busy week:
+
+- **Your dashboard without copying and pasting.** Say **show my dashboard** and Claude reads your Sheet itself. No copying three tabs into the chat.
+- **"Check my week" catches what you forgot to log.** *A made-up example:* on Friday, Alex Sample says **check my week**. Claude finds a recruiter screen with Fabrikam Health and a follow-up call with Tailspin Labs that Alex never logged, and asks about each one. It also notices that the Fabrikam calendar invite says 2 pm while the recruiter's newer email says 3 pm, and says so. Alex confirms the two calls, and they become Activity rows. Nothing is added until Alex says yes.
+- **A morning email that knows your week.** One short draft in your Gmail each weekday: what's due, what's coming up, and the one thing to do today. It's a draft to you, and it's never sent.
+
+It's still optional. If you're new to Claude or on the Free plan, start in Basic and come back to this when the basics feel easy.
 
 **What the permission allows, plainly.** When you connect, Google shows a screen asking you to let Claude access that part of your account. That permission covers your whole account for that service, not just the FitFactorOS Sheet, and it can include changing things, not only reading them. According to Anthropic's help center, the Google connections can read your email, view and change calendar events, and work with your Drive files, and Claude can only reach what you can already reach in your own Google account. Sending email, and sharing, moving or deleting Drive files, ask for your approval by default.
 
@@ -212,6 +228,7 @@ The one-page [cheat sheet](cheat-sheet.md) groups these by when you'd use them.
 | **update my profile** (or "change my pay floor," "add a contact") | Changes one answer |
 | **fit factor this** + a job link | Company fit, then Role fit, then you decide |
 | **go deep** | Deeper research on a job you're serious about. Claude asks first, because it uses much more of your plan. |
+| **tailor my resume** | What on your resume matches a job, what's missing, and what to move up. A draft only if you ask. |
 | **log this** (or "I applied to…," "I had a call with…") | Activity rows to paste |
 | **this week's work search log** | Your weekly unemployment log |
 | **did I do enough this week?** | Your count against your state's minimum |
@@ -258,7 +275,7 @@ Then click **D10** and replace the note with: *Counts only Activity rows marked 
 New to Claude, or curious how the pieces fit? [Want to go further?](learn-more.md) has a few free official Anthropic courses and help pages on Projects, Skills, and scheduled tasks.
 
 ## Coming in later phases
-The Job Finder and Outreach come next. Later, Claude will add rows to your Sheet for you after you OK them, so you won't have to paste them. See the [Roadmap](../README.md#roadmap).
+Next: Outreach, to find the right person and draft a note for you to send. Later, Claude will add rows to your Sheet for you after you OK them, so you won't have to paste them. Job Finder comes last, once everything after finding a job is solid. See the [Roadmap](../README.md#roadmap).
 
 ## Your data
 Your answers are saved in your Claude Project and, if you use it, your own Google Sheet. FitFactorOS has no server of its own and collects nothing. Your chats with Claude go through Anthropic like any Claude chat, and if Claude's memory feature is on, Claude may remember details between chats. You can control that in Claude's settings. Anthropic's privacy policy covers the rest.

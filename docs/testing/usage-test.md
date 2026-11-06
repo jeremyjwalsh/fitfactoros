@@ -25,20 +25,22 @@ Before and after each step, write down the **Current session** percent.
 | 2 | Quick fit | paste the saved job text, then the link and **fit factor this**; choose **Hold** |
 | 3 | Deep dive | in the same chat, **go deep**, then **Yes, go deeper**; choose **Pursue** at the end |
 | 4 | Dashboard | new chat, **show my dashboard** |
+| 5 | Resume review | back in the step 2 chat, attach the sample resume and say **tailor my resume**; choose **I'll edit my own** |
+| 6 | Resume draft | same chat, **Draft a tailored version** |
 
 ## Log
 
-| Run | Date | Intake | Quick fit | Deep dive | Dashboard | Searches in deep dive | Notes |
-|---|---|---|---|---|---|---|---|
-| 1 | | % | % | % | % | | |
-| 2 | | % | % | % | % | | |
-| 3 | | % | % | % | % | | |
-| **Middle value** | | % | % | % | % | | |
+| Run | Date | Intake | Quick fit | Deep dive | Dashboard | Resume review | Resume draft | Searches in deep dive | Notes |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | | % | % | % | % | % | % | | |
+| 2 | | % | % | % | % | % | % | | |
+| 3 | | % | % | % | % | % | % | | |
+| **Middle value** | | % | % | % | % | % | % | | |
 
 "Searches in deep dive": count the "Searched the web" and page-read lines Claude shows. The deep dive should stop at 12.
 
 ## Free plan check (once)
-On a fresh Free account, at the start of a session, run steps 1 to 4 in order. Write down:
+On a fresh Free account, at the start of a session, run steps 1 to 6 in order. Write down:
 - Which step you were on when the limit message appeared (or "none").
 - The reset time the message gave.
 - Whether the deep dive finished with a verdict, or at least the "So far / Leaning" lines, before the limit.

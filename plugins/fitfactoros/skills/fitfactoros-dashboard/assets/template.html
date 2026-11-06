@@ -60,6 +60,7 @@ h2{margin:0;font-family:var(--display);font-size:26px;font-weight:600;text-wrap:
 .ladder li::before{content:"";width:10px;height:10px;border-radius:50%;border:2px solid var(--line);flex-shrink:0}
 .ladder li.done{color:var(--muted)}.ladder li.done::before{background:var(--track);border-color:var(--track)}
 .ladder li.now{color:var(--fg);font-weight:600}.ladder li.now::before{background:var(--accent);border-color:var(--accent)}
+.ladder li.skip::before{border-style:dashed}.ladder .opt{font-size:11px;color:var(--faint);font-weight:400}
 .ev{display:flex;gap:10px;align-items:flex-start}.ev .pill{width:76px;text-align:center;flex-shrink:0;padding:3px 0}
 .ev span:last-child{font-size:13px;color:var(--muted)}
 .empty{font-size:13px;color:var(--faint)}
@@ -118,6 +119,7 @@ __DATA__
     <div class="saygrid">
       <div><b>fit factor this</b> + a job link: score a new job</div>
       <div><b>go deep</b>: deeper research on a job you're serious about</div>
+      <div><b>tailor my resume</b>: what matches a job, what's missing, what to move up</div>
       <div><b>log this</b>: "I applied to…", "I had a call with…"</div>
       <div><b>this week's work search log</b>: your weekly unemployment log</div>
       <div><b>did I do enough this week?</b>: your count against the minimum</div>
@@ -130,6 +132,17 @@ __DATA__
 
 <script>
 const RUNGS=["Picked","Researched","Found the right person","Reached out to contact","Sent a researched note","Applied","Heard back","Interviewing","Offer"];
+const WARM_LADDER=["Picked","Researched","Reached out to contact","Applied","Heard back","Interviewing","Offer"];
+const COLD_LADDER=["Picked","Researched","Found the right person","Sent a researched note","Applied","Heard back","Interviewing","Offer"];
+const OPTIONAL=["Found the right person","Reached out to contact","Sent a researched note"];
+const CHECKLIST="https://github.com/jeremyjwalsh/fitfactoros/blob/main/docs/stage-checklists.md";
+function ladderFor(s){const L=s.path==="Warm"?WARM_LADDER:COLD_LADDER;return !s.stage||L.includes(s.stage)?L:RUNGS;}
+/* A rung below the current one shows as done only if it must have happened.
+   Outreach rungs are optional: applying cold skips them, so once a job is past
+   them they stay hollow unless the job is still on an outreach rung. */
+function rungClass(r,i,idx,stage){if(i===idx)return"now";if(i>idx)return"";return OPTIONAL.includes(r)&&!OPTIONAL.includes(stage)?"skip":"done";}
+function ladderHTML(s){const L=ladderFor(s),idx=L.indexOf(s.stage);return L.map((r,i)=>`<li class="${rungClass(r,i,idx,s.stage)}">${r}${OPTIONAL.includes(r)&&i!==idx?' <span class="opt">optional</span>':""}</li>`).join("");}
+function checklistFor(s){if(s.call==="Pass")return null;const m={"Applied":["applied","Applied checklist"],"Heard back":["interviewing","Interviewing checklist"],"Interviewing":["interviewing","Interviewing checklist"],"Offer":["offer","Offer checklist"]};if(m[s.stage])return m[s.stage];if(s.call==="Pursue")return["applied","Before you apply: Applied checklist"];return null;}
 const TAGS={V:"Verified",E:"Estimated",I:"Inferred"};
 let D={jobs:[],activities:[]};
 try{D=Object.assign(D,JSON.parse(document.getElementById("ffos-data").textContent));}catch(e){}
@@ -187,7 +200,7 @@ function render(){
   const s=JOBS.find(j=>j.id===picked);
   const det=document.getElementById("detail");
   if(!s){det.innerHTML='<div class="eyebrow">Selected</div><p class="empty">Pick a job to see its ladder, evidence and who to write to.</p>';return;}
-  const idx=RUNGS.indexOf(s.stage);
+  const idx=ladderFor(s).indexOf(s.stage);
   det.innerHTML=`
    <div style="display:flex;flex-direction:column;gap:4px"><div class="eyebrow">Selected</div><h2>${esc(s.co)}</h2><div class="sub">${esc(s.role)}${s.loc?" · "+esc(s.loc):""}</div></div>
    <div class="scorebig"><span class="n">${s.fit??"–"}</span><span class="pill ${callPill(s.call)}">${callLabel(s.call)}</span>${s.cfit!=null?`<span class="sub">Company fit ${s.cfit}</span>`:""}</div>
@@ -196,7 +209,8 @@ function render(){
     ${s.flag?`<div><span class="pill flag">${esc(s.flag)}</span></div>`:""}</div>
    <div style="display:flex;flex-direction:column;gap:8px"><div class="k">Where it is on the ladder</div>
     ${idx<0?'<div class="empty">No rung set in your Sheet yet. Add a Ladder stage to the Jobs row.</div>':""}
-    <ol class="ladder">${RUNGS.map((r,i)=>`<li class="${i===idx?"now":i<idx?"done":""}">${r}</li>`).join("")}</ol></div>
+    <ol class="ladder">${ladderHTML(s)}</ol>
+    ${checklistFor(s)?`<a href="${CHECKLIST}#${checklistFor(s)[0]}" target="_blank" rel="noopener">${checklistFor(s)[1]}</a>`:""}</div>
    <div class="sec"><div class="k">What we know</div>
     ${s.ev&&s.ev.length?s.ev.map(e=>`<div class="ev"><span class="pill ${esc(e[0])}">${TAGS[e[0]]||"Inferred"}</span><span>${esc(e[1])}</span></div>`).join(""):'<div class="empty">No Evidence rows yet. A Maybe gets a Jobs row only; Evidence comes with a Pursue or a deep read.</div>'}
     ${s.log?`<div class="sub">Logged: ${esc(s.log)}</div>`:""}</div>

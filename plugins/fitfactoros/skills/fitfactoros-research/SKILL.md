@@ -129,17 +129,19 @@ Keep it short and plain. In this order:
 
 Then, if your interface offers tappable choices, ask one question: **"What do you want to do?"** with the options "Pursue," "Hold," and "Pass." (Hold means park it and come back later; it is recorded as Maybe.) Showing the buttons ends your turn, so everything above must already be written. Without buttons, ask the same question as a short numbered list.
 
+**Cold path: two ways to pursue.** When the Path is Cold, split Pursue into two options, so the choices are "Pursue: find the right person," "Pursue: apply cold," "Hold," and "Pass." Finding a person first is still the stronger route; applying cold is a real path, not a dead end, for when there's nobody to find or the posting is closing soon. If "Go deeper first" would make a fifth option, keep a single "Pursue" instead, and if they pick it, ask in one line which way: "Find the right person first" or "Apply cold (tailor your resume first)."
+
 **Offer "Go deeper first" only when there's a real reason.** Add it as a fourth option only when your suggested call is Pursue or Maybe, no gate is ✗, and deeper research could change the decision (for example, an open question about leadership, money, or culture that the posting can't answer). Otherwise leave it off. A Pass with a failed gate never gets it. The user can still type **go deep** any time.
 
 ## Step 7: Record it
 
-After the user answers, give the rows. **Every lead gets a Jobs row**, including Passes. If the user picks Hold or skips the question, record it as Maybe.
+After the user answers, give the rows. **Every lead gets a Jobs row**, including Passes. If the user picks Hold or skips the question, record it as Maybe. Either Pursue option records as Pursue; the choice only sets the Next step.
 
 - **Pass, or Hold (Maybe):** the Jobs row only. One paste.
 - **Pursue:** the Jobs row and the Evidence rows. Two pastes.
 - **Never an Activity row.** The Jobs row is the record of the lead. The Activity tab is for things the user does beyond screening (applying, outreach, interviews).
 
-- **Pursue:** Screen result `Pursue`, Ladder stage `Researched`, Status `Active`.
+- **Pursue:** Screen result `Pursue`, Ladder stage `Researched`, Status `Active`. Next step: `Reach out to [contact]` (Warm), `Find the right person` (Cold, find the right person), or `Tailor your resume, then apply` (Cold, apply cold). Next step date: today.
 - **Hold (Maybe):** Screen result `Maybe`, Ladder stage `Researched`, Status `Active`. Next step is the one question that would settle it; Next step date is when to come back (one week out unless the user gives a date). The dashboard shows these as **Parked**.
 - **Pass:** Screen result `Pass`, Ladder stage `Researched`, Status `Passed`.
 - **Go deeper first** (or the user says **go deep**): **ask before you start. Don't search anything yet.** Say, word for word:
@@ -161,9 +163,26 @@ For Pursue, add this step:
 
 > 4. Copy the second block. On the **Evidence** tab, click the first empty cell in **column A** and paste.
 
+**After a Pursue, offer the resume.** End with, word for word (it's the same line for Warm and Cold):
+
+> **Next: get your resume ready for this one.** Say **tailor my resume** here in this chat (I already have the posting) and attach your resume, or save it in your Project once so I can find it every time. I'll show what matches, what's missing, and what to move up. I only draft a new version if you ask, and only from what's on your resume or what you tell me.
+
+Hold and Pass don't get this line.
+
 ## When the user reports something they did
 
 "I had an interview," "I applied," "I talked to the recruiter": you may update the read and the Jobs row (use the furthest real ladder stage, such as `Interviewing`), and treat the job as in progress (write Chance as "pending [what]"). But the record of what they did belongs to the Activity Log. End with, word for word: "To add this to your Activity log (and Interviews tab), say **log this: [what you did, with the date]**."
+
+Then add one line pointing to the checklist for the job's new stage: "For what to do next, see the [[Stage] checklist](https://github.com/jeremyjwalsh/fitfactoros/blob/main/docs/stage-checklists.md#[anchor])." Use this table, and link only these anchors:
+
+| Ladder stage | Checklist | Anchor |
+|---|---|---|
+| Applied | Applied | `applied` |
+| Heard back | Interviewing (if it's a yes) | `interviewing` |
+| Interviewing | Interviewing, then Waiting | `interviewing` |
+| Offer | Offer | `offer` |
+
+If they say "no" came back, link `closing-the-loop` instead.
 
 ## Leads already in the Sheet
 

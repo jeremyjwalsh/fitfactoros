@@ -2,6 +2,41 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-11-06: tailor your resume, apply cold, and stage checklists
+
+### Tailor your resume (new skill: Materials)
+- **After a Pursue, Claude offers to get your resume ready for that job.** Say **tailor my resume** in the same chat. Claude compares your resume with the posting and shows what matches, what's missing, and what to move up. Missing items come back as questions ("Have you done this?"), never as filled-in lines.
+- **A draft only when you ask.** Every line comes from your resume or from something you confirm in the chat: no invented experience, titles, numbers, or tools. A built-in check flags any number or name in the draft that isn't on your resume. You paste what you want into your own resume and save it as a PDF yourself.
+- **Uses less than a fit read** for the review, because it needs no web searches (our estimate; the usage test now has rows for it). A full draft uses more.
+- Save your resume in your Project (**Context → Add**) once, and Claude finds it every time.
+- New fictional resume for testing: `samples/sample-resume.md`.
+
+### Applying cold is a real path
+- **A cold Pursue now offers two ways in:** **find the right person** first, or **apply cold**. Before, a cold Pursue only ever said "Find the right person," which went nowhere when there was no one to find.
+- **No new ladder rungs.** Tailoring your resume is preparation, so it's a Next step ("Tailor your resume, then apply"), not a rung. Applying cold goes straight from Researched to Applied. Your Sheet doesn't change.
+- When you log a step, Claude also tells you to clear the Next step you just finished and suggests the next one.
+
+### Dashboard: the ladder only shows what happened
+- **Fixed:** the dashboard drew one ladder for every job and marked every rung below the current one as done. A job you applied to cold showed "Reached out to contact" and "Sent a researched note" as done when neither happened. Each job now gets its own path's ladder, outreach rungs are marked *optional*, and a skipped one stays hollow.
+- Each job links to the checklist for its stage. "Tailor my resume" is added to Things you can say.
+
+### Stage checklists (new doc)
+- **[docs/stage-checklists.md](docs/stage-checklists.md):** one short checklist each for Applied, Interviewing, Waiting, Offer, Negotiate, Accept or decline, and Closing the loop (when it's a no). They line up with the rungs you already have. Research, the Activity Log, and the dashboard point to the right one.
+- Includes an optional section on using a meeting note-taker for interviews, starting with asking everyone's permission before recording, with a link to the Massachusetts law.
+
+### Research
+- A team being built from scratch is treated as both a chance and a risk: it doesn't move any score, and it becomes one of the questions to ask.
+
+### Docs
+- **Why connect Google?** A short section in the setup guide (and a pointer in the README) with a made-up example of what Connected mode catches. It's still optional; first-timers start in Basic.
+- README: a note on meeting notes in "A note from Jeremy"; "Coming next" now says Outreach next and Job Finder last; the warm-path ladder says Outreach is planned and applying cold is a real path; the Roadmap moves resume help into V1 and points Interview Prep, Follow-up, and Negotiation to the checklists for now.
+
+**To update:**
+- **Free plan (skills added by hand):** upload the new **fitfactoros-materials** skill. Replace **fitfactoros-research**, **fitfactoros-activity-log**, and **fitfactoros-dashboard** (delete the old one, upload the new file). Intake and the morning email didn't change.
+- **Plugin (paid plans):** **Check for updates**, then start a new chat in your Project.
+
+Your Sheet and Intake answers carry over.
+
 ## 2026-10-17 (evening): ChatGPT test result
 
 - The README and setup guide now say what the ChatGPT test found: after being told to read the skill files from GitHub, ChatGPT followed the fit factor rules and reached the same suggested call as Claude on one job, with scores within a few points. Just typing **fit factor this** there still gets ChatGPT's own kind of score, and the other skills haven't been tried in ChatGPT.

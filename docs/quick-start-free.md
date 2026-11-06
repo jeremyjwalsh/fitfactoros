@@ -146,6 +146,8 @@ The Free plan has a usage limit that **resets every five hours**, according to A
 ## Later, if you want more
 Everything below is optional. The [full setup guide](setup.md) covers each one.
 
+- **Tailor your resume for a job you pursue.** Add one more skill file ([fitfactoros-materials.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-materials.zip), the same way as step 4), then say **tailor my resume** in the chat where you fit factored the job. It shows what matches, what's missing, and what to move up, and drafts a new version only if you ask.
+- **Checklists for each stage** after you apply: interviews, waiting, the offer, and negotiating. See [stage checklists](stage-checklists.md). Nothing to install.
 - **Keep a record in a Google Sheet,** so every job you look at is saved in one place.
 - **Log your job-search activity** and build a weekly work-search log for unemployment (Massachusetts first).
 - **Connected mode:** let Claude read your Sheet to show a dashboard, or check your calendar and email for activity you forgot to log. Connecting Google is optional and you can disconnect any time. The setup guide explains exactly what the permission allows.

@@ -18,6 +18,9 @@ Do it the same day. The details are still fresh, and the morning email stops nud
 |---|---|
 | **fit factor this** + the job link | Company fit, then Role fit. You decide: pursue, park as a maybe, or pass |
 | **go deep** | Deeper research on a job you're serious about. Claude asks first: on the Free plan, one deep dive can use most of your usage until your limit resets. |
+| **tailor my resume** (after a Pursue, same chat) | What on your resume matches the job, what's missing, and what to move up. A tailored draft only if you ask. You save it as a PDF yourself. |
+
+No contact at the company? A Pursue gives you two ways in: **find the right person** first, or **apply cold**. After that, the [stage checklists](stage-checklists.md) cover applying, interviews, waiting, and the offer.
 
 ## End of the week (Saturday or Sunday)
 

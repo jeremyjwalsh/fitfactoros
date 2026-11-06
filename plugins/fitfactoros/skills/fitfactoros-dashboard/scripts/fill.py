@@ -47,6 +47,27 @@ E = lambda x: html.escape(str(x if x is not None else ""))
 LADDER = ["Picked", "Researched", "Found the right person", "Reached out to contact",
           "Sent a researched note", "Applied", "Heard back", "Interviewing", "Offer"]
 TAGNAME = {"V": "Verified", "E": "Estimated", "I": "Inferred"}
+# Same ladders as the page script: one per path, outreach rungs optional.
+WARM_L = ["Picked", "Researched", "Reached out to contact", "Applied", "Heard back", "Interviewing", "Offer"]
+COLD_L = ["Picked", "Researched", "Found the right person", "Sent a researched note", "Applied", "Heard back", "Interviewing", "Offer"]
+OPTIONAL = {"Found the right person", "Reached out to contact", "Sent a researched note"}
+CHECKLIST = "https://github.com/jeremyjwalsh/fitfactoros/blob/main/docs/stage-checklists.md"
+def ladder_for(j):
+    L = WARM_L if j["path"] == "Warm" else COLD_L
+    return L if not j.get("stage") or j["stage"] in L else LADDER
+def ladder_html(j):
+    L = ladder_for(j); st = j.get("stage", ""); idx = L.index(st) if st in L else -1; out = ""
+    for i, r in enumerate(L):
+        c = "now" if i == idx else "" if i > idx else "skip" if r in OPTIONAL and st not in OPTIONAL else "done"
+        tag = ' <span class="opt">optional</span>' if r in OPTIONAL and i != idx else ""
+        out += f'<li class="{c}">{r}{tag}</li>'
+    return out
+def checklist_for(j):
+    if j["call"] == "Pass": return None
+    m = {"Applied": ("applied", "Applied checklist"), "Heard back": ("interviewing", "Interviewing checklist"),
+         "Interviewing": ("interviewing", "Interviewing checklist"), "Offer": ("offer", "Offer checklist")}
+    if j.get("stage") in m: return m[j["stage"]]
+    return ("applied", "Before you apply: Applied checklist") if j["call"] == "Pursue" else None
 def d(x):
     try: return datetime.date.fromisoformat((x or "")[:10])
     except ValueError: return None
@@ -83,12 +104,13 @@ openj = [j for j in jobs if j["call"] != "Pass"]
 rows = "".join(f'''<div class="row"><span class="rank">{i+1}</span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span class="co">{E(j["co"])}</span><span class="role">{E(j["role"])}</span><span class="chips"><span class="pill {pill(j["call"])}">{label(j["call"])}</span><span class="pill {"warm" if j["path"]=="Warm" else "cold"}">{j["path"]}{" · " + E(j["contact"]) if j.get("contact") else ""}</span></span></span><span class="score"><span class="n">{j.get("fit","–")}</span><span class="bar"><i style="width:{j.get("fit") or 0}%"></i></span></span><span class="gap"><span class="clamp">{E(j.get("gap"))}</span></span><span class="next">{nxt(j)}</span></div>''' for i, j in enumerate(openj))
 detail = ""
 if openj:
-    s0 = openj[0]; idx = LADDER.index(s0["stage"]) if s0.get("stage") in LADDER else -1
+    s0 = openj[0]; ck = checklist_for(s0)
     detail = (f'<div class="eyebrow">Selected</div><h2>{E(s0["co"])}</h2><div class="sub">{E(s0["role"])}</div>'
       f'<div class="scorebig"><span class="n">{s0.get("fit","–")}</span><span class="pill {pill(s0["call"])}">{label(s0["call"])}</span></div>'
       + (f'<div class="nextbox"><div class="k">Next step</div><div>{E(s0["next"])}</div></div>' if s0.get("next") else "")
       + f'<div class="k">Biggest gap</div><div class="sub">{E(s0.get("gap") or "None noted")}</div>'
-      + '<ol class="ladder">' + "".join(f'<li class="{"now" if i == idx else "done" if i < idx else ""}">{r}</li>' for i, r in enumerate(LADDER)) + "</ol>"
+      + '<ol class="ladder">' + ladder_html(s0) + "</ol>"
+      + (f'<a href="{CHECKLIST}#{ck[0]}" target="_blank" rel="noopener">{ck[1]}</a>' if ck else "")
       + '<div class="sec"><div class="k">What we know</div>' + "".join(
           f'<div class="ev"><span class="pill {e[0]}">{TAGNAME[e[0]]}</span><span>{E(e[1])}</span></div>' for e in s0.get("ev", [])) + "</div>")
 out = (tpl.replace("__DATA__", blob, 1).replace("__STAMP__", E(f"FitFactorOS · {data['sheet']} · read {fmt(today)}"), 1)
