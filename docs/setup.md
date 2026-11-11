@@ -119,7 +119,7 @@ A Project is a folder in Claude that keeps your FitFactorOS chats and answers to
 
 Your Profile is set. If something changes later, say **update my profile**. Claude tells you which line to change.
 
-**Optional: save your resume in the Project too.** Same place: **Context → Add**, then upload your resume file. When you say **tailor my resume** later, Claude finds it there instead of asking you to attach it each time.
+**Optional: save your resume in the Project too.** Same place: **Context → Add → Upload from device**, then choose your resume. When you say **tailor my resume** later, Claude finds it there instead of asking you to attach it each time.
 
 ## 6. Fit factor a job (any time)
 1. Inside your FitFactorOS Project, start a new chat. Paste the job link (or the job description itself) and type **fit factor this**.

@@ -73,7 +73,7 @@ Leave them as they are. **Don't open or unzip them.**
 
 The Skills page opens on *Discover*, a showcase of other skills. You can ignore it.
 
-A "skill" is a set of instructions Claude follows when you ask for that task. You've just given Claude two of them.
+A "skill" is a set of instructions Claude follows when you ask for that task. You've just given Claude three of them.
 
 ## 5. Make a FitFactorOS Project
 A Project is a folder in Claude that keeps your FitFactorOS chats and your answers together.
@@ -118,7 +118,7 @@ Claude then gives you a row of text for a spreadsheet. On Basic mode, you can ig
 
 **Going deeper.** For a job you're serious about, Claude may offer **Go deeper first**: a much fuller look at the company. **On the Free plan, one deep dive can use most of your usage until your limit resets, which can be a few hours.** Claude asks before it starts. Say **Not now** unless this is a job you'd really go after.
 
-**Tailor your resume.** If you pick **Pursue**, say **tailor my resume** in the same chat and attach your resume. Claude shows what on your resume matches the job, what's missing, and what to move up. It drafts a new version only if you ask, using only what's on your resume or what you tell it. You paste what you want into your own resume and save it as a PDF. To skip attaching it every time, save your resume in your Project too (**Context → Add**, then upload the file).
+**Tailor your resume.** If you pick **Pursue**, say **tailor my resume** in the same chat and attach your resume. Claude shows what on your resume matches the job, what's missing, and what to move up. It drafts a new version only if you ask, using only what's on your resume or what you tell it. You paste what you want into your own resume and save it as a PDF. To skip attaching it every time, save your resume in your Project too (**Context → Add → Upload from device**, then choose your resume).
 
 ---
 
