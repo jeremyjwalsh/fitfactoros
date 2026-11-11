@@ -2,6 +2,13 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-11-11 (branding): a logo, a brand page, and "job fit system"
+
+- **FitFactorOS has a logo.** Three bars, one for each tag (Verified, Estimated, Inferred), then the name. It's now at the top of this README. Files and a short brand page (names, colors, fonts) are in [docs/brand](docs/brand/brand.md).
+- **Names, settled:** FitFactorOS is the brand; **Jobs** is this edition (a College edition may come later); **Fit Check** and **Fit Track** are the two ways in.
+- **It's a job fit system, not a job search system.** FitFactorOS doesn't find jobs or apply for you; it helps you evaluate them and follow through. The plugin descriptions now say so.
+- No skills changed, so there's nothing to reinstall.
+
 ## 2026-11-11 (later): resume tailoring in the quick start; Job Finder off the build list
 
 - **The Free plan quick start now has three downloads, not two:** Intake, Research, and Materials. So **tailor my resume** always runs with its rules (nothing invented, review before any draft), not as Claude's ordinary resume help. A short "Tailor your resume" step follows the fit factor step.

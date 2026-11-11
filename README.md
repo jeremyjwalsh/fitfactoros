@@ -1,3 +1,5 @@
+<p><img src="docs/brand/fitfactoros-jobs.png" alt="FitFactorOS Jobs" width="420"></p>
+
 # FitFactorOS
 
 ### Find jobs worth pursuing. Know why they're a fit.
