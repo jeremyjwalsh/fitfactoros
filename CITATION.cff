@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use, share, or write about FitFactorOS, please credit it like this."
+title: "FitFactorOS"
+abstract: "A free, open-source job fit system for Claude. It helps you evaluate jobs, decide which are worth pursuing, and follow through. Every claim is tagged Verified, Estimated, or Inferred, and you send everything yourself."
+type: software
+authors:
+  - given-names: Jeremy
+    family-names: Walsh
+repository-code: "https://github.com/jeremyjwalsh/fitfactoros"
+url: "https://github.com/jeremyjwalsh/fitfactoros"
+license: MIT
+keywords:
+  - job fit
+  - job seekers
+  - careers
+  - Claude

@@ -29,7 +29,7 @@ FitFactorOS has three levels:
 
 ## Logo
 
-Three stacked bars, one for each tag (Verified, Estimated, Inferred), then "FitFactor" in Fraunces with "OS" in IBM Plex Sans, accent blue. Edition versions add a thin gray divider and the edition name.
+Three stacked bars, one for each tag (Verified, Estimated, Inferred), then "FitFactor" in Fraunces with "OS" in IBM Plex Sans, accent blue, and a small ™. Edition versions add a thin gray divider and the edition name.
 
 | File | Use |
 |---|---|
@@ -63,6 +63,12 @@ These match the dashboard and morning email.
 - **Tags and the paste line:** IBM Plex Mono
 
 All three are free Google Fonts. Presenting slides on someone else's computer? Use basic fonts (for example Georgia and Arial) for the text and keep the logo as a picture.
+
+## The name and the credit
+
+- **FitFactorOS™ is a trademark of Jeremy Walsh.** The code is free to use under the [MIT license](../../LICENSE); the name isn't part of that. If you build your own version, please give it a different name.
+- Use ™ the first time FitFactorOS appears in a document. Once the name is registered, it becomes ®.
+- Credit line for materials: *Created by Jeremy Walsh.* To cite FitFactorOS, use the **Cite this repository** button on GitHub (it reads [CITATION.cff](../../CITATION.cff)).
 
 ## Examples
 

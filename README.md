@@ -4,7 +4,7 @@
 
 ### Find jobs worth pursuing. Know why they're a fit.
 
-FitFactorOS is a free, open-source tool that helps you evaluate job opportunities against your experience, priorities, and deal-breakers.
+FitFactorOS™ is a free, open-source tool that helps you evaluate job opportunities against your experience, priorities, and deal-breakers.
 
 Paste a job posting, answer a few questions, and get a clear assessment of how well the company and role fit you—including potential red flags and what to investigate next.
 
