@@ -2,6 +2,12 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-11-11 (later): resume tailoring in the quick start; Job Finder off the build list
+
+- **The Free plan quick start now has three downloads, not two:** Intake, Research, and Materials. So **tailor my resume** always runs with its rules (nothing invented, review before any draft), not as Claude's ordinary resume help. A short "Tailor your resume" step follows the fit factor step.
+- **Job Finder is off the build list for now.** Plenty of tools already find job postings; FitFactorOS focuses on deciding which ones are worth it and following through. Find jobs anywhere and bring the link. Job Finder stays on the roadmap as a possible later addition.
+- No skills changed, so there's nothing to reinstall. If you followed the quick start before today, add **fitfactoros-materials.zip** the same way you added the others.
+
 ## 2026-11-11: clearer wording about Claude's plans
 
 - **Fixed confusing wording.** The docs said "Free plan" and "paid plan" without saying whose plan, which made it sound like FitFactorOS might have a paid version. It doesn't. The README now says so near the top, and every mention says **Claude's** Free plan or a paid **Claude** plan. The quick start says the same in its first lines.

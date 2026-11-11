@@ -275,7 +275,7 @@ Then click **D10** and replace the note with: *Counts only Activity rows marked 
 New to Claude, or curious how the pieces fit? [Want to go further?](learn-more.md) has a few free official Anthropic courses and help pages on Projects, Skills, and scheduled tasks.
 
 ## Coming in later phases
-Next: Outreach, to find the right person and draft a note for you to send. Later, Claude will add rows to your Sheet for you after you OK them, so you won't have to paste them. Job Finder comes last, once everything after finding a job is solid. See the [Roadmap](../README.md#roadmap).
+Next: Outreach, to find the right person and draft a note for you to send. Later, Claude will add rows to your Sheet for you after you OK them, so you won't have to paste them. Job Finder, a short list of roles picked for you, is a possible later addition, not planned for now: find jobs anywhere and bring the link here. See the [Roadmap](../README.md#roadmap).
 
 ## Your data
 Your answers are saved in your Claude Project and, if you use it, your own Google Sheet. FitFactorOS has no server of its own and collects nothing. Your chats with Claude go through Anthropic like any Claude chat, and if Claude's memory feature is on, Claude may remember details between chats. You can control that in Claude's settings. Anthropic's privacy policy covers the rest.

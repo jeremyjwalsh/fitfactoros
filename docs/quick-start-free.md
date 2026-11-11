@@ -2,7 +2,7 @@
 
 *FitFactorOS is always free. "Free plan" here means a free Claude account.*
 
-**Get your first job fit read in about 20 minutes.** This page covers the two parts of FitFactorOS you need first: **Intake** (a few questions about what you want) and **fit factor this** (an honest read on one job). Everything else can wait.
+**Get your first job fit read in about 20 minutes.** This page covers the three parts of FitFactorOS you need first: **Intake** (a few questions about what you want), **fit factor this** (an honest read on one job), and **tailor my resume** (your resume, ready for a job you pursue). Everything else can wait.
 
 **Here's what you'll get at the end** (an example, with a made-up job):
 
@@ -40,11 +40,12 @@ FitFactorOS won't work without this.
 
 That's the only setting you need today. (The setup guide mentions other memory settings. You can skip them on the Free plan; step 6 below does the same job.)
 
-## 3. Download two files
+## 3. Download three files
 Click each link. The file downloads right away. You don't need a GitHub account.
 
 - **[fitfactoros-intake.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-intake.zip)**
 - **[fitfactoros-research.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-research.zip)**
+- **[fitfactoros-materials.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-materials.zip)** (for **tailor my resume**)
 
 Leave them as they are. **Don't open or unzip them.**
 
@@ -53,16 +54,16 @@ Leave them as they are. **Don't open or unzip them.**
 > 1. In **Finder**, open **Downloads**.
 > 2. Hold **Control** and click the `fitfactoros-intake` folder (or right-click it).
 > 3. Choose **Compress "fitfactoros-intake"**. A new file, `fitfactoros-intake.zip`, appears next to it. Use that one.
-> 4. Do the same for `fitfactoros-research`.
+> 4. Do the same for `fitfactoros-research` and `fitfactoros-materials`.
 >
 > To stop Safari doing this next time: in Safari, click **Safari → Settings → General** and untick **Open "safe" files after downloading**. Or download with Chrome or Firefox, which don't unzip.
 
-## 4. Add the two files to Claude
+## 4. Add the three files to Claude
 1. In the left menu, click **Customize** (or go to **[claude.ai/customize](https://claude.ai/customize)**). Make sure **Skills** is selected at the top.
 2. Click the black **+ Add** button at the top right, then **Upload skill**.
 3. Choose `fitfactoros-intake.zip` from your Downloads.
-4. Do steps 2 and 3 again for `fitfactoros-research.zip`.
-5. Click **Yours** (next to *Discover*, near the top) to see your own skills. Both FitFactorOS skills should be listed. If one says **Disabled**, click its **Turn on** button.
+4. Do steps 2 and 3 again for `fitfactoros-research.zip`, then for `fitfactoros-materials.zip`.
+5. Click **Yours** (next to *Discover*, near the top) to see your own skills. All three FitFactorOS skills should be listed. If one says **Disabled**, click its **Turn on** button.
 
 <img src="images/skills-add-menu.png" alt="Customize page, Skills selected, with the + Add menu open showing Upload skill" width="640">
 
@@ -117,6 +118,8 @@ Claude then gives you a row of text for a spreadsheet. On Basic mode, you can ig
 
 **Going deeper.** For a job you're serious about, Claude may offer **Go deeper first**: a much fuller look at the company. **On the Free plan, one deep dive can use most of your usage until your limit resets, which can be a few hours.** Claude asks before it starts. Say **Not now** unless this is a job you'd really go after.
 
+**Tailor your resume.** If you pick **Pursue**, say **tailor my resume** in the same chat and attach your resume. Claude shows what on your resume matches the job, what's missing, and what to move up. It drafts a new version only if you ask, using only what's on your resume or what you tell it. You paste what you want into your own resume and save it as a PDF. To skip attaching it every time, save your resume in your Project too (**Context → Add**, then upload the file).
+
 ---
 
 ## When you hit a usage limit
@@ -135,7 +138,7 @@ The Free plan has a usage limit that **resets every five hours**, according to A
 |---|---|
 | The upload says it can't read the file | You probably uploaded a folder, not a .zip. See the Safari box in step 3. |
 | You can't find the skills you uploaded | On the Skills page, click **Yours**, not *Discover*. |
-| Claude doesn't seem to know FitFactorOS | Check step 2 (the setting is on) and step 4 (both skills switched on). Then start a new chat in your Project. |
+| Claude doesn't seem to know FitFactorOS | Check step 2 (the setting is on) and step 4 (all three skills switched on). Then start a new chat in your Project. |
 | "I don't have your FitFactorOS answers yet" | Make sure you're in your FitFactorOS Project and that **My FitFactorOS answers** is listed under **Context** on the Project page (step 6). Or paste your answer block into the chat. |
 | Claude says it can't search the web | Click **+** under the message box and look for a **Web search** switch. Turn it on and try again. |
 | Claude says it could only read part of the posting | Follow its steps: on the job posting, select all (**Ctrl+A** on Windows, **Cmd+A** on Mac), copy, and paste it into the chat. |
@@ -148,7 +151,6 @@ The Free plan has a usage limit that **resets every five hours**, according to A
 ## Later, if you want more
 Everything below is optional. The [full setup guide](setup.md) covers each one.
 
-- **Tailor your resume for a job you pursue.** Add one more skill file ([fitfactoros-materials.zip](https://github.com/jeremyjwalsh/fitfactoros/raw/main/dist/fitfactoros-materials.zip), the same way as step 4), then say **tailor my resume** in the chat where you fit factored the job. It shows what matches, what's missing, and what to move up, and drafts a new version only if you ask.
 - **Checklists for each stage** after you apply: interviews, waiting, the offer, and negotiating. See [stage checklists](stage-checklists.md). Nothing to install.
 - **Keep a record in a Google Sheet,** so every job you look at is saved in one place.
 - **Log your job-search activity** and build a weekly work-search log for unemployment (Massachusetts first).

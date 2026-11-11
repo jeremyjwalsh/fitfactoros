@@ -98,7 +98,7 @@ Jeremy
 9. **See where you stand.** Say **"show my dashboard"** for your top picks, each job's next step, and your progress this week.
 10. **Optional: a morning email.** With Gmail connected, say **"set up my morning email"** for a one-minute weekday email in your Gmail Drafts: how you're doing, what needs attention, and the one thing to do today. It's a draft to you and is never sent.
 
-Coming next: **Outreach**, which helps you find the right person and drafts a note for you to send. **Job Finder**, a short list of roles picked for you, comes last, once everything after finding a job is solid. See the [Roadmap](#roadmap).
+Coming next: **Outreach**, which helps you find the right person and drafts a note for you to send. **Job Finder**, a short list of roles picked for you, is a possible later addition, not planned for now. Find jobs anywhere you like (job boards, friends, newsletters) and bring the link here; FitFactorOS focuses on what comes after. See the [Roadmap](#roadmap).
 
 ---
 
@@ -172,7 +172,7 @@ Emails you send and receive are linked from the sheet with `=HYPERLINK(...)` for
 | Agent | What it does | What it never does |
 |---|---|---|
 | **Intake** | Asks 9 short questions to build your Profile. Every question is skippable. | Guess answers you didn't give. |
-| **Job Finder** *(planned)* | Finds roles that match your Profile and your deal-breakers. | Apply to anything. |
+| **Job Finder** *(maybe later)* | Finds roles that match your Profile and your deal-breakers. | Apply to anything. |
 | **Research** | Scores each role and company, runs a diligence checklist, and tags every claim. | Present an inference as a fact. |
 | **Materials** | Compares your resume with a job you're pursuing: what matches, what's missing, what to move up. Drafts a tailored version only if you ask. | Invent experience, titles, numbers, or tools, or replace your resume unless you ask. |
 | **Outreach** *(planned)* | Finds your warmest path to a person and drafts a short note. | Send the note. |
@@ -355,7 +355,7 @@ fitfactoros/
     └── fitfactoros-sample.xlsx
 ```
 
-Each skill folder contains a `SKILL.md` (the agent's instructions) and a `references/` folder for the rubrics, checklists, and templates it reads. Outreach and Job Finder get their own skill folders when they ship.
+Each skill folder contains a `SKILL.md` (the agent's instructions) and a `references/` folder for the rubrics, checklists, and templates it reads. Outreach gets its own skill folder when it ships, and Job Finder would too if it's ever built.
 
 ### State rules for the Activity Log
 
@@ -377,7 +377,7 @@ Each file in `plugins/fitfactoros/skills/fitfactoros-activity-log/states/` recor
 | 1 | Sheet template + Intake agent | Testing |
 | 2 | Research: quick screen, deep research on request, Jobs and Evidence rows | Testing |
 | 3 | Activity Log (Massachusetts first, then more states) | Testing |
-| 4 | Job Finder: a short list picked for you, and you can still bring your own leads (a job someone suggested, or one you found) | Planned, built last |
+| 4 | Job Finder: a short list picked for you, and you can still bring your own leads (a job someone suggested, or one you found) | Maybe later: not planned for now |
 | 5 | Outreach (warm-path ladder, two-fact rule) | Planned, next |
 | 6 | Dashboard with per-opportunity ladders and your own warm vs cold results | Testing |
 | 7 | Morning email: an opt-in weekday draft with your one next move | Testing |
@@ -385,7 +385,7 @@ Each file in `plugins/fitfactoros/skills/fitfactoros-activity-log/states/` recor
 | 9 | Materials: tailor your resume to a job you're pursuing, reviewing your version first and drafting only on request. Apply cold becomes a real path. | Testing |
 | 10 | Stage checklists: applying, interviews, waiting, the offer, negotiating, accepting or declining | Done (first version) |
 
-**Build order from here:** finish and test Materials and the checklists, then Outreach. Job Finder comes last, once everything after finding a job is solid. Phase numbers are labels, not the order.
+**Build order from here:** finish and test Materials and the checklists, then Outreach. **Job Finder is off the build list for now.** Finding postings is the part plenty of tools already do well; FitFactorOS focuses on deciding which ones are worth it and following through. It stays on the roadmap as a possible option. Phase numbers are labels, not the order.
 
 **V2 (future)**
 
