@@ -2,6 +2,11 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-11-11 (fonts): a calmer heading font
+
+- **Headings now use Source Serif 4** instead of Fraunces, in the brand page, the deck, the leave-behind and the video. Fraunces draws a curly lowercase "f," which looked like a glitch in words like "fit." The logo doesn't change.
+- No skills changed, so there's nothing to reinstall.
+
 ## 2026-11-11 (credit): the name and how to cite it
 
 - **FitFactorOS™.** The name is now marked as a trademark of Jeremy Walsh, in the README and on the logo. The code stays free under the MIT license; if you build your own version, please give it a different name. Details in the [brand page](docs/brand/brand.md#the-name-and-the-credit).

@@ -58,7 +58,7 @@ These match the dashboard and morning email.
 
 ## Type
 
-- **Headings:** Fraunces
+- **Headings:** Source Serif 4 (the logo still uses Fraunces, but the logo is a picture, so nothing to install)
 - **Body:** IBM Plex Sans
 - **Tags and the paste line:** IBM Plex Mono
 
