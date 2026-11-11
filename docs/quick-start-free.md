@@ -1,4 +1,6 @@
-# Quick start: the Free plan
+# Quick start: Claude's Free plan
+
+*FitFactorOS is always free. "Free plan" here means a free Claude account.*
 
 **Get your first job fit read in about 20 minutes.** This page covers the two parts of FitFactorOS you need first: **Intake** (a few questions about what you want) and **fit factor this** (an honest read on one job). Everything else can wait.
 

@@ -2,6 +2,11 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-11-11: clearer wording about Claude's plans
+
+- **Fixed confusing wording.** The docs said "Free plan" and "paid plan" without saying whose plan, which made it sound like FitFactorOS might have a paid version. It doesn't. The README now says so near the top, and every mention says **Claude's** Free plan or a paid **Claude** plan. The quick start says the same in its first lines.
+- Nothing else changed. No skills changed, so there's nothing to reinstall.
+
 ## 2026-11-06 (afternoon): Fit Check, the two-minute way in
 
 - **New: Fit Check.** Paste one line into your AI, add a job link, answer six quick questions, and get a fit read with nothing installed. It reads [fit-check.md](fit-check.md), which uses the same scoring rules as the full setup, so the two never drift apart. Still being tested, so the README says so.

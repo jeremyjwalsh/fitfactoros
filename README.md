@@ -12,11 +12,11 @@ And if you want help managing your search, optional tools can track opportunitie
 
 **You stay in control.** FitFactorOS doesn't apply for jobs or send messages on your behalf.
 
-<sub>Built for Claude today. Free and open source. The core Fit Factor assessment works on Claude's free plan; a few extras work best on a paid Claude plan.</sub>
+<sub>Built for Claude today. Free and open source: there is no paid version of FitFactorOS. When these docs say "Free plan" or "paid plan," they mean your **Claude** account. Everything works on Claude's Free plan; a few extras work best on a paid Claude plan.</sub>
 
 > **Status:** Early build. Intake, Research, resume tailoring, the Activity Log (Massachusetts first), the Dashboard, the Morning Email, and the activity check are in testing. Stage checklists are new. See [Roadmap](#roadmap).
 
-> **Want to try it?** Start with a [Fit Check](#fit-check-try-it-in-two-minutes): one paste, any AI, no setup. Like it? Set up **Fit Track**, the full system: new to Claude or on the Free plan, use the [Free plan quick start](docs/quick-start-free.md) (about 20 minutes, no Google or GitHub account needed); everyone else, [Getting started](#getting-started).
+> **Want to try it?** Start with a [Fit Check](#fit-check-try-it-in-two-minutes): one paste, any AI, no setup. Like it? Set up **Fit Track**, the full system: new to Claude or on Claude's Free plan, use the [Claude Free plan quick start](docs/quick-start-free.md) (about 20 minutes, no Google or GitHub account needed); everyone else, [Getting started](#getting-started).
 
 ## Two ways in: Fit Check and Fit Track
 
@@ -87,7 +87,7 @@ Jeremy
 
 ## What to expect
 
-1. **Set up once (about 20 minutes).** Add FitFactorOS to Claude and answer the Intake questions. Every question can be skipped. New to Claude? Use the [Free plan quick start](docs/quick-start-free.md).
+1. **Set up once (about 20 minutes).** Add FitFactorOS to Claude and answer the Intake questions. Every question can be skipped. New to Claude? Use the [Claude Free plan quick start](docs/quick-start-free.md).
 2. **Bring a job.** A link a friend sent you, or one you found yourself. Paste the link (or the job description) and say **"fit factor this."** If Claude can't read the whole page, it tells you how to copy and paste the description.
 3. **Get a quick read.** Company fit, then Role fit, the biggest blocker, and a suggested call. Every claim is tagged Verified, Estimated, or Inferred.
 4. **You decide.** **Pursue**, **Hold** (park it and come back in a week), or **Pass**. No one you know at the company? Pursue comes in two kinds: **find the right person** first, or **apply cold**. For a promising job, you can also **go deeper first**: a fuller look at the company (leadership changes, funding, market position, competitors) and then the role. Going deeper uses much more of your Claude plan (on Free, it can use most of your usage until your limit resets), so Claude asks before it starts.
@@ -252,23 +252,23 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 
 ## Getting started
 
-### New to Claude, or on the Free plan? Start here.
+### New to Claude, or on Claude's Free plan? Start here.
 
-**➜ [Free plan quick start](docs/quick-start-free.md)**: your first job fit read in about 20 minutes. You need a free Claude account and one job link. No Google account, no GitHub account, no connections.
+**➜ [Claude Free plan quick start](docs/quick-start-free.md)**: your first job fit read in about 20 minutes. You need a free Claude account and one job link. No Google account, no GitHub account, no connections.
 
 ### Two ways to use it
 
 - **Basic** (where everyone starts): nothing connected. Claude gives you results and rows of text, and you copy what you want into your Sheet or a note. Intake and **fit factor this** work fully in Basic.
 - **Connected** (optional, later): connect Google Sheets so Claude can read your Sheet for the dashboard page, and, separately, Gmail and Google Calendar for **check my week** and the morning email. Connect only what you want, and disconnect any time. The [setup guide, step 8](docs/setup.md#8-connected-mode-optional-any-time-later) explains what the Google permission allows.
 
-**Why connect Google?** It saves copying and pasting, and it catches what slips through. **show my dashboard** reads your Sheet itself. **check my week** finds calls and interviews you forgot to log, and flags things like an interview time that differs between the invite and the email. The morning email tells you the one thing to do today. [A made-up example](docs/setup.md#why-connect-google) walks through it. First-timers and Free plan users: start in Basic; this can wait.
+**Why connect Google?** It saves copying and pasting, and it catches what slips through. **show my dashboard** reads your Sheet itself. **check my week** finds calls and interviews you forgot to log, and flags things like an interview time that differs between the invite and the email. The morning email tells you the one thing to do today. [A made-up example](docs/setup.md#why-connect-google) walks through it. First-timers and people on Claude's Free plan: start in Basic; this can wait.
 
 ### The full setup
 
-**What you'll need:** a Claude account and about 20 minutes. A Google account only if you want the Sheet or Connected mode. FitFactorOS works on the Free plan; a paid plan (Pro or above) gives you more usage, optional one-click install and updates, and the scheduled morning email.
+**What you'll need:** a Claude account and about 20 minutes. A Google account only if you want the Sheet or Connected mode. FitFactorOS works on Claude's Free plan; a paid Claude plan (Pro or above) gives you more usage, optional one-click install and updates, and the scheduled morning email.
 
 1. Create or sign in to your Claude account, and turn on **Cloud code execution and file creation** in **Settings → Capabilities**.
-2. Add the FitFactorOS skills to Claude ([setup guide, step 3](docs/setup.md#3-add-fitfactoros-to-claude)). On any plan, download the skill files and upload them in **Customize → Skills**. On a paid plan, you can add the plugin instead.
+2. Add the FitFactorOS skills to Claude ([setup guide, step 3](docs/setup.md#3-add-fitfactoros-to-claude)). On any plan, download the skill files and upload them in **Customize → Skills**. On a paid Claude plan, you can add the plugin instead.
 3. Create a Project called **FitFactorOS**, start a new chat inside it, and say **"Start my intake."** Save the answers Claude gives you in your Project's files.
 4. Start a new chat in the Project, paste a job link, and say **"fit factor this."**
 5. Later, if you want: set up your Google Sheet, and Connected mode.
@@ -329,7 +329,7 @@ fitfactoros/
 │           │   └── states/                # One rules file per state (ma.md first) + _template.md
 │           ├── fitfactoros-dashboard/     # "Show my dashboard": reads your Sheet, makes a private page
 │           └── fitfactoros-morning-email/ # Optional weekday email draft; checked quotes and songs lists
-├── dist/                     # The same skills as ZIPs, for the Free plan
+├── dist/                     # The same skills as ZIPs, for Claude's Free plan
 │   ├── fitfactoros-intake.zip
 │   ├── fitfactoros-research.zip
 │   ├── fitfactoros-materials.zip
@@ -337,7 +337,7 @@ fitfactoros/
 │   ├── fitfactoros-dashboard.zip
 │   └── fitfactoros-morning-email.zip
 ├── docs/
-│   ├── quick-start-free.md   # Free plan quick start: Intake and fit factor, nothing connected
+│   ├── quick-start-free.md   # Claude Free plan quick start: Intake and fit factor, nothing connected
 │   ├── setup.md              # Step-by-step setup for non-technical users
 │   ├── cheat-sheet.md        # One page of everything you can say
 │   ├── stage-checklists.md   # A short checklist for each stage, from applying to the offer
