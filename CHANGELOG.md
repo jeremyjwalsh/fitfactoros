@@ -2,6 +2,15 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-11-11 (Fit Check): resume first
+
+- **Attach your resume before you paste the line.** The Fit Check line now says "My resume is attached." In our first live test, the resume came in after the questions, so the first score ignored it. Now the resume goes in the very first message.
+- **Fit Check proves it read your resume.** It opens with a line from your resume, or says plainly that it doesn't see one, before it asks anything.
+- **Late resume? It rescores on its own** and says what changed.
+- **The fit read looks the same in every AI:** fixed labels, both scores out of 100, "not checked" when a score is skipped, and a "Based on" line saying whether your resume was used.
+- **The README says plainly where the instructions live:** plain text files on GitHub that any AI can read, not something built into Claude.
+- No skills changed, so there's nothing to reinstall. Fit Check reads the new instructions the next time you paste the line.
+
 ## 2026-11-11 (fonts): a calmer heading font
 
 - **Headings now use Source Serif 4** instead of Fraunces, in the brand page, the deck, the leave-behind and the video. Fraunces draws a curly lowercase "f," which looked like a glitch in words like "fit." The logo doesn't change.

@@ -4,7 +4,7 @@
 >
 > Pictures were taken on a paid account in October 2026; the Free plan may look slightly different. Menu names in Claude change from time to time. If a step doesn't match what you see, tell us through the [feedback form](https://forms.gle/JAvtLkWR3unQQZQ77).
 
-**Built for Claude.** FitFactorOS is built and tested on Claude. The rules are written in plain, open instructions (the SKILL.md format), so other AI tools can follow them too. In an early test with one job, ChatGPT followed the fit factor rules and reached the same suggested call as Claude, with scores within a few points. Two catches: ChatGPT only did this when told to read the skill files from GitHub first (just typing **fit factor this** got its own kind of score), and the other skills haven't been tried there. The one-click install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
+**Built for Claude, written for any AI.** All of FitFactorOS's instructions are plain text files in this GitHub repo (the SKILL.md format), not something locked inside Claude. Claude reads them when you add the skills; another AI can read them if you point it at the files. What's been tested so far: Fit Check ran in ChatGPT in a live test (Nov 11, 2026), and in an earlier one-job test ChatGPT followed the fit factor rules and reached the same suggested call as Claude, with scores within a few points, but only when told to read the files from GitHub first. The other skills haven't been tried outside Claude. Three things rely on Claude features and are Claude-only for now: the one-click plugin install, the dashboard page, and scheduling the morning email.
 
 ## Two ways to use FitFactorOS
 

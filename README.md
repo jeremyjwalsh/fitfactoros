@@ -29,17 +29,22 @@ And if you want help managing your search, optional tools can track opportunitie
 
 ### Fit Check: try it in two minutes
 
-*New, and still being tested. Some AI tools may not be able to open the link. If yours can't, use Fit Track.*
+*New. Tested once in ChatGPT (it worked); a Claude Free plan test is next. Some AI tools can't open the link. If yours can't, use Fit Track.*
 
 1. Find a job you like and copy its link.
-2. Open your AI (for example, Claude) and paste this, with your job link at the end:
+2. Open your AI (for example, Claude or ChatGPT) and **attach your resume first**: click the paperclip or **+** button next to the message box and choose your resume (PDF or Word). Wait until it finishes uploading. No file handy? Paste your resume text under the line instead.
+3. Paste this, with your job link at the end, and send:
 
    ```
-   Read https://raw.githubusercontent.com/jeremyjwalsh/fitfactoros/main/fit-check.md and follow it. Here's the job:
+   Read https://raw.githubusercontent.com/jeremyjwalsh/fitfactoros/main/fit-check.md and follow it. My resume is attached. Here's the job:
    ```
-3. Answer the six quick questions it asks (skip any you like).
+4. It tells you what it read from your resume (so you know it saw it), then asks six quick questions. Skip any you like. No resume? Delete "My resume is attached." and answer the background question instead.
 
-You get the same read Fit Track gives: gates, Company fit, Role fit, the biggest blocker, questions to ask, and a suggested call, with every claim tagged. It uses the same scoring rules. What it doesn't do: remember your answers, keep a record, go deeper, or tailor your resume. That's Fit Track.
+You get the same read Fit Track gives: gates, Company fit, Role fit, the biggest blocker, questions to ask, and a suggested call, with every claim tagged. It uses the same scoring rules. If you add your resume after the read, it rescores on its own. What it doesn't do: remember your answers, keep a record, go deeper, or tailor your resume. That's Fit Track.
+
+*On ChatGPT's Free plan you can attach only a few files a day. If it won't take your resume, paste the text.*
+
+**Where the instructions live.** Fit Check isn't built into any AI. The instructions are a plain text file here on GitHub ([fit-check.md](fit-check.md)), and the line you paste tells your AI to read it. That's why the same line can work in Claude, ChatGPT, or another AI that can open web links.
 
 ## What you get
 
@@ -275,7 +280,7 @@ FitFactorOS tracks **your own** warm-path vs cold-path results over time and sho
 4. Start a new chat in the Project, paste a job link, and say **"fit factor this."**
 5. Later, if you want: set up your Google Sheet, and Connected mode.
 
-**Built for Claude.** FitFactorOS is built and tested on Claude. The rules are written in plain, open instructions (the SKILL.md format), so other AI tools can follow them too. In an early test with one job, ChatGPT followed the fit factor rules and reached the same suggested call as Claude, with scores within a few points. Two catches: ChatGPT only did this when told to read the skill files from GitHub first (just typing **fit factor this** got its own kind of score), and the other skills haven't been tried there. The plugin install, the dashboard page, and the morning email rely on Claude features and are Claude-only for now.
+**Built for Claude, written for any AI.** All of FitFactorOS's instructions are plain text files in this GitHub repo (the SKILL.md format), not something locked inside Claude. Claude reads them when you add the skills; another AI can read them if you point it at the files. What's been tested so far: Fit Check ran in ChatGPT in a live test (Nov 11, 2026), and in an earlier one-job test ChatGPT followed the fit factor rules and reached the same suggested call as Claude, with scores within a few points, but only when told to read the files from GitHub first. The other skills haven't been tried outside Claude. Three things rely on Claude features and are Claude-only for now: the one-click plugin install, the dashboard page, and scheduling the morning email.
 
 Always use FitFactorOS from a new chat inside your FitFactorOS Project.
 

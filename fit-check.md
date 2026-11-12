@@ -11,11 +11,17 @@ https://raw.githubusercontent.com/jeremyjwalsh/fitfactoros/main/plugins/fitfacto
 
 Use them exactly: the factors, weights, the 1–10 scale where 5 is typical, the caps, and the suggested-call bands. Where they say "Intake answers," use the user's answers from Step 2. If you can't open that page, say so and stop. Don't score from memory.
 
-## Step 2: Ask six quick questions, in one message
+## Step 2: Check for a resume, then ask six quick questions, in one message
 
-Before you read the job or search anything, ask these together. Say every one can be skipped, and that a short answer is fine.
+**Look for a resume first.** The user may have attached one (PDF or Word) or pasted its text in their first message. Do this before you ask anything.
 
-1. **Your background:** paste your resume, or give your last job title, years of experience, and 3 to 5 top skills.
+- **You can read it:** start your reply with one line that proves it, using two real details from it, for example: "I read your resume: most recently [title] at [employer], strongest in [one or two skills]." Use only what's on the page.
+- **They mentioned a resume but you can't read it** (still uploading, wrong file type, blank, or you can't open files): say so plainly: "You mentioned a resume, but I can't see it. Attach it again with the paperclip or + button next to the message box, or paste the text." Don't score anything until they reply.
+- **No resume:** say once: "I don't see a resume. You can attach it (paperclip or + button) or paste the text in your answer, or just answer question 1."
+
+Then, before you read the job or search anything, ask these together. Say every one can be skipped, and that a short answer is fine.
+
+1. **Your background:** *If you read a resume:* "Anything to correct or add?" *If not:* "Attach or paste your resume, or give your last job title, years of experience, and 3 to 5 top skills."
 2. **What roles are you after?**
 3. **Lowest pay you'd take** (base pay, if that's how you think of it)?
 4. **Where and how can you work?** (remote, hybrid, on-site, which cities)
@@ -49,8 +55,9 @@ Add: "Know anyone at this company? Tell me, and I'll note it." A skipped answer 
 
 ## Step 6: Show the result
 
-Short and plain, in this order:
+Short and plain, in this order, with these exact labels, so the read looks the same in every AI. Both scores are out of 100. If you didn't score one, write the label and "not checked" with the reason; never leave it out.
 
+0. **Based on:** "your resume and your answers" or "your answers only (no resume)". If you're working without a resume, add: "Attach your resume any time and I'll rescore."
 1. **Company fit: N/100.** One sentence why, 2–4 tagged lines, then: *Weighed: Stability n, Momentum n, Leadership n, Pull n (each out of 10; 5 is typical).*
 2. **Role fit: N/100.** One sentence why, 2–4 tagged lines, then: *Weighed: Role match n, Work you want n, Level and pay n.*
 3. **Blocker:** the one biggest thing between the user and an offer, or "No major blocker."
@@ -71,3 +78,7 @@ If the suggested call is **Pursue** or **Maybe**, add this line after it, word f
 > Want a deeper look first, at leadership changes, money, and culture? That's **Go deeper**, part of Fit Track. It uses much more of your AI plan, so it's worth it for a job you'd really go after.
 
 If the user asks to check another job in this chat, reuse their answers and start again at Step 3.
+
+## If a resume arrives after the read
+
+If the user attaches or pastes a resume after you've shown a read, don't wait to be asked. Say "Got your resume. Rescoring with it.", give the one-line proof from Step 2, then redo Steps 4 to 6 for the same job (no new search unless the company result changes). Start the new read with one line on what changed, for example "Role fit 61 → 74: your resume shows the must-have tools." If nothing changed, say so.
