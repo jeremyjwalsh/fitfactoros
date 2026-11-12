@@ -1,0 +1,466 @@
+<p><img src="docs/brand/fitfactoros-jobs.png" alt="FitFactorOS Jobs" width="420"></p>
+
+# FitFactorOS
+
+### Find jobs worth pursuing. Know why they're a fit.
+
+FitFactorOS™ is a free, open-source tool that helps you evaluate job opportunities against your experience, priorities, and deal-breakers.
+
+Paste a job posting, answer a few questions, and get a clear assessment of how well the company and role fit you—including potential red flags and what to investigate next.
+
+Want to go further? FitFactorOS can research the company, its products, leadership, and competitive position to help you make a more informed decision.
+
+And if you want help managing your search, optional tools can track opportunities, contacts, applications, interviews, and progress.
+
+**You stay in control.** FitFactorOS doesn't apply for jobs or send messages on your behalf.
+
+<sub>Built for Claude today. Free and open source: there is no paid version of FitFactorOS. When these docs say "Free plan" or "paid plan," they mean your **Claude** account. Everything works on Claude's Free plan; a few extras work best on a paid Claude plan.</sub>
+
+> **Status:** Early build. Intake, Research, resume tailoring, the Activity Log (Massachusetts first), the Dashboard, the Morning Email, and the activity check are in testing. Stage checklists are new. See [Roadmap](#roadmap).
+
+> **Want to try it?** Start with a [Fit Check](#fit-check-try-it-in-two-minutes): attach your resume, paste one line, no setup. Like it? Set up **Fit Track**, the full system: new to Claude or on Claude's Free plan, use the [Claude Free plan quick start](docs/quick-start-free.md) (about 20 minutes, no Google or GitHub account needed); everyone else, [Getting started](#getting-started).
+
+## Two ways in: Fit Check and Fit Track
+
+**FitFactorOS helps you make better decisions. Fit Check helps you decide. Fit Track helps you follow through.**
+
+- **FitFactorOS | Fit Check** is the hook: a quick, honest read on one job. Attach your resume, paste one line into your AI, and you're done. Nothing to install, nothing saved.
+- **FitFactorOS | Fit Track** is the whole thing: FitFactorOS set up in Claude, so it remembers your answers, keeps a record of every job, tailors your resume, logs your activity, and shows your dashboard and morning email.
+
+### Fit Check: try it in two minutes
+
+*New. Tested once in ChatGPT (it worked); a Claude Free plan test is next. Some AI tools can't open the link. If yours can't, use Fit Track.*
+
+1. Find a job you like and copy its link.
+2. Open your AI (for example, Claude or ChatGPT) and **attach your resume first**: click the paperclip or **+** button next to the message box and choose your resume (PDF or Word). Wait until it finishes uploading. No file handy? Paste your resume text under the line instead.
+3. Paste this, with your job link at the end, and send:
+
+   ```
+   Read https://raw.githubusercontent.com/jeremyjwalsh/fitfactoros/main/fit-check.md and follow it. My resume is attached. Here's the job:
+   ```
+4. It tells you what it read from your resume (so you know it saw it), then asks six quick questions. Skip any you like. No resume? Delete "My resume is attached." and answer the background question instead.
+
+You get the same read Fit Track gives: gates, Company fit, Role fit, the biggest blocker, questions to ask, and a suggested call, with every claim tagged. It uses the same scoring rules. If you add your resume after the read, it rescores on its own. What it doesn't do: remember your answers, keep a record, go deeper, or tailor your resume. That's Fit Track.
+
+*On ChatGPT's Free plan you can attach only a few files a day. If it won't take your resume, paste the text.*
+
+**Where the instructions live.** Fit Check isn't built into any AI. The instructions are a plain text file here on GitHub ([fit-check.md](fit-check.md)), and the line you paste tells your AI to read it. That's why the same line can work in Claude, ChatGPT, or another AI that can open web links.
+
+## What you get
+
+*Examples with a made-up job seeker, Alex Sample, and made-up companies. Click a picture to see it full size.*
+
+| **A fit read on any job** | **Your dashboard** | **An optional morning email** |
+|---|---|---|
+| <a href="docs/images/example-fit-factor.png"><img src="docs/images/example-fit-factor.png" alt="Example fit factor result: Company fit 67, Role fit 84, tagged claims, gates, a warm path, and the suggested call Pursue" width="260"></a> | <a href="docs/images/example-dashboard.png"><img src="docs/images/example-dashboard.png" alt="Example dashboard: this week's progress, top picks with fit scores, and one job's ladder and tagged evidence" width="260"></a> | <a href="docs/images/example-morning-email.png"><img src="docs/images/example-morning-email.png" alt="Example morning email: a quote for the day, your one move, how the week is going, and what needs attention" width="260"></a> |
+| Paste a job link and say **fit factor this**. You get Company fit, Role fit, what's in your way, and a suggested call, with every claim tagged. | Say **show my dashboard** for your top picks, where each job stands on its ladder, and your week so far. | A one-minute weekday draft in your Gmail: one thing to do today, and how you're doing. Never sent. |
+
+The dashboard and email pictures come from FitFactorOS's own dashboard and email code, run on the made-up sample. The fit read is laid out the way Claude shows it in a chat.
+
+
+---
+
+## A note from Jeremy
+
+First off, welcome! And thank you for giving FitFactorOS a try.
+
+I built this because, well, I needed it.
+
+After spending much of my career helping companies and people get more out of technology, I found myself on the other side of the table: looking for my next opportunity. And let me tell you, the job search process can be brutal.
+
+Apply. Wait. Hear nothing. Repeat.
+
+Somewhere along the way, I started wondering if there was a better way. Instead of applying to more jobs, what if we focused on finding the right jobs? What if we used AI to do the heavy lifting on research, find real human connections, and help us recognize progress even when the inbox is painfully quiet?
+
+That's how FitFactorOS started.
+
+I'm not a software developer by trade, and this is my first open-source project. It's a work in progress, built with AI, curiosity, and probably more coffee than I'd care to admit. There will be bumps along the way. If you find one, please [tell me](https://forms.gle/JAvtLkWR3unQQZQ77). If you have an idea to make it better, I'd love to hear it.
+
+FitFactorOS is free because I believe a good tool should be available to anyone trying to get back on their feet. If it helps you find your next opportunity, wonderful. If you share it with someone else who needs it, even better.
+
+One last thing: AI can help with the research, but you're still in the driver's seat. You decide what matters, who to contact, and when to hit Send.
+
+Be kind to yourself during the process. The job search doesn't define your worth, and even a small step forward is still a step.
+
+One tip from my own search: record your interviews, with permission. A meeting note-taker made a big difference for me. My debriefs after each round, the exact numbers a recruiter said out loud, and my prep for the next round all came from my notes instead of my memory. I use Granola. I have no connection to the company, and it's one option among many. Whatever you use, ask everyone on the call before you record; some states, including Massachusetts, require it. There's more in the [stage checklists](docs/stage-checklists.md#a-meeting-note-taker-optional).
+
+Thanks for being here. Now, let's find you something worth pursuing.
+
+Jeremy
+
+*P.S. If this thing ever makes you laugh, gives you a little confidence, or saves you from applying to a job you would've hated, I'd call that a pretty good day.*
+
+---
+
+## What to expect
+
+1. **Set up once (about 20 minutes).** Add FitFactorOS to Claude and answer the Intake questions. Every question can be skipped. New to Claude? Use the [Claude Free plan quick start](docs/quick-start-free.md).
+2. **Bring a job.** A link a friend sent you, or one you found yourself. Paste the link (or the job description) and say **"fit factor this."** If Claude can't read the whole page, it tells you how to copy and paste the description.
+3. **Get a quick read.** Company fit, then Role fit, the biggest blocker, and a suggested call. Every claim is tagged Verified, Estimated, or Inferred.
+4. **You decide.** **Pursue**, **Hold** (park it and come back in a week), or **Pass**. No one you know at the company? Pursue comes in two kinds: **find the right person** first, or **apply cold**. For a promising job, you can also **go deeper first**: a fuller look at the company (leadership changes, funding, market position, competitors) and then the role. Going deeper uses much more of your Claude plan (on Free, it can use most of your usage until your limit resets), so Claude asks before it starts.
+5. **Tailor your resume.** After a Pursue, say **tailor my resume**. Claude compares your resume with the posting: what matches, what's missing, what to move up. It drafts a new version only if you ask, and only from what's on your resume or what you tell it. You save it as a PDF yourself.
+6. **Keep the record.** Claude gives you a row to paste into your Google Sheet (or a note). Every job you look at gets recorded, even the ones you pass on.
+7. **Log what you do.** Say "I applied to…" or "I had a call with…" to log it. If you're collecting unemployment, say "this week's work search log" for your weekly log.
+8. **Follow the checklist for each stage.** Short [stage checklists](docs/stage-checklists.md) for applying, interviews, waiting, the offer, negotiating, and accepting. The dashboard links the right one for each job.
+9. **See where you stand.** Say **"show my dashboard"** for your top picks, each job's next step, and your progress this week.
+10. **Optional: a morning email.** With Gmail connected, say **"set up my morning email"** for a one-minute weekday email in your Gmail Drafts: how you're doing, what needs attention, and the one thing to do today. It's a draft to you and is never sent.
+
+Coming next: **Outreach**, which helps you find the right person and drafts a note for you to send. **Job Finder**, a short list of roles picked for you, is a possible later addition, not planned for now. Find jobs anywhere you like (job boards, friends, newsletters) and bring the link here; FitFactorOS focuses on what comes after. See the [Roadmap](#roadmap).
+
+---
+
+## Why this exists
+
+### The fear: the black hole and the doom loop
+
+Most job seekers know the feeling: you apply, and nothing happens. No reply, no rejection, no signal. Just the black hole.
+
+Greenhouse CEO Daniel Chait has named what's happening on both sides of that hole. Job seekers use AI to apply to more and more roles. Recruiters, buried under the volume, use AI to filter them out. Applicants who get filtered out respond by applying to even more jobs. He calls it the **"AI doom loop"** ([Fortune, Nov 2025](https://fortune.com/2025/11/18/hiring-job-seekers-recruiters-talent-acquisition-ai-doom-loop-application-technology/); [Fortune, Jul 2026](https://fortune.com/2026/07/27/greenhouse-ceo-daniel-chait-ai-doom-loop-job-seekers-spam-interview-applications-unemployment/)). Greenhouse reports that applications per recruiter on its platform have risen 412% ([Fortune, Jul 2026](https://fortune.com/2026/07/27/greenhouse-ceo-daniel-chait-ai-doom-loop-job-seekers-spam-interview-applications-unemployment/)). Nobody is winning.
+
+Tools that help you apply to more jobs, faster, make this worse. FitFactorOS goes the other way.
+
+### The research: why the grind wears people down
+
+A job search is mostly effort you can't see paying off. Researchers who tracked unemployed job seekers every day for three weeks found that people's mood and confidence swung with how much progress they *felt* they'd made that day, and that a low-progress day was followed by *more* effort the next day ([Wanberg, Zhu & Van Hooft, 2010](#the-science-behind-it)). In today's market, "more effort" often means more applications, which feeds the loop.
+
+Other research explains why visible progress matters so much: people work harder as a goal gets closer, and a head start makes people more likely to finish. Putting feelings into words also takes some of the sting out of them. Details and sources are in [The science behind it](#the-science-behind-it).
+
+### The proof that precision works
+
+Greenhouse offers a "My Dream Job" feature that lets a candidate flag one role per month as their top pick. **Greenhouse reports** that these intentional applicants are hired at roughly **5x the rate** of other applicants ([Fortune, Jul 2026](https://fortune.com/2026/07/27/greenhouse-ceo-daniel-chait-ai-doom-loop-job-seekers-spam-interview-applications-unemployment/)). Intent is a signal employers can trust. Volume isn't.
+
+### The solution
+
+FitFactorOS is built on three moves:
+
+1. **Fewer, better-fit roles.** Every job is researched and scored against *your* criteria before you spend time on it.
+2. **A human attached before you apply, when there is one.** For every role you pursue, start with the warmest path to a real person: people you already know first. When there's nobody to find, applying cold with a tailored resume is a real path, not a dead end.
+3. **Every step visible.** Each opportunity gets its own short ladder. You always know what you've done and what the next step is.
+
+---
+
+## Principles
+
+These are the rules every part of FitFactorOS follows. If a feature breaks one, the feature is wrong.
+
+- **Precision over volume.** A few well-researched, well-connected applications beat a hundred cold ones.
+- **Humans send everything.** Agents read, research, and draft. They never send an email, submit an application, or post anything. You do.
+- **Every claim is tagged.** Anything an agent tells you about a company, role, or person is labeled:
+  - **Verified**: confirmed from a primary source (the job posting, the company's site, a filing, your own records), with a link and the date checked.
+  - **Estimated**: a number or range worked out from comparable data (for example, a pay band from similar postings), with the method stated.
+  - **Inferred**: a judgment drawn from the evidence, with the reasoning stated. Never presented as fact.
+- **Warm path first.** Before you apply, find the warmest route to a person. When you can, reach out first and apply 2–3 days later, so your contact has a chance to flag you before your application lands in the pile. When there's no one to find, apply cold, with your resume tailored to the job.
+- **Keep it simple.** Built for non-technical people. Questions come as tappable choices where possible, and every question can be skipped.
+- **Only real progress counts.** Every rung on your ladder is something you actually did or something that actually happened. No fake rungs, no points for opening the app.
+- **Light by design.** Claude plans have usage limits. FitFactorOS spends your usage only where it changes a decision: a quick screen first, deep research only on jobs you choose to pursue, and never researching the same thing twice.
+- **Your data stays yours.** Your information lives in your own Claude Project and, if you use it, your own Google Sheet. This repository contains no personal data; it ships with a fictional sample profile.
+
+---
+
+## How it works
+
+### The hub: one Google Sheet
+
+Your record lives in one Google Sheet. It's optional at first: you can start with Intake and fit factor alone and add the Sheet later. The first tab is a quick summary that fills in by itself; the other five hold your data. Every row that belongs to a specific opportunity carries the same **Job ID**, so the tabs join together.
+
+| Tab | What it holds |
+|---|---|
+| **Dashboard** | A quick summary that fills in by itself. For the full view, say "show my dashboard." |
+| **Profile** | Your answers from Intake: target roles, where you can work, pay floor, deal-breakers, dream companies, people you know. |
+| **Jobs** | One row per opportunity: company, role, fit score, warm path, ladder stage, next step. |
+| **Evidence** | Every research claim, tagged Verified / Estimated / Inferred, with source link and date. |
+| **Interviews** | Each conversation: who, when, what was asked, what you learned. |
+| **Activity** | A dated log of every job-search action, formatted for your state's unemployment requirements if you need that. |
+
+Emails you send and receive are linked from the sheet with `=HYPERLINK(...)` formulas that include `authuser=<your email>`, so clicking a link opens the right inbox even if you're signed into more than one Google account. The sheet becomes your audit trail.
+
+### The agents
+
+| Agent | What it does | What it never does |
+|---|---|---|
+| **Intake** | Asks 9 short questions to build your Profile. Every question is skippable. | Guess answers you didn't give. |
+| **Job Finder** *(maybe later)* | Finds roles that match your Profile and your deal-breakers. | Apply to anything. |
+| **Research** | Scores each role and company, runs a diligence checklist, and tags every claim. | Present an inference as a fact. |
+| **Materials** | Compares your resume with a job you're pursuing: what matches, what's missing, what to move up. Drafts a tailored version only if you ask. | Invent experience, titles, numbers, or tools, or replace your resume unless you ask. |
+| **Outreach** *(planned)* | Finds your warmest path to a person and drafts a short note. | Send the note. |
+| **Activity Log** | Logs your real activity and builds a weekly work-search log from your Jobs and Activity tabs, formatted for your state's rules when FitFactorOS has them. | Submit anything to a state portal, or give legal advice. |
+| **Morning Email** | Optional. Each weekday, saves one email draft to you: how you're doing, what needs attention, and today's one move, with a quote or song picked to suit you. | Send anything, or draft to anyone but you. |
+
+#### The Intake questions
+
+1. Upload your resume.
+2. What roles are you targeting?
+3. Where can you work? (remote, hybrid, which cities)
+4. What's the lowest pay you'd accept?
+5. Deal-breakers, and any companies to avoid?
+6. What kind of work makes you lose track of time?
+7. Dream companies, and people you know at companies you like?
+8. What state are you in, and are you collecting unemployment?
+   *Your answer only powers the Activity Log, and it goes in your own Sheet.*
+9. *(Optional)* Two or three wins from your career, with numbers.
+
+#### What fit factor weighs
+
+No black box. Here's what goes into each score, so you can dig in wherever you want more.
+
+Before any scoring, four yes/no gates: companies you want to avoid, your pay floor, where you can work, and your deal-breakers. A failed gate means a suggested Pass.
+
+| Company fit | Weight | Role fit | Weight |
+|---|---|---|---|
+| **Stability**: money, profitability or funding, recent layoffs | 35% | **Role match**: the posting's must-haves compared with your background | 40% |
+| **Momentum**: new funding, launches, big customer wins | 25% | **Work you want**: the day-to-day compared with the work that makes you lose track of time | 30% |
+| **Leadership**: senior team changes in the last 18 months | 20% | **Level and pay**: the level compared with your experience, and posted pay compared with your floor | 30% |
+| **Pull**: a dream company, or one you've said you're excited about | 20% | | |
+
+Each factor scores 1 to 10, where 5 means typical. A factor can score above 6 only when the facts behind it are verified: the job posting, your Intake answers, or the company's own announcements. The full rules are in [rubrics.md](plugins/fitfactoros/skills/fitfactoros-research/references/rubrics.md).
+
+**Go deeper** adds the full leadership history (who left, who arrived), every funding round and who led it, 12 months of news, market position, the live careers page, employee reviews for a read on culture, competitors, and a separate **Chance of getting it** (High, Medium, or Low). The checklist is in [deep-research.md](plugins/fitfactoros/skills/fitfactoros-research/references/deep-research.md).
+
+#### The warm-path ladder
+
+For each role, look for the warmest route, in this order. Today you do this yourself, with your Intake list of people you know (Research flags a match). **Outreach**, planned, will help find the person and draft the note.
+
+1. **You know someone there.**
+2. **You know someone who knows someone there.**
+3. **You share a background** with someone there (former employer, school, community).
+4. **A direct, researched note** to the right person.
+5. **Apply cold.** When nothing above is available, or the posting is closing soon. It's a real path, not a dead end: tailor your resume first (say **tailor my resume**), apply, and log it.
+
+When Outreach ships, every outreach draft will follow the **two-fact rule**: it includes two specific, checkable facts that show you did your homework and explain why you're writing to *this* person about *this* role.
+
+### The dashboard and the ladders
+
+The dashboard shows your top opportunities, why each one scored the way it did, what's known about it (with tags), and who to write to.
+
+Each opportunity also gets its own **ladder**: a short, visible sequence of real steps. Warm paths have fewer rungs because a person is already in the loop. Rungs marked *(optional)* can be skipped: applying cold goes straight from Researched to Applied, and the dashboard never shows a skipped rung as done.
+
+```
+Warm path                          Cold path
+─────────                          ─────────
+Offer                              Offer
+Interviewing                       Interviewing
+Heard back                         Heard back
+Applied (with referral)            Applied
+Reached out to your contact        Sent a researched note (optional)
+  (optional)                       Found the right person (optional)
+Researched                         Researched
+Picked                             Picked
+```
+
+Tailoring your resume isn't a rung: it's preparation, and a rung moves only when something real happens outside the chat. It shows up as the job's **Next step** ("Tailor your resume, then apply") until you apply.
+
+Each rung after Applied has a short [checklist](docs/stage-checklists.md): Applied, Heard back, Interviewing, and Offer (with Negotiate and Accept or decline under it).
+
+"Heard back" counts whether the answer is yes or no. A closed loop is real progress; the black hole is the thing we're fighting.
+
+FitFactorOS tracks **your own** warm-path vs cold-path results over time and shows them back to you, instead of quoting someone else's statistics. After a few weeks you'll see what works for you.
+
+---
+
+## Getting started
+
+### New to Claude, or on Claude's Free plan? Start here.
+
+**➜ [Claude Free plan quick start](docs/quick-start-free.md)**: your first job fit read in about 20 minutes. You need a free Claude account and one job link. No Google account, no GitHub account, no connections.
+
+### Two ways to use it
+
+- **Basic** (where everyone starts): nothing connected. Claude gives you results and rows of text, and you copy what you want into your Sheet or a note. Intake and **fit factor this** work fully in Basic.
+- **Connected** (optional, later): connect Google Sheets so Claude can read your Sheet for the dashboard page, and, separately, Gmail and Google Calendar for **check my week** and the morning email. Connect only what you want, and disconnect any time. The [setup guide, step 8](docs/setup.md#8-connected-mode-optional-any-time-later) explains what the Google permission allows.
+
+**Why connect Google?** It saves copying and pasting, and it catches what slips through. **show my dashboard** reads your Sheet itself. **check my week** finds calls and interviews you forgot to log, and flags things like an interview time that differs between the invite and the email. The morning email tells you the one thing to do today. [A made-up example](docs/setup.md#why-connect-google) walks through it. First-timers and people on Claude's Free plan: start in Basic; this can wait.
+
+### The full setup
+
+**What you'll need:** a Claude account and about 20 minutes. A Google account only if you want the Sheet or Connected mode. FitFactorOS works on Claude's Free plan; a paid Claude plan (Pro or above) gives you more usage, optional one-click install and updates, and the scheduled morning email.
+
+1. Create or sign in to your Claude account, and turn on **Cloud code execution and file creation** in **Settings → Capabilities**.
+2. Add the FitFactorOS skills to Claude ([setup guide, step 3](docs/setup.md#3-add-fitfactoros-to-claude)). On any plan, download the skill files and upload them in **Customize → Skills**. On a paid Claude plan, you can add the plugin instead.
+3. Create a Project called **FitFactorOS**, start a new chat inside it, and say **"Start my intake."** Save the answers Claude gives you in your Project's files.
+4. Start a new chat in the Project, paste a job link, and say **"fit factor this."**
+5. Later, if you want: set up your Google Sheet, and Connected mode.
+
+**Built for Claude, written for any AI.** All of FitFactorOS's instructions are plain text files in this GitHub repo (the SKILL.md format), not something locked inside Claude. Claude reads them when you add the skills; another AI can read them if you point it at the files. What's been tested so far: Fit Check ran in ChatGPT in a live test (Nov 11, 2026), and in an earlier one-job test ChatGPT followed the fit factor rules and reached the same suggested call as Claude, with scores within a few points, but only when told to read the files from GitHub first. The other skills haven't been tried outside Claude. Three things rely on Claude features and are Claude-only for now: the one-click plugin install, the dashboard page, and scheduling the morning email.
+
+Always use FitFactorOS from a new chat inside your FitFactorOS Project.
+
+### Things you can say
+
+Say these inside your FitFactorOS Project, one task per chat.
+
+Keep the one-page [cheat sheet](docs/cheat-sheet.md) handy: it groups these by when you'd use them.
+
+| Say this | What happens |
+|---|---|
+| **start my intake** | Builds your Profile (about 10 minutes) |
+| **update my profile** (or "change my pay floor," "add a contact") | Changes one answer |
+| **fit factor this** + a job link | Company fit, then Role fit, then you decide |
+| **go deep** | Deeper research on a job you're serious about. Claude asks first, because it uses much more of your plan. |
+| **tailor my resume** | What on your resume matches a job, what's missing, and what to move up. A draft only if you ask. |
+| **log this** (or "I applied to…," "I had a call with…") | Activity rows to paste |
+| **check my week** (or "what did I miss?") | *Connected mode.* Claude checks your calendar and email (read-only) for activity you haven't logged, and asks before adding anything |
+| **this week's work search log** | Your weekly unemployment log |
+| **did I do enough this week?** | Your count against your state's minimum |
+| **show my dashboard** (or "where do I stand?") | Your top picks, ladders, and this week, on a private page |
+| **set up my morning email** | *Connected mode.* An optional weekday email draft with your one next move (scheduled on Pro and above) |
+| **morning email** | Today's email draft, any time |
+
+The [setup guide](docs/setup.md) walks through every step, with pictures of each screen.
+
+**New to Claude?** [Want to go further?](docs/learn-more.md) lists a few free official Anthropic courses and help pages on Projects, Skills, and scheduled tasks.
+
+---
+
+## Repository layout
+
+Folders marked *(planned)* arrive as each phase ships.
+
+```
+fitfactoros/
+├── README.md
+├── CHANGELOG.md              # What changed in each release
+├── LICENSE
+├── CONTRIBUTING.md
+├── .claude-plugin/
+│   └── marketplace.json      # Lets Claude add this repo as a plugin marketplace
+├── plugins/
+│   └── fitfactoros/          # The FitFactorOS plugin
+│       ├── .claude-plugin/
+│       │   └── plugin.json
+│       └── skills/
+│           ├── fitfactoros-intake/
+│           ├── fitfactoros-research/      # Quick screen rubrics, deep research checklist, Jobs row map
+│           ├── fitfactoros-materials/     # "Tailor my resume": review first, draft only on request
+│           ├── fitfactoros-activity-log/
+│           │   ├── references/            # Activity row map
+│           │   └── states/                # One rules file per state (ma.md first) + _template.md
+│           ├── fitfactoros-dashboard/     # "Show my dashboard": reads your Sheet, makes a private page
+│           └── fitfactoros-morning-email/ # Optional weekday email draft; checked quotes and songs lists
+├── dist/                     # The same skills as ZIPs, for Claude's Free plan
+│   ├── fitfactoros-intake.zip
+│   ├── fitfactoros-research.zip
+│   ├── fitfactoros-materials.zip
+│   ├── fitfactoros-activity-log.zip
+│   ├── fitfactoros-dashboard.zip
+│   └── fitfactoros-morning-email.zip
+├── docs/
+│   ├── quick-start-free.md   # Claude Free plan quick start: Intake and fit factor, nothing connected
+│   ├── setup.md              # Step-by-step setup for non-technical users
+│   ├── cheat-sheet.md        # One page of everything you can say
+│   ├── stage-checklists.md   # A short checklist for each stage, from applying to the offer
+│   ├── testing/              # Observer sheet and usage test for people running test sessions
+│   ├── images/               # Screenshots used in the guides
+│   ├── sheet-schema.md       # Every tab and column, Job ID joins, HYPERLINK pattern
+│   ├── morning-email.md      # How the morning email decides what to show
+│   ├── learn-more.md         # Free official Anthropic courses and help pages
+│   └── guardrails.md         # Rules every agent follows: humans send, tag claims, no fake rungs
+├── sheet/
+│   └── fitfactoros-template.xlsx   # Import into Google Sheets
+└── samples/
+    ├── sample-profile.md     # Fictional job seeker
+    ├── sample-resume.md      # Fictional resume, for testing "tailor my resume"
+    └── fitfactoros-sample.xlsx
+```
+
+Each skill folder contains a `SKILL.md` (the agent's instructions) and a `references/` folder for the rubrics, checklists, and templates it reads. Outreach gets its own skill folder when it ships, and Job Finder would too if it's ever built.
+
+### State rules for the Activity Log
+
+Each file in `plugins/fitfactoros/skills/fitfactoros-activity-log/states/` records one state's work-search requirements: minimum activities per week, how the benefit week is defined, the state portal, required fields for each activity, how long records must be kept, which activity types count, a link to the official source for every rule, and the date the rules were last checked. The agent warns you if a state's rules haven't been checked in over 90 days.
+
+"Counts for unemployment" stays blank unless the state file backs it up with an official source. States without a file still get a weekly log; it just doesn't mark anything as counting.
+
+**This is not legal advice.** Unemployment rules change. Always confirm requirements with your state's official unemployment agency.
+
+---
+
+## Roadmap
+
+**V1 (in progress)**
+
+| Phase | What ships | Status |
+|---|---|---|
+| 0 | README and repo structure | Done |
+| 1 | Sheet template + Intake agent | Testing |
+| 2 | Research: quick screen, deep research on request, Jobs and Evidence rows | Testing |
+| 3 | Activity Log (Massachusetts first, then more states) | Testing |
+| 4 | Job Finder: a short list picked for you, and you can still bring your own leads (a job someone suggested, or one you found) | Maybe later: not planned for now |
+| 5 | Outreach (warm-path ladder, two-fact rule) | Planned, next |
+| 6 | Dashboard with per-opportunity ladders and your own warm vs cold results | Testing |
+| 7 | Morning email: an opt-in weekday draft with your one next move | Testing |
+| 8 | Activity check: reads your calendar and email (read-only) for job-search activity you haven't logged, and asks you about each one. Nothing is logged until you confirm. | Testing |
+| 9 | Materials: tailor your resume to a job you're pursuing, reviewing your version first and drafting only on request. Apply cold becomes a real path. | Testing |
+| 10 | Stage checklists: applying, interviews, waiting, the offer, negotiating, accepting or declining | Done (first version) |
+
+**Build order from here:** finish and test Materials and the checklists, then Outreach. **Job Finder is off the build list for now.** Finding postings is the part plenty of tools already do well; FitFactorOS focuses on deciding which ones are worth it and following through. It stays on the roadmap as a possible option. Phase numbers are labels, not the order.
+
+**V2 (future)**
+
+- **Interview Prep**: research on each person you'll meet, voice mock interviews, and a debrief after every round that feeds prep for the next one. *For now, the [Interviewing checklist](docs/stage-checklists.md#interviewing) covers it.*
+- **Cover letters**: the same review-first approach as the resume.
+- **Follow-up**: reminders and drafts for thank-you notes and check-ins, timed to your ladder. *For now, see the [Waiting checklist](docs/stage-checklists.md#waiting).*
+- **No more copy and paste**: Claude adds rows to your Sheet for you, after you OK them, instead of you pasting each one.
+- **Negotiation**: compare offers side by side against the pay floor and deal-breakers from your Intake. *For now, see the [Offer](docs/stage-checklists.md#offer) and [Negotiate](docs/stage-checklists.md#negotiate) checklists.*
+- **Close the loop**: wrap up your search. Thank the people who helped, close out open applications, and see your own warm-path vs cold-path results.
+- **Friday look-back**: on Fridays, the morning email adds a short look back at your week: what moved, what you learned, and how your warm and cold paths are doing. It is not therapy; it points to real support when that's what you need.
+- **Hands-off updates (last on the list)**: Claude notices what happened in your calendar and email and updates your Sheet on its own, within limits you set, and tells you what it changed. This comes last on purpose: each earlier step (drafting, then asking, then adding rows after you OK them) has to prove Claude reads your week correctly first, and the guardrails get a clear update before it ships.
+
+---
+
+## The science behind it
+
+FitFactorOS is designed around a small set of findings. Here's what each one says and how we use it.
+
+**The job search grind.** Wanberg, Zhu, and Van Hooft followed 233 unemployed job seekers with a daily survey over three weeks. Mood and confidence swung from day to day, and those swings tracked how much progress people felt they'd made. Lower perceived progress on a given day was followed by *more* search effort the next day.
+*How we use it:* Visible progress matters, and effort alone isn't the fix. FitFactorOS makes real progress visible and channels extra effort into quality (research, warm paths) rather than more applications.
+
+**Quality, not just quantity.** A large meta-analysis (378 samples, about 166,000 people) found that job-search intensity modestly predicts interviews, offers, and getting hired, but not the *quality* of the job you land. Job-search quality and self-regulation predicted both.
+*How we use it:* We're honest that volume isn't useless. FitFactorOS is a bet on quality and fit, because that's what predicts a job worth having.
+
+**The goal-gradient effect.** Kivetz, Urminsky, and Zheng found that people speed up as they get closer to a goal, the way a coffee-card customer buys more often as the free drink gets near.
+*How we use it:* Short ladders, one per opportunity, so the next rung is always within reach.
+
+**Endowed progress.** Nunes and Drèze found that people given a head start toward a goal were more likely to complete it and got there faster, even when the total work required was the same.
+*How we use it, with a deliberate difference:* The original studies used an artificial head start. FitFactorOS only credits work you've *actually* done, like finishing Intake or already knowing someone at a company. Real head starts, never fake ones.
+
+**Affect labeling.** In a brain-imaging study, Lieberman and colleagues found that labeling the emotion in negative images, compared with processing them in other ways, reduced the response of the amygdala, a brain region involved in emotional reaction. It was a lab study, so applying it to a weekly check-in is our design choice, not a tested result.
+*How we use it:* The V2 Momentum check-in invites you to name how the week felt, briefly, alongside what you got done. Encouragement, not therapy.
+
+**Intent beats volume, in the field.** Greenhouse reports that candidates who use its one-per-month "My Dream Job" flag are hired at roughly 5x the rate of other applicants.
+*How we use it:* It's the closest real-world evidence that a small number of intentional applications outperforms a large number of automated ones.
+
+### Sources
+
+- Paoli, N. "'Trust is at an all-time low for both job seekers and recruiters': Hiring platform CEO says talent acquisition is in an 'AI doom loop'." *Fortune*, Nov. 18, 2025. <https://fortune.com/2025/11/18/hiring-job-seekers-recruiters-talent-acquisition-ai-doom-loop-application-technology/>
+- Royle, O. R. "CEO of the top-rated hiring platform says the job market is so bad that candidates are paying $20 to mass apply and driving bosses crazy with spam." *Fortune*, Jul. 27, 2026. <https://fortune.com/2026/07/27/greenhouse-ceo-daniel-chait-ai-doom-loop-job-seekers-spam-interview-applications-unemployment/>
+- Kivetz, R., Urminsky, O., & Zheng, Y. (2006). The goal-gradient hypothesis resurrected: Purchase acceleration, illusionary goal progress, and customer retention. *Journal of Marketing Research, 43*(1), 39–58. <https://doi.org/10.1509/jmkr.43.1.39>
+- Lieberman, M. D., Eisenberger, N. I., Crockett, M. J., Tom, S. M., Pfeifer, J. H., & Way, B. M. (2007). Putting feelings into words: Affect labeling disrupts amygdala activity in response to affective stimuli. *Psychological Science, 18*(5), 421–428. <https://doi.org/10.1111/j.1467-9280.2007.01916.x>
+- Nunes, J. C., & Drèze, X. (2006). The endowed progress effect: How artificial advancement increases effort. *Journal of Consumer Research, 32*(4), 504–512.
+- van Hooft, E. A. J., Kammeyer-Mueller, J. D., Wanberg, C. R., Kanfer, R., & Basbug, G. (2021). Job search and employment success: A quantitative review and future research agenda. *Journal of Applied Psychology, 106*, 674–713. <https://doi.org/10.1037/apl0000675>
+- Wanberg, C. R., Zhu, J., & Van Hooft, E. A. J. (2010). The job search grind: Perceived progress, self-reactions, and self-regulation of search effort. *Academy of Management Journal, 53*, 788–807. <https://doi.org/10.5465/AMJ.2010.52814599>
+
+---
+
+## Contributing
+
+Contributions are welcome, especially **state rules files** for the Activity Log. Every state file needs an official source link and a verification date. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+Not technical? You can still help. Share feedback through the [feedback form](https://forms.gle/JAvtLkWR3unQQZQ77). No GitHub account needed.
+
+## Feedback and support
+
+FitFactorOS is built and maintained by one person, on a best-effort basis. Questions, bugs, and ideas all go through the [feedback form](https://forms.gle/JAvtLkWR3unQQZQ77). I read every response, but I can't promise a reply or a fix by any date.
+
+FitFactorOS is a free tool. It is not a promise of support, and it is not a promise of a job. It helps you spend your effort where it counts; the search, and every decision in it, stays yours.
+
+See [CHANGELOG.md](CHANGELOG.md) for what changed in each update.
+
+## License
+
+[MIT](LICENSE)
+
+## About
+
+Built by [Jeremy Walsh](https://github.com/jeremyjwalsh).
+
+Thank you to [JobFinderOS](https://github.com/matthewprice/JobFinderOS) by Matt Price, which showed what an open-source, agent-based job search could look like and inspired this project.
