@@ -18,13 +18,13 @@ And if you want help managing your search, optional tools can track opportunitie
 
 > **Status:** Early build. Intake, Research, resume tailoring, the Activity Log (Massachusetts first), the Dashboard, the Morning Email, and the activity check are in testing. Stage checklists are new. See [Roadmap](#roadmap).
 
-> **Want to try it?** Start with a [Fit Check](#fit-check-try-it-in-two-minutes): one paste, any AI, no setup. Like it? Set up **Fit Track**, the full system: new to Claude or on Claude's Free plan, use the [Claude Free plan quick start](docs/quick-start-free.md) (about 20 minutes, no Google or GitHub account needed); everyone else, [Getting started](#getting-started).
+> **Want to try it?** Start with a [Fit Check](#fit-check-try-it-in-two-minutes): attach your resume, paste one line, no setup. Like it? Set up **Fit Track**, the full system: new to Claude or on Claude's Free plan, use the [Claude Free plan quick start](docs/quick-start-free.md) (about 20 minutes, no Google or GitHub account needed); everyone else, [Getting started](#getting-started).
 
 ## Two ways in: Fit Check and Fit Track
 
 **FitFactorOS helps you make better decisions. Fit Check helps you decide. Fit Track helps you follow through.**
 
-- **FitFactorOS | Fit Check** is the hook: a quick, honest read on one job. Paste one line into your AI and you're done. Nothing to install, nothing saved.
+- **FitFactorOS | Fit Check** is the hook: a quick, honest read on one job. Attach your resume, paste one line into your AI, and you're done. Nothing to install, nothing saved.
 - **FitFactorOS | Fit Track** is the whole thing: FitFactorOS set up in Claude, so it remembers your answers, keeps a record of every job, tailors your resume, logs your activity, and shows your dashboard and morning email.
 
 ### Fit Check: try it in two minutes
