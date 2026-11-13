@@ -20,6 +20,17 @@ And if you want help managing your search, optional tools can track opportunitie
 
 > **Want to try it?** Start with a [Fit Check](#fit-check-try-it-in-two-minutes): attach your resume, paste one line, no setup. Like it? Set up **Fit Track**, the full system: new to Claude or on Claude's Free plan, use the [Claude Free plan quick start](docs/quick-start-free.md) (about 20 minutes, no Google or GitHub account needed); everyone else, [Getting started](#getting-started).
 
+## See it in action
+
+Three short films (under a minute each). Click a picture to watch on YouTube.
+
+| How it works (56s) | The story (47s) | The commercial (48s) |
+|---|---|---|
+| [![FitFactorOS Jobs - How It Works Film](https://img.youtube.com/vi/j11uIAk84cY/hqdefault.jpg)](https://youtu.be/j11uIAk84cY) | [![FitFactorOS Jobs - Story Film](https://img.youtube.com/vi/zGvRq1PaK8c/hqdefault.jpg)](https://youtu.be/zGvRq1PaK8c) | [![FitFactorOS Jobs - Commercial](https://img.youtube.com/vi/NSrh7BW2DrE/hqdefault.jpg)](https://youtu.be/NSrh7BW2DrE) |
+| What Fit Check and Fit Track do. | Why fewer, better-fit jobs. | A short ad. |
+
+*Made with AI tools, directed by a person: the narration voices and music are AI-generated, and the people in the commercial are AI-generated (a dramatization, not real users). The companies and numbers on screen are made up.*
+
 ## Two ways in: Fit Check and Fit Track
 
 **FitFactorOS helps you make better decisions. Fit Check helps you decide. Fit Track helps you follow through.**

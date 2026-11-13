@@ -2,6 +2,11 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-11-13 (films)
+
+- **New "See it in action" section in the README:** the How It Works film, the Story film, and the commercial, hosted on YouTube (unlisted), so they play on any device without a big download. Each shows a thumbnail that opens the video.
+- A plain note says what in the films is AI-generated.
+
 ## 2026-11-11 (Fit Check): resume first
 
 - **Attach your resume before you paste the line.** The Fit Check line now says "My resume is attached." In our first live test, the resume came in after the questions, so the first score ignored it. Now the resume goes in the very first message.
