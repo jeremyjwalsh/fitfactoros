@@ -26,7 +26,7 @@ Three short films (under a minute each). Click a picture to watch on YouTube.
 
 | How it works (56s) | The story (47s) | The commercial (48s) |
 |---|---|---|
-| [![FitFactorOS Jobs - How It Works Film](https://img.youtube.com/vi/j11uIAk84cY/hqdefault.jpg)](https://youtu.be/j11uIAk84cY) | [![FitFactorOS Jobs - Story Film](https://img.youtube.com/vi/zGvRq1PaK8c/hqdefault.jpg)](https://youtu.be/zGvRq1PaK8c) | [![FitFactorOS Jobs - Commercial](https://img.youtube.com/vi/NSrh7BW2DrE/hqdefault.jpg)](https://youtu.be/NSrh7BW2DrE) |
+| [![FitFactorOS Jobs - How It Works Film](https://img.youtube.com/vi/irbjeyCDsK0/hqdefault.jpg)](https://youtu.be/irbjeyCDsK0) | [![FitFactorOS Jobs - Story Film](https://img.youtube.com/vi/zGvRq1PaK8c/hqdefault.jpg)](https://youtu.be/zGvRq1PaK8c) | [![FitFactorOS Jobs - Commercial](https://img.youtube.com/vi/NSrh7BW2DrE/hqdefault.jpg)](https://youtu.be/NSrh7BW2DrE) |
 | What Fit Check and Fit Track do. | Why fewer, better-fit jobs. | A short ad. |
 
 *Made with AI tools, directed by a person: the narration voices and music are AI-generated, and the people in the commercial are AI-generated (a dramatization, not real users). The companies and numbers on screen are made up.*
@@ -35,8 +35,8 @@ Three short films (under a minute each). Click a picture to watch on YouTube.
 
 **FitFactorOS helps you make better decisions. Fit Check helps you decide. Fit Track helps you follow through.**
 
-- **FitFactorOS | Fit Check** is the hook: a quick, honest read on one job. Attach your resume, paste one line into your AI, and you're done. Nothing to install, nothing saved.
-- **FitFactorOS | Fit Track** is the whole thing: FitFactorOS set up in Claude, so it remembers your answers, keeps a record of every job, tailors your resume, logs your activity, and shows your dashboard and morning email.
+- **FitFactorOS | Fit Check** is the hook: a quick, honest read on one job. Attach your resume, paste one line into your AI, and you're done. Nothing to install, nothing saved. Think of it as one agent working for you: your Scout.
+- **FitFactorOS | Fit Track** is the whole thing: FitFactorOS set up in Claude, so it remembers your answers, keeps a record of every job, tailors your resume, logs your activity, and shows your dashboard and morning email. Think of it as a team of five working for you: Scout, Editor, Recorder, Analyst and Briefer. You start each one, and none of them sends anything.
 
 ### Fit Check: try it in two minutes
 

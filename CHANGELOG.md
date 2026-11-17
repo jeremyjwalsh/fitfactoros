@@ -2,6 +2,12 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-11-17 (films): your team of five
+
+- **Updated How It Works film:** a "1 agent: your Scout" tag on Fit Check, a "No black box." card on the tags, and a "Fit Track: your team of five" card (Scout, Editor, Recorder, Analyst, Briefer). Same narration and length. The README links to the new version.
+- **"Two ways in" now says it simply:** Fit Check is one agent working for you, your Scout. Fit Track is a team of five.
+- No skills changed, so there's nothing to reinstall.
+
 ## 2026-11-13 (films)
 
 - **New "See it in action" section in the README:** the How It Works film, the Story film, and the commercial, hosted on YouTube (unlisted), so they play on any device without a big download. Each shows a thumbnail that opens the video.
