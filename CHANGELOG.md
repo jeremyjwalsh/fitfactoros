@@ -2,6 +2,11 @@
 
 What changed in each FitFactorOS update, newest first. Your Sheet and your Intake answers carry over between updates unless a note here says otherwise.
 
+## 2026-11-17 (brand): "FitFactorOS | Jobs"
+
+- **Edition names now use a bar, to match the logo:** "FitFactorOS | Jobs" and, later, "FitFactorOS | College". Where both editions appear together: "FitFactorOS | Jobs – Fit Check". File names keep the plain form ("FitFactorOS Jobs - Deck.pptx") because Windows doesn't allow "|" in file names. See [brand.md](docs/brand/brand.md).
+- No skills changed, so there's nothing to reinstall.
+
 ## 2026-11-17 (films): your team of five
 
 - **Updated How It Works film:** a "1 agent: your Scout" tag on Fit Check, a "No black box." card on the tags, and a "Fit Track: your team of five" card (Scout, Editor, Recorder, Analyst, Briefer). Same narration and length. The README links to the new version.

@@ -1,4 +1,4 @@
-<p><img src="docs/brand/fitfactoros-jobs.png" alt="FitFactorOS Jobs" width="420"></p>
+<p><img src="docs/brand/fitfactoros-jobs.png" alt="FitFactorOS | Jobs" width="420"></p>
 
 # FitFactorOS
 
@@ -26,7 +26,7 @@ Three short films (under a minute each). Click a picture to watch on YouTube.
 
 | How it works (56s) | The story (47s) | The commercial (48s) |
 |---|---|---|
-| [![FitFactorOS Jobs - How It Works Film](https://img.youtube.com/vi/irbjeyCDsK0/hqdefault.jpg)](https://youtu.be/irbjeyCDsK0) | [![FitFactorOS Jobs - Story Film](https://img.youtube.com/vi/zGvRq1PaK8c/hqdefault.jpg)](https://youtu.be/zGvRq1PaK8c) | [![FitFactorOS Jobs - Commercial](https://img.youtube.com/vi/NSrh7BW2DrE/hqdefault.jpg)](https://youtu.be/NSrh7BW2DrE) |
+| [![FitFactorOS \| Jobs - How It Works Film](https://img.youtube.com/vi/irbjeyCDsK0/hqdefault.jpg)](https://youtu.be/irbjeyCDsK0) | [![FitFactorOS \| Jobs - Story Film](https://img.youtube.com/vi/zGvRq1PaK8c/hqdefault.jpg)](https://youtu.be/zGvRq1PaK8c) | [![FitFactorOS \| Jobs - Commercial](https://img.youtube.com/vi/NSrh7BW2DrE/hqdefault.jpg)](https://youtu.be/NSrh7BW2DrE) |
 | What Fit Check and Fit Track do. | Why fewer, better-fit jobs. | A short ad. |
 
 *Made with AI tools, directed by a person: the narration voices and music are AI-generated, and the people in the commercial are AI-generated (a dramatization, not real users). The companies and numbers on screen are made up.*

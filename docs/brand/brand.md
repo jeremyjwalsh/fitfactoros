@@ -13,9 +13,10 @@ FitFactorOS has three levels:
 | Way in | **Fit Check** and **Fit Track** | Fit Check is the quick read (one paste, nothing saved). Fit Track is the full system. Every edition has both. |
 
 **How to write them**
-- Editions: "FitFactorOS Jobs", "FitFactorOS College". No dash, no "for".
-- The ways in: "FitFactorOS | Fit Check" and "FitFactorOS | Fit Track". Never "Fit Check" or "Fit Track" alone in public material: on their own they read like fitness apps, and other tools already use the name Fit Check.
-- Where both editions appear together, use the full form: "FitFactorOS Jobs | Fit Check".
+- Editions: "FitFactorOS | Jobs", "FitFactorOS | College". The bar matches the divider in the edition logo. No "for".
+- The ways in: "FitFactorOS | Fit Check" and "FitFactorOS | Fit Track" inside one edition's material. Never "Fit Check" or "Fit Track" alone in public material: on their own they read like fitness apps, and other tools already use the name Fit Check.
+- Where both editions appear together, name the edition first, then the way in, with a dash, not a second bar: "FitFactorOS | Jobs – Fit Check", "FitFactorOS | College – Fit Track".
+- File names keep the plain form, because Windows doesn't allow "|" in file names: "FitFactorOS Jobs - Deck.pptx". Titles people read (slides, videos, docs) use the bar.
 - Spell out FitFactorOS. "FFOS" is private shorthand only.
 
 **What it is:** a **job fit system**, not a job search system. It doesn't find jobs or apply for you; it helps you evaluate them and follow through on the ones worth it. ("Job search" is fine when it means the person's own search.)
@@ -34,8 +35,8 @@ Three stacked bars, one for each tag (Verified, Estimated, Inferred), then "FitF
 | File | Use |
 |---|---|
 | [fitfactoros.png](fitfactoros.png) | The parent brand alone |
-| [fitfactoros-jobs.png](fitfactoros-jobs.png) | FitFactorOS Jobs |
-| [fitfactoros-college.png](fitfactoros-college.png) | FitFactorOS College (for later) |
+| [fitfactoros-jobs.png](fitfactoros-jobs.png) | FitFactorOS \| Jobs |
+| [fitfactoros-college.png](fitfactoros-college.png) | FitFactorOS \| College (for later) |
 
 Transparent PNGs, for light backgrounds. Use the logo as a picture, never retyped as text: in slides and documents, other computers swap the fonts and the text version breaks.
 
